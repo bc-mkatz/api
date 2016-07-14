@@ -62,7 +62,7 @@ paths:
             $ref: "#/definitions/ErrorResponse"
         409:
           description: |
-            `Product` was in conflict with another product. This is the result of duplicate unique values such as name or SKU; a missing or invalid category id, brand id, or tax_class id; or a conflicting `bulk_pricing_rule`.
+            `Product` was in conflict with another product. This is the result of duplicate unique values, such as `name` or `sku`; a missing or invalid `category_id`, `brand_id`, or `tax_class` ID; or a conflicting `bulk_pricing_rule`.
           schema:
             $ref: "#/definitions/ErrorResponse"
     delete:
@@ -93,7 +93,7 @@ paths:
       - $ref: "#/parameters/ProductIdParam"
     get:
       description: |
-        Returns a `Product` from the BigCommerce Catalog
+        Returns a `Product` from the BigCommerce Catalog.
       operationId: getProductById
       responses:
         200:
@@ -102,14 +102,14 @@ paths:
           $ref: '#/responses/NotFound'
     put:
       description: |
-        Updates a `Product` in the BigCommerce Catalog
+        Updates a `Product` in the BigCommerce Catalog.
       operationId: updateProduct
       parameters:
         - name: product
           in: body
           required: true
           description: |
-            A BigCommerce `Product` object
+            A BigCommerce `Product` object.
           schema:
             $ref: "#/definitions/Product"
       responses:
@@ -124,12 +124,12 @@ paths:
             $ref: "#/definitions/ErrorResponse"
         409:
           description: |
-            `Product` was in conflict with another product. This is the result of duplicate unique values such as name or SKU, a missing category, brand, or tax_class that the product is being associate to, or a conflicting bulk pricing rule.
+            `Product` was in conflict with another product. This is the result of duplicate unique values, such as `name` or `sku`; a missing `category_id`, `brand_id`, or `tax_class_id` associated with the product; or a conflicting bulk pricing rule.
           schema:
             $ref: "#/definitions/ErrorResponse"
     delete:
       description: |
-        Deletes a `Product` object from the BigCommerce Catalog
+        Deletes a `Product` object from the BigCommerce Catalog.
       operationId: deleteProductById
       responses:
         204:
@@ -138,7 +138,7 @@ paths:
     parameters:
       - name: product_id
         description: |
-          The id of the `Product` the image is being attached to.
+          The ID of the `Product` to which the image is being attached.
         required: true
         in: path
         type: integer
@@ -151,14 +151,14 @@ paths:
           $ref: "#/responses/ProductImageCollectionResponse"     
     post:
       description: |
-        Creates an image on a product. Publically accessible URLs and files (form post) are valid parameters.
+        Creates an image on a product. Publicly accessible URLs and files (`form post`) are valid parameters.
       operationId: createProductImage
       parameters:
       - name: productImage
         in: body
         required: true
         description: |
-          A BigCommerce `ProductImage` object
+          A BigCommerce `ProductImage` object.
         schema:
           $ref: "#/definitions/ProductImage"
       responses:
@@ -170,13 +170,13 @@ paths:
     parameters:
       - name: product_id
         description: |
-          The id of the `Product` the image is being attached to.
+          The ID of the `Product` to which the image is being attached.
         required: true
         in: path
         type: integer
       - name: image_id
         description: |
-          The id of the `Image` the image is being operated on.
+          The ID of the `Image` being operated on.
         required: true
         in: path
         type: integer
@@ -189,14 +189,14 @@ paths:
           $ref: "#/responses/ProductImageCollectionResponse"     
     put:
       description: |
-        Updates an image on a product. Publically accessible URLs and files (form post) are valid parameters.
+        Updates an image on a product. Publicly accessible URLs and files (`form post`) are valid parameters.
       operationId: updateProductImage
       parameters:
       - name: productImage
         in: body
         required: true
         description: |
-          A BigCommerce `ProductImage` object
+          A BigCommerce `ProductImage` object.
         schema:
           $ref: "#/definitions/ProductImage"
       responses:
@@ -206,7 +206,7 @@ paths:
           $ref: '#/responses/NotFound'
     delete:
       description: |
-        Delete a `ProductImage` in the BigCommerce Catalog
+        Deletes a `ProductImage` in the BigCommerce Catalog.
       operationId: deleteProductImage
       responses:
         204:
@@ -249,13 +249,13 @@ paths:
       - name: variant_id
         in: path
         description: |
-          The id of the `Variant`.
+          The ID of the `Variant`.
         required: true
         type: number
         format: int
     get:
       description:
-        Get a `Variant` object.
+        Gets a `Variant` object.
       operationId: getProductVariantById
       responses:
         200:
@@ -264,7 +264,7 @@ paths:
           $ref: '#/responses/NotFound'
     put:
       description:
-        Update a `Variant` object.
+        Updates a `Variant` object.
       operationId: updateProductVariant
       parameters:
       - name: Variant
@@ -281,7 +281,7 @@ paths:
           $ref: '#/responses/NotFound'
     delete:
       description: |
-        Delete a `Variant`
+        Delete as `Variant`.
       operationId: deleteProductVariantById
       responses:
         204:
@@ -294,13 +294,13 @@ paths:
         - name: variant_id
           in: path
           description: |
-            The id of the `Variant`.
+            The ID of the `Variant`.
           required: true
           type: number
           format: int
         - name: image_file
           description: |
-            A publically accessible URL for an image. Support MIME types include GIF, JPEG, and PNG.
+            A publicly accessible URL for an image. Supported MIME types include GIF, JPEG, and PNG.
           required: true
           in: body
           schema:
@@ -313,7 +313,7 @@ paths:
           $ref: '#/responses/NotFound'
         422:
           description: |
-            Variant image was not valid. This is the result of missing image_file fields or non-url for image_file field. See the response for more details.
+            Variant image was not valid. This is the result of missing `image_file` fields, or of non-URL values for the `image_file` field. See the response for more details.
           schema:
             $ref: "#/definitions/ErrorResponse"
   /catalog/products/{product_id}/options:
@@ -321,7 +321,7 @@ paths:
       - $ref: "#/parameters/ProductIdParam"
     get:
       description:
-        Get an array of `Option` objects.
+        Gets an array of `Option` objects.
       operationId: getOptions
       responses:
         200:
@@ -334,11 +334,11 @@ paths:
         in: body
         required: true
         description: |
-          `Option` object
+          `Option` object.
         schema:
           $ref: "#/definitions/Option"
       description:
-        Create an `Option`.
+        Creates an `Option`.
       operationId: createOption
       responses:
         200:
@@ -350,7 +350,7 @@ paths:
             $ref: "#/definitions/ErrorResponse"
         409:
           description: |
-            Option was in conflict with another option. This is the result of duplicate unique fields such as name.
+            Option was in conflict with another option. This is the result of duplicate unique fields, such as `name`.
           schema:
             $ref: "#/definitions/ErrorResponse"
   /catalog/products/{product_id}/options/{option_id}:
@@ -358,19 +358,19 @@ paths:
       - name: product_id
         in: path
         description: |
-          The id of the `Product` the `Option` belongs to.
+          The ID of the `Product` to which the `Option` belongs.
         required: true
         type: number
         format: int
       - name: option_id
         description: |
-          The id of the `Option`.
+          The ID of the `Option`.
         required: true
         in: path
         type: integer
     put:
       description: |
-        Update a Product's `Option` based on the product_id and option_id.
+        Update a Product's `Option`, based on the `product_id` and `option_id`.
       operationId: updateOption
       responses:
         200:
@@ -382,7 +382,7 @@ paths:
             $ref: "#/definitions/ErrorResponse"
         409:
           description: |
-            The `Option` was in conflict with another option. This is the result of duplicate unique fields such as name.
+            The `Option` was in conflict with another option. This is the result of duplicate unique fields, such as name.
           schema:
             $ref: "#/definitions/ErrorResponse"
     delete:
@@ -500,7 +500,7 @@ paths:
       parameters:
         - name: image_file
           description: |
-            A publically accessible URL for an image. Support MIME types include GIF, JPEG, and PNG.
+            A publicly accessible URL for an image. Support MIME types include GIF, JPEG, and PNG.
           required: true
           in: body
           schema:
@@ -692,14 +692,14 @@ paths:
         type: integer
       - name: image_file
         description: |
-          A publically accessible URL for an image. Support MIME types include GIF, JPEG, and PNG.
+          A publicly accessible URL for an image. Support MIME types include GIF, JPEG, and PNG.
         required: true
         in: body
         schema:
           $ref: '#/definitions/ResourceImage'
     post:
       description: |
-        Creates an image on a category. Publically accessible URLs and files (form post) are valid parameters.
+        Creates an image on a category. Publicly accessible URLs and files (form post) are valid parameters.
       operationId: createCategoryImage
       responses:
         204:
@@ -799,12 +799,12 @@ paths:
             $ref: "#/definitions/ErrorResponse"
         409:
           description: |
-            The `Brand` was in conflict with another product. This is the result of duplicate unique value such as name
+            The `Brand` was in conflict with another product. This is the result of duplicate unique value, such as `name`.
           schema:
             $ref: "#/definitions/ErrorResponse"
     delete:
       description: |
-        Delete a `Brand` from the BigCommerce Catalog
+        Deletes a `Brand` from the BigCommerce Catalog.
       operationId: deleteBrand
       responses:
         204:
@@ -813,18 +813,18 @@ paths:
     parameters:
       - name: brand_id
         description: |
-          The id of the `Brand` the image is being attached to.
+          The ID of the `Brand` to which the image is being attached.
         required: true
         in: path
         type: integer
     post:
       description: |
-        Creates an image on a `Brand`. Publically accessible URLs and files (form post) are valid parameters.
+        Creates an image on a `Brand`. Publicly accessible URLs and files (`form post`) are valid parameters.
       operationId: createBrandImage
       parameters:
       - name: image_file
         description: |
-          A publically accessible URL for an image. Support MIME types include GIF, JPEG, and PNG.
+          A publicly accessible URL for an image. Supported MIME types include GIF, JPEG, and PNG.
         required: true
         in: body
         schema:
@@ -832,7 +832,7 @@ paths:
       responses:
         204:
           description: |
-            Empty response indicating success post of image
+            Empty response, indicating successful post of the image.
         404:
           $ref: '#/responses/NotFound'
         422:
@@ -842,11 +842,11 @@ paths:
             $ref: "#/definitions/ErrorResponse"
     delete:
       description: |
-        Delete a `Brand` image the BigCommerce Catalog
+        Deletes a `Brand` image from the BigCommerce Catalog.
       operationId: deleteBrandImage
       responses:
         204:
-          description: Image cleared for the brand
+          description: Image removed for the brand.
 parameters:
   FilterIdParam:
     name: id
@@ -893,49 +893,49 @@ parameters:
   FilterBrandIdParam:
     name: brand_id
     description: |
-      Filter items by brand_id.
+      Filter items by `brand_id`.
     required: false
     in: query
     type: integer
   FilterDateModifiedParam:
     name: date_modified
     description: |
-      Filter items by date_modified.
+      Filter items by `date_modified`.
     required: false
     in: query
     type: integer
   FilterDateLastImportedParam:
     name: date_last_imported
     description: |
-      Filter items by date_last_imported.
+      Filter items by `date_last_imported`.
     required: false
     in: query
     type: integer
   FilterIsVisibleParam:
     name: is_visible
     description: |
-      Filter items by is_visible.
+      Filter items by `is_visible`.
     required: false
     in: query
     type: integer
   FilterIsFeaturedParam:
     name: is_featured
     description: |
-      Filter items by is_featured.
+      Filter items by `is_featured`.
     required: false
     in: query
     type: integer
   FilterInventoryLevelParam:
     name: inventory_level
     description: |
-      Filter items by inventory_level.
+      Filter items by `inventory_level`.
     required: false
     in: query
     type: integer
   FilterTotalSoldParam:
     name: total_sold
     description: |
-      Filter items by total_sold.
+      Filter items by `total_sold`.
     required: false
     in: query
     type: integer
@@ -956,28 +956,28 @@ parameters:
   FilterKeywordParam:
     name: keyword
     description: |
-      Filter items by keywords found in the name or page_title.
+      Filter items by keywords found in the name or `page_title`.
     required: false
     in: query
     type: integer
   FilterIncludeParam:
     name: include
     description: |
-      Include sub-resources on a product with a comma separated list. Valid expansions currently include `variants`, `images`, `custom_fields`, and `bulk_pricing_rules`.
+      Include sub-resources on a product, using a comma-separated list. Valid expansions currently include `variants`, `images`, `custom_fields`, and `bulk_pricing_rules`.
     required: false
     in: query
     type: string
   FilterParentIdParam:
     name: parent_id
     description: |
-      Filter items by parent_id.
+      Filter items by `parent_id`.
     required: false
     in: query
     type: integer
   FilterPageTitleParam:
     name: page_title
     description: |
-      Filter items by page_title.
+      Filter items by `page_title`.
     required: false
     in: query
     type: string
@@ -999,14 +999,14 @@ parameters:
     name: product_id
     in: path
     description: |
-      The id of the `Product` the `Variant` belongs to.
+      The ID of the `Product` to which the `Variant` belongs.
     required: true
     type: number
     format: int
 responses:
   NotFound:
     description: |
-      Error payload for the BigCommerce API
+      Error payload for the BigCommerce API.
     schema:
       title: NotFound
       type: object
@@ -1016,16 +1016,18 @@ responses:
             404 HTTP status code
           type: integer
         title:
-          description: The error title describing the particular
+          description: |
+            The error title describing the particular error encountered.
           type: string
         type:
           type: string
         instance:
           type: string
   NoContent:
-    description: No content on successful deletion
+    description: |
+      No content, upon successful deletion.
   VariantResponse:
-    description: Successful response
+    description: Successful response.
     schema:
       title: VariantResponse
       type: object
@@ -1036,7 +1038,7 @@ responses:
           $ref: '#/definitions/Meta'
   VariantCollectionResponse:
     description: |
-      Response payload for the Bigcommerce API
+      Response payload for the Bigcommerce API.
     schema:
       title: VariantCollectionResponse
       type: object
@@ -1049,7 +1051,7 @@ responses:
           $ref: "#/definitions/CollectionMeta"
   ProductResponse:
     description: |
-      Response payload for the Bigcommerce API
+      Response payload for the Bigcommerce API.
     schema:
       title: ProductResponse
       type: object
@@ -1060,7 +1062,7 @@ responses:
           $ref: "#/definitions/Meta"
   BrandResponse:
     description: |
-      Response payload for the Bigcommerce API
+      Response payload for the Bigcommerce API.
     schema:
       title: BrandResponse
       type: object
@@ -1071,7 +1073,7 @@ responses:
           $ref: "#/definitions/Meta"
   BrandCollectionResponse:
     description: |
-      Response payload for the Bigcommerce API
+      Response payload for the Bigcommerce API.
     schema:
       title: BrandCollectionResponse
       type: object
@@ -1084,7 +1086,7 @@ responses:
           $ref: "#/definitions/CollectionMeta"
   CategoryResponse:
     description: |
-      Response payload for the Bigcommerce API
+      Response payload for the Bigcommerce API.
     schema:
       title: CategoryResponse
       type: object
@@ -1095,7 +1097,7 @@ responses:
           $ref: "#/definitions/Meta"
   CategoryCollectionResponse:
     description: |
-      Response payload for the Bigcommerce API
+      Response payload for the Bigcommerce API.
     schema:
       title: CategoryCollectionResponse
       type: object
@@ -1108,7 +1110,7 @@ responses:
           $ref: "#/definitions/CollectionMeta"
   CategoryTreeCollectionResponse:
     description: |
-      Response payload for the Bigcommerce API
+      Response payload for the Bigcommerce API.
     schema:
       title: CategoryTreeCollectionResponse
       type: object
@@ -1121,7 +1123,7 @@ responses:
           $ref: "#/definitions/CollectionMeta"
   OptionResponse:
     description: |
-      Response payload for the Bigcommerce API
+      Response payload for the Bigcommerce API.
     schema:
       title: OptionResponse
       type: object
@@ -1132,7 +1134,7 @@ responses:
           $ref: "#/definitions/CollectionMeta"
   OptionCollectionResponse:
     description: |
-      Response payload for the Bigcommerce API
+      Response payload for the Bigcommerce API.
     schema:
       title: OptionCollectionResponse
       type: object
@@ -1145,7 +1147,7 @@ responses:
           $ref: "#/definitions/CollectionMeta"
   ModifierResponse:
     description: |
-      Response payload for the Bigcommerce API
+      Response payload for the Bigcommerce API.
     schema:
       title: ModifierResponse
       type: object
@@ -1156,7 +1158,7 @@ responses:
           $ref: "#/definitions/CollectionMeta"
   ModifierCollectionResponse:
     description: |
-      Response payload for the Bigcommerce API
+      Response payload for the Bigcommerce API.
     schema:
       title: ModifierCollectionResponse
       type: object
@@ -1169,7 +1171,7 @@ responses:
           $ref: "#/definitions/CollectionMeta"
   ProductCollectionResponse:
     description: |
-      Response payload for the Bigcommerce API
+      Response payload for the Bigcommerce API.
     schema:
       title: ProductCollectionResponse
       type: object
@@ -1182,7 +1184,7 @@ responses:
           $ref: "#/definitions/CollectionMeta"
   ProductImageResponse:
     description: |
-      Response payload for the Bigcommerce API
+      Response payload for the Bigcommerce API.
     schema:
       title: ProductImageResponse
       type: object
@@ -1193,7 +1195,7 @@ responses:
           $ref: "#/definitions/CollectionMeta"        
   ProductImageCollectionResponse:
     description: |
-      Response payload for the Bigcommerce API
+      Response payload for the Bigcommerce API.
     schema:
       title: ProductImageCollectionResponse
       type: object
@@ -1208,7 +1210,7 @@ definitions:
   BaseError:
     type: object
     description: |
-      Error payload for the BigCommerce API
+      Error payload for the BigCommerce API.
     properties:
       status:
         description: |
@@ -1216,7 +1218,7 @@ definitions:
         type: integer
       title:
         description: |
-          The error title describing the particular
+          Error title describing the particular error encountered.
         type: string
       type:
         type: string
@@ -1236,12 +1238,12 @@ definitions:
   CollectionMeta:
     type: object
     description: |
-      Data about the response including pagination and collection totals
+      Data about the response, including pagination and collection totals.
     properties:
       total:
         type: integer
         description: |
-          Total number of items return in the result set
+          Total number of items returned in the result set.
       count:
         type: integer
         description: |
@@ -1249,44 +1251,44 @@ definitions:
       per_page:
         type: integer
         description: |
-          The amount of items returned in the collection per page, controlled by the limit parameter
+          The number of items returned in the collection per page, controlled by the `limit` parameter
       current_page:
         type: integer
         description: |
-          The page you are currently on within the collection
+          The page you are currently on within the collection.
       total_pages:
         type: integer
         description: |
-          The total number of pages in the collection
+          The total number of pages in the collection.
       links:
         type: object
         description: |
-          Pagination links for the previous and next parts of the whole collection
+          Pagination links for the previous and next parts of the whole collection.
         properties:
           previous:
             type: string
             description: |
-              Link to the previous page returned in the response
+              Link to the previous page returned in the response.
           current:
             type: string
             description: |
-              Link to the current page returned in the response
+              Link to the current page returned in the response.
           next:
             type: string
             description: |
-              Link to the next page returned in the response
+              Link to the next page returned in the response.
   Meta:
     type: object
-    description: Empty meta object, may be used later
+    description: Empty meta object; might be used later.
   Product:
     type: object
     description: |
-      A BigCommerce Product object describes a single or collection of purchasable units.
+      A BigCommerce Product object describes a purchasable unit, or a collection of purchasable units.
     properties:
       id:
         type: integer
         description: |
-          The unique numerical ID of the product, increments sequentially.
+          The unique numeric ID of the product; increments sequentially.
       name:
         type: string
         description: |
@@ -1541,11 +1543,11 @@ definitions:
     properties:
       id:
         description: |
-          The unique numerical ID of the image, increments sequentially
+          The unique numeric ID of the image, increments sequentially
         type: integer
       product_id:
         description: |
-          The unique numerical identifier for the product that the image is associated with.
+          The unique numeric identifier for the product that the image is associated with.
         type: integer
       is_thumbnail:
         description: |
@@ -1586,7 +1588,7 @@ definitions:
     properties:
       id:
         description: |
-          The unique numerical ID of the custom field, increments sequentially
+          The unique numeric ID of the custom field, increments sequentially
         type: integer
       name:
         description: |
@@ -1763,11 +1765,11 @@ definitions:
       id:
         type: integer
         description: |
-          The unique numerical ID of the category, increments sequentially.
+          The unique numeric ID of the category, increments sequentially.
       parent_id:
         type: integer
         description: |
-          The unique numerical ID of the category's parent. This field controls where the category sits in the tree of categories that organize the catalog.
+          The unique numeric ID of the category's parent. This field controls where the category sits in the tree of categories that organize the catalog.
       name:
         type: string
         description: |
@@ -1794,11 +1796,11 @@ definitions:
       id:
         type: integer
         description: |
-          The unique numerical ID of the category, increments sequentially.
+          The unique numeric ID of the category, increments sequentially.
       parent_id:
         type: integer
         description: |
-          The unique numerical ID of the category's parent. This field controls where the category sits in the tree of categories that organize the catalog.
+          The unique numeric ID of the category's parent. This field controls where the category sits in the tree of categories that organize the catalog.
       name:
         type: string
         description: |
@@ -1866,7 +1868,7 @@ definitions:
   ResourceImage:
     type: object
     description: |
-      An object containing a publically accessible image URL or a form post that contains an image file.
+      An object containing a publicly accessible image URL or a form post that contains an image file.
     properties:
       image_url:
         type: string
@@ -1882,7 +1884,7 @@ definitions:
       id:
         type: integer
         description: |
-          The unique numerical ID of the brand, increments sequentially.
+          The unique numeric ID of the brand, increments sequentially.
       name:
         type: string
         description: |
@@ -1915,11 +1917,11 @@ definitions:
       id:
         type: integer
         description: |
-          The unique numerical ID of the option, increments sequentially.
+          The unique numeric ID of the option, increments sequentially.
       product_id:
         type: integer
         description: |
-          The unique numerical ID of the product that the option belongs to.
+          The unique numeric ID of the product that the option belongs to.
       name:
         type: string
         description: |
@@ -2079,19 +2081,19 @@ definitions:
       id:
         type: integer
         description: |
-          The unique numerical ID of the modifier, increments sequentially.
+          The unique numeric ID of the modifier; increments sequentially.
       product_id:
         type: integer
         description: |
-          The unique numerical ID of the product that the option belongs to.
+          The unique numeric ID of the product to which the option belongs.
       name:
         type: string
         description: |
-          The name unique option name auto-generated from the display name, a timestamp, and the product id.
+          The unique option name; auto-generated from the display name, a timestamp, and the product ID.
       display_name:
         type: string
         description: |
-          The name of the option shown on the store front.
+          The name of the option, as shown on the storefront.
       type:
         $ref: "#/definitions/ModifierType"
       config:
@@ -2105,7 +2107,7 @@ definitions:
     description: |
       The type of modifier, which determines how it will display on the storefront. For reference, former v2 API values: 
       D = date, C = checkbox, F = file, T = text, MT = multi_line_text, N = numbers_only_text, RB = radio_buttons, 
-      RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, CS = swatch
+      RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, CS = swatch.
     enum:
       - date
       - checkbox
@@ -2125,23 +2127,23 @@ definitions:
       id:
         type: integer
         description: |
-          The unique numerical ID of the value, increments sequentially.
+          The unique numeric ID of the value; increments sequentially.
       is_default:
         type: boolean
         description: |
-          The flag for preselecting a value as the default on the store front. This field is not supported for swatch options/modifiers.
+          The flag for pre-selecting a value as the default on the storefront. This field is not supported for `swatch` options/modifiers.
       label:
         type: string
         description: |
-          The text display identifying the value on the store front.
+          The text displayed to identify the value on the storefront.
       sort_order:
         type: integer
         description: |
-          The order in which the value will be displayed on the product page.
+          The order in which the value will be displayed on the product page. Lower values mean higher placement.
       value_data:
         type: object
         description: |
-          Extra data describing the value based on the type of option or modifier that the value is associated with swatch requires an array of colors with up to three hexidecimal color keys, product list requires a `product_id`, and checkbox requires boolean flag called `checked_value` to determine which value is considered to be the checked state.
+          Extra data describing the value, based on the value's associated type of option or modifier. A `swatch` type requires an array of colors, with up to three hexidecimal color keys. A `product_list` type requires a `product_id`. A `checkbox` type requires a boolean flag called `checked_value` to determine which value is considered to be the checked state.
   ModifierValue:
     type: object
     allOf:
@@ -2158,29 +2160,29 @@ definitions:
               image:
                 type: string
                 description: |
-                  The url for an image displayed on the storefront when the modifier value is selected.
+                  The URL for an image displayed on the storefront when the modifier value is selected.
               purchasing_disabled:
                 type: object
                 properties:
                   status:
                     type: boolean
                     description: |
-                      Flag for whether the modifier value disables purchasing when selected on the storefront. This can be used for temporarily disabling a particular modifier value.
+                      Flag determining whether the modifier value disables purchasing when selected on the storefront. This can be used for temporarily disabling a particular modifier value.
                   message:
                     type: string
                     description: |
-                      The message displayed on the storefront when the purchasing disabled status is `true`.
+                      The message displayed on the storefront when the `purchasing_disabled` status is `true`.
   Adjuster:
     type: object
     properties:
       adjuster:
         type: string
         description: |
-          The type of adjuster as either `relative` or `percentage` for either the price or the weight of the variant when the modifier value is selected on the storefront.
+          The type of adjuster – either `relative` or `percentage` – for the variant's price or weight, when the modifier value is selected on the storefront.
         enum:
           - relative
           - percentage
       adjuster_value:
         type: number
         description: |
-          The numeric amount the adjuster will change either the price or the weight of the variant when the modifier value is selected on the storefront.
+          The numeric amount by which the adjuster will change the variant's price or the weight, when the modifier value is selected on the storefront.
