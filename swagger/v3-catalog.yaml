@@ -1089,7 +1089,7 @@ paths:
       responses:
         204:
           description: Image cleared for the brand
-  /catalog/products/variants:
+  /catalog/variants:
     get:
       tags:
         - Catalog
