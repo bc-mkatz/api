@@ -2,7 +2,7 @@ swagger: '2.0'
 info:
   title: BigCommerce Checkout API Data Model
   description: api for building carts in BigCommerce
-  version: v0.0.1
+  version: v0.0.2
 
 host: unknown
 
@@ -14,6 +14,23 @@ produces:
   - application/json
 
 paths:
+  /checkout:
+    get:
+      summary: Retrieve a collection of checkout entities
+      responses:
+        200:
+          description: A succesful collection of checkouts
+          # parameters:
+          # This will contain a list to be defined of possible filters
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '#/definitions/Checkout'
+              meta:
+                $ref: '#/definitions/Meta'
   /checkouts/{id}:
     get:
       summary: Retrieve a Checkout by its ID
@@ -173,6 +190,8 @@ definitions:
           - "null" # This is open to discussion. Internally we assign the ID = 0 to identify guest shopper. Not sure if we want to expose that
         description: "Null if the shopper is a guest"
         format: UUID
+      customer_group_id:
+        type: string
       email:
         type: string
         format: email
@@ -253,6 +272,12 @@ definitions:
           product_id:
             type: integer
             description: "The Product ID"
+          price:
+            type: number
+          sale_price:
+            type: number
+          retail_price:
+            type: number
           sku_id:
             type:
               - integer
@@ -295,12 +320,6 @@ definitions:
               type: string
       quantity:
         type: number
-      price:
-        type: number
-      sale_price:
-        type: number
-      retail_price:
-        type: number
       require_shipping:
         type: boolean
       taxable:
@@ -310,6 +329,7 @@ definitions:
         format: uri
       base_amount:
         type: number
+        description: "Price we used from the variant level"
       discount_amount:
         type: number
         description: "The total value of all discounts applied to this item"
