@@ -757,7 +757,7 @@ Name | Type | Description | Notes
 **option_values.label** | **string** | The label of the option value to be created on POST. | [optional] 
 
 
-## v3 Customer API Reference
+## v3 Newsletter Subscriber API Reference
 
 Please view the documentation generated from the Swagger file [here](http://editor.swagger.io/#/?import=https://raw.githubusercontent.com/bigcommerce/api/master/swagger/v3-catalog.yaml).
 
