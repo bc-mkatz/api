@@ -65,11 +65,11 @@ If you're currently consuming our v2 API, you'll notice that some catalog endpoi
 
 You can see how we're planning to iterate by looking at the [public API roadmap](https://trello.com/b/1Od4oCsl/bigcommerce-api-roadmap). 
 
-## v2 Catalog API and Control Panel Interoperability
+## v2 Catalog API and Control-Panel Interoperability
 
-The v3 Catalog API is essentially our catalog's future state. This means that many concepts don't map visibly to their v2 and control panel relatives.
+The v3 Catalog API is essentially our catalog's future state. This means that many concepts don't map visibly to their v2 and control-panel relatives.
 
-The good news here is we've built this API with v2 interoperability in mind. So you should be able to use both APIs simultaneously as you (ideally) fully transition all catalog management to v3. The key areas to be aware of are:    
+The good news here is we've built this API with v2 interoperability in mind. So you should be able to use both APIs simultaneously as you (in an ideal scenario) fully transition all catalog management to v3. The key areas to be aware of are:    
 
 - Option Sets
   - The Product resource in v3 has an `option_set_id` field that, if set, will prevent you from directly editing product options and modifiers. If you want to edit the option set, you will need to either use v2, or else set the `option_set_id` field to null. The latter will remove the option set and allow you to directly attach options and modifiers.
@@ -495,7 +495,7 @@ Name | Type | Description | Notes
 **quantity_min** | **int** | The minimum (inclusive) quantity of a product to satisfy this rule. Must be greater than or equal to 0 (zero). | [optional] 
 **quantity_max** | **int** | The maximum (inclusive) quantity of a product to satisfy this rule. Must be greater than the `quantity_min` value – unless this field has a value of zero, in which case there will be no maximum bound for this rule. | [optional] 
 **type** | **string** | The type of adjustment that is made. One of: `price` - adjustment amount per product; `percent` - adjustment as a percent of the original price; `fixed` - adjusted absolute price of the product. | [optional] 
-**amount** | **int** | The value of the ?? adjusted by the bulk pricing rule. | [optional] 
+**amount** | **int** | The value of the discount adjusted by the bulk pricing rule. | [optional] 
 
 
 ##### Category
@@ -530,7 +530,7 @@ Name | Type | Description | Notes
 **name** | **string** | The name displayed for the category. Name is unique to the category&#39;s siblings. | [optional] 
 **is_visible** | **bool** | Flag to determine whether or not the product should be displayed to customers browsing the store. If `true`, the category will be displayed. If `false`, the category will be hidden from view. | [optional] 
 **url** | **string** | The custom URL for the category on the storefront. | [optional] 
-**children** | **array** | The list of children of the category. | [optional] 
+**children** | **array** | The list of the category's children. | [optional] 
 
 
 ##### CollectionMeta
@@ -543,7 +543,7 @@ Name | Type | Description | Notes
 **per_page** | **int** | The number of items returned in the collection per page, controlled by the `limit` parameter. | [optional] 
 **current_page** | **int** | The page you are currently on within the collection. | [optional] 
 **total_pages** | **int** | The total number of pages in the collection. | [optional] 
-**links** | **object** | ?? Collection of page links. ?? | [optional] 
+**links** | **object** | Collection of page links. | [optional] 
 **links.previous** | **string** | Link to the previous page returned in the response. | [optional] 
 **links.current** | **string** | Link to the current page returned in the response. | [optional] 
 **links.next** | **string** | Link to the next page returned in the response. | [optional] 
@@ -559,13 +559,13 @@ Name | Type | Description | Notes
 **display_name** | **string** | The name of the option shown on the storefront. | [optional] 
 **type** | **string** | Possible values: `date`, `checkbox`, `file`, `text`, `multi_line_text`, `numbers_only_text`, `radio_buttons`, `rectangles`, `dropdown`, `product_list`, `product_list_with_images`, `swatch`. | [optional] 
 **config** | **object** | (Please see [OptionConfig](#optionconfig).) | [optional] 
-**values** | **object** | ?? Collection of values. ?? | [optional] 
+**values** | **object** | Collection of values. | [optional] 
 **values.id** | **int** | The unique numeric ID of the value; increments sequentially. | [optional] 
 **values.is_default** | **bool** | The flag for preselecting a value as the default on the storefront. This field is not supported for `swatch` options/modifiers. | [optional] 
 **values.label** | **string** | The text displayed to identify the value on the storefront. | [optional] 
 **values.sort_order** | **int** | The order in which the value will be displayed on the product page. | [optional] 
 **values.value_data** | **object** | Extra data describing the value, based on the value's associated type of option or modifier. A `swatch` type requires an array of colors, with up to three hexidecimal color keys. A `product_list` type requires a `product_id`. A `checkbox` type requires a boolean flag called `checked_value` to determine which value is considered to be the checked state. | [optional] 
-**values.adjusters** | **object** | ?? Collection of adjusters. ?? | [optional] ??
+**values.adjusters** | **object** | Collection of adjusters.  | [optional]
 **values.adjusters.adjuster** | **string** | The type of adjuster – either `relative` or `percentage` – for the variant's price or weight, when the modifier value is selected on the storefront. | [optional] 
 **values.adjusters.adjuster_value** | **float** | The numeric amount by which the adjuster will change the variant's price or the weight, when the modifier value is selected on the storefront. | [optional] 
 
@@ -581,7 +581,7 @@ Name | Type | Description | Notes
 **display_name** | **string** | The text displayed to identify the option on the storefront. | [optional] 
 **type** | **string** | Possible values: `radio_buttons`, `rectangles`, `dropdown`, `product_list`, `product_list_with_images`, `swatch` | [optional] 
 **config** | **object** | (Please see [OptionConfig](#optionconfig).) | [optional] 
-**values** | **object** | ?? Collection of values ?? | [optional] 
+**values** | **object** | Collection of values. | [optional] 
 **values.id** | **int** | The unique numeric ID of the value; increments sequentially. | [optional] 
 **values.is_default** | **bool** | The flag for preselecting a value as the default on the storefront. This field is not supported for `swatch` options/modifiers. | [optional] 
 **values.label** | **string** | The text displayed to identify the value on the storefront. | [optional] 
@@ -683,7 +683,7 @@ Name | Type | Description | Notes
 **is_preorder_only** | **bool** | If set to `false`, the product will _not_ change its availability from `pre-order` to `available` on the release date. Otherwise, the product's availability/status will change to `available` on the release date. | [optional] 
 **is_price_hidden** | **bool** | The default `false` value indicates that this product's price will be shown on the product page. If set to `true`, the price will be hidden. (Note: To successfully set `is_price_hidden` to `true`, the `availability` value must be `disabled`.) | [optional] 
 **price_hidden_label** | **string** | By default, an empty string. If `is_price_hidden` is `true`, the `price_hidden_label` value will be displayed instead of the price. (Note: To successfully set a non-empty string value for `price_hidden_label`, the `availability` value must be `disabled`.) | [optional] 
-**images** | **object** | ?? [Description to be added] ?? | [optional] 
+**images** | **object** | Collection of images for this product. | [optional] 
 **images.id** | **int** | The unique numeric ID of the image; increments sequentially. | [optional] 
 **images.product_id** | **int** | The unique numeric identifier for the product associated with the image. | [optional] 
 **images.is_thumbnail** | **bool** | Flag for identifying whether or ot the image is used as the product&#39;s thumbnail. | [optional] 
@@ -694,19 +694,19 @@ Name | Type | Description | Notes
 **images.url_standard** | **string** | The standard URL for this image. | [optional] 
 **images.url_thumbnail** | **string** | The thumbnail URL for this image. | [optional] 
 **images.url_tiny** | **string** | The tiny URL for this image. | [optional] 
-**custom_fields** | **object** | ?? Collection of custom fields. ?? | [optional] 
+**custom_fields** | **object** | Collection of custom fields. | [optional] 
 **custom_fields.id** | **int** | The unique numeric ID of the custom field; increments sequentially. | [optional] 
 **custom_fields.name** | **string** | The name of the field, as shown on the storefront: "orders", etc. | [optional] 
 **custom_fields.value** | **string** | The values or text of the field, as shown on the storefront" "orders", etc. | [optional] 
-**custom_url** | **object** | ?? [Description to be added] ?? | [optional] 
+**custom_url** | **object** | URL corresponding to a custom field.| [optional] 
 **custom_url.url** | **string** | Product URL on the storefront. | [optional] 
 **custom_url.is_customized** | **bool** | Returns `true` if the URL has been changed from its default state (i.e., the auto-assigned URL BigCommerce provides). | [optional] 
-**bulk_pricing_rules** | **object** | ?? Collection of bulk pricing rules. ?? | [optional] 
+**bulk_pricing_rules** | **object** | Collection of bulk pricing rules. | [optional] 
 **bulk_pricing_rules.id** | **int** | The ID of the bulk pricing rule. | [optional] 
 **bulk_pricing_rules.quantity_min** | **int** | The minimum (inclusive) quantity of a product to satisfy this rule.  Must be greater than or equal to 0 (zero). | [optional] 
 **bulk_pricing_rules.quantity_max** | **int** | The maximum (inclusive) quantity of a product to satisfy this rule. Must be greater than the `bulk_pricing_rules.quantity_min` value – unless this field has a value of zero, in which case there will be no maximum bound for this rule. | [optional] 
 **bulk_pricing_rules.type** | **string** | The type of bulk pricing adjustment that is made. One of: `price` - adjustment amount per product; `percent` - adjustment as a percentage of the original price; or `fixed` - adjusted absolute price of the product. | [optional] 
-**bulk_pricing_rules.amount** | **int** | The value of the ?? adjusted by the bulk pricing rule. | [optional] 
+**bulk_pricing_rules.amount** | **int** | The value of the discount adjusted by the bulk pricing rule. | [optional] 
 **variants** | **object**  | (Please see [Variant](#variant).) | [optional] 
 
 ##### <a name="variant"></a> Variant
@@ -714,9 +714,9 @@ Name | Type | Description | Notes
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** | ?? [Description to be added] ?? | [optional] 
-**product_id** | **int** | ?? [Description to be added] ?? | [optional] 
-**sku** | **string** | ?? [Description to be added] ?? | [optional] 
+**id** | **int** | Unique ID for this variant. | [optional] 
+**product_id** | **int** | ID of the parent product. | [optional] 
+**sku** | **string** | SKU for this variant. | [optional] 
 **sku_id** | **int** | Read-only reference to a v2 SKU ID. Will be `null` on a base variant. | [optional] 
 **cost_price** | **string** | The cost price of the variant. | [optional] 
 **price** | **string** | This variant&#39;s base price on the storefront. If this value is `null`, the product&#39;s default price (set in the Product resource&#39;s `price` field) will be used as the base price. | [optional] 
@@ -728,9 +728,9 @@ Name | Type | Description | Notes
 **inventory_level** | **int** | Inventory level for the variant. Used when the product&#39;s `inventory_tracking` value is set to `variant`. | [optional] 
 **inventory_warning_level** | **int** | When the variant hits this inventory level, it is considered low-stock. | [optional] 
 **bin_picking_number** | **string** | Identifies where in a warehouse the variant is located. | [optional] 
-**option_values** | **object** | Array of option, and option values, IDs that make up this variant. Will be empty if the variant is the product&#39;s base variant. | [optional] 
-**option_values.id** | **int** | ?? [Description to be added] ?? | [optional] 
-**option_values.option_id** | **int** | ?? [Description to be added] ?? | [optional] 
+**option_values** | **object** | Array of option, and option-value, IDs that make up this variant. Will be empty if the variant is the product&#39;s base variant. | [optional] 
+**option_values.id** | **int** | Unique ID for this option value. | [optional] 
+**option_values.option_id** | **int** | Unique ID for this option-value option. | [optional] 
 
 
 ##### VariantPost
@@ -738,9 +738,9 @@ Name | Type | Description | Notes
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** | ?? [Description to be added] ?? | [optional] 
-**product_id** | **int** | ?? [Description to be added] ?? | [optional] 
-**sku** | **string** | ?? [Description to be added] ?? | [optional] 
+**id** | **int** | Unique ID for this variant. | [optional] 
+**product_id** | **int** | ID of the parent product. | [optional] 
+**sku** | **string** | SKU for this variant. | [optional] 
 **sku_id** | **int** | Read-only reference to a v2 SKU ID. Will be `null` on a base variant. | [optional] 
 **price** | **string** | This variant&#39;s base price on the storefront. If this value is `null`, the product&#39;s default price (set in the Product resource&#39;s `price` field) will be used as the base price. | [optional] 
 **weight** | **string** | This variant&#39;s base weight on the storefront. If this value is `null`, the product&#39;s default weight (set in the Product resource&#39;s `weight` field) will be used as the base weight. | [optional] 
@@ -752,9 +752,38 @@ Name | Type | Description | Notes
 **inventory_level** | **int** | Inventory level for the variant. Used when the product&#39;s inventory_tracking is set to `variant`. | [optional] 
 **inventory_warning_level** | **int** | When the variant hits this inventory level, it is considered low-stock. | [optional] 
 **bin_picking_number** | **string** | Identifies where in a warehouse the variant is located. | [optional] 
-**option_values** | **object** | ?? [Description to be added] ?? | [optional] 
+**option_values** | **object** | Collection of option values for this variant. | [optional] 
 **option_values.option_display_name** | **string** | The name of the option to be created on POST. | [optional] 
 **option_values.label** | **string** | The label of the option value to be created on POST. | [optional] 
 
 
+## v3 Customer API Reference
 
+Please view the documentation generated from the Swagger file [here](http://editor.swagger.io/#/?import=https://raw.githubusercontent.com/bigcommerce/api/master/swagger/v3-catalog.yaml).
+
+### Endpoints
+
+HTTP request | Description
+------------- | -------------
+**GET** /customers/subscribers | Returns a paginated collection of Customers who are Subscribers to the store's newsletter.
+**POST** /customers/subscribers | Creates a Subscriber object in the BigCommerce Customers collection.
+**DELETE** /customers/subscribers | Deletes a Subscriber or Subscribers from the BigCommerce Customers collection.
+**GET** /customers/subscribers/{subscriber_id} | Gets a specified Subscriber object.
+**PUT** /customers/subscribers/{subscriber_id} | Updates a specified Subscriber object.
+**DELETE** /customers/subscribers/{subscriber_id} | Deletes a specified Subscriber object.
+
+
+### Models
+
+##### CustomerSubscriber
+------
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**email** | **sring** | Customer's email address. | [optional] 
+**first_name** | **string** | Customer's first name. | [optional] 
+**last_name** | **string** | Customer's first name. | [optional] 
+**source** | **string** | How the customer was added as a subscriber: `historical`, `order`, `newsletter_box`, `api`, etc. | [optional] 
+**order_id** | **int** | ID of the order through which the customer opted in to a newsletter subscription. | [optional] 
+**date_created** | **string (date-time)** | Date on which the subscription was created. | [optional] 
+**date_created** | **string (date-time)** | Date on which the subscription was last modified. | [optional]
