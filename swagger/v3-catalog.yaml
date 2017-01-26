@@ -59,14 +59,14 @@ paths:
       responses:
         200:
           description: |
-            An array of products and meta data
+            An array of products and metadata.
           schema:
             $ref: "#/definitions/ProductCollectionResponse"
     post:
       tags:
         - Catalog
       description: |
-        Creates a `Product` in the BigCommerce Catalog
+        Creates a `Product` in the BigCommerce Catalog.
       operationId: createProduct
       parameters:
         - name: product
@@ -89,7 +89,7 @@ paths:
             $ref: "#/definitions/ErrorResponse"
         409:
           description: |
-            `Product` was in conflict with another product. This is the result of duplicate unique values such as name or SKU; a missing or invalid category id, brand id, or tax_class id; or a conflicting `bulk_pricing_rule`.
+            `Product` was in conflict with another product. This is the result of duplicate unique values, such as name or SKU; a missing or invalid category ID, brand ID, or tax_class ID; or a conflicting `bulk_pricing_rule`.
           schema:
             $ref: "#/definitions/ErrorResponse"
     delete:
@@ -137,7 +137,7 @@ paths:
             $ref: "#/definitions/ProductResponse"
         404:
           description: |
-            The resource was not found
+            The resource was not found.
           schema:
             $ref: '#/definitions/NotFound'
     put:
@@ -162,7 +162,7 @@ paths:
             $ref: "#/definitions/ProductResponse"
         404:
           description: |
-            The resource was not found
+            The resource was not found.
           schema:
             $ref: '#/definitions/NotFound'
         422:
@@ -172,7 +172,7 @@ paths:
             $ref: "#/definitions/ErrorResponse"
         409:
           description: |
-            `Product` was in conflict with another product. This is the result of duplicate unique values such as name or SKU, a missing category, brand, or tax_class that the product is being associate to, or a conflicting bulk pricing rule.
+            `Product` was in conflict with another product. This is the result of duplicate unique values, such as name or SKU; a missing category, brand, or tax_class with which the product is being associated; or a conflicting bulk pricing rule.
           schema:
             $ref: "#/definitions/ErrorResponse"
     delete:
@@ -189,7 +189,7 @@ paths:
     parameters:
       - name: product_id
         description: |
-          The id of the `Product` the image is being attached to.
+          The ID of the `Product` to which the image is being attached.
         required: true
         in: path
         type: integer
@@ -209,7 +209,7 @@ paths:
       tags:
         - Catalog
       description: |
-        Creates an image on a product. Publically accessible URLs and files (form post) are valid parameters.
+        Creates an image on a product. Publicly accessible URLs and files (form post) are valid parameters.
       operationId: createProductImage
       parameters:
       - name: productImage
@@ -227,20 +227,20 @@ paths:
             $ref: '#/definitions/ProductImageResponse'
         404:
           description: |
-            The resource was not found
+            The resource was not found.
           schema:
             $ref: '#/definitions/NotFound'
   /catalog/products/{product_id}/images/{image_id}:
     parameters:
       - name: product_id
         description: |
-          The id of the `Product` the image is being attached to.
+          The ID of the `Product` to which the image is being attached.
         required: true
         in: path
         type: integer
       - name: image_id
         description: |
-          The id of the `Image` the image is being operated on.
+          The ID of the `Image` being operated on.
         required: true
         in: path
         type: integer
@@ -253,54 +253,54 @@ paths:
       responses:
         200:
           description: |
-            An array of product images and meta data
+            An array of product images and metadata.
           schema:
             $ref: "#/definitions/ProductImageCollectionResponse"
         404:
           description: |
-            The resource was not found
+            The resource was not found.
           schema:
             $ref: '#/definitions/NotFound'    
     put:
       tags:
         - Catalog
       description: |
-        Updates an image on a product. Publically accessible URLs and files (form post) are valid parameters.
+        Updates an image on a product. Publicly accessible URLs and files (form post) are valid parameters.
       operationId: updateProductImage
       parameters:
       - name: productImage
         in: body
         required: true
         description: |
-          A BigCommerce `ProductImage` object
+          A BigCommerce `ProductImage` object.
         schema:
           $ref: "#/definitions/ProductImage"
       responses:
         200:
           description: |
-            A product image
+            A product image.
           schema:
             $ref: '#/definitions/ProductImageResponse'
         404:
           description: |
-            The resource was not found
+            The resource was not found.
           schema:
             $ref: '#/definitions/NotFound'
     delete:
       tags:
         - Catalog
       description: |
-        Delete a `ProductImage` in the BigCommerce Catalog
+        Delete a `ProductImage` in the BigCommerce Catalog.
       operationId: deleteProductImage
       responses:
         204:
           description: |
-            An empty response
+            An empty response.
   /catalog/products/{product_id}/videos:
     parameters:
       - name: product_id
         description: |
-          The id of the `Product` the video is being attached to.
+          The ID of the `Product` to which the video is being attached.
         required: true
         in: path
         type: integer
@@ -313,45 +313,45 @@ paths:
       responses:
         200:
           description: |
-            List of product videos and meta
+            List of product videos and metadata.
           schema:
             $ref: "#/definitions/ProductVideoCollectionResponse"
     post:
       tags:
         - Catalog
       description: |
-        Creates an video on a product using a video ID from Youtube
+        Creates a video on a product, using a video ID from YouTube.
       operationId: createProductVideo
       parameters:
       - name: productVideo
         in: body
         required: true
         description: |
-          A BigCommerce `ProductVideo` object
+          A BigCommerce `ProductVideo` object.
         schema:
           $ref: "#/definitions/ProductVideo"
       responses:
         200:
           description: |
-            A product video
+            A product video.
           schema:
             $ref: '#/definitions/ProductVideoResponse'
         404:
           description: |
-            The resource was not found
+            The resource was not found.
           schema:
             $ref: '#/definitions/NotFound'
   /catalog/products/{product_id}/videos/{video_id}:
     parameters:
       - name: product_id
         description: |
-          The id of the `Product` the video is being attached to.
+          The ID of the `Product` to which the video is being attached.
         required: true
         in: path
         type: integer
       - name: video_id
         description: |
-          The id of the `Video` the video is being operated on.
+          The ID of the `Video` being operated on.
         required: true
         in: path
         type: string
@@ -359,17 +359,17 @@ paths:
       tags:
         - Catalog
       description: |
-        Gets video on a product.
+        Gets a video on a product.
       operationId: getProductVideoById
       responses:
         200:
           description: |
-            An array of product videos and meta data
+            An array of product videos and metadata.
           schema:
             $ref: "#/definitions/ProductVideoCollectionResponse"
         404:
           description: |
-            The resource was not found
+            The resource was not found.
           schema:
             $ref: '#/definitions/NotFound'
     put:
@@ -389,12 +389,12 @@ paths:
       responses:
         200:
           description: |
-            A product video
+            A product video.
           schema:
             $ref: '#/definitions/ProductVideoResponse'
         404:
           description: |
-            The resource was not found
+            The resource was not found.
           schema:
             $ref: '#/definitions/NotFound'
     delete:
@@ -422,12 +422,12 @@ paths:
       responses:
         200:
           description: |
-            An array of variants and meta data
+            An array of variants and metadata.
           schema:
             $ref: '#/definitions/VariantCollectionResponse'
         404:
           description: |
-            The resource was not found
+            The resource was not found.
           schema:
             $ref: '#/definitions/NotFound'
     post:
@@ -447,12 +447,12 @@ paths:
       responses:
         200:
           description: |
-            A variant and meta data
+            A variant and metadata.
           schema:
             $ref: '#/definitions/VariantResponse'
         404:
           description: |
-            The resource was not found
+            The resource was not found.
           schema:
             $ref: '#/definitions/NotFound'
   /catalog/products/{product_id}/variants/{variant_id}:
@@ -461,7 +461,7 @@ paths:
       - name: variant_id
         in: path
         description: |
-          The id of the `Variant`.
+          The ID of the `Variant`.
         required: true
         type: number
         format: int
@@ -469,24 +469,24 @@ paths:
       tags:
         - Catalog
       description:
-        Get a `Variant` object.
+        Gets a `Variant` object.
       operationId: getVariantById
       responses:
         200:
           description: |
-            A variant and meta data
+            A variant and metadata.
           schema:
             $ref: '#/definitions/VariantResponse'
         404:
           description: |
-            The resource was not found
+            The resource was not found.
           schema:
             $ref: '#/definitions/NotFound'
     put:
       tags:
         - Catalog
       description:
-        Update a `Variant` object.
+        Updates a `Variant` object.
       operationId: updateVariant
       parameters:
       - name: Variant
@@ -499,12 +499,12 @@ paths:
       responses:
         200:
           description: |
-            A variant and meta data
+            A variant and metadata.
           schema:
             $ref: '#/definitions/VariantResponse'
         404:
           description: |
-            The resource was not found
+            The resource was not found.
           schema:
             $ref: '#/definitions/NotFound'
     delete:
@@ -527,7 +527,7 @@ paths:
         - name: variant_id
           in: path
           description: |
-            The id of the `Variant`.
+            The ID of the `Variant`.
           required: true
           type: number
           format: int
@@ -542,12 +542,12 @@ paths:
       responses:
         200:
           description: |
-            A ResourceImage and meta data
+            A ResourceImage and metadata.
           schema:
             $ref: '#/definitions/ImageResponse'
         404:
           description: |
-            The resource was not found
+            The resource was not found.
           schema:
             $ref: '#/definitions/NotFound'
         422:
@@ -567,12 +567,12 @@ paths:
       responses:
         200:
           description: |
-            An array of options and meta data
+            An array of options and metadata.
           schema:
             $ref: '#/definitions/OptionCollectionResponse'
         404:
           description: |
-            The resource was not found
+            The resource was not found.
           schema:
             $ref: '#/definitions/NotFound'
     post:
@@ -610,13 +610,13 @@ paths:
       - name: product_id
         in: path
         description: |
-          The id of the `Product` the `Option` belongs to.
+          The ID of the `Product` to which the `Option` belongs.
         required: true
         type: number
         format: int
       - name: option_id
         description: |
-          The id of the `Option`.
+          The ID of the `Option`.
         required: true
         in: path
         type: integer
@@ -624,7 +624,7 @@ paths:
       tags:
         - Catalog
       description:
-        Gets `Option` object by product id and option id.
+        Gets an `Option` object, by product and option ID.
       operationId: getOptionById
       responses:
         200:
@@ -634,7 +634,7 @@ paths:
             $ref: "#/definitions/OptionResponse"
         404:
           description: |
-            The resource was not found
+            The resource was not found.
           schema:
             $ref: '#/definitions/NotFound'
     put:
@@ -682,7 +682,7 @@ paths:
       - name: product_id
         in: path
         description: |
-          The id of the `Product` the `Modifier` belongs to.
+          The ID of the `Product` to which the `Modifier` belongs.
         required: true
         type: number
         format: int
@@ -695,7 +695,7 @@ paths:
       responses:
         200:
           description: |
-            An array of modifiers and meta data
+            An array of modifiers and metadata.
           schema:
             $ref: '#/definitions/ModifierCollectionResponse'
     post:
@@ -733,13 +733,13 @@ paths:
       - name: product_id
         in: path
         description: |
-          The id of the `Product` the `Modifier` belongs to.
+          The ID of the `Product` to which the `Modifier` belongs.
         required: true
         type: number
         format: int
       - name: modifier_id
         description: |
-          The id of the `Modifier`
+          The ID of the `Modifier`.
         required: true
         in: path
         type: integer
@@ -757,14 +757,14 @@ paths:
             $ref: '#/definitions/ModifierResponse'
         404:
           description: |
-            The resource was not found
+            The resource was not found.
           schema:
             $ref: '#/definitions/NotFound'
     put:
       tags:
         - Catalog
       description: |
-        Update an Product's `Modifier` based on the product_id and modifier_id.
+        Update a Product's `Modifier` based on the product_id and modifier_id.
       operationId: updateModifier
       parameters:
         - name: modifier
@@ -805,19 +805,19 @@ paths:
       - name: product_id
         in: path
         description: |
-          The id of the `Product` the `Modifier` belongs to.
+          The ID of the `Product` to which the `Modifier` belongs.
         required: true
         type: number
         format: int
       - name: modifier_id
         description: |
-          The id of the `Modifier`
+          The ID of the `Modifier`.
         required: true
         in: path
         type: integer
       - name: value_id
         description: |
-          The id of the `Modifier`
+          The ID of the `Modifier`.
         required: true
         in: path
         type: integer
@@ -838,12 +838,12 @@ paths:
       responses:
         200:
           description: |
-            A ResourceImage and meta data
+            A ResourceImage and metadata.
           schema:
             $ref: '#/definitions/ImageResponse'
         404:
           description: |
-            The resource was not found
+            The resource was not found.
           schema:
             $ref: '#/definitions/NotFound'
         422:
@@ -877,7 +877,7 @@ paths:
       responses:
         200:
           description: |
-            An array category objects and meta data
+            An array category objects and metadata.
           schema:
             $ref: "#/definitions/CategoryCollectionResponse"
     post:
@@ -930,7 +930,7 @@ paths:
     parameters:
       - name: category_id
         description: |
-          The id of the `Category` requested
+          The ID of the `Category` requested.
         required: true
         in: path
         type: integer
@@ -948,14 +948,14 @@ paths:
             $ref: "#/definitions/CategoryResponse"
         404:
           description: |
-            The resource was not found
+            The resource was not found.
           schema:
             $ref: '#/definitions/NotFound'
     put:
       tags:
         - Catalog
       description: |
-        Update a `Category` in the BigCommerce Catalog
+        Updates a `Category` in the BigCommerce Catalog.
       operationId: updateCategory
       parameters:
         - name: category
@@ -973,7 +973,7 @@ paths:
             $ref: "#/definitions/CategoryResponse"
         404:
           description: |
-            The resource was not found
+            The resource was not found.
           schema:
             $ref: '#/definitions/NotFound'
         422:
@@ -1000,7 +1000,7 @@ paths:
     parameters:
       - name: category_id
         description: |
-          The id of the `Category` the image is being attached to.
+          The ID of the `Category` to which the image is being attached.
         required: true
         in: path
         type: integer
@@ -1017,17 +1017,17 @@ paths:
       consumes:
         - multipart/form-data
       description: |
-        Creates an image on a category. Publically accessible URLs and files (form post) are valid parameters.
+        Creates an image on a category. Publicly accessible URLs and files (form post) are valid parameters.
       operationId: createCategoryImage
       responses:
         200:
           description: |
-            A ResourceImage and meta data
+            A ResourceImage and metadata.
           schema:
             $ref: '#/definitions/ImageResponse'
         404:
           description: |
-            The resource was not found
+            The resource was not found.
           schema:
             $ref: '#/definitions/NotFound'
         422:
@@ -1055,7 +1055,7 @@ paths:
       responses:
         200:
           description: |
-            A array of nested category tree objects and meta data
+            A array of nested category tree objects and metadata.
           schema:
             $ref: "#/definitions/CategoryTreeCollectionResponse"
   /catalog/brands:
@@ -1124,7 +1124,7 @@ paths:
       - name: brand_id
         in: path
         description: |
-          The id of the `Brand` requested
+          The ID of the `Brand` requested.
         required: true
         type: number
         format: int
@@ -1142,14 +1142,14 @@ paths:
             $ref: "#/definitions/BrandResponse"
         404:
           description: |
-            The resource was not found
+            The resource was not found.
           schema:
             $ref: '#/definitions/NotFound'
     put:
       tags:
         - Catalog
       description: |
-        Update a `Brand` in the BigCommerce Catalog
+        Updates a `Brand` in the BigCommerce Catalog.
       operationId: updateBrand
       parameters:
         - name: brand
@@ -1167,7 +1167,7 @@ paths:
             $ref: "#/definitions/BrandResponse"
         404:
           description: |
-            The resource was not found
+            The resource was not found.
           schema:
             $ref: '#/definitions/NotFound'
         422:
@@ -1177,7 +1177,7 @@ paths:
             $ref: "#/definitions/ErrorResponse"
         409:
           description: |
-            The `Brand` was in conflict with another product. This is the result of duplicate unique value such as name
+            The `Brand` was in conflict with another product. This is the result of duplicate unique value such as name.
           schema:
             $ref: "#/definitions/ErrorResponse"
     delete:
@@ -1194,7 +1194,7 @@ paths:
     parameters:
       - name: brand_id
         description: |
-          The id of the `Brand` the image is being attached to.
+          The ID of the `Brand` to which the image is being attached.
         required: true
         in: path
         type: integer
@@ -1202,7 +1202,7 @@ paths:
       tags:
         - Catalog
       description: |
-        Creates an image on a `Brand`. Publically accessible URLs and files (form post) are valid parameters.
+        Creates an image on a `Brand`. Publicly accessible URLs and files (form post) are valid parameters.
       operationId: createBrandImage
       parameters:
         - name: image_file
@@ -1216,12 +1216,12 @@ paths:
       responses:
         200:
           description: |
-            A ResourceImage and meta data
+            A ResourceImage and metadata.
           schema:
             $ref: '#/definitions/ImageResponse'
         404:
           description: |
-            The resource was not found
+            The resource was not found.
           schema:
             $ref: '#/definitions/NotFound'
         422:
@@ -1253,12 +1253,12 @@ paths:
       responses:
         200:
           description: |
-            An array of variants and meta data
+            An array of variants and metadata.
           schema:
             $ref: '#/definitions/VariantCollectionResponse'
         404:
           description: |
-            The resource was not found
+            The resource was not found.
           schema:
             $ref: '#/definitions/NotFound'
   /catalog/summary:
@@ -1270,7 +1270,7 @@ paths:
       responses:
         200:
           description: |
-            An array of catalog summary and meta data
+            An array of catalog summary and metadata.
           schema:
             $ref: '#/definitions/CatalogSummaryResponse'
   /customers/subscribers:
@@ -1291,7 +1291,7 @@ paths:
       responses:
         200:
           description: |
-            An array of subscriber objects and meta data
+            An array of subscriber objects and metadata.
           schema:
             $ref: "#/definitions/SubscriberCollectionResponse"
     post:
@@ -1347,7 +1347,7 @@ paths:
       - name: subscriber_id
         in: path
         description: |
-          The id of the `Subscriber` requested.
+          The ID of the `Subscriber` requested.
         required: true
         type: number
         format: int
@@ -1365,14 +1365,14 @@ paths:
             $ref: "#/definitions/SubscriberResponse"
         404:
           description: |
-            The resource was not found
+            The resource was not found.
           schema:
             $ref: '#/definitions/NotFound'
     put:
       tags:
         - Customers
       description: |
-        Update a `Subscriber` object.
+        Updates a `Subscriber` object.
       operationId: updateSubscriber
       parameters:
         - name: subscriber
@@ -1390,7 +1390,7 @@ paths:
             $ref: "#/definitions/SubscriberResponse"
         404:
           description: |
-            The resource was not found
+            The resource was not found.
           schema:
             $ref: '#/definitions/NotFound'
         422:
@@ -1417,7 +1417,7 @@ parameters:
   FilterIdParam:
     name: id
     description: |
-      Filter items by id.
+      Filter items by ID.
     required: false
     in: query
     type: integer
@@ -1662,14 +1662,14 @@ parameters:
     name: product_id
     in: path
     description: |
-      The id of the `Product` the `Variant` belongs to.
+      The ID of the `Product` to which the `Variant` belongs.
     required: true
     type: number
     format: int
 definitions:
   ModifierCollectionResponse:
     description: |
-      Response payload for the Bigcommerce API
+      Response payload for the Bigcommerce API.
     type: object
     properties:
       data:
@@ -1680,7 +1680,7 @@ definitions:
         $ref: "#/definitions/CollectionMeta"
   ModifierResponse:
     description: |
-      Response payload for the Bigcommerce API
+      Response payload for the Bigcommerce API.
     type: object
     properties:
       data:
@@ -1689,7 +1689,7 @@ definitions:
         $ref: "#/definitions/CollectionMeta"
   OptionCollectionResponse:
     description: |
-      Response payload for the Bigcommerce API
+      Response payload for the Bigcommerce API.
     type: object
     properties:
       data:
@@ -1700,7 +1700,7 @@ definitions:
         $ref: "#/definitions/CollectionMeta"
   OptionResponse:
     description: |
-      Response payload for the Bigcommerce API
+      Response payload for the Bigcommerce API.
     type: object
     properties:
       data:
@@ -1709,7 +1709,7 @@ definitions:
         $ref: "#/definitions/CollectionMeta"
   CategoryTreeCollectionResponse:
     description: |
-      Response payload for the Bigcommerce API
+      Response payload for the Bigcommerce API.
     type: object
     properties:
       data:
@@ -1720,7 +1720,7 @@ definitions:
         $ref: "#/definitions/CollectionMeta"
   CategoryCollectionResponse:
     description: |
-      Response payload for the Bigcommerce API
+      Response payload for the Bigcommerce API.
     type: object
     properties:
       data:
@@ -1731,7 +1731,7 @@ definitions:
         $ref: "#/definitions/CollectionMeta"
   CategoryResponse:
     description: |
-      Response payload for the Bigcommerce API
+      Response payload for the Bigcommerce API.
     type: object
     properties:
       data:
@@ -1740,7 +1740,7 @@ definitions:
         $ref: "#/definitions/Meta"
   BrandCollectionResponse:
     description: |
-      Response payload for the Bigcommerce API
+      Response payload for the Bigcommerce API.
     type: object
     properties:
       data:
@@ -1751,7 +1751,7 @@ definitions:
         $ref: "#/definitions/CollectionMeta"
   BrandResponse:
     description: |
-      Response payload for the Bigcommerce API
+      Response payload for the Bigcommerce API.
     type: object
     properties:
       data:
@@ -1760,7 +1760,7 @@ definitions:
         $ref: "#/definitions/Meta"
   SubscriberCollectionResponse:
     description: |
-      Response payload for the Bigcommerce API
+      Response payload for the Bigcommerce API.
     type: object
     properties:
       data:
@@ -1771,7 +1771,7 @@ definitions:
         $ref: "#/definitions/CollectionMeta"
   SubscriberResponse:
     description: |
-      Response payload for the Bigcommerce API
+      Response payload for the Bigcommerce API.
     type: object
     properties:
       data:
@@ -1789,7 +1789,7 @@ definitions:
         $ref: '#/definitions/Meta'
   ProductImageCollectionResponse:
     description: |
-      Response payload for the Bigcommerce API
+      Response payload for the Bigcommerce API.
     type: object
     properties:
       data:
@@ -1800,7 +1800,7 @@ definitions:
         $ref: "#/definitions/CollectionMeta"
   ProductVideoCollectionResponse:
     description: |
-      Response payload for the Bigcommerce API
+      Response payload for the Bigcommerce API.
     type: object
     properties:
       data:
@@ -1811,7 +1811,7 @@ definitions:
         $ref: "#/definitions/CollectionMeta"
   VariantCollectionResponse:
     description: |
-      Response payload for the Bigcommerce API
+      Response payload for the Bigcommerce API.
     type: object
     properties:
       data:
@@ -1822,7 +1822,7 @@ definitions:
         $ref: "#/definitions/CollectionMeta"
   ProductImageResponse:
     description: |
-      Response payload for the Bigcommerce API
+      Response payload for the Bigcommerce API.
     type: object
     properties:
       data:
@@ -1831,7 +1831,7 @@ definitions:
         $ref: "#/definitions/CollectionMeta"
   ProductVideoResponse:
     description: |
-      Response payload for the Bigcommerce API
+      Response payload for the Bigcommerce API.
     type: object
     properties:
       data:
@@ -1840,7 +1840,7 @@ definitions:
         $ref: "#/definitions/CollectionMeta"
   ImageResponse:
     description: |
-      Response payload for the Bigcommerce API
+      Response payload for the Bigcommerce API.
     type: object
     properties:
       data:
@@ -1865,7 +1865,7 @@ definitions:
         type: string
   ProductResponse:
     description: |
-      Response payload for the Bigcommerce API
+      Response payload for the Bigcommerce API.
     type: object
     properties:
       data:
@@ -1875,7 +1875,7 @@ definitions:
   ProductCollectionResponse:
     type: object
     description: |
-      Response payload for the Bigcommerce API
+      Response payload for the Bigcommerce API.
     properties:
       data:
         type: array
@@ -1885,7 +1885,7 @@ definitions:
         $ref: "#/definitions/CollectionMeta"
   CatalogSummaryResponse:
       description: |
-        Response payload for the Bigcommerce API
+        Response payload for the Bigcommerce API.
       type: object
       properties:
         data:
@@ -1923,48 +1923,48 @@ definitions:
   CollectionMeta:
     type: object
     description: |
-      Data about the response including pagination and collection totals
+      Data about the response, including pagination and collection totals.
     properties:
       total:
         type: integer
         description: |
-          Total number of items return in the result set
+          Total number of items returned in the result set.
       count:
         type: integer
         description: |
-          Total number of items in the collection
+          Total number of items in the collection.
       per_page:
         type: integer
         description: |
-          The amount of items returned in the collection per page, controlled by the limit parameter
+          The amount of items returned in the collection per page, controlled by the limit parameter.
       current_page:
         type: integer
         description: |
-          The page you are currently on within the collection
+          The page you are currently on within the collection.
       total_pages:
         type: integer
         description: |
-          The total number of pages in the collection
+          The total number of pages in the collection.
       links:
         type: object
         description: |
-          Pagination links for the previous and next parts of the whole collection
+          Pagination links for the previous and next parts of the whole collection.
         properties:
           previous:
             type: string
             description: |
-              Link to the previous page returned in the response
+              Link to the previous page returned in the response.
           current:
             type: string
             description: |
-              Link to the current page returned in the response
+              Link to the current page returned in the response.
           next:
             type: string
             description: |
               Link to the next page returned in the response
   Meta:
     type: object
-    description: Empty meta object, may be used later
+    description: Empty meta object; might be used later.
   Product:
     type: object
     description: |
@@ -1973,7 +1973,7 @@ definitions:
       id:
         type: integer
         description: |
-          The unique numerical ID of the product, increments sequentially.
+          The unique numerical ID of the product; increments sequentially.
       name:
         type: string
         description: |
@@ -2055,7 +2055,7 @@ definitions:
       brand_id:
         type: integer
         description: |
-          The id associated with the product's brand.
+          The ID associated with the product's brand.
       inventory_level:
         type: integer
         description: |
@@ -2244,7 +2244,7 @@ definitions:
   ProductImage:
     type: object
     description: |
-      An product image model.
+      A product image model.
     properties:
       id:
         description: |
@@ -2289,11 +2289,11 @@ definitions:
   ProductVideo:
     type: object
     description: |
-      An product video model.
+      a product video model.
     properties:
       id:
         description: |
-          The ID of a Youtube video.
+          The ID of a YouTube video.
         type: integer
       product_id:
         description: |
@@ -2305,15 +2305,15 @@ definitions:
         type: integer
       description:
         description: |
-          The description for the video. If left blank, this will be filled in according to data on Youtube.
+          The description for the video. If left blank, this will be filled in according to data on YouTube.
         type: string
       title:
         description: |
-          The title for the video. If left blank, this will be filled in according to data on Youtube.
+          The title for the video. If left blank, this will be filled in according to data on YouTube.
         type: string
       length:
         description: |
-          length of video. This will be filled in according to data on Youtube.
+          length of video. This will be filled in according to data on YouTube.
         type: string
   CustomField:
     type: object
@@ -2373,12 +2373,12 @@ definitions:
           - percent
           - fixed
         description: |
-          The type of adjument that is made, 'price' - The adjument amount per product, 'percent' - The adjustment as a percent of the original price, 'fixed' - the adjusted absolute price of the product.
+          The type of adjustment that is made: 'price' - the adjument amount per product; 'percent' - the adjustment as a percentage of the original price; 'fixed' - the adjusted absolute price of the product.
       amount:
         type: number
         format: double
         description: |
-          The value of the adjusted by the bulk pricing rule.
+          The value of the product, adjusted by the bulk pricing rule.
   Variant:
     type: object
     properties:
@@ -2391,7 +2391,7 @@ definitions:
       sku_id:
         type: integer
         x-nullable: true
-        description: read-only reference to V2 sku id, null if it's a base variant
+        description: Read-only reference to v2 SKU ID. Null if it is a base variant.
       cost_price:
         type: number
         format: double
@@ -2444,7 +2444,7 @@ definitions:
       sku_id:
         type: integer
         x-nullable: true
-        description: read-only reference to V2 sku id, null if it's a base variant
+        description: Read-only reference to v2 SKU ID. Hull if it is a base variant.
       price:
         type: string
         x-nullable: true
@@ -2616,7 +2616,7 @@ definitions:
   ResourceImage:
     type: object
     description: |
-      An object containing a publically accessible image URL or a form post that contains an image file.
+      An object containing a publicly accessible image URL, or a form post that contains an image file.
     properties:
       image_url:
         type: string
@@ -2628,7 +2628,7 @@ definitions:
       id:
         type: integer
         description: |
-          The unique numerical ID of the brand, increments sequentially.
+          The unique numerical ID of the brand; increments sequentially.
       name:
         type: string
         description: |
@@ -2654,22 +2654,22 @@ definitions:
       image_url:
         type: string
         description: |
-          URL of the image url for this category used on the storefront. Images can be uploaded via form file post to /brannds/{brandId}/image or by providing publicly accessible URL to this field.
+          URL of the image used on the storefront for this category. Images can be uploaded via form file post to `/brands/{brandId}/image`, or by providing a publicly accessible URL to this field.
   Option:
     type: object
     properties:
       id:
         type: integer
         description: |
-          The unique numerical ID of the option, increments sequentially.
+          The unique numerical ID of the option; increments sequentially.
       product_id:
         type: integer
         description: |
-          The unique numerical ID of the product that the option belongs to.
+          The unique numerical ID of the product to which the option belongs.
       name:
         type: string
         description: |
-          The name unique option name auto-generated from the display name, a timestamp, and the product id.
+          The unique option name, auto-generated from the display name, a timestamp, and the product ID.
       display_name:
         type: string
         description: |
@@ -2718,7 +2718,7 @@ definitions:
       order_id:
         type: integer
         description: |
-          The id of the source order, if source was an order.
+          The ID of the source order, if source was an order.
       date_modified:
         type: string
         format: data-time
@@ -2868,7 +2868,7 @@ definitions:
       name:
         type: string
         description: |
-          The name unique option name auto-generated from the display name, a timestamp, and the product id.
+          The unique option name, auto-generated from the display name, a timestamp, and the product ID.
       display_name:
         type: string
         description: |
