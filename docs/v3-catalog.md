@@ -1,18 +1,10 @@
 # BigCommerce Catalog API
 
-<div class="app-desc">A Swagger Document for the BigCommmerce API V3.</div>
-
-<div class="app-desc">More information: [https://helloreverb.com](https://helloreverb.com)</div>
-
-<div class="app-desc">Contact Info: [hello@helloreverb.com](hello@helloreverb.com)</div>
+<div class="app-desc">A Swagger Document for the BigCommmerce API v3.</div>
 
 <div class="app-desc">Version: 3.0.0b</div>
 
 <div class="app-desc">BasePath:/stores/{{store_id}}/v3</div>
-
-<div class="license-info">All rights reserved</div>
-
-<div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
 
 ## Access
 
