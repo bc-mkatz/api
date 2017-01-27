@@ -1,14 +1,424 @@
-# BigCommerce Catalog API
+# v3 Catalog API Documentation
 
-<div class="app-desc">A Swagger Document for the BigCommmerce API v3.</div>
+_Welcome! Please note that this API is in our partner-release stage, which means that in the short term, we'll be iterating on feedback from partners. Our goal is to make sure that all concerns are addressed, and that we reach our goal of creating the most powerful, easiest-to-use catalog API in ecommerce. Because of this iterative approach, please expect small changes and many additions to occur._
 
-<div class="app-desc">Version: 3.0.0b</div>
+**Have suggestions, feedback or questions? Submit them as an issue here:** 
+https://github.com/bigcommerce/api/issues
 
-<div class="app-desc">BasePath:/stores/{{store_id}}/v3</div>
+**Want to see what we have in development, and help direct our roadmap? View our public API roadmap here:** https://trello.com/b/1Od4oCsl/bigcommerce-api-roadmap
 
-## Access
+## Access and Authentication
 
-## <a name="__Methods">Methods</a>
+All BigCommerce stores have access to the v3 Catalog API.
+
+The base URI is: https://api.bigcommerce.com/stores/{store_hash}/v3/
+
+To authenticate, you'll need to use an OAuth client ID and token, sent along with the following headers:
+  
+- Accept: application/json  
+- X-Auth-Client: {client_id}  
+- X-Auth-Token: {oauth_token}
+
+The flow to register for a client ID and retrieve a token is the same as with the v2 API:
+- To get your Client ID, you must complete [App Registration](https://developer.bigcommerce.com/api/registration).
+- To get your OAuth token, you must complete [App Installation](https://developer.bigcommerce.com/api/callback).
+
+On our short-term roadmap is the ability to more easily create OAuth credentials, within the control panel – similar to the way legacy v2 keys are created now. _Note that in the future, we'll be deprecating legacy keys from v2, and removing the ability to create v2 keys within the CP. So grokking our OAuth flow now is not a wasted effort!_
+
+Existing v2 client ids and tokens will also work with the v3 API. So, if you've already integrated with v2 using our OAuth flow, you should be golden!
+
+## What's New?
+
+- Variants
+  - Every purchasable entity in the catalog is now a variant. When you create a product without any options, we automatically create a variant for you. This enables enhanced flows around inventory management, such as the ability to solely use the variants endpoint to manage inventory levels.
+- Options and Modifiers
+  - There is now a clear separation of options that define variants versus those that are modifiers of a variant. This enables us to simplify the creation and management of variant prices and modifier adjusters. It removes the need to use complex rules, in all but the most extreme cases.
+  - Options and modifiers can also be attached directly to the product, without the requirement to create an option set beforehand.
+- Creating a Product with its Variants in One API Call
+  - When creating an initial catalog, you can send the core product and variant data in the same request. This helps you create more performant, managable codebases. We'll handle the option and option value creation for you.
+- Including Variants in Product GETs
+  - Following our goal of streamlining catalog management, you can now request to `?include=variants` (along with other resources). This further eliminates API calls.
+- Ready-made Catalog Tree
+  - There's now an endpoint specifically for building out the catalog tree, which previously took considerable work to construct.  
+- Full Access to Modifer Configuration values
+  - Properties like number-only field limits, and product-list inventory adjustment settings, are now available via this API. This exposes more than 20 properties previously unavailable to our developers.
+
+## What's Not Here?
+
+If you're currently consuming our v2 API, you'll notice that some catalog endpoints and elements are missing from this version. Some of the omissions are intentional; we're iterating on others, making sure they're done right. 
+
+- Intentional
+  - Product -> Configurable Fields
+      - Modifiers should now be used for any use case where you'd use configurable fields. You can attach modifiers to products as well and they cover a larger array of uses. 
+  - Option Sets
+      - In v3, you attach options directly to products. So option sets are not required, and v3 includes no endpoint to manage options sets. However, v3 will respect option sets that have been attached via v2 or the control panel.
+- Iterating
+  - Product -> Complex Rules
+      - Keep in mind that the majority of rule use cases can already be solved through variant properties and modifier adjusters.
+  - Product -> Reviews
+  - Product -> Videos
+  - Product -> Downloads
+  - Product -> Google Search Mappings
+      - Might instead bring fields onto variant entity as properties/metadata.
+  - Product -> Open Graph and Accounting Fields
+      - Might group into their own product objects, to keep resource clean.
+
+You can see how we're planning to iterate by looking at the [public API roadmap](https://trello.com/b/1Od4oCsl/bigcommerce-api-roadmap). 
+
+## v2 Catalog API and Control-Panel Interoperability
+
+The v3 Catalog API is essentially our catalog's future state. This means that many concepts don't map visibly to their v2 and control-panel relatives.
+
+The good news here is we've built this API with v2 interoperability in mind. So you should be able to use both APIs simultaneously as you (in an ideal scenario) fully transition all catalog management to v3. The key areas to be aware of are:    
+
+- Option Sets
+  - The Product resource in v3 has an `option_set_id` field that, if set, will prevent you from directly editing product options and modifiers. If you want to edit the option set, you will need to either use v2, or else set the `option_set_id` field to null. The latter will remove the option set and allow you to directly attach options and modifiers.
+  - In our control panel's Add/Edit Product section, any products created by v3 will have not have an option set applied, but merchants can still edit the options. If the merchant edits/chooses an option set, any variants will be removed from the product.
+- Product Rules
+  - Any variant created in v3 with non-null core properties (price, weight, image, purchasablilty) will create a rule under the hood. The same goes for modifier adjusters. These will show in v2 as product rules, and any edits to them will be shared across API versions.
+
+_We're already refreshing our control panel's Add/Edit Product workflow to align with the concepts in v3._
+
+### Product POST with Variants
+
+When you include variants in your Product POST, we'll automatically create all the options and option values for you. If you don't pass the price and weight with the variants, the product price and weight will be used for the variants on the storefront.
+
+Here's a sample POST to https://api.bigcommerce.com/stores/{store-hash}/v3/catalog/products:
+```javascript
+{
+    "name": "T-shirt",
+    "type": "physical",
+    "price": 10.25,
+    "description": "<h4>Great T-shirt</h4>The best t-shirt ever.",
+    "weight": 1.20,
+    "categories": [
+        18
+    ],
+    "variants": [
+        {
+            "sku": "SKU-R-SM",
+            "option_values": [
+                {
+                    "option_display_name": "Color",
+                    "label": "Red"
+                },
+                {
+                    "option_display_name": "Size",
+                    "label": "Small"
+                }
+            ]
+        },
+        {
+            "sku": "SKU-B-SM",
+            "option_values": [
+                {
+                    "option_display_name": "Color",
+                    "label": "Blue"
+                },
+                {
+                    "option_display_name": "Size",
+                    "label": "Small"
+                }
+            ]
+        },
+        {
+            "sku": "SKU-R-MD",
+            "option_values": [
+                {
+                    "option_display_name": "Color",
+                    "label": "Red"
+                },
+                {
+                    "option_display_name": "Size",
+                    "label": "Medium"
+                }
+            ]
+        },
+        {
+            "sku": "SKU-B-MD",
+            "option_values": [
+                {
+                    "option_display_name": "Color",
+                    "label": "Blue"
+                },
+                {
+                    "option_display_name": "Size",
+                    "label": "Medium"
+                }
+            ]
+        },
+        {
+            "sku": "SKU-R-LG",
+            "price": 10.50,
+            "weight": 1.25,
+            "option_values": [
+                {
+                    "option_display_name": "Color",
+                    "label": "Red"
+                },
+                {
+                    "option_display_name": "Size",
+                    "label": "Large"
+                }
+            ]
+        },
+        {
+            "sku": "SKU-B-LG",
+            "price": 10.50,
+            "weight": 1.25,
+            "option_values": [
+                {
+                    "option_display_name": "Color",
+                    "label": "Blue"
+                },
+                {
+                    "option_display_name": "Size",
+                    "label": "Large"
+                }
+            ]
+        }
+    ]
+}
+```
+
+When you create a product, we'll automatically return variants in the response:
+```javascript
+{
+    "data": {
+        "id": 114,
+        "name": "T-shirt",
+        "type": 1,
+        "sku": "",
+        "description": "<h4>Great T-shirt</h4>The best t-shirt ever.",
+        "weight": 1.2,
+        "width": 0,
+        "depth": 0,
+        "height": 0,
+        "price": 10.25,
+        "cost_price": 0,
+        "retail_price": 0,
+        "sale_price": 0,
+        "tax_class_id": 0,
+        "product_tax_code": "",
+        "calculated_price": 10.25,
+        "categories": [
+            18
+        ],
+        "brand_id": 0,
+        "option_set_id": null,
+        "inventory_level": 0,
+        "inventory_warning_level": 0,
+        "inventory_tracking": 0,
+        "fixed_cost_shipping_price": 0,
+        "is_free_shipping": false,
+        "is_visible": true,
+        "is_featured": false,
+        "warranty": "",
+        "bin_picking_number": "",
+        "layout_file": "",
+        "upc": "",
+        "search_keywords": "",
+        "availability": "available",
+        "availability_description": "",
+        "gift_wrapping_options": 0,
+        "sort_order": 0,
+        "condition": "New",
+        "is_condition_shown": true,
+        "order_quantity_minimum": 0,
+        "order_quantity_maximum": 0,
+        "page_title": "",
+        "meta_keywords": [],
+        "meta_description": "",
+        "date_created": "2016-07-03T00:39:00+00:00",
+        "date_modified": "2016-07-03T00:39:00+00:00",
+        "view_count": 0,
+        "preorder_release_date": null,
+        "preorder_message": "",
+        "is_preorder_only": false,
+        "is_price_hidden": false,
+        "price_hidden_label": "",
+        "custom_url": {
+            "url": "/t-shirt/",
+            "is_customized": false
+        },
+        "variants": [
+            {
+                "id": 78,
+                "product_id": 114,
+                "sku": "SKU-R-SM",
+                "sku_id": 127,
+                "price": null,
+                "weight": null,
+                "purchasing_disabled": false,
+                "purchasing_disabled_message": "",
+                "image_file": null,
+                "cost_price": 0,
+                "upc": "",
+                "inventory_level": 0,
+                "inventory_warning_level": 0,
+                "bin_picking_number": "",
+                "option_values": [
+                    {
+                        "id": 98,
+                        "option_id": 113
+                    },
+                    {
+                        "id": 99,
+                        "option_id": 114
+                    }
+                ]
+            },
+            {
+                "id": 79,
+                "product_id": 114,
+                "sku": "SKU-B-SM",
+                "sku_id": 128,
+                "price": null,
+                "weight": null,
+                "purchasing_disabled": false,
+                "purchasing_disabled_message": "",
+                "image_file": null,
+                "cost_price": 0,
+                "upc": "",
+                "inventory_level": 0,
+                "inventory_warning_level": 0,
+                "bin_picking_number": "",
+                "option_values": [
+                    {
+                        "id": 100,
+                        "option_id": 113
+                    },
+                    {
+                        "id": 99,
+                        "option_id": 114
+                    }
+                ]
+            },
+            {
+                "id": 80,
+                "product_id": 114,
+                "sku": "SKU-R-MD",
+                "sku_id": 129,
+                "price": null,
+                "weight": null,
+                "purchasing_disabled": false,
+                "purchasing_disabled_message": "",
+                "image_file": null,
+                "cost_price": 0,
+                "upc": "",
+                "inventory_level": 0,
+                "inventory_warning_level": 0,
+                "bin_picking_number": "",
+                "option_values": [
+                    {
+                        "id": 98,
+                        "option_id": 113
+                    },
+                    {
+                        "id": 101,
+                        "option_id": 114
+                    }
+                ]
+            },
+            {
+                "id": 81,
+                "product_id": 114,
+                "sku": "SKU-B-MD",
+                "sku_id": 130,
+                "price": null,
+                "weight": null,
+                "purchasing_disabled": false,
+                "purchasing_disabled_message": "",
+                "image_file": null,
+                "cost_price": 0,
+                "upc": "",
+                "inventory_level": 0,
+                "inventory_warning_level": 0,
+                "bin_picking_number": "",
+                "option_values": [
+                    {
+                        "id": 100,
+                        "option_id": 113
+                    },
+                    {
+                        "id": 101,
+                        "option_id": 114
+                    }
+                ]
+            },
+            {
+                "id": 82,
+                "product_id": 114,
+                "sku": "SKU-R-LG",
+                "sku_id": 131,
+                "price": 10.5,
+                "weight": 1.25,
+                "purchasing_disabled": false,
+                "purchasing_disabled_message": "",
+                "image_file": null,
+                "cost_price": 0,
+                "upc": "",
+                "inventory_level": 0,
+                "inventory_warning_level": 0,
+                "bin_picking_number": "",
+                "option_values": [
+                    {
+                        "id": 98,
+                        "option_id": 113
+                    },
+                    {
+                        "id": 102,
+                        "option_id": 114
+                    }
+                ]
+            },
+            {
+                "id": 83,
+                "product_id": 114,
+                "sku": "SKU-B-LG",
+                "sku_id": 132,
+                "price": 10.5,
+                "weight": 1.25,
+                "purchasing_disabled": false,
+                "purchasing_disabled_message": "",
+                "image_file": null,
+                "cost_price": 0,
+                "upc": "",
+                "inventory_level": 0,
+                "inventory_warning_level": 0,
+                "bin_picking_number": "",
+                "option_values": [
+                    {
+                        "id": 100,
+                        "option_id": 113
+                    },
+                    {
+                        "id": 102,
+                        "option_id": 114
+                    }
+                ]
+            }
+        ],
+        "images": [],
+        "custom_fields": [],
+        "bulk_pricing_rules": []
+    },
+    "meta": {}
+}
+```
+
+## Expanding Product Sub-Resources on GET
+
+You can include sub-resources on a product, as a comma-separated list, by using `include={sub-resources}` as a query string. Valid expansions currently include `variants`, `images`, `custom_fields`, and `bulk_pricing_rules`. For instance, if you wanted variants and custom fields to also return in the product response, you'd GET: 
+https://api.bigcommerce.com/stores/{store-hash}/v3/catalog/products?include=variants,custom_fields
+
+# v3 Catalog API Reference
+
+Please view the documentation generated from the Swagger file [here](http://editor.swagger.io/#/?import=https://raw.githubusercontent.com/bigcommerce/api/master/swagger/v3-catalog.yaml).
+
+## <a name="__Methods">Methods/Endpoints</a>
+
+BasePath: `/stores/{{store_id}}/v3`
 
 [ Jump to [Models](#__Models) ]
 
@@ -104,13 +514,9 @@
 *   [`<span class="http-method">get</span> /customers/subscribers`](#getSubscribers)
 *   [`<span class="http-method">put</span> /customers/subscribers/{subscriber_id}`](#updateSubscriber)
 
-# <a name="Catalog">Catalog</a>
+## <a name="Catalog">Catalog</a>
 
-<div class="method"><a name="catalogSummaryGet"></a>
-
-<div class="method-path"><a name="catalogSummaryGet"></a>[Up](#__Methods)
-
-    get /catalog/summary
+## <div class="method"><a name="catalogSummaryGet"></a> get /catalog/summary
 
 </div>
 
@@ -156,11 +562,7 @@ An array of catalog summary and metadata. [CatalogSummaryResponse](#CatalogSumma
 
 * * *
 
-<div class="method"><a name="createBrand"></a>
-
-<div class="method-path"><a name="createBrand"></a>[Up](#__Methods)
-
-    post /catalog/brands
+## <div class="method"><a name="createBrand"></a> post /catalog/brands
 
 </div>
 
@@ -227,11 +629,7 @@ Brand was not valid. This is the result of missing required fields, or of invali
 
 * * *
 
-<div class="method"><a name="createBrandImage"></a>
-
-<div class="method-path"><a name="createBrandImage"></a>[Up](#__Methods)
-
-    post /catalog/brands/{brand_id}/image
+## <div class="method"><a name="createBrandImage"></a> post /catalog/brands/{brand_id}/image
 
 </div>
 
@@ -302,11 +700,7 @@ Image was not valid. This is the result of a missing `image_file` field or an in
 
 * * *
 
-<div class="method"><a name="createBrandMetafield"></a>
-
-<div class="method-path"><a name="createBrandMetafield"></a>[Up](#__Methods)
-
-    post /catalog/brands/{brand_id}/metafields
+## <div class="method"><a name="createBrandMetafield"></a> post /catalog/brands/{brand_id}/metafields
 
 </div>
 
@@ -400,11 +794,7 @@ The `Metafield` was not valid. This is the result of missing required fields, or
 
 * * *
 
-<div class="method"><a name="createCategory"></a>
-
-<div class="method-path"><a name="createCategory"></a>[Up](#__Methods)
-
-    post /catalog/categories
+## <div class="method"><a name="createCategory"></a> post /catalog/categories
 
 </div>
 
@@ -482,11 +872,7 @@ The `Category` was not valid. This is the result of missing required fields, or 
 
 * * *
 
-<div class="method"><a name="createCategoryImage"></a>
-
-<div class="method-path"><a name="createCategoryImage"></a>[Up](#__Methods)
-
-    post /catalog/categories/{category_id}/image
+## <div class="method"><a name="createCategoryImage"></a> post /catalog/categories/{category_id}/image
 
 </div>
 
@@ -557,11 +943,7 @@ Image was not valid. This is the result of a missing `image_file` field or an in
 
 * * *
 
-<div class="method"><a name="createCategoryMetafield"></a>
-
-<div class="method-path"><a name="createCategoryMetafield"></a>[Up](#__Methods)
-
-    post /catalog/categories/{category_id}/metafields
+## <div class="method"><a name="createCategoryMetafield"></a> post /catalog/categories/{category_id}/metafields
 
 </div>
 
@@ -641,11 +1023,7 @@ The `Metafield` was not valid. This is the result of missing required fields, or
 
 * * *
 
-<div class="method"><a name="createComplexRule"></a>
-
-<div class="method-path"><a name="createComplexRule"></a>[Up](#__Methods)
-
-    post /catalog/products/{product_id}/complex-rules
+## <div class="method"><a name="createComplexRule"></a> post /catalog/products/{product_id}/complex-rules
 
 </div>
 
@@ -748,11 +1126,7 @@ The `ComplexRule` was not valid. This is the result of missing required fields, 
 
 * * *
 
-<div class="method"><a name="createModifier"></a>
-
-<div class="method-path"><a name="createModifier"></a>[Up](#__Methods)
-
-    post /catalog/products/{product_id}/modifiers
+## <div class="method"><a name="createModifier"></a> post /catalog/products/{product_id}/modifiers
 
 </div>
 
@@ -866,11 +1240,7 @@ The `Modifier` was not valid. This is the result of missing required fields, or 
 
 * * *
 
-<div class="method"><a name="createModifierImage"></a>
-
-<div class="method-path"><a name="createModifierImage"></a>[Up](#__Methods)
-
-    post /catalog/products/{product_id}/modifiers/{modifier_id}/values/{value_id}/image
+## <div class="method"><a name="createModifierImage"></a> post /catalog/products/{product_id}/modifiers/{modifier_id}/values/{value_id}/image
 
 </div>
 
@@ -949,11 +1319,7 @@ Modifier image was not valid. This is the result of missing `image_file` fields,
 
 * * *
 
-<div class="method"><a name="createOption"></a>
-
-<div class="method-path"><a name="createOption"></a>[Up](#__Methods)
-
-    post /catalog/products/{product_id}/options
+## <div class="method"><a name="createOption"></a> post /catalog/products/{product_id}/options
 
 </div>
 
@@ -1072,11 +1438,7 @@ Option was not valid. This is the result of missing required fields, or of inval
 
 * * *
 
-<div class="method"><a name="createProduct"></a>
-
-<div class="method-path"><a name="createProduct"></a>[Up](#__Methods)
-
-    post /catalog/products
+## <div class="method"><a name="createProduct"></a> post /catalog/products
 
 </div>
 
@@ -1234,11 +1596,7 @@ A product [ProductResponse](#ProductResponse)
 
 * * *
 
-<div class="method"><a name="createProductImage"></a>
-
-<div class="method-path"><a name="createProductImage"></a>[Up](#__Methods)
-
-    post /catalog/products/{product_id}/images
+## <div class="method"><a name="createProductImage"></a> post /catalog/products/{product_id}/images
 
 </div>
 
@@ -1303,11 +1661,7 @@ The product ID does not exist. [NotFound](#NotFound)</div>
 
 * * *
 
-<div class="method"><a name="createProductMetafield"></a>
-
-<div class="method-path"><a name="createProductMetafield"></a>[Up](#__Methods)
-
-    post /catalog/products/{product_id}/metafields
+## <div class="method"><a name="createProductMetafield"></a> post /catalog/products/{product_id}/metafields
 
 </div>
 
@@ -1387,11 +1741,7 @@ The `Metafield` was not valid. This is the result of missing required fields, or
 
 * * *
 
-<div class="method"><a name="createProductVideo"></a>
-
-<div class="method-path"><a name="createProductVideo"></a>[Up](#__Methods)
-
-    post /catalog/products/{product_id}/videos
+## <div class="method"><a name="createProductVideo"></a> post /catalog/products/{product_id}/videos
 
 </div>
 
@@ -1474,11 +1824,7 @@ The resource was not found. [NotFound](#NotFound)</div>
 
 * * *
 
-<div class="method"><a name="createVariant"></a>
-
-<div class="method-path"><a name="createVariant"></a>[Up](#__Methods)
-
-    post /catalog/products/{product_id}/variants
+## <div class="method"><a name="createVariant"></a> post /catalog/products/{product_id}/variants
 
 </div>
 
@@ -1564,11 +1910,7 @@ The resource was not found. [NotFound](#NotFound)</div>
 
 * * *
 
-<div class="method"><a name="createVariantImage"></a>
-
-<div class="method-path"><a name="createVariantImage"></a>[Up](#__Methods)
-
-    post /catalog/products/{product_id}/variants/{variant_id}/image
+## <div class="method"><a name="createVariantImage"></a> post /catalog/products/{product_id}/variants/{variant_id}/image
 
 </div>
 
@@ -1641,11 +1983,7 @@ Image was not valid. This is the result of a missing image_file field or an inco
 
 * * *
 
-<div class="method"><a name="createVariantMetafield"></a>
-
-<div class="method-path"><a name="createVariantMetafield"></a>[Up](#__Methods)
-
-    post /catalog/products/{product_id}/variants/{variant_id}/metafields
+## <div class="method"><a name="createVariantMetafield"></a> post /catalog/products/{product_id}/variants/{variant_id}/metafields
 
 </div>
 
@@ -1729,11 +2067,7 @@ The `Metafield` was not valid. This is the result of missing required fields, or
 
 * * *
 
-<div class="method"><a name="deleteBrandById"></a>
-
-<div class="method-path"><a name="deleteBrandById"></a>[Up](#__Methods)
-
-    delete /catalog/brands/{brand_id}
+## <div class="method"><a name="deleteBrandById"></a> delete /catalog/brands/{brand_id}
 
 </div>
 
@@ -1771,11 +2105,7 @@ An empty response.[](#)</div>
 
 * * *
 
-<div class="method"><a name="deleteBrandImage"></a>
-
-<div class="method-path"><a name="deleteBrandImage"></a>[Up](#__Methods)
-
-    delete /catalog/brands/{brand_id}/image
+## <div class="method"><a name="deleteBrandImage"></a> delete /catalog/brands/{brand_id}/image
 
 </div>
 
@@ -1813,11 +2143,7 @@ Image cleared from the brand.[](#)</div>
 
 * * *
 
-<div class="method"><a name="deleteBrandMetafieldById"></a>
-
-<div class="method-path"><a name="deleteBrandMetafieldById"></a>[Up](#__Methods)
-
-    delete /catalog/brands/{brand_id}/metafields/{metafield_id}
+## <div class="method"><a name="deleteBrandMetafieldById"></a> delete /catalog/brands/{brand_id}/metafields/{metafield_id}
 
 </div>
 
@@ -1859,11 +2185,7 @@ An empty response.[](#)</div>
 
 * * *
 
-<div class="method"><a name="deleteBrands"></a>
-
-<div class="method-path"><a name="deleteBrands"></a>[Up](#__Methods)
-
-    delete /catalog/brands
+## <div class="method"><a name="deleteBrands"></a> delete /catalog/brands
 
 </div>
 
@@ -1905,11 +2227,7 @@ An empty response.[](#)</div>
 
 * * *
 
-<div class="method"><a name="deleteCategories"></a>
-
-<div class="method-path"><a name="deleteCategories"></a>[Up](#__Methods)
-
-    delete /catalog/categories
+## <div class="method"><a name="deleteCategories"></a> delete /catalog/categories
 
 </div>
 
@@ -1963,11 +2281,7 @@ An empty response.[](#)</div>
 
 * * *
 
-<div class="method"><a name="deleteCategoryById"></a>
-
-<div class="method-path"><a name="deleteCategoryById"></a>[Up](#__Methods)
-
-    delete /catalog/categories/{category_id}
+## <div class="method"><a name="deleteCategoryById"></a> delete /catalog/categories/{category_id}
 
 </div>
 
@@ -2005,11 +2319,7 @@ An empty response.[](#)</div>
 
 * * *
 
-<div class="method"><a name="deleteCategoryImage"></a>
-
-<div class="method-path"><a name="deleteCategoryImage"></a>[Up](#__Methods)
-
-    delete /catalog/categories/{category_id}/image
+## <div class="method"><a name="deleteCategoryImage"></a> delete /catalog/categories/{category_id}/image
 
 </div>
 
@@ -2047,11 +2357,7 @@ An empty response.[](#)</div>
 
 * * *
 
-<div class="method"><a name="deleteCategoryMetafieldById"></a>
-
-<div class="method-path"><a name="deleteCategoryMetafieldById"></a>[Up](#__Methods)
-
-    delete /catalog/categories/{category_id}/metafields/{metafield_id}
+## <div class="method"><a name="deleteCategoryMetafieldById"></a> delete /catalog/categories/{category_id}/metafields/{metafield_id}
 
 </div>
 
@@ -2093,11 +2399,7 @@ An empty response.[](#)</div>
 
 * * *
 
-<div class="method"><a name="deleteComplexRuleById"></a>
-
-<div class="method-path"><a name="deleteComplexRuleById"></a>[Up](#__Methods)
-
-    delete /catalog/products/{product_id}/complex-rules/{complex_rule_id}
+## <div class="method"><a name="deleteComplexRuleById"></a> delete /catalog/products/{product_id}/complex-rules/{complex_rule_id}
 
 </div>
 
@@ -2139,11 +2441,7 @@ An empty response.[](#)</div>
 
 * * *
 
-<div class="method"><a name="deleteModifierById"></a>
-
-<div class="method-path"><a name="deleteModifierById"></a>[Up](#__Methods)
-
-    delete /catalog/products/{product_id}/modifiers/{modifier_id}
+## <div class="method"><a name="deleteModifierById"></a> delete /catalog/products/{product_id}/modifiers/{modifier_id}
 
 </div>
 
@@ -2185,11 +2483,7 @@ An empty response.[](#)</div>
 
 * * *
 
-<div class="method"><a name="deleteModifierImage"></a>
-
-<div class="method-path"><a name="deleteModifierImage"></a>[Up](#__Methods)
-
-    delete /catalog/products/{product_id}/modifiers/{modifier_id}/values/{value_id}/image
+## <div class="method"><a name="deleteModifierImage"></a> delete /catalog/products/{product_id}/modifiers/{modifier_id}/values/{value_id}/image
 
 </div>
 
@@ -2235,11 +2529,7 @@ Image cleared for this modifier value.[](#)</div>
 
 * * *
 
-<div class="method"><a name="deleteOptionById"></a>
-
-<div class="method-path"><a name="deleteOptionById"></a>[Up](#__Methods)
-
-    delete /catalog/products/{product_id}/options/{option_id}
+## <div class="method"><a name="deleteOptionById"></a> delete /catalog/products/{product_id}/options/{option_id}
 
 </div>
 
@@ -2281,11 +2571,7 @@ An empty response.[](#)</div>
 
 * * *
 
-<div class="method"><a name="deleteProductById"></a>
-
-<div class="method-path"><a name="deleteProductById"></a>[Up](#__Methods)
-
-    delete /catalog/products/{product_id}
+## <div class="method"><a name="deleteProductById"></a> delete /catalog/products/{product_id}
 
 </div>
 
@@ -2323,11 +2609,7 @@ An empty response.[](#)</div>
 
 * * *
 
-<div class="method"><a name="deleteProductImage"></a>
-
-<div class="method-path"><a name="deleteProductImage"></a>[Up](#__Methods)
-
-    delete /catalog/products/{product_id}/images/{image_id}
+## <div class="method"><a name="deleteProductImage"></a> delete /catalog/products/{product_id}/images/{image_id}
 
 </div>
 
@@ -2369,11 +2651,7 @@ An empty response.[](#)</div>
 
 * * *
 
-<div class="method"><a name="deleteProductMetafieldById"></a>
-
-<div class="method-path"><a name="deleteProductMetafieldById"></a>[Up](#__Methods)
-
-    delete /catalog/products/{product_id}/metafields/{metafield_id}
+## <div class="method"><a name="deleteProductMetafieldById"></a> delete /catalog/products/{product_id}/metafields/{metafield_id}
 
 </div>
 
@@ -2415,11 +2693,7 @@ An empty response.[](#)</div>
 
 * * *
 
-<div class="method"><a name="deleteProductVideo"></a>
-
-<div class="method-path"><a name="deleteProductVideo"></a>[Up](#__Methods)
-
-    delete /catalog/products/{product_id}/videos/{video_id}
+## <div class="method"><a name="deleteProductVideo"></a> delete /catalog/products/{product_id}/videos/{video_id}
 
 </div>
 
@@ -2461,11 +2735,7 @@ An empty response[](#)</div>
 
 * * *
 
-<div class="method"><a name="deleteProducts"></a>
-
-<div class="method-path"><a name="deleteProducts"></a>[Up](#__Methods)
-
-    delete /catalog/products
+## <div class="method"><a name="deleteProducts"></a> delete /catalog/products
 
 </div>
 
@@ -2559,11 +2829,7 @@ An empty response.[](#)</div>
 
 * * *
 
-<div class="method"><a name="deleteVariantById"></a>
-
-<div class="method-path"><a name="deleteVariantById"></a>[Up](#__Methods)
-
-    delete /catalog/products/{product_id}/variants/{variant_id}
+## <div class="method"><a name="deleteVariantById"></a> delete /catalog/products/{product_id}/variants/{variant_id}
 
 </div>
 
@@ -2605,11 +2871,7 @@ An empty response.[](#)</div>
 
 * * *
 
-<div class="method"><a name="deleteVariantMetafieldById"></a>
-
-<div class="method-path"><a name="deleteVariantMetafieldById"></a>[Up](#__Methods)
-
-    delete /catalog/products/{product_id}/variants/{variant_id}/metafields/{metafield_id}
+## <div class="method"><a name="deleteVariantMetafieldById"></a> delete /catalog/products/{product_id}/variants/{variant_id}/metafields/{metafield_id}
 
 </div>
 
@@ -2655,11 +2917,7 @@ An empty response.[](#)</div>
 
 * * *
 
-<div class="method"><a name="getBrandById"></a>
-
-<div class="method-path"><a name="getBrandById"></a>[Up](#__Methods)
-
-    get /catalog/brands/{brand_id}
+## <div class="method"><a name="getBrandById"></a> get /catalog/brands/{brand_id}
 
 </div>
 
@@ -2722,11 +2980,7 @@ The resource was not found. [NotFound](#NotFound)</div>
 
 * * *
 
-<div class="method"><a name="getBrandMetafieldByBrandId"></a>
-
-<div class="method-path"><a name="getBrandMetafieldByBrandId"></a>[Up](#__Methods)
-
-    get /catalog/brands/{brand_id}/metafields/{metafield_id}
+## <div class="method"><a name="getBrandMetafieldByBrandId"></a> get /catalog/brands/{brand_id}/metafields/{metafield_id}
 
 </div>
 
@@ -2793,11 +3047,7 @@ The resource was not found. [NotFound](#NotFound)</div>
 
 * * *
 
-<div class="method"><a name="getBrandMetafieldsByBrandId"></a>
-
-<div class="method-path"><a name="getBrandMetafieldsByBrandId"></a>[Up](#__Methods)
-
-    get /catalog/brands/{brand_id}/metafields
+## <div class="method"><a name="getBrandMetafieldsByBrandId"></a> get /catalog/brands/{brand_id}/metafields
 
 </div>
 
@@ -2904,11 +3154,7 @@ The resource was not found. [NotFound](#NotFound)</div>
 
 * * *
 
-<div class="method"><a name="getBrands"></a>
-
-<div class="method-path"><a name="getBrands"></a>[Up](#__Methods)
-
-    get /catalog/brands
+## <div class="method"><a name="getBrands"></a> get /catalog/brands
 
 </div>
 
@@ -2990,11 +3236,7 @@ An array of brand objects and metadata. [BrandCollectionResponse](#BrandCollecti
 
 * * *
 
-<div class="method"><a name="getCategories"></a>
-
-<div class="method-path"><a name="getCategories"></a>[Up](#__Methods)
-
-    get /catalog/categories
+## <div class="method"><a name="getCategories"></a> get /catalog/categories
 
 </div>
 
@@ -3099,11 +3341,7 @@ An array of category objects and metadata. [CategoryCollectionResponse](#Categor
 
 * * *
 
-<div class="method"><a name="getCategoryById"></a>
-
-<div class="method-path"><a name="getCategoryById"></a>[Up](#__Methods)
-
-    get /catalog/categories/{category_id}
+## <div class="method"><a name="getCategoryById"></a> get /catalog/categories/{category_id}
 
 </div>
 
@@ -3177,11 +3415,7 @@ The resource was not found. [NotFound](#NotFound)</div>
 
 * * *
 
-<div class="method"><a name="getCategoryMetafieldByCategoryId"></a>
-
-<div class="method-path"><a name="getCategoryMetafieldByCategoryId"></a>[Up](#__Methods)
-
-    get /catalog/categories/{category_id}/metafields/{metafield_id}
+## <div class="method"><a name="getCategoryMetafieldByCategoryId"></a> get /catalog/categories/{category_id}/metafields/{metafield_id}
 
 </div>
 
@@ -3248,11 +3482,7 @@ The resource was not found. [NotFound](#NotFound)</div>
 
 * * *
 
-<div class="method"><a name="getCategoryMetafieldsByCategoryId"></a>
-
-<div class="method-path"><a name="getCategoryMetafieldsByCategoryId"></a>[Up](#__Methods)
-
-    get /catalog/categories/{category_id}/metafields
+## <div class="method"><a name="getCategoryMetafieldsByCategoryId"></a> get /catalog/categories/{category_id}/metafields
 
 </div>
 
@@ -3351,11 +3581,7 @@ The resource was not found. [NotFound](#NotFound)</div>
 
 * * *
 
-<div class="method"><a name="getCategoryTree"></a>
-
-<div class="method-path"><a name="getCategoryTree"></a>[Up](#__Methods)
-
-    get /catalog/categories/tree
+## <div class="method"><a name="getCategoryTree"></a> get /catalog/categories/tree
 
 </div>
 
@@ -3414,11 +3640,7 @@ A array of nested category tree objects and metadata. [CategoryTreeCollectionRes
 
 * * *
 
-<div class="method"><a name="getComplexRuleById"></a>
-
-<div class="method-path"><a name="getComplexRuleById"></a>[Up](#__Methods)
-
-    get /catalog/products/{product_id}/complex-rules/{complex_rule_id}
+## <div class="method"><a name="getComplexRuleById"></a> get /catalog/products/{product_id}/complex-rules/{complex_rule_id}
 
 </div>
 
@@ -3511,11 +3733,7 @@ The resource was not found. [NotFound](#NotFound)</div>
 
 * * *
 
-<div class="method"><a name="getComplexRules"></a>
-
-<div class="method-path"><a name="getComplexRules"></a>[Up](#__Methods)
-
-    get /catalog/products/{product_id}/complex-rules
+## <div class="method"><a name="getComplexRules"></a> get /catalog/products/{product_id}/complex-rules
 
 </div>
 
@@ -3600,11 +3818,7 @@ An array of `ComplexRule` objects and metadata. [ComplexRuleCollectionResponse](
 
 * * *
 
-<div class="method"><a name="getModifierById"></a>
-
-<div class="method-path"><a name="getModifierById"></a>[Up](#__Methods)
-
-    get /catalog/products/{product_id}/modifiers/{modifier_id}
+## <div class="method"><a name="getModifierById"></a> get /catalog/products/{product_id}/modifiers/{modifier_id}
 
 </div>
 
@@ -3708,11 +3922,7 @@ The resource was not found. [NotFound](#NotFound)</div>
 
 * * *
 
-<div class="method"><a name="getModifiers"></a>
-
-<div class="method-path"><a name="getModifiers"></a>[Up](#__Methods)
-
-    get /catalog/products/{product_id}/modifiers
+## <div class="method"><a name="getModifiers"></a> get /catalog/products/{product_id}/modifiers
 
 </div>
 
@@ -3808,11 +4018,7 @@ An array of modifiers and metadata. [ModifierCollectionResponse](#ModifierCollec
 
 * * *
 
-<div class="method"><a name="getOptionById"></a>
-
-<div class="method-path"><a name="getOptionById"></a>[Up](#__Methods)
-
-    get /catalog/products/{product_id}/options/{option_id}
+## <div class="method"><a name="getOptionById"></a> get /catalog/products/{product_id}/options/{option_id}
 
 </div>
 
@@ -3921,11 +4127,7 @@ The resource was not found. [NotFound](#NotFound)</div>
 
 * * *
 
-<div class="method"><a name="getOptions"></a>
-
-<div class="method-path"><a name="getOptions"></a>[Up](#__Methods)
-
-    get /catalog/products/{product_id}/options
+## <div class="method"><a name="getOptions"></a> get /catalog/products/{product_id}/options
 
 </div>
 
@@ -4030,11 +4232,7 @@ The resource was not found. [NotFound](#NotFound)</div>
 
 * * *
 
-<div class="method"><a name="getProductById"></a>
-
-<div class="method-path"><a name="getProductById"></a>[Up](#__Methods)
-
-    get /catalog/products/{product_id}
+## <div class="method"><a name="getProductById"></a> get /catalog/products/{product_id}
 
 </div>
 
@@ -4198,11 +4396,7 @@ The resource was not found. [NotFound](#NotFound)</div>
 
 * * *
 
-<div class="method"><a name="getProductImageById"></a>
-
-<div class="method-path"><a name="getProductImageById"></a>[Up](#__Methods)
-
-    get /catalog/products/{product_id}/images/{image_id}
+## <div class="method"><a name="getProductImageById"></a> get /catalog/products/{product_id}/images/{image_id}
 
 </div>
 
@@ -4261,11 +4455,7 @@ The resource was not found. [NotFound](#NotFound)</div>
 
 * * *
 
-<div class="method"><a name="getProductImages"></a>
-
-<div class="method-path"><a name="getProductImages"></a>[Up](#__Methods)
-
-    get /catalog/products/{product_id}/images
+## <div class="method"><a name="getProductImages"></a> get /catalog/products/{product_id}/images
 
 </div>
 
@@ -4335,11 +4525,7 @@ The product ID does not exist. [NotFound](#NotFound)</div>
 
 * * *
 
-<div class="method"><a name="getProductMetafieldByProductId"></a>
-
-<div class="method-path"><a name="getProductMetafieldByProductId"></a>[Up](#__Methods)
-
-    get /catalog/products/{product_id}/metafields/{metafield_id}
+## <div class="method"><a name="getProductMetafieldByProductId"></a> get /catalog/products/{product_id}/metafields/{metafield_id}
 
 </div>
 
@@ -4406,11 +4592,7 @@ The resource was not found. [NotFound](#NotFound)</div>
 
 * * *
 
-<div class="method"><a name="getProductMetafieldsByProductId"></a>
-
-<div class="method-path"><a name="getProductMetafieldsByProductId"></a>[Up](#__Methods)
-
-    get /catalog/products/{product_id}/metafields
+## <div class="method"><a name="getProductMetafieldsByProductId"></a> get /catalog/products/{product_id}/metafields
 
 </div>
 
@@ -4509,11 +4691,7 @@ The resource was not found. [NotFound](#NotFound)</div>
 
 * * *
 
-<div class="method"><a name="getProductVideoById"></a>
-
-<div class="method-path"><a name="getProductVideoById"></a>[Up](#__Methods)
-
-    get /catalog/products/{product_id}/videos/{video_id}
+## <div class="method"><a name="getProductVideoById"></a> get /catalog/products/{product_id}/videos/{video_id}
 
 </div>
 
@@ -4590,11 +4768,7 @@ The resource was not found. [NotFound](#NotFound)</div>
 
 * * *
 
-<div class="method"><a name="getProductVideos"></a>
-
-<div class="method-path"><a name="getProductVideos"></a>[Up](#__Methods)
-
-    get /catalog/products/{product_id}/videos
+## <div class="method"><a name="getProductVideos"></a> get /catalog/products/{product_id}/videos
 
 </div>
 
@@ -4663,11 +4837,7 @@ List of product videos and metadata. [ProductVideoCollectionResponse](#ProductVi
 
 * * *
 
-<div class="method"><a name="getProducts"></a>
-
-<div class="method-path"><a name="getProducts"></a>[Up](#__Methods)
-
-    get /catalog/products
+## <div class="method"><a name="getProducts"></a> get /catalog/products
 
 </div>
 
@@ -4932,11 +5102,7 @@ An array of products and metadata. [ProductCollectionResponse](#ProductCollectio
 
 * * *
 
-<div class="method"><a name="getVariantById"></a>
-
-<div class="method-path"><a name="getVariantById"></a>[Up](#__Methods)
-
-    get /catalog/products/{product_id}/variants/{variant_id}
+## <div class="method"><a name="getVariantById"></a> get /catalog/products/{product_id}/variants/{variant_id}
 
 </div>
 
@@ -5016,11 +5182,7 @@ The resource was not found. [NotFound](#NotFound)</div>
 
 * * *
 
-<div class="method"><a name="getVariantMetafieldByProductIdAndVariantId"></a>
-
-<div class="method-path"><a name="getVariantMetafieldByProductIdAndVariantId"></a>[Up](#__Methods)
-
-    get /catalog/products/{product_id}/variants/{variant_id}/metafields/{metafield_id}
+## <div class="method"><a name="getVariantMetafieldByProductIdAndVariantId"></a> get /catalog/products/{product_id}/variants/{variant_id}/metafields/{metafield_id}
 
 </div>
 
@@ -5091,11 +5253,7 @@ The resource was not found. [NotFound](#NotFound)</div>
 
 * * *
 
-<div class="method"><a name="getVariantMetafieldsByProductIdAndVariantId"></a>
-
-<div class="method-path"><a name="getVariantMetafieldsByProductIdAndVariantId"></a>[Up](#__Methods)
-
-    get /catalog/products/{product_id}/variants/{variant_id}/metafields
+## <div class="method"><a name="getVariantMetafieldsByProductIdAndVariantId"></a> get /catalog/products/{product_id}/variants/{variant_id}/metafields
 
 </div>
 
@@ -5198,11 +5356,7 @@ The resource was not found. [NotFound](#NotFound)</div>
 
 * * *
 
-<div class="method"><a name="getVariants"></a>
-
-<div class="method-path"><a name="getVariants"></a>[Up](#__Methods)
-
-    get /catalog/variants
+## <div class="method"><a name="getVariants"></a> get /catalog/variants
 
 </div>
 
@@ -5301,11 +5455,7 @@ The resource was not found. [NotFound](#NotFound)</div>
 
 * * *
 
-<div class="method"><a name="getVariantsByProductId"></a>
-
-<div class="method-path"><a name="getVariantsByProductId"></a>[Up](#__Methods)
-
-    get /catalog/products/{product_id}/variants
+## <div class="method"><a name="getVariantsByProductId"></a> get /catalog/products/{product_id}/variants
 
 </div>
 
@@ -5406,11 +5556,7 @@ The resource was not found. [NotFound](#NotFound)</div>
 
 * * *
 
-<div class="method"><a name="updateBrand"></a>
-
-<div class="method-path"><a name="updateBrand"></a>[Up](#__Methods)
-
-    put /catalog/brands/{brand_id}
+## <div class="method"><a name="updateBrand"></a> put /catalog/brands/{brand_id}
 
 </div>
 
@@ -5491,11 +5637,7 @@ The `Brand` was not valid. This is the result of missing required fields, or of 
 
 * * *
 
-<div class="method"><a name="updateBrandMetafield"></a>
-
-<div class="method-path"><a name="updateBrandMetafield"></a>[Up](#__Methods)
-
-    put /catalog/brands/{brand_id}/metafields/{metafield_id}
+## <div class="method"><a name="updateBrandMetafield"></a> put /catalog/brands/{brand_id}/metafields/{metafield_id}
 
 </div>
 
@@ -5575,11 +5717,7 @@ The resource was not found. [NotFound](#NotFound)</div>
 
 * * *
 
-<div class="method"><a name="updateCategory"></a>
-
-<div class="method-path"><a name="updateCategory"></a>[Up](#__Methods)
-
-    put /catalog/categories/{category_id}
+## <div class="method"><a name="updateCategory"></a> put /catalog/categories/{category_id}
 
 </div>
 
@@ -5671,11 +5809,7 @@ The `Category` was not valid. This is the result of missing required fields, or 
 
 * * *
 
-<div class="method"><a name="updateCategoryMetafield"></a>
-
-<div class="method-path"><a name="updateCategoryMetafield"></a>[Up](#__Methods)
-
-    put /catalog/categories/{category_id}/metafields/{metafield_id}
+## <div class="method"><a name="updateCategoryMetafield"></a> put /catalog/categories/{category_id}/metafields/{metafield_id}
 
 </div>
 
@@ -5755,11 +5889,7 @@ The resource was not found. [NotFound](#NotFound)</div>
 
 * * *
 
-<div class="method"><a name="updateComplexRule"></a>
-
-<div class="method-path"><a name="updateComplexRule"></a>[Up](#__Methods)
-
-    put /catalog/products/{product_id}/complex-rules/{complex_rule_id}
+## <div class="method"><a name="updateComplexRule"></a> put /catalog/products/{product_id}/complex-rules/{complex_rule_id}
 
 </div>
 
@@ -5856,11 +5986,7 @@ The `ComplexRule` was not valid. This is the result of missing required fields, 
 
 * * *
 
-<div class="method"><a name="updateModifier"></a>
-
-<div class="method-path"><a name="updateModifier"></a>[Up](#__Methods)
-
-    put /catalog/products/{product_id}/modifiers/{modifier_id}
+## <div class="method"><a name="updateModifier"></a> put /catalog/products/{product_id}/modifiers/{modifier_id}
 
 </div>
 
@@ -5978,11 +6104,7 @@ The `Modifier` was not valid. This is the result of missing required fields, or 
 
 * * *
 
-<div class="method"><a name="updateOption"></a>
-
-<div class="method-path"><a name="updateOption"></a>[Up](#__Methods)
-
-    put /catalog/products/{product_id}/options/{option_id}
+## <div class="method"><a name="updateOption"></a> put /catalog/products/{product_id}/options/{option_id}
 
 </div>
 
@@ -6105,11 +6227,7 @@ The `Option` was not valid. This is the result of missing required fields, or of
 
 * * *
 
-<div class="method"><a name="updateProduct"></a>
-
-<div class="method-path"><a name="updateProduct"></a>[Up](#__Methods)
-
-    put /catalog/products/{product_id}
+## <div class="method"><a name="updateProduct"></a> put /catalog/products/{product_id}
 
 </div>
 
@@ -6281,11 +6399,7 @@ The resource was not found. [NotFound](#NotFound)
 
 * * *
 
-<div class="method"><a name="updateProductImage"></a>
-
-<div class="method-path"><a name="updateProductImage"></a>[Up](#__Methods)
-
-    put /catalog/products/{product_id}/images/{image_id}
+## <div class="method"><a name="updateProductImage"></a> put /catalog/products/{product_id}/images/{image_id}
 
 </div>
 
@@ -6354,11 +6468,7 @@ The resource was not found. [NotFound](#NotFound)</div>
 
 * * *
 
-<div class="method"><a name="updateProductMetafield"></a>
-
-<div class="method-path"><a name="updateProductMetafield"></a>[Up](#__Methods)
-
-    put /catalog/products/{product_id}/metafields/{metafield_id}
+## <div class="method"><a name="updateProductMetafield"></a> put /catalog/products/{product_id}/metafields/{metafield_id}
 
 </div>
 
@@ -6438,11 +6548,7 @@ The resource was not found. [NotFound](#NotFound)</div>
 
 * * *
 
-<div class="method"><a name="updateProductVideo"></a>
-
-<div class="method-path"><a name="updateProductVideo"></a>[Up](#__Methods)
-
-    put /catalog/products/{product_id}/videos/{video_id}
+## <div class="method"><a name="updateProductVideo"></a> put /catalog/products/{product_id}/videos/{video_id}
 
 </div>
 
@@ -6529,11 +6635,7 @@ The resource was not found. [NotFound](#NotFound)</div>
 
 * * *
 
-<div class="method"><a name="updateVariant"></a>
-
-<div class="method-path"><a name="updateVariant"></a>[Up](#__Methods)
-
-    put /catalog/products/{product_id}/variants/{variant_id}
+## <div class="method"><a name="updateVariant"></a> put /catalog/products/{product_id}/variants/{variant_id}
 
 </div>
 
@@ -6623,11 +6725,7 @@ The resource was not found. [NotFound](#NotFound)</div>
 
 * * *
 
-<div class="method"><a name="updateVariantMetafield"></a>
-
-<div class="method-path"><a name="updateVariantMetafield"></a>[Up](#__Methods)
-
-    put /catalog/products/{product_id}/variants/{variant_id}/metafields/{metafield_id}
+## <div class="method"><a name="updateVariantMetafield"></a> put /catalog/products/{product_id}/variants/{variant_id}/metafields/{metafield_id}
 
 </div>
 
@@ -6711,13 +6809,9 @@ The resource was not found. [NotFound](#NotFound)</div>
 
 * * *
 
-# <a name="Customers">Customers</a>
+## <a name="Customers">Customers</a>
 
-<div class="method"><a name="createSubscriber"></a>
-
-<div class="method-path"><a name="createSubscriber"></a>[Up](#__Methods)
-
-    post /customers/subscribers
+## <div class="method"><a name="createSubscriber"></a> post /customers/subscribers
 
 </div>
 
@@ -6785,11 +6879,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 * * *
 
-<div class="method"><a name="deleteSubscriberById"></a>
-
-<div class="method-path"><a name="deleteSubscriberById"></a>[Up](#__Methods)
-
-    delete /customers/subscribers/{subscriber_id}
+## <div class="method"><a name="deleteSubscriberById"></a> delete /customers/subscribers/{subscriber_id}
 
 </div>
 
@@ -6827,11 +6917,7 @@ An empty response.[](#)</div>
 
 * * *
 
-<div class="method"><a name="deleteSubscribers"></a>
-
-<div class="method-path"><a name="deleteSubscribers"></a>[Up](#__Methods)
-
-    delete /customers/subscribers
+## <div class="method"><a name="deleteSubscribers"></a> delete /customers/subscribers
 
 </div>
 
@@ -6893,11 +6979,7 @@ An empty response.[](#)</div>
 
 * * *
 
-<div class="method"><a name="getSubscriberById"></a>
-
-<div class="method-path"><a name="getSubscriberById"></a>[Up](#__Methods)
-
-    get /customers/subscribers/{subscriber_id}
+## <div class="method"><a name="getSubscriberById"></a> get /customers/subscribers/{subscriber_id}
 
 </div>
 
@@ -6961,11 +7043,7 @@ The resource was not found. [NotFound](#NotFound)</div>
 
 * * *
 
-<div class="method"><a name="getSubscribers"></a>
-
-<div class="method-path"><a name="getSubscribers"></a>[Up](#__Methods)
-
-    get /customers/subscribers
+## <div class="method"><a name="getSubscribers"></a> get /customers/subscribers
 
 </div>
 
@@ -7068,11 +7146,7 @@ An array of `Subscriber` objects and metadata. [SubscriberCollectionResponse](#S
 
 * * *
 
-<div class="method"><a name="updateSubscriber"></a>
-
-<div class="method-path"><a name="updateSubscriber"></a>[Up](#__Methods)
-
-    put /customers/subscribers/{subscriber_id}
+## <div class="method"><a name="updateSubscriber"></a> put /customers/subscribers/{subscriber_id}
 
 </div>
 
@@ -7154,8 +7228,6 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 * * *
 
-<div class="up">[Up](#__Models)</div>
-
 ## <a name="__Models">Models</a>
 
 [ Jump to [Methods](#__Methods) ]
@@ -7229,13 +7301,13 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="Adjuster">Adjuster -</a> [Up](#__Models)
+### <a name="Adjuster">Adjuster -</a> 
 
 <div class="field-items">
 
 <div class="param">adjuster (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The type of adjuster for either the price or the weight of the variant, when the modifier value is selected on the storefront.</div>
+<span class="param-type">[String](#string)</span> The type of adjuster for either the price or the weight of the variant, when the modifier value is selected on the storefront.</div>
 
 <div class="param-enum-header">Enum:</div>
 
@@ -7245,7 +7317,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">adjuster_value (optional)</div>
 
-<div class="param-desc"><span class="param-type">[BigDecimal](#number)</span> The numeric amount by which the adjuster will change either the price or the weight of the variant, when the modifier value is selected on the storefront.</div>
+<span class="param-type">[BigDecimal](#number)</span> The numeric amount by which the adjuster will change either the price or the weight of the variant, when the modifier value is selected on the storefront.</div>
 
 </div>
 
@@ -7253,7 +7325,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="BaseError">BaseError -</a> [Up](#__Models)
+### <a name="BaseError">BaseError -</a> 
 
 <div class="model-description">Error payload for the BigCommerce API.</div>
 
@@ -7261,19 +7333,19 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">status (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The HTTP status code</div>
+<span class="param-type">[Integer](#integer)</span> The HTTP status code</div>
 
 <div class="param">title (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The error title describing the particular error.</div>
+<span class="param-type">[String](#string)</span> The error title describing the particular error.</div>
 
 <div class="param">type (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span></div>
+<span class="param-type">[String](#string)</span></div>
 
 <div class="param">instance (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span></div>
+<span class="param-type">[String](#string)</span></div>
 
 </div>
 
@@ -7281,37 +7353,37 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="Brand">Brand -</a> [Up](#__Models)
+### <a name="Brand">Brand -</a> 
 
 <div class="field-items">
 
 <div class="param">id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The unique numeric ID of the brand; increments sequentially.</div>
+<span class="param-type">[Integer](#integer)</span> The unique numeric ID of the brand; increments sequentially.</div>
 
 <div class="param">name (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The name of the brand. Must be unique.</div>
+<span class="param-type">[String](#string)</span> The name of the brand. Must be unique.</div>
 
 <div class="param">page_title (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The title shown in the browser while viewing the brand.</div>
+<span class="param-type">[String](#string)</span> The title shown in the browser while viewing the brand.</div>
 
 <div class="param">meta_keywords (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[String]](#string)</span> Comma-separated list of meta keywords to include in the HTML.</div>
+<span class="param-type">[array[String]](#string)</span> Comma-separated list of meta keywords to include in the HTML.</div>
 
 <div class="param">meta_description (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> A meta description to include.</div>
+<span class="param-type">[String](#string)</span> A meta description to include.</div>
 
 <div class="param">search_keywords (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> A comma-separated list of keywords that can be used to locate this brand.</div>
+<span class="param-type">[String](#string)</span> A comma-separated list of keywords that can be used to locate this brand.</div>
 
 <div class="param">image_url (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Image URL used for this category on the storefront. Images can be uploaded via form file post to `/brands/{brandId}/image`, or by providing a publicly accessible URL in this field.</div>
+<span class="param-type">[String](#string)</span> Image URL used for this category on the storefront. Images can be uploaded via form file post to `/brands/{brandId}/image`, or by providing a publicly accessible URL in this field.</div>
 
 </div>
 
@@ -7319,7 +7391,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="BrandCollectionResponse">BrandCollectionResponse -</a> [Up](#__Models)
+### <a name="BrandCollectionResponse">BrandCollectionResponse -</a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -7327,11 +7399,11 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">data (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[Brand]](#Brand)</span></div>
+<span class="param-type">[array[Brand]](#Brand)</span></div>
 
 <div class="param">meta (optional)</div>
 
-<div class="param-desc"><span class="param-type">[CollectionMeta](#CollectionMeta)</span></div>
+<span class="param-type">[CollectionMeta](#CollectionMeta)</span></div>
 
 </div>
 
@@ -7339,7 +7411,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="BrandResponse">BrandResponse -</a> [Up](#__Models)
+### <a name="BrandResponse">BrandResponse -</a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -7347,11 +7419,11 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">data (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Brand](#Brand)</span></div>
+<span class="param-type">[Brand](#Brand)</span></div>
 
 <div class="param">meta (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Meta](#Meta)</span></div>
+<span class="param-type">[Meta](#Meta)</span></div>
 
 </div>
 
@@ -7359,7 +7431,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="BulkPricingRule">BulkPricingRule -</a> [Up](#__Models)
+### <a name="BulkPricingRule">BulkPricingRule -</a> 
 
 <div class="model-description">Rules that offer price discounts based on quantity breaks.</div>
 
@@ -7367,19 +7439,19 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The ID of the bulk pricing rule.</div>
+<span class="param-type">[Integer](#integer)</span> The ID of the bulk pricing rule.</div>
 
 <div class="param">quantity_min (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The minimum inclusive quantity of a product to satisfy this rule. Must be greater than or equal to zero.</div>
+<span class="param-type">[Integer](#integer)</span> The minimum inclusive quantity of a product to satisfy this rule. Must be greater than or equal to zero.</div>
 
 <div class="param">quantity_max (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The maximum inclusive quantity of a product to satisfy this rule. Must be greater than the `quantity_min` value – unless this field has a value of 0 (zero), in which case there will be no maximum bound for this rule.</div>
+<span class="param-type">[Integer](#integer)</span> The maximum inclusive quantity of a product to satisfy this rule. Must be greater than the `quantity_min` value – unless this field has a value of 0 (zero), in which case there will be no maximum bound for this rule.</div>
 
 <div class="param">type (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The type of adjustment that is made. Values: `price` - the adjustment amount per product; `percent` - the adjustment as a percentage of the original price; `fixed` - the adjusted absolute price of the product.</div>
+<span class="param-type">[String](#string)</span> The type of adjustment that is made. Values: `price` - the adjustment amount per product; `percent` - the adjustment as a percentage of the original price; `fixed` - the adjusted absolute price of the product.</div>
 
 <div class="param-enum-header">Enum:</div>
 
@@ -7391,7 +7463,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">amount (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Double](#double)</span> The value of the adjustment by the bulk pricing rule. format: double</div>
+<span class="param-type">[Double](#double)</span> The value of the adjustment by the bulk pricing rule. format: double</div>
 
 </div>
 
@@ -7399,7 +7471,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="CatalogSummary">CatalogSummary -</a> [Up](#__Models)
+### <a name="CatalogSummary">CatalogSummary -</a> 
 
 <div class="model-description">A BigCommerce Catalog Summary object describes a lightweight summary of the catalog.</div>
 
@@ -7407,19 +7479,19 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">inventory_count (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> A count of all inventory items in the catalog.</div>
+<span class="param-type">[Integer](#integer)</span> A count of all inventory items in the catalog.</div>
 
 <div class="param">inventory_value (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Double](#double)</span> Total value of store's inventory. format: double</div>
+<span class="param-type">[Double](#double)</span> Total value of store's inventory. format: double</div>
 
 <div class="param">primary_category_id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> ID of the category containing the most products.</div>
+<span class="param-type">[Integer](#integer)</span> ID of the category containing the most products.</div>
 
 <div class="param">primary_category_name (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Name of the category containing the most products.</div>
+<span class="param-type">[String](#string)</span> Name of the category containing the most products.</div>
 
 </div>
 
@@ -7427,7 +7499,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="CatalogSummaryResponse">CatalogSummaryResponse -</a> [Up](#__Models)
+### <a name="CatalogSummaryResponse">CatalogSummaryResponse -</a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -7435,11 +7507,11 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">data (optional)</div>
 
-<div class="param-desc"><span class="param-type">[CatalogSummary](#CatalogSummary)</span></div>
+<span class="param-type">[CatalogSummary](#CatalogSummary)</span></div>
 
 <div class="param">meta (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Meta](#Meta)</span></div>
+<span class="param-type">[Meta](#Meta)</span></div>
 
 </div>
 
@@ -7447,7 +7519,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="Category">Category -</a> [Up](#__Models)
+### <a name="Category">Category -</a> 
 
 <div class="model-description">A BigCommerce category object.</div>
 
@@ -7455,59 +7527,59 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The unique numeric ID of the category; increments sequentially.</div>
+<span class="param-type">[Integer](#integer)</span> The unique numeric ID of the category; increments sequentially.</div>
 
 <div class="param">parent_id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The unique numeric ID of the category's parent. This field controls where the category sits in the tree of categories that organize the catalog.</div>
+<span class="param-type">[Integer](#integer)</span> The unique numeric ID of the category's parent. This field controls where the category sits in the tree of categories that organize the catalog.</div>
 
 <div class="param">name (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The name displayed for the category. Name is unique with respect to the category's siblings.</div>
+<span class="param-type">[String](#string)</span> The name displayed for the category. Name is unique with respect to the category's siblings.</div>
 
 <div class="param">description (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The product description, which can include HTML formatting.</div>
+<span class="param-type">[String](#string)</span> The product description, which can include HTML formatting.</div>
 
 <div class="param">views (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> Number of views the category has on the storefront.</div>
+<span class="param-type">[Integer](#integer)</span> Number of views the category has on the storefront.</div>
 
 <div class="param">sort_order (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> Priority this category will be given when included in the menu and category pages. The lower the number, the closer to the top of the results the category will be.</div>
+<span class="param-type">[Integer](#integer)</span> Priority this category will be given when included in the menu and category pages. The lower the number, the closer to the top of the results the category will be.</div>
 
 <div class="param">page_title (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Custom title for the category page. If not defined, the category name will be used as the meta title.</div>
+<span class="param-type">[String](#string)</span> Custom title for the category page. If not defined, the category name will be used as the meta title.</div>
 
 <div class="param">meta_keywords (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[String]](#string)</span> Custom meta keywords for the category page. If not defined, the store's default keywords will be used. Must post as an array like: ["awesome","sauce"].</div>
+<span class="param-type">[array[String]](#string)</span> Custom meta keywords for the category page. If not defined, the store's default keywords will be used. Must post as an array like: ["awesome","sauce"].</div>
 
 <div class="param">meta_description (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Custom meta description for the category page. If not defined, the store's default meta description will be used.</div>
+<span class="param-type">[String](#string)</span> Custom meta description for the category page. If not defined, the store's default meta description will be used.</div>
 
 <div class="param">layout_file (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The layout template file used to render this category.</div>
+<span class="param-type">[String](#string)</span> The layout template file used to render this category.</div>
 
 <div class="param">image_url (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Image URL used for this category on the storefront. Images can be uploaded via form file post to `/categories/{categoryId}/image`, or by providing a publicly accessible URL in this field.</div>
+<span class="param-type">[String](#string)</span> Image URL used for this category on the storefront. Images can be uploaded via form file post to `/categories/{categoryId}/image`, or by providing a publicly accessible URL in this field.</div>
 
 <div class="param">is_visible (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> Flag to determine whether the product should be displayed to customers browsing the store. If `true`, the category will be displayed. If `false`, the category will be hidden from view.</div>
+<span class="param-type">[Boolean](#boolean)</span> Flag to determine whether the product should be displayed to customers browsing the store. If `true`, the category will be displayed. If `false`, the category will be hidden from view.</div>
 
 <div class="param">search_keywords (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> A comma-separated list of keywords that can be used to locate the category when searching the store.</div>
+<span class="param-type">[String](#string)</span> A comma-separated list of keywords that can be used to locate the category when searching the store.</div>
 
 <div class="param">default_product_sort (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Determines how the products are sorted on category page load.</div>
+<span class="param-type">[String](#string)</span> Determines how the products are sorted on category page load.</div>
 
 <div class="param-enum-header">Enum:</div>
 
@@ -7531,7 +7603,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">custom_url (optional)</div>
 
-<div class="param-desc"><span class="param-type">[CustomUrl](#CustomUrl)</span></div>
+<span class="param-type">[CustomUrl](#CustomUrl)</span></div>
 
 </div>
 
@@ -7539,7 +7611,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="CategoryCollectionResponse">CategoryCollectionResponse -</a> [Up](#__Models)
+### <a name="CategoryCollectionResponse">CategoryCollectionResponse -</a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -7547,11 +7619,11 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">data (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[Category]](#Category)</span></div>
+<span class="param-type">[array[Category]](#Category)</span></div>
 
 <div class="param">meta (optional)</div>
 
-<div class="param-desc"><span class="param-type">[CollectionMeta](#CollectionMeta)</span></div>
+<span class="param-type">[CollectionMeta](#CollectionMeta)</span></div>
 
 </div>
 
@@ -7559,7 +7631,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="CategoryNode">CategoryNode -</a> [Up](#__Models)
+### <a name="CategoryNode">CategoryNode -</a> 
 
 <div class="model-description">A BigCommerce category node object. Used to reflect parent <> child category relationships.</div>
 
@@ -7567,27 +7639,27 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The unique numeric ID of the category; increments sequentially.</div>
+<span class="param-type">[Integer](#integer)</span> The unique numeric ID of the category; increments sequentially.</div>
 
 <div class="param">parent_id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The unique numeric ID of the category's parent. This field controls where the category sits in the tree of categories that organize the catalog.</div>
+<span class="param-type">[Integer](#integer)</span> The unique numeric ID of the category's parent. This field controls where the category sits in the tree of categories that organize the catalog.</div>
 
 <div class="param">name (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The name displayed for the category. Name is unique with respect to the category's siblings.</div>
+<span class="param-type">[String](#string)</span> The name displayed for the category. Name is unique with respect to the category's siblings.</div>
 
 <div class="param">is_visible (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> Flag to determine whether the product should be displayed to customers browsing the store. If `true`, the category will be displayed. If `false`, the category will be hidden from view.</div>
+<span class="param-type">[Boolean](#boolean)</span> Flag to determine whether the product should be displayed to customers browsing the store. If `true`, the category will be displayed. If `false`, the category will be hidden from view.</div>
 
 <div class="param">url (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The custom URL for the category on the storefront.</div>
+<span class="param-type">[String](#string)</span> The custom URL for the category on the storefront.</div>
 
 <div class="param">children (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[CategoryNode]](#CategoryNode)</span> The list of children of the category.</div>
+<span class="param-type">[array[CategoryNode]](#CategoryNode)</span> The list of children of the category.</div>
 
 </div>
 
@@ -7595,7 +7667,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="CategoryResponse">CategoryResponse -</a> [Up](#__Models)
+### <a name="CategoryResponse">CategoryResponse -</a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -7603,11 +7675,11 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">data (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Category](#Category)</span></div>
+<span class="param-type">[Category](#Category)</span></div>
 
 <div class="param">meta (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Meta](#Meta)</span></div>
+<span class="param-type">[Meta](#Meta)</span></div>
 
 </div>
 
@@ -7615,7 +7687,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="CategoryTreeCollectionResponse">CategoryTreeCollectionResponse -</a> [Up](#__Models)
+### <a name="CategoryTreeCollectionResponse">CategoryTreeCollectionResponse -</a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -7623,11 +7695,11 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">data (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[CategoryNode]](#CategoryNode)</span></div>
+<span class="param-type">[array[CategoryNode]](#CategoryNode)</span></div>
 
 <div class="param">meta (optional)</div>
 
-<div class="param-desc"><span class="param-type">[CollectionMeta](#CollectionMeta)</span></div>
+<span class="param-type">[CollectionMeta](#CollectionMeta)</span></div>
 
 </div>
 
@@ -7635,7 +7707,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="CollectionMeta">CollectionMeta -</a> [Up](#__Models)
+### <a name="CollectionMeta">CollectionMeta -</a> 
 
 <div class="model-description">Data about the response, including pagination and collection totals.</div>
 
@@ -7643,27 +7715,27 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">total (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> Total number of items return in the result set.</div>
+<span class="param-type">[Integer](#integer)</span> Total number of items return in the result set.</div>
 
 <div class="param">count (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> Total number of items in the collection.</div>
+<span class="param-type">[Integer](#integer)</span> Total number of items in the collection.</div>
 
 <div class="param">per_page (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The amount of items returned in the collection per page, controlled by the limit parameter.</div>
+<span class="param-type">[Integer](#integer)</span> The amount of items returned in the collection per page, controlled by the limit parameter.</div>
 
 <div class="param">current_page (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The page you are currently on within the collection.</div>
+<span class="param-type">[Integer](#integer)</span> The page you are currently on within the collection.</div>
 
 <div class="param">total_pages (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The total number of pages in the collection.</div>
+<span class="param-type">[Integer](#integer)</span> The total number of pages in the collection.</div>
 
 <div class="param">links (optional)</div>
 
-<div class="param-desc"><span class="param-type">[CollectionMeta_links](#CollectionMeta_links)</span></div>
+<span class="param-type">[CollectionMeta_links](#CollectionMeta_links)</span></div>
 
 </div>
 
@@ -7671,7 +7743,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="CollectionMeta_links">CollectionMeta_links -</a> [Up](#__Models)
+### <a name="CollectionMeta_links">CollectionMeta_links -</a> 
 
 <div class="model-description">Pagination links for the previous and next parts of the whole collection.</div>
 
@@ -7679,15 +7751,15 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">previous (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Link to the previous page returned in the response.</div>
+<span class="param-type">[String](#string)</span> Link to the previous page returned in the response.</div>
 
 <div class="param">current (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Link to the current page returned in the response.</div>
+<span class="param-type">[String](#string)</span> Link to the current page returned in the response.</div>
 
 <div class="param">next (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Link to the next page returned in the response.</div>
+<span class="param-type">[String](#string)</span> Link to the next page returned in the response.</div>
 
 </div>
 
@@ -7695,7 +7767,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="ComplexRule">ComplexRule -</a> [Up](#__Models)
+### <a name="ComplexRule">ComplexRule -</a> 
 
 <div class="model-description">Apply price, weight, image, or availabilty adjustments to product, based on a set of conditions. A complex rule's condition must either contain more than one modifier value, or else contain a modifier value and a variant id.</div>
 
@@ -7703,51 +7775,51 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The unique numeric ID of the rule; increments sequentially.</div>
+<span class="param-type">[Integer](#integer)</span> The unique numeric ID of the rule; increments sequentially.</div>
 
 <div class="param">product_id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The unique numeric ID of the product with which the rule is associated; increments sequentially.</div>
+<span class="param-type">[Integer](#integer)</span> The unique numeric ID of the product with which the rule is associated; increments sequentially.</div>
 
 <div class="param">sort_order (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> Priority this rule will be given, when making adjustments to the product properties.</div>
+<span class="param-type">[Integer](#integer)</span> Priority this rule will be given, when making adjustments to the product properties.</div>
 
 <div class="param">enabled (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> Flag for determining whether the rule is to be used when adjusting a product's price, weight, image, or availabilty.</div>
+<span class="param-type">[Boolean](#boolean)</span> Flag for determining whether the rule is to be used when adjusting a product's price, weight, image, or availabilty.</div>
 
 <div class="param">stop (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> Flag for determining whether other rules should not be applied after this rule has been applied.</div>
+<span class="param-type">[Boolean](#boolean)</span> Flag for determining whether other rules should not be applied after this rule has been applied.</div>
 
 <div class="param">price_adjuster (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Adjuster](#Adjuster)</span></div>
+<span class="param-type">[Adjuster](#Adjuster)</span></div>
 
 <div class="param">weight_adjuster (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Adjuster](#Adjuster)</span></div>
+<span class="param-type">[Adjuster](#Adjuster)</span></div>
 
 <div class="param">purchasing_disabled (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> Flag for determining whether the rule should disable purchasing of a product when the conditions are applied.</div>
+<span class="param-type">[Boolean](#boolean)</span> Flag for determining whether the rule should disable purchasing of a product when the conditions are applied.</div>
 
 <div class="param">purchasing_disabled_message (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Message displayed on the storefront when a rule disables the purchasing of a product.</div>
+<span class="param-type">[String](#string)</span> Message displayed on the storefront when a rule disables the purchasing of a product.</div>
 
 <div class="param">purchasing_hidden (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> Flag for determining whether the rule should hide purchasing of a product when the conditions are applied.</div>
+<span class="param-type">[Boolean](#boolean)</span> Flag for determining whether the rule should hide purchasing of a product when the conditions are applied.</div>
 
 <div class="param">image_url (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The URL for an image displayed on the storefront when the conditions are applied.</div>
+<span class="param-type">[String](#string)</span> The URL for an image displayed on the storefront when the conditions are applied.</div>
 
 <div class="param">conditions (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[ComplexRuleCondition]](#ComplexRuleCondition)</span></div>
+<span class="param-type">[array[ComplexRuleCondition]](#ComplexRuleCondition)</span></div>
 
 </div>
 
@@ -7755,7 +7827,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="ComplexRuleCollectionResponse">ComplexRuleCollectionResponse -</a> [Up](#__Models)
+### <a name="ComplexRuleCollectionResponse">ComplexRuleCollectionResponse -</a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -7763,11 +7835,11 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">data (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[ComplexRule]](#ComplexRule)</span></div>
+<span class="param-type">[array[ComplexRule]](#ComplexRule)</span></div>
 
 <div class="param">meta (optional)</div>
 
-<div class="param-desc"><span class="param-type">[CollectionMeta](#CollectionMeta)</span></div>
+<span class="param-type">[CollectionMeta](#CollectionMeta)</span></div>
 
 </div>
 
@@ -7775,7 +7847,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="ComplexRuleCondition">ComplexRuleCondition -</a> [Up](#__Models)
+### <a name="ComplexRuleCondition">ComplexRuleCondition -</a> 
 
 <div class="model-description">Complex rules may return with conditions that apply to one or more variants, or with a single modifier value (if the rules were created using the v2 API or the control panel). Complex rules created or updated in the v3 API must have conditions that either reference multiple `modifier_value_id`'s, or else reference a `modifier_value_id` and a `variant_id`.</div>
 
@@ -7783,27 +7855,27 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The unique numeric ID of the rule condition; increments sequentially.</div>
+<span class="param-type">[Integer](#integer)</span> The unique numeric ID of the rule condition; increments sequentially.</div>
 
 <div class="param">rule_id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The unique numeric ID of the rule with which the condition is associated.</div>
+<span class="param-type">[Integer](#integer)</span> The unique numeric ID of the rule with which the condition is associated.</div>
 
 <div class="param">modifier_id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The unique numeric ID of the modifier with which the rule condition is associated.</div>
+<span class="param-type">[Integer](#integer)</span> The unique numeric ID of the modifier with which the rule condition is associated.</div>
 
 <div class="param">modifier_value_id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The unique numeric ID of the modifier value with which the rule condition is associated.</div>
+<span class="param-type">[Integer](#integer)</span> The unique numeric ID of the modifier value with which the rule condition is associated.</div>
 
 <div class="param">variant_id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The unique numeric ID of the variant the rule condition is associated with.</div>
+<span class="param-type">[Integer](#integer)</span> The unique numeric ID of the variant the rule condition is associated with.</div>
 
 <div class="param">combination_id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> (READ-ONLY:) The unique numeric ID of the SKU (v2 API), or Combination, with which the rule condition is associated. This is to maintain cross-compatibility between v2 and v3.</div>
+<span class="param-type">[Integer](#integer)</span> (READ-ONLY:) The unique numeric ID of the SKU (v2 API), or Combination, with which the rule condition is associated. This is to maintain cross-compatibility between v2 and v3.</div>
 
 </div>
 
@@ -7811,7 +7883,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="ComplexRuleResponse">ComplexRuleResponse -</a> [Up](#__Models)
+### <a name="ComplexRuleResponse">ComplexRuleResponse -</a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -7819,11 +7891,11 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">data (optional)</div>
 
-<div class="param-desc"><span class="param-type">[ComplexRule](#ComplexRule)</span></div>
+<span class="param-type">[ComplexRule](#ComplexRule)</span></div>
 
 <div class="param">meta (optional)</div>
 
-<div class="param-desc"><span class="param-type">[CollectionMeta](#CollectionMeta)</span></div>
+<span class="param-type">[CollectionMeta](#CollectionMeta)</span></div>
 
 </div>
 
@@ -7831,7 +7903,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="CustomField">CustomField -</a> [Up](#__Models)
+### <a name="CustomField">CustomField -</a> 
 
 <div class="model-description">Gets custom fields associated with a product. These allow you to specify additional information that will appear on the product's page, such as a book's ISBN or a DVD's release date.</div>
 
@@ -7839,19 +7911,19 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The unique numeric ID of the custom field; increments sequentially.</div>
+<span class="param-type">[Integer](#integer)</span> The unique numeric ID of the custom field; increments sequentially.</div>
 
 <div class="param">name (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The name of the field, shown on the storefront, orders, etc.</div>
+<span class="param-type">[String](#string)</span> The name of the field, shown on the storefront, orders, etc.</div>
 
 <div class="param">value (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The values or text of the field, shown on the storefront, orders, etc.</div>
+<span class="param-type">[String](#string)</span> The values or text of the field, shown on the storefront, orders, etc.</div>
 
 <div class="param">product_id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The unique numeric identifier for the product with which the field is associated.</div>
+<span class="param-type">[Integer](#integer)</span> The unique numeric identifier for the product with which the field is associated.</div>
 
 </div>
 
@@ -7859,7 +7931,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="CustomUrl">CustomUrl -</a> [Up](#__Models)
+### <a name="CustomUrl">CustomUrl -</a> 
 
 <div class="model-description">The custom URL for the product on the storefront.</div>
 
@@ -7867,11 +7939,11 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">url (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Product URL on the storefront.</div>
+<span class="param-type">[String](#string)</span> Product URL on the storefront.</div>
 
 <div class="param">is_customized (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> Returns `true` if the URL has been changed from its default state (the auto-assigned URL that BigCommerce provides).</div>
+<span class="param-type">[Boolean](#boolean)</span> Returns `true` if the URL has been changed from its default state (the auto-assigned URL that BigCommerce provides).</div>
 
 </div>
 
@@ -7879,35 +7951,35 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="DetailedErrors">DetailedErrors -</a> [Up](#__Models)
+### <a name="DetailedErrors">DetailedErrors -</a> 
 
 </div>
 
 <div class="model">
 
-### <a name="ErrorResponse">ErrorResponse -</a> [Up](#__Models)
+### <a name="ErrorResponse">ErrorResponse -</a> 
 
 <div class="field-items">
 
 <div class="param">status (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The HTTP status code</div>
+<span class="param-type">[Integer](#integer)</span> The HTTP status code</div>
 
 <div class="param">title (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The error title describing the particular error.</div>
+<span class="param-type">[String](#string)</span> The error title describing the particular error.</div>
 
 <div class="param">type (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span></div>
+<span class="param-type">[String](#string)</span></div>
 
 <div class="param">instance (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span></div>
+<span class="param-type">[String](#string)</span></div>
 
 <div class="param">errors (optional)</div>
 
-<div class="param-desc"><span class="param-type">[DetailedErrors](#DetailedErrors)</span></div>
+<span class="param-type">[DetailedErrors](#DetailedErrors)</span></div>
 
 </div>
 
@@ -7915,7 +7987,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="ImageResponse">ImageResponse -</a> [Up](#__Models)
+### <a name="ImageResponse">ImageResponse -</a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -7923,11 +7995,11 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">data (optional)</div>
 
-<div class="param-desc"><span class="param-type">[ResourceImage](#ResourceImage)</span></div>
+<span class="param-type">[ResourceImage](#ResourceImage)</span></div>
 
 <div class="param">meta (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Meta](#Meta)</span></div>
+<span class="param-type">[Meta](#Meta)</span></div>
 
 </div>
 
@@ -7935,7 +8007,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="Meta">Meta -</a> [Up](#__Models)
+### <a name="Meta">Meta -</a> 
 
 <div class="model-description">Empty meta object; might be used later.</div>
 
@@ -7943,7 +8015,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="MetaFieldCollectionResponse">MetaFieldCollectionResponse -</a> [Up](#__Models)
+### <a name="MetaFieldCollectionResponse">MetaFieldCollectionResponse -</a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -7951,11 +8023,11 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">data (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[Metafield]](#Metafield)</span></div>
+<span class="param-type">[array[Metafield]](#Metafield)</span></div>
 
 <div class="param">meta (optional)</div>
 
-<div class="param-desc"><span class="param-type">[CollectionMeta](#CollectionMeta)</span></div>
+<span class="param-type">[CollectionMeta](#CollectionMeta)</span></div>
 
 </div>
 
@@ -7963,7 +8035,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="Metafield">Metafield -</a> [Up](#__Models)
+### <a name="Metafield">Metafield -</a> 
 
 <div class="model-description">Allows app partners to write custom data to various resources in the API.</div>
 
@@ -7971,15 +8043,15 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The unique identifier for the metafields.</div>
+<span class="param-type">[Integer](#integer)</span> The unique identifier for the metafields.</div>
 
 <div class="param">description (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Description for the metafields.</div>
+<span class="param-type">[String](#string)</span> Description for the metafields.</div>
 
 <div class="param">permission_set (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Determines whether the field is completely private to the app that owns the field (`app_only`), or visible to other API consumers (`read`), or completely open for reading and writing to other apps (`write`).</div>
+<span class="param-type">[String](#string)</span> Determines whether the field is completely private to the app that owns the field (`app_only`), or visible to other API consumers (`read`), or completely open for reading and writing to other apps (`write`).</div>
 
 <div class="param-enum-header">Enum:</div>
 
@@ -7991,11 +8063,11 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">namespace (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Namespace for the metafield, for organizational purposes.</div>
+<span class="param-type">[String](#string)</span> Namespace for the metafield, for organizational purposes.</div>
 
 <div class="param">resource_type (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The type of resource with which the metafield is associated.</div>
+<span class="param-type">[String](#string)</span> The type of resource with which the metafield is associated.</div>
 
 <div class="param-enum-header">Enum:</div>
 
@@ -8009,23 +8081,23 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">resource_id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The unique identifier for the resource with which the metafield is associated.</div>
+<span class="param-type">[Integer](#integer)</span> The unique identifier for the resource with which the metafield is associated.</div>
 
 <div class="param">key (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The name of the field, for example: `location_id`, `color`.</div>
+<span class="param-type">[String](#string)</span> The name of the field, for example: `location_id`, `color`.</div>
 
 <div class="param">value (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The value of the field, for example: `1`, `blue`</div>
+<span class="param-type">[String](#string)</span> The value of the field, for example: `1`, `blue`</div>
 
 <div class="param">created_at (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Date](#DateTime)</span> Date and time of the metafield's creation. format: date-time</div>
+<span class="param-type">[Date](#DateTime)</span> Date and time of the metafield's creation. format: date-time</div>
 
 <div class="param">updated_at (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Date](#DateTime)</span> Date and time when the metafield was last updated. format: date-time</div>
+<span class="param-type">[Date](#DateTime)</span> Date and time when the metafield was last updated. format: date-time</div>
 
 </div>
 
@@ -8033,7 +8105,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="MetafieldResponse">MetafieldResponse -</a> [Up](#__Models)
+### <a name="MetafieldResponse">MetafieldResponse -</a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -8041,11 +8113,11 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">data (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Metafield](#Metafield)</span></div>
+<span class="param-type">[Metafield](#Metafield)</span></div>
 
 <div class="param">meta (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Meta](#Meta)</span></div>
+<span class="param-type">[Meta](#Meta)</span></div>
 
 </div>
 
@@ -8053,29 +8125,29 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="Modifier">Modifier -</a> [Up](#__Models)
+### <a name="Modifier">Modifier -</a> 
 
 <div class="field-items">
 
 <div class="param">id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The unique numeric ID of the modifier; increments sequentially.</div>
+<span class="param-type">[Integer](#integer)</span> The unique numeric ID of the modifier; increments sequentially.</div>
 
 <div class="param">product_id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The unique numeric ID of the product to which the option belongs.</div>
+<span class="param-type">[Integer](#integer)</span> The unique numeric ID of the product to which the option belongs.</div>
 
 <div class="param">name (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The unique option name. Auto-generated from the display name, a timestamp, and the product ID.</div>
+<span class="param-type">[String](#string)</span> The unique option name. Auto-generated from the display name, a timestamp, and the product ID.</div>
 
 <div class="param">display_name (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The name of the option shown on the storefront.</div>
+<span class="param-type">[String](#string)</span> The name of the option shown on the storefront.</div>
 
 <div class="param">type (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The type of modifier, which determines how it will display on the storefront. For reference, the former v2 API values are: D = date, C = checkbox, F = file, T = text, MT = multi_line_text, N = numbers_only_text, RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, CS = swatch.</div>
+<span class="param-type">[String](#string)</span> The type of modifier, which determines how it will display on the storefront. For reference, the former v2 API values are: D = date, C = checkbox, F = file, T = text, MT = multi_line_text, N = numbers_only_text, RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, CS = swatch.</div>
 
 <div class="param-enum-header">Enum:</div>
 
@@ -8105,15 +8177,15 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">required (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> Whether or not this modifer is required at checkout.</div>
+<span class="param-type">[Boolean](#boolean)</span> Whether or not this modifer is required at checkout.</div>
 
 <div class="param">config (optional)</div>
 
-<div class="param-desc"><span class="param-type">[OptionConfig](#OptionConfig)</span></div>
+<span class="param-type">[OptionConfig](#OptionConfig)</span></div>
 
 <div class="param">option_values (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[ModifierValue]](#ModifierValue)</span></div>
+<span class="param-type">[array[ModifierValue]](#ModifierValue)</span></div>
 
 </div>
 
@@ -8121,7 +8193,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="ModifierCollectionResponse">ModifierCollectionResponse -</a> [Up](#__Models)
+### <a name="ModifierCollectionResponse">ModifierCollectionResponse -</a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -8129,11 +8201,11 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">data (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[Modifier]](#Modifier)</span></div>
+<span class="param-type">[array[Modifier]](#Modifier)</span></div>
 
 <div class="param">meta (optional)</div>
 
-<div class="param-desc"><span class="param-type">[CollectionMeta](#CollectionMeta)</span></div>
+<span class="param-type">[CollectionMeta](#CollectionMeta)</span></div>
 
 </div>
 
@@ -8141,7 +8213,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="ModifierResponse">ModifierResponse -</a> [Up](#__Models)
+### <a name="ModifierResponse">ModifierResponse -</a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -8149,11 +8221,11 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">data (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Modifier](#Modifier)</span></div>
+<span class="param-type">[Modifier](#Modifier)</span></div>
 
 <div class="param">meta (optional)</div>
 
-<div class="param-desc"><span class="param-type">[CollectionMeta](#CollectionMeta)</span></div>
+<span class="param-type">[CollectionMeta](#CollectionMeta)</span></div>
 
 </div>
 
@@ -8161,33 +8233,33 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="ModifierValue">ModifierValue -</a> [Up](#__Models)
+### <a name="ModifierValue">ModifierValue -</a> 
 
 <div class="field-items">
 
 <div class="param">id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The unique numeric ID of the value; increments sequentially.</div>
+<span class="param-type">[Integer](#integer)</span> The unique numeric ID of the value; increments sequentially.</div>
 
 <div class="param">is_default (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> The flag for preselecting a value as the default on the storefront. This field is not supported for swatch options/modifiers.</div>
+<span class="param-type">[Boolean](#boolean)</span> The flag for preselecting a value as the default on the storefront. This field is not supported for swatch options/modifiers.</div>
 
 <div class="param">label (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The text display identifying the value on the storefront.</div>
+<span class="param-type">[String](#string)</span> The text display identifying the value on the storefront.</div>
 
 <div class="param">sort_order (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The order in which the value will be displayed on the product page.</div>
+<span class="param-type">[Integer](#integer)</span> The order in which the value will be displayed on the product page.</div>
 
 <div class="param">value_data (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Object](#object)</span> Extra data describing the value, based on the type of option or modifier with which the value is associated. `swatch` requires an array of colors, with up to three hexidecimal color keys; `product list` requires a `product_id`; and `checkbox` requires a boolean flag, called `checked_value`, to determine which value is considered to be the checked state.</div>
+<span class="param-type">[Object](#object)</span> Extra data describing the value, based on the type of option or modifier with which the value is associated. `swatch` requires an array of colors, with up to three hexidecimal color keys; `product list` requires a `product_id`; and `checkbox` requires a boolean flag, called `checked_value`, to determine which value is considered to be the checked state.</div>
 
 <div class="param">adjusters (optional)</div>
 
-<div class="param-desc"><span class="param-type">[ModifierValue_adjusters](#ModifierValue_adjusters)</span></div>
+<span class="param-type">[ModifierValue_adjusters](#ModifierValue_adjusters)</span></div>
 
 </div>
 
@@ -8195,25 +8267,25 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="ModifierValue_adjusters">ModifierValue_adjusters -</a> [Up](#__Models)
+### <a name="ModifierValue_adjusters">ModifierValue_adjusters -</a> 
 
 <div class="field-items">
 
 <div class="param">price (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Adjuster](#Adjuster)</span></div>
+<span class="param-type">[Adjuster](#Adjuster)</span></div>
 
 <div class="param">weight (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Adjuster](#Adjuster)</span></div>
+<span class="param-type">[Adjuster](#Adjuster)</span></div>
 
 <div class="param">image_url (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The URL for an image displayed on the storefront when the modifier value is selected.</div>
+<span class="param-type">[String](#string)</span> The URL for an image displayed on the storefront when the modifier value is selected.</div>
 
 <div class="param">purchasing_disabled (optional)</div>
 
-<div class="param-desc"><span class="param-type">[ModifierValue_adjusters_purchasing_disabled](#ModifierValue_adjusters_purchasing_disabled)</span></div>
+<span class="param-type">[ModifierValue_adjusters_purchasing_disabled](#ModifierValue_adjusters_purchasing_disabled)</span></div>
 
 </div>
 
@@ -8221,17 +8293,17 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="ModifierValue_adjusters_purchasing_disabled">ModifierValue_adjusters_purchasing_disabled -</a> [Up](#__Models)
+### <a name="ModifierValue_adjusters_purchasing_disabled">ModifierValue_adjusters_purchasing_disabled -</a> 
 
 <div class="field-items">
 
 <div class="param">status (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> Flag for whether the modifier value disables purchasing when selected on the storefront. This can be used for temporarily disabling a particular modifier value.</div>
+<span class="param-type">[Boolean](#boolean)</span> Flag for whether the modifier value disables purchasing when selected on the storefront. This can be used for temporarily disabling a particular modifier value.</div>
 
 <div class="param">message (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The message displayed on the storefront when the purchasing disabled status is `true`.</div>
+<span class="param-type">[String](#string)</span> The message displayed on the storefront when the purchasing disabled status is `true`.</div>
 
 </div>
 
@@ -8239,7 +8311,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="NotFound">NotFound -</a> [Up](#__Models)
+### <a name="NotFound">NotFound -</a> 
 
 <div class="model-description">Error payload for the BigCommerce API.</div>
 
@@ -8247,19 +8319,19 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">status (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> 404 HTTP status code.</div>
+<span class="param-type">[Integer](#integer)</span> 404 HTTP status code.</div>
 
 <div class="param">title (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The error title describing the particular error.</div>
+<span class="param-type">[String](#string)</span> The error title describing the particular error.</div>
 
 <div class="param">type (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span></div>
+<span class="param-type">[String](#string)</span></div>
 
 <div class="param">instance (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span></div>
+<span class="param-type">[String](#string)</span></div>
 
 </div>
 
@@ -8267,29 +8339,29 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="Option">Option -</a> [Up](#__Models)
+### <a name="Option">Option -</a> 
 
 <div class="field-items">
 
 <div class="param">id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The unique numeric ID of the option; increments sequentially.</div>
+<span class="param-type">[Integer](#integer)</span> The unique numeric ID of the option; increments sequentially.</div>
 
 <div class="param">product_id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The unique numeric ID of the product to which the option belongs.</div>
+<span class="param-type">[Integer](#integer)</span> The unique numeric ID of the product to which the option belongs.</div>
 
 <div class="param">name (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The unique option name, auto-generated from the display name, a timestamp, and the product ID.</div>
+<span class="param-type">[String](#string)</span> The unique option name, auto-generated from the display name, a timestamp, and the product ID.</div>
 
 <div class="param">display_name (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The name of the option shown on the storefront.</div>
+<span class="param-type">[String](#string)</span> The name of the option shown on the storefront.</div>
 
 <div class="param">type (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The type of option, which determines how it will display on the storefront. For reference, the former v2 API values are: RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, CS = swatch.</div>
+<span class="param-type">[String](#string)</span> The type of option, which determines how it will display on the storefront. For reference, the former v2 API values are: RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, CS = swatch.</div>
 
 <div class="param-enum-header">Enum:</div>
 
@@ -8307,11 +8379,11 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">config (optional)</div>
 
-<div class="param-desc"><span class="param-type">[OptionConfig](#OptionConfig)</span></div>
+<span class="param-type">[OptionConfig](#OptionConfig)</span></div>
 
 <div class="param">option_values (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[OptionValue]](#OptionValue)</span></div>
+<span class="param-type">[array[OptionValue]](#OptionValue)</span></div>
 
 </div>
 
@@ -8319,7 +8391,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="OptionCollectionResponse">OptionCollectionResponse -</a> [Up](#__Models)
+### <a name="OptionCollectionResponse">OptionCollectionResponse -</a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -8327,11 +8399,11 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">data (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[Option]](#Option)</span></div>
+<span class="param-type">[array[Option]](#Option)</span></div>
 
 <div class="param">meta (optional)</div>
 
-<div class="param-desc"><span class="param-type">[CollectionMeta](#CollectionMeta)</span></div>
+<span class="param-type">[CollectionMeta](#CollectionMeta)</span></div>
 
 </div>
 
@@ -8339,29 +8411,29 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="OptionConfig">OptionConfig -</a> [Up](#__Models)
+### <a name="OptionConfig">OptionConfig -</a> 
 
 <div class="field-items">
 
 <div class="param">default_value (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> (date, text, multi_line_text, numbers_only_text) The default value. Shown on a date option as an ISO-8601–formatted string, or on a text option as a string.</div>
+<span class="param-type">[String](#string)</span> (date, text, multi_line_text, numbers_only_text) The default value. Shown on a date option as an ISO-8601–formatted string, or on a text option as a string.</div>
 
 <div class="param">checked_by_default (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> (checkbox) Flag for setting the checkbox to be checked by default.</div>
+<span class="param-type">[Boolean](#boolean)</span> (checkbox) Flag for setting the checkbox to be checked by default.</div>
 
 <div class="param">checkbox_label (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> (checkbox) Label displayed for the checkbox option.</div>
+<span class="param-type">[String](#string)</span> (checkbox) Label displayed for the checkbox option.</div>
 
 <div class="param">date_limited (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> (date) Flag to limit the dates allowed to be entered on a date option.</div>
+<span class="param-type">[Boolean](#boolean)</span> (date) Flag to limit the dates allowed to be entered on a date option.</div>
 
 <div class="param">date_limit_mode (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> (date) The type of limit that is allowed to be entered on a date option.</div>
+<span class="param-type">[String](#string)</span> (date) The type of limit that is allowed to be entered on a date option.</div>
 
 <div class="param-enum-header">Enum:</div>
 
@@ -8373,15 +8445,15 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">date_earliest_value (optional)</div>
 
-<div class="param-desc"><span class="param-type">[date](#date)</span> (date) The earliest date allowed to be entered on the date option, as an ISO-8601 formatted string. format: date</div>
+<span class="param-type">[date](#date)</span> (date) The earliest date allowed to be entered on the date option, as an ISO-8601 formatted string. format: date</div>
 
 <div class="param">date_latest_value (optional)</div>
 
-<div class="param-desc"><span class="param-type">[date](#date)</span> (date) The latest date allowed to be entered on the date option, as an ISO-8601 formatted string. format: date</div>
+<span class="param-type">[date](#date)</span> (date) The latest date allowed to be entered on the date option, as an ISO-8601 formatted string. format: date</div>
 
 <div class="param">file_types_mode (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> (file) The kind of restriction on the file types that can be uploaded with a file upload option. Values: `specific` - restricts uploads to particular file types; `all` - allows all file types.</div>
+<span class="param-type">[String](#string)</span> (file) The kind of restriction on the file types that can be uploaded with a file upload option. Values: `specific` - restricts uploads to particular file types; `all` - allows all file types.</div>
 
 <div class="param-enum-header">Enum:</div>
 
@@ -8391,43 +8463,43 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">file_types_supported (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[String]](#string)</span> (file) The type of files allowed to be uploaded if the `file_type_option` is set to `specific`. Values: `images` - Allows upload of image MIME types (`bmp`,`gif`,`jpg`,`jpeg`,`jpe`,`jif`,`jfif`,`jfi`,`png`,`wbmp`,`xbm`,`tiff`). `documents` - Allows upload of document MIME types (`txt`,`pdf`,`rtf`,`doc`,`docx`,`xls`,`xlsx`,`accdb`,`mdb`,`one`,`pps`,`ppsx`,`ppt`,`pptx`,`pub`,`odt`,`ods`,`odp`,`odg`,`odf`). `other` - Allows file types defined in the `file_types_other` array.</div>
+<span class="param-type">[array[String]](#string)</span> (file) The type of files allowed to be uploaded if the `file_type_option` is set to `specific`. Values: `images` - Allows upload of image MIME types (`bmp`,`gif`,`jpg`,`jpeg`,`jpe`,`jif`,`jfif`,`jfi`,`png`,`wbmp`,`xbm`,`tiff`). `documents` - Allows upload of document MIME types (`txt`,`pdf`,`rtf`,`doc`,`docx`,`xls`,`xlsx`,`accdb`,`mdb`,`one`,`pps`,`ppsx`,`ppt`,`pptx`,`pub`,`odt`,`ods`,`odp`,`odg`,`odf`). `other` - Allows file types defined in the `file_types_other` array.</div>
 
 <div class="param">file_types_other (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[String]](#string)</span> (file) A list of other file types allowed with the file upload option.</div>
+<span class="param-type">[array[String]](#string)</span> (file) A list of other file types allowed with the file upload option.</div>
 
 <div class="param">file_max_size (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> (file) The maximum size for a file that can be used with the file upload option.</div>
+<span class="param-type">[Integer](#integer)</span> (file) The maximum size for a file that can be used with the file upload option.</div>
 
 <div class="param">text_characters_limited (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> (text, multi_line_text) Flag to validate the length of a text or multi-line text input.</div>
+<span class="param-type">[Boolean](#boolean)</span> (text, multi_line_text) Flag to validate the length of a text or multi-line text input.</div>
 
 <div class="param">text_min_length (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> (text, multi_line_text) The minimum length allowed for a text or multi-line text option.</div>
+<span class="param-type">[Integer](#integer)</span> (text, multi_line_text) The minimum length allowed for a text or multi-line text option.</div>
 
 <div class="param">text_max_length (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> (text, multi_line_text) The maximum length allowed for a text or multi line text option.</div>
+<span class="param-type">[Integer](#integer)</span> (text, multi_line_text) The maximum length allowed for a text or multi line text option.</div>
 
 <div class="param">text_lines_limited (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> (multi_line_text) Flag to validate the maximum number of lines allowed on a multi-line text input.</div>
+<span class="param-type">[Boolean](#boolean)</span> (multi_line_text) Flag to validate the maximum number of lines allowed on a multi-line text input.</div>
 
 <div class="param">text_max_lines (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> (multi_line_text) The maximum number of lines allowed on a multi-line text input.</div>
+<span class="param-type">[Integer](#integer)</span> (multi_line_text) The maximum number of lines allowed on a multi-line text input.</div>
 
 <div class="param">number_limited (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> (numbers_only_text) Flag to limit the value of a number option.</div>
+<span class="param-type">[Boolean](#boolean)</span> (numbers_only_text) Flag to limit the value of a number option.</div>
 
 <div class="param">number_limit_mode (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> (numbers_only_text) The type of limit on values entered for a number option.</div>
+<span class="param-type">[String](#string)</span> (numbers_only_text) The type of limit on values entered for a number option.</div>
 
 <div class="param-enum-header">Enum:</div>
 
@@ -8439,27 +8511,27 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">number_lowest_value (optional)</div>
 
-<div class="param-desc"><span class="param-type">[BigDecimal](#number)</span> (numbers_only_text) The lowest allowed value for a number option if `number_limited` is true.</div>
+<span class="param-type">[BigDecimal](#number)</span> (numbers_only_text) The lowest allowed value for a number option if `number_limited` is true.</div>
 
 <div class="param">number_highest_value (optional)</div>
 
-<div class="param-desc"><span class="param-type">[BigDecimal](#number)</span> (numbers_only_text) The highest allowed value for a number option if `number_limited` is true.</div>
+<span class="param-type">[BigDecimal](#number)</span> (numbers_only_text) The highest allowed value for a number option if `number_limited` is true.</div>
 
 <div class="param">number_integers_only (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> (numbers_only_text) Flag to limit the input on a number option to whole numbers only.</div>
+<span class="param-type">[Boolean](#boolean)</span> (numbers_only_text) Flag to limit the input on a number option to whole numbers only.</div>
 
 <div class="param">product_list_adjusts_inventory (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> (product_list, product_list_with_images) Flag for automatically adjusting inventory on a product included in the list.</div>
+<span class="param-type">[Boolean](#boolean)</span> (product_list, product_list_with_images) Flag for automatically adjusting inventory on a product included in the list.</div>
 
 <div class="param">product_list_adjusts_pricing (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> (product_list, product_list_with_images) Flag to add the optional product's price to the main product's price.</div>
+<span class="param-type">[Boolean](#boolean)</span> (product_list, product_list_with_images) Flag to add the optional product's price to the main product's price.</div>
 
 <div class="param">product_list_shipping_calc (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> (product_list, product_list_with_images) How to factor the optional product's weight and package dimensions into the shipping quote. Values: `none` - don't adjust; `weight` - use shipping weight only; `package` - use weight and dimensions.</div>
+<span class="param-type">[String](#string)</span> (product_list, product_list_with_images) How to factor the optional product's weight and package dimensions into the shipping quote. Values: `none` - don't adjust; `weight` - use shipping weight only; `package` - use weight and dimensions.</div>
 
 <div class="param-enum-header">Enum:</div>
 
@@ -8475,7 +8547,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="OptionResponse">OptionResponse -</a> [Up](#__Models)
+### <a name="OptionResponse">OptionResponse -</a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -8483,11 +8555,11 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">data (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Option](#Option)</span></div>
+<span class="param-type">[Option](#Option)</span></div>
 
 <div class="param">meta (optional)</div>
 
-<div class="param-desc"><span class="param-type">[CollectionMeta](#CollectionMeta)</span></div>
+<span class="param-type">[CollectionMeta](#CollectionMeta)</span></div>
 
 </div>
 
@@ -8495,29 +8567,29 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="OptionValue">OptionValue -</a> [Up](#__Models)
+### <a name="OptionValue">OptionValue -</a> 
 
 <div class="field-items">
 
 <div class="param">id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The unique numeric ID of the value; increments sequentially.</div>
+<span class="param-type">[Integer](#integer)</span> The unique numeric ID of the value; increments sequentially.</div>
 
 <div class="param">is_default (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> The flag for preselecting a value as the default on the storefront. This field is not supported for swatch options/modifiers.</div>
+<span class="param-type">[Boolean](#boolean)</span> The flag for preselecting a value as the default on the storefront. This field is not supported for swatch options/modifiers.</div>
 
 <div class="param">label (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The text display identifying the value on the storefront.</div>
+<span class="param-type">[String](#string)</span> The text display identifying the value on the storefront.</div>
 
 <div class="param">sort_order (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The order in which the value will be displayed on the product page.</div>
+<span class="param-type">[Integer](#integer)</span> The order in which the value will be displayed on the product page.</div>
 
 <div class="param">value_data (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Object](#object)</span> Extra data describing the value, based on the type of option or modifier with which the value is associated. `swatch` requires an array of colors, with up to three hexidecimal color keys; `product list` requires a `product_id`; and `checkbox` requires a boolean flag, called `checked_value`, to determine which value is considered to be the checked state.</div>
+<span class="param-type">[Object](#object)</span> Extra data describing the value, based on the type of option or modifier with which the value is associated. `swatch` requires an array of colors, with up to three hexidecimal color keys; `product list` requires a `product_id`; and `checkbox` requires a boolean flag, called `checked_value`, to determine which value is considered to be the checked state.</div>
 
 </div>
 
@@ -8525,25 +8597,25 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="OptionValueShort">OptionValueShort -</a> [Up](#__Models)
+### <a name="OptionValueShort">OptionValueShort -</a> 
 
 <div class="field-items">
 
 <div class="param">id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span></div>
+<span class="param-type">[Integer](#integer)</span></div>
 
 <div class="param">option_id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span></div>
+<span class="param-type">[Integer](#integer)</span></div>
 
 <div class="param">option_display_name (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The name of the option.</div>
+<span class="param-type">[String](#string)</span> The name of the option.</div>
 
 <div class="param">label (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The label of the option value.</div>
+<span class="param-type">[String](#string)</span> The label of the option value.</div>
 
 </div>
 
@@ -8551,17 +8623,17 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="OptionValueShortPost">OptionValueShortPost -</a> [Up](#__Models)
+### <a name="OptionValueShortPost">OptionValueShortPost -</a> 
 
 <div class="field-items">
 
 <div class="param">option_display_name (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The name of the option to be created on POST.</div>
+<span class="param-type">[String](#string)</span> The name of the option to be created on POST.</div>
 
 <div class="param">label (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The label of the option value to be created on POST.</div>
+<span class="param-type">[String](#string)</span> The label of the option value to be created on POST.</div>
 
 </div>
 
@@ -8569,7 +8641,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="Product">Product -</a> [Up](#__Models)
+### <a name="Product">Product -</a> 
 
 <div class="model-description">A BigCommerce Product object describes a single purchasable unit or a collection of purchasable units.</div>
 
@@ -8577,15 +8649,15 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The unique numeric ID of the product; increments sequentially.</div>
+<span class="param-type">[Integer](#integer)</span> The unique numeric ID of the product; increments sequentially.</div>
 
 <div class="param">name (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The product name.</div>
+<span class="param-type">[String](#string)</span> The product name.</div>
 
 <div class="param">type (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The product type: physical - a physical stock unit; digital - a digital download.</div>
+<span class="param-type">[String](#string)</span> The product type: physical - a physical stock unit; digital - a digital download.</div>
 
 <div class="param-enum-header">Enum:</div>
 
@@ -8595,75 +8667,75 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">sku (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> User-defined product code/stock keeping unit (SKU).</div>
+<span class="param-type">[String](#string)</span> User-defined product code/stock keeping unit (SKU).</div>
 
 <div class="param">description (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The product description, which can include HTML formatting.</div>
+<span class="param-type">[String](#string)</span> The product description, which can include HTML formatting.</div>
 
 <div class="param">weight (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Double](#double)</span> Weight of the product, which can be used when calculating shipping costs. format: double</div>
+<span class="param-type">[Double](#double)</span> Weight of the product, which can be used when calculating shipping costs. format: double</div>
 
 <div class="param">width (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Double](#double)</span> Width of the product, which can be used when calculating shipping costs. format: double</div>
+<span class="param-type">[Double](#double)</span> Width of the product, which can be used when calculating shipping costs. format: double</div>
 
 <div class="param">depth (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Double](#double)</span> Depth of the product, which can be used when calculating shipping costs. format: double</div>
+<span class="param-type">[Double](#double)</span> Depth of the product, which can be used when calculating shipping costs. format: double</div>
 
 <div class="param">height (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Double](#double)</span> Height of the product, which can be used when calculating shipping costs. format: double</div>
+<span class="param-type">[Double](#double)</span> Height of the product, which can be used when calculating shipping costs. format: double</div>
 
 <div class="param">price (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Double](#double)</span> The price of the product. The price should include or exclude tax, based on the store settings. format: double</div>
+<span class="param-type">[Double](#double)</span> The price of the product. The price should include or exclude tax, based on the store settings. format: double</div>
 
 <div class="param">cost_price (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Double](#double)</span> The cost price of the product. Stored for reference only; it is not used or displayed anywhere on the store. format: double</div>
+<span class="param-type">[Double](#double)</span> The cost price of the product. Stored for reference only; it is not used or displayed anywhere on the store. format: double</div>
 
 <div class="param">retail_price (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Double](#double)</span> The retail cost of the product. If entered, the retail cost price will be shown on the product page. format: double</div>
+<span class="param-type">[Double](#double)</span> The retail cost of the product. If entered, the retail cost price will be shown on the product page. format: double</div>
 
 <div class="param">sale_price (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Double](#double)</span> If entered, the sale price will be used instead of value in the price field when calculating the product's cost. format: double</div>
+<span class="param-type">[Double](#double)</span> If entered, the sale price will be used instead of value in the price field when calculating the product's cost. format: double</div>
 
 <div class="param">tax_class_id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The ID of the tax class applied to the product. (NOTE: Value ignored if automatic tax is enabled.)</div>
+<span class="param-type">[Integer](#integer)</span> The ID of the tax class applied to the product. (NOTE: Value ignored if automatic tax is enabled.)</div>
 
 <div class="param">product_tax_code (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Accepts AvaTax System Tax Codes, which identify products and services that fall into special sales-tax categories. By using these codes, merchants who subscribe to Avalara Premium can calculate sales taxes more accurately. Stores without Avalara Premium will ignore the code when calculating sales tax. Do not pass more than one code. The codes are case-sensitive. For details, please see Avalara's documentation.</div>
+<span class="param-type">[String](#string)</span> Accepts AvaTax System Tax Codes, which identify products and services that fall into special sales-tax categories. By using these codes, merchants who subscribe to Avalara Premium can calculate sales taxes more accurately. Stores without Avalara Premium will ignore the code when calculating sales tax. Do not pass more than one code. The codes are case-sensitive. For details, please see Avalara's documentation.</div>
 
 <div class="param">calculated_price (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Double](#double)</span> The price of the product, unless a `sale_price` is set. format: double</div>
+<span class="param-type">[Double](#double)</span> The price of the product, unless a `sale_price` is set. format: double</div>
 
 <div class="param">categories (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[Integer]](#integer)</span> An array of IDs for the categories to which this product belongs. When updating a product, if an array of categories is supplied, all product categories will be overwritten. Does not accept more than 1,000 ID values.</div>
+<span class="param-type">[array[Integer]](#integer)</span> An array of IDs for the categories to which this product belongs. When updating a product, if an array of categories is supplied, all product categories will be overwritten. Does not accept more than 1,000 ID values.</div>
 
 <div class="param">brand_id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The ID associated with the product's brand.</div>
+<span class="param-type">[Integer](#integer)</span> The ID associated with the product's brand.</div>
 
 <div class="param">inventory_level (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> Current inventory level of the product. Simple inventory tracking must be enabled (See the inventory_tracking field) for this to take any effect.</div>
+<span class="param-type">[Integer](#integer)</span> Current inventory level of the product. Simple inventory tracking must be enabled (See the inventory_tracking field) for this to take any effect.</div>
 
 <div class="param">inventory_warning_level (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> Inventory Warning level for the product. When the product's inventory level drops below the warning level, the store owner will be informed. Simple inventory tracking must be enabled (see the `inventory_tracking` field) for this to take any effect.</div>
+<span class="param-type">[Integer](#integer)</span> Inventory Warning level for the product. When the product's inventory level drops below the warning level, the store owner will be informed. Simple inventory tracking must be enabled (see the `inventory_tracking` field) for this to take any effect.</div>
 
 <div class="param">inventory_tracking (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The type of inventory tracking for the product. Values are: none - inventory levels will not be tracked; product - inventory levels will be tracked using the `inventory_level` and `inventory_warning_level` fields; variant - inventory levels will be tracked based on variants, which maintain their own warning levels and inventory levels.</div>
+<span class="param-type">[String](#string)</span> The type of inventory tracking for the product. Values are: none - inventory levels will not be tracked; product - inventory levels will be tracked using the `inventory_level` and `inventory_warning_level` fields; variant - inventory levels will be tracked based on variants, which maintain their own warning levels and inventory levels.</div>
 
 <div class="param-enum-header">Enum:</div>
 
@@ -8675,43 +8747,43 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">fixed_cost_shipping_price (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> A fixed shipping cost for the product. If defined, this value will be used during checkout instead of normal shipping-cost calculation.</div>
+<span class="param-type">[Integer](#integer)</span> A fixed shipping cost for the product. If defined, this value will be used during checkout instead of normal shipping-cost calculation.</div>
 
 <div class="param">is_free_shipping (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> Flag used to indicate whether the product has free shipping. If `true`, the shipping cost for the product will be zero.</div>
+<span class="param-type">[Boolean](#boolean)</span> Flag used to indicate whether the product has free shipping. If `true`, the shipping cost for the product will be zero.</div>
 
 <div class="param">is_visible (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> Flag to determine whether the product should be displayed to customers browsing the store. If `true`, the product will be displayed. If `false`, the product will be hidden from view.</div>
+<span class="param-type">[Boolean](#boolean)</span> Flag to determine whether the product should be displayed to customers browsing the store. If `true`, the product will be displayed. If `false`, the product will be hidden from view.</div>
 
 <div class="param">is_featured (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> Flag to determine whether the product should be included in the `featured products` panel when viewing the store.</div>
+<span class="param-type">[Boolean](#boolean)</span> Flag to determine whether the product should be included in the `featured products` panel when viewing the store.</div>
 
 <div class="param">warranty (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Warranty information displayed on the product page. Can include HTML formatting.</div>
+<span class="param-type">[String](#string)</span> Warranty information displayed on the product page. Can include HTML formatting.</div>
 
 <div class="param">bin_picking_number (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The BIN picking number for the product.</div>
+<span class="param-type">[String](#string)</span> The BIN picking number for the product.</div>
 
 <div class="param">layout_file (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The layout template file used to render this product.</div>
+<span class="param-type">[String](#string)</span> The layout template file used to render this product.</div>
 
 <div class="param">upc (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The product UPC code, which is used in feeds for shopping comparison sites and external channel integrations.</div>
+<span class="param-type">[String](#string)</span> The product UPC code, which is used in feeds for shopping comparison sites and external channel integrations.</div>
 
 <div class="param">search_keywords (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> A comma-separated list of keywords that can be used to locate the product when searching the store.</div>
+<span class="param-type">[String](#string)</span> A comma-separated list of keywords that can be used to locate the product when searching the store.</div>
 
 <div class="param">availability (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Availability of the product. Availability options are: available - the product can be purchased in the storefront; disabled - the product is listed in the storefront, but cannot be purchased; preorder - the product is listed for pre-orders.</div>
+<span class="param-type">[String](#string)</span> Availability of the product. Availability options are: available - the product can be purchased in the storefront; disabled - the product is listed in the storefront, but cannot be purchased; preorder - the product is listed for pre-orders.</div>
 
 <div class="param-enum-header">Enum:</div>
 
@@ -8723,11 +8795,11 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">availability_description (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Availability text displayed on the checkout page, under the product title. Tells the customer how long it will normally take to ship this product, such as 'Usually ships in 24 hours.'</div>
+<span class="param-type">[String](#string)</span> Availability text displayed on the checkout page, under the product title. Tells the customer how long it will normally take to ship this product, such as 'Usually ships in 24 hours.'</div>
 
 <div class="param">gift_wrapping_options_type (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Type of gift-wrapping options. Values: `any` - allow any gift-wrapping options in the store; `none` - disallow gift wrapping on the product; `list` – provide a list of IDs in the `gift_wrapping_options_list` field.</div>
+<span class="param-type">[String](#string)</span> Type of gift-wrapping options. Values: `any` - allow any gift-wrapping options in the store; `none` - disallow gift wrapping on the product; `list` – provide a list of IDs in the `gift_wrapping_options_list` field.</div>
 
 <div class="param-enum-header">Enum:</div>
 
@@ -8739,95 +8811,95 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">gift_wrapping_options_list (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[Integer]](#integer)</span> A list of gift-wrapping option IDs.</div>
+<span class="param-type">[array[Integer]](#integer)</span> A list of gift-wrapping option IDs.</div>
 
 <div class="param">sort_order (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> Priority to give this product when included in product lists on category pages and in search results. Lower integers will place the product closer to the top of the results.</div>
+<span class="param-type">[Integer](#integer)</span> Priority to give this product when included in product lists on category pages and in search results. Lower integers will place the product closer to the top of the results.</div>
 
 <div class="param">condition (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The product condition. Will be shown on the product page if the `is_condition_shown` field's value is `true`. Possible values: `New`, `Used`, `Refurbished`.</div>
+<span class="param-type">[String](#string)</span> The product condition. Will be shown on the product page if the `is_condition_shown` field's value is `true`. Possible values: `New`, `Used`, `Refurbished`.</div>
 
 <div class="param">is_condition_shown (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> Flag used to determine whether the product condition is shown to the customer on the product page.</div>
+<span class="param-type">[Boolean](#boolean)</span> Flag used to determine whether the product condition is shown to the customer on the product page.</div>
 
 <div class="param">order_quantity_minimum (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The minimum quantity an order must contain, to be eligible to purchase this product.</div>
+<span class="param-type">[Integer](#integer)</span> The minimum quantity an order must contain, to be eligible to purchase this product.</div>
 
 <div class="param">order_quantity_maximum (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The maximum quantity an order can contain when purchasing the product.</div>
+<span class="param-type">[Integer](#integer)</span> The maximum quantity an order can contain when purchasing the product.</div>
 
 <div class="param">page_title (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Custom title for the product page. If not defined, the product name will be used as the meta title.</div>
+<span class="param-type">[String](#string)</span> Custom title for the product page. If not defined, the product name will be used as the meta title.</div>
 
 <div class="param">meta_keywords (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[String]](#string)</span> Custom meta keywords for the product page. If not defined, the store's default keywords will be used.</div>
+<span class="param-type">[array[String]](#string)</span> Custom meta keywords for the product page. If not defined, the store's default keywords will be used.</div>
 
 <div class="param">meta_description (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Custom meta description for the product page. If not defined, the store's default meta description will be used.</div>
+<span class="param-type">[String](#string)</span> Custom meta description for the product page. If not defined, the store's default meta description will be used.</div>
 
 <div class="param">date_created (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The date on which the product was created. format: data-time</div>
+<span class="param-type">[String](#string)</span> The date on which the product was created. format: data-time</div>
 
 <div class="param">date_modified (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The date on which the product was modified. format: data-time</div>
+<span class="param-type">[String](#string)</span> The date on which the product was modified. format: data-time</div>
 
 <div class="param">view_count (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The number of times the product has been viewed.</div>
+<span class="param-type">[Integer](#integer)</span> The number of times the product has been viewed.</div>
 
 <div class="param">preorder_release_date (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Pre-order release date. See the `availability` field for details on setting a product's availability to accept pre-orders. format: data-time</div>
+<span class="param-type">[String](#string)</span> Pre-order release date. See the `availability` field for details on setting a product's availability to accept pre-orders. format: data-time</div>
 
 <div class="param">preorder_message (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Custom expected-date message to display on the product page. If undefined, the message defaults to the storewide setting. Can contain the `%%DATE%%` placeholder, which will be substituted for the release date.</div>
+<span class="param-type">[String](#string)</span> Custom expected-date message to display on the product page. If undefined, the message defaults to the storewide setting. Can contain the `%%DATE%%` placeholder, which will be substituted for the release date.</div>
 
 <div class="param">is_preorder_only (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> If set to `false`, the product will not change its availability from `preorder` to `available` on the release date. Otherwise, on the release date the product's availability/status will change to `available`.</div>
+<span class="param-type">[Boolean](#boolean)</span> If set to `false`, the product will not change its availability from `preorder` to `available` on the release date. Otherwise, on the release date the product's availability/status will change to `available`.</div>
 
 <div class="param">is_price_hidden (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> False by default, indicating that this product's price should be shown on the product page. If set to `true`, the price is hidden. (NOTE: To successfully set `is_price_hidden` to `true`, the `availability` value must be `disabled`.)</div>
+<span class="param-type">[Boolean](#boolean)</span> False by default, indicating that this product's price should be shown on the product page. If set to `true`, the price is hidden. (NOTE: To successfully set `is_price_hidden` to `true`, the `availability` value must be `disabled`.)</div>
 
 <div class="param">price_hidden_label (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> By default, an empty string. If `is_price_hidden` is `true`, the value of `price_hidden_label` is displayed instead of the price. (NOTE: To successfully set a non-empty string value with `is_price_hidden` set to `true`, the `availability` value must be `disabled`.)</div>
+<span class="param-type">[String](#string)</span> By default, an empty string. If `is_price_hidden` is `true`, the value of `price_hidden_label` is displayed instead of the price. (NOTE: To successfully set a non-empty string value with `is_price_hidden` set to `true`, the `availability` value must be `disabled`.)</div>
 
 <div class="param">images (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[ProductImage]](#ProductImage)</span></div>
+<span class="param-type">[array[ProductImage]](#ProductImage)</span></div>
 
 <div class="param">videos (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[ProductVideo]](#ProductVideo)</span></div>
+<span class="param-type">[array[ProductVideo]](#ProductVideo)</span></div>
 
 <div class="param">custom_fields (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[CustomField]](#CustomField)</span></div>
+<span class="param-type">[array[CustomField]](#CustomField)</span></div>
 
 <div class="param">custom_url (optional)</div>
 
-<div class="param-desc"><span class="param-type">[CustomUrl](#CustomUrl)</span></div>
+<span class="param-type">[CustomUrl](#CustomUrl)</span></div>
 
 <div class="param">bulk_pricing_rules (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[BulkPricingRule]](#BulkPricingRule)</span></div>
+<span class="param-type">[array[BulkPricingRule]](#BulkPricingRule)</span></div>
 
 <div class="param">variants (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[Variant]](#Variant)</span></div>
+<span class="param-type">[array[Variant]](#Variant)</span></div>
 
 </div>
 
@@ -8835,7 +8907,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="ProductCollectionResponse">ProductCollectionResponse -</a> [Up](#__Models)
+### <a name="ProductCollectionResponse">ProductCollectionResponse -</a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -8843,11 +8915,11 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">data (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[Product]](#Product)</span></div>
+<span class="param-type">[array[Product]](#Product)</span></div>
 
 <div class="param">meta (optional)</div>
 
-<div class="param-desc"><span class="param-type">[CollectionMeta](#CollectionMeta)</span></div>
+<span class="param-type">[CollectionMeta](#CollectionMeta)</span></div>
 
 </div>
 
@@ -8855,7 +8927,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="ProductImage">ProductImage -</a> [Up](#__Models)
+### <a name="ProductImage">ProductImage -</a> 
 
 <div class="model-description">The full ProductImage model.</div>
 
@@ -8863,43 +8935,43 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">is_thumbnail (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> Flag for identifying whether the image is used as the product's thumbnail.</div>
+<span class="param-type">[Boolean](#boolean)</span> Flag for identifying whether the image is used as the product's thumbnail.</div>
 
 <div class="param">sort_order (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The order in which the image will be displayed on the product page. Higher integers give the image a lower priority. When updating, if the image is given a lower priority, all images with a `sort_order` the same as or greater than the image's new `sort_order` value will have their `sort_order`s reordered.</div>
+<span class="param-type">[Integer](#integer)</span> The order in which the image will be displayed on the product page. Higher integers give the image a lower priority. When updating, if the image is given a lower priority, all images with a `sort_order` the same as or greater than the image's new `sort_order` value will have their `sort_order`s reordered.</div>
 
 <div class="param">description (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The description for the image.</div>
+<span class="param-type">[String](#string)</span> The description for the image.</div>
 
 <div class="param">id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The unique numeric ID of the image; increments sequentially.</div>
+<span class="param-type">[Integer](#integer)</span> The unique numeric ID of the image; increments sequentially.</div>
 
 <div class="param">product_id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The unique numeric identifier for the product with which the image is associated.</div>
+<span class="param-type">[Integer](#integer)</span> The unique numeric identifier for the product with which the image is associated.</div>
 
 <div class="param">image_file (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The local path to the original image file uploaded to BigCommerce.</div>
+<span class="param-type">[String](#string)</span> The local path to the original image file uploaded to BigCommerce.</div>
 
 <div class="param">url_zoom (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The zoom URL for this image. By default, this is used as the zoom image on product pages when zoom images are enabled.</div>
+<span class="param-type">[String](#string)</span> The zoom URL for this image. By default, this is used as the zoom image on product pages when zoom images are enabled.</div>
 
 <div class="param">url_standard (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The standard URL for this image. By default, this is used for product-page images.</div>
+<span class="param-type">[String](#string)</span> The standard URL for this image. By default, this is used for product-page images.</div>
 
 <div class="param">url_thumbnail (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The thumbnail URL for this image. By default, this is the image size used on the category page and in side panels.</div>
+<span class="param-type">[String](#string)</span> The thumbnail URL for this image. By default, this is the image size used on the category page and in side panels.</div>
 
 <div class="param">url_tiny (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The tiny URL for this image. By default, this is the image size used for thumbnails beneath the product image on a product page.</div>
+<span class="param-type">[String](#string)</span> The tiny URL for this image. By default, this is the image size used for thumbnails beneath the product image on a product page.</div>
 
 </div>
 
@@ -8907,7 +8979,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="ProductImageBase">ProductImageBase -</a> [Up](#__Models)
+### <a name="ProductImageBase">ProductImageBase -</a> 
 
 <div class="model-description">Common ProductImage properties.</div>
 
@@ -8915,15 +8987,15 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">is_thumbnail (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> Flag for identifying whether the image is used as the product's thumbnail.</div>
+<span class="param-type">[Boolean](#boolean)</span> Flag for identifying whether the image is used as the product's thumbnail.</div>
 
 <div class="param">sort_order (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The order in which the image will be displayed on the product page. Higher integers give the image a lower priority. When updating, if the image is given a lower priority, all images with a `sort_order` the same as or greater than the image's new `sort_order` value will have their `sort_order`s reordered.</div>
+<span class="param-type">[Integer](#integer)</span> The order in which the image will be displayed on the product page. Higher integers give the image a lower priority. When updating, if the image is given a lower priority, all images with a `sort_order` the same as or greater than the image's new `sort_order` value will have their `sort_order`s reordered.</div>
 
 <div class="param">description (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The description for the image.</div>
+<span class="param-type">[String](#string)</span> The description for the image.</div>
 
 </div>
 
@@ -8931,7 +9003,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="ProductImageCollectionResponse">ProductImageCollectionResponse -</a> [Up](#__Models)
+### <a name="ProductImageCollectionResponse">ProductImageCollectionResponse -</a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -8939,11 +9011,11 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">data (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[ProductImage]](#ProductImage)</span></div>
+<span class="param-type">[array[ProductImage]](#ProductImage)</span></div>
 
 <div class="param">meta (optional)</div>
 
-<div class="param-desc"><span class="param-type">[CollectionMeta](#CollectionMeta)</span></div>
+<span class="param-type">[CollectionMeta](#CollectionMeta)</span></div>
 
 </div>
 
@@ -8951,7 +9023,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="ProductImagePost">ProductImagePost -</a> [Up](#__Models)
+### <a name="ProductImagePost">ProductImagePost -</a> 
 
 <div class="model-description">The model for a POST to create an image on a product.</div>
 
@@ -8959,23 +9031,23 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">is_thumbnail (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> Flag for identifying whether the image is used as the product's thumbnail.</div>
+<span class="param-type">[Boolean](#boolean)</span> Flag for identifying whether the image is used as the product's thumbnail.</div>
 
 <div class="param">sort_order (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The order in which the image will be displayed on the product page. Higher integers give the image a lower priority. When updating, if the image is given a lower priority, all images with a `sort_order` the same as or greater than the image's new `sort_order` value will have their `sort_order`s reordered.</div>
+<span class="param-type">[Integer](#integer)</span> The order in which the image will be displayed on the product page. Higher integers give the image a lower priority. When updating, if the image is given a lower priority, all images with a `sort_order` the same as or greater than the image's new `sort_order` value will have their `sort_order`s reordered.</div>
 
 <div class="param">description (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The description for the image.</div>
+<span class="param-type">[String](#string)</span> The description for the image.</div>
 
 <div class="param">image_url (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Must be a fully qualified URL path, including protocol.</div>
+<span class="param-type">[String](#string)</span> Must be a fully qualified URL path, including protocol.</div>
 
 <div class="param">image_file (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Must be sent as a multipart/form-data field in the request body.</div>
+<span class="param-type">[String](#string)</span> Must be sent as a multipart/form-data field in the request body.</div>
 
 </div>
 
@@ -8983,7 +9055,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="ProductImagePut">ProductImagePut -</a> [Up](#__Models)
+### <a name="ProductImagePut">ProductImagePut -</a> 
 
 <div class="model-description">The model for a PUT to update applicable ProductImage fields.</div>
 
@@ -8991,15 +9063,15 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">is_thumbnail (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> Flag for identifying whether the image is used as the product's thumbnail.</div>
+<span class="param-type">[Boolean](#boolean)</span> Flag for identifying whether the image is used as the product's thumbnail.</div>
 
 <div class="param">sort_order (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The order in which the image will be displayed on the product page. Higher integers give the image a lower priority. When updating, if the image is given a lower priority, all images with a `sort_order` the same as or greater than the image's new `sort_order` value will have their `sort_order`s reordered.</div>
+<span class="param-type">[Integer](#integer)</span> The order in which the image will be displayed on the product page. Higher integers give the image a lower priority. When updating, if the image is given a lower priority, all images with a `sort_order` the same as or greater than the image's new `sort_order` value will have their `sort_order`s reordered.</div>
 
 <div class="param">description (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The description for the image.</div>
+<span class="param-type">[String](#string)</span> The description for the image.</div>
 
 </div>
 
@@ -9007,7 +9079,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="ProductImageResponse">ProductImageResponse -</a> [Up](#__Models)
+### <a name="ProductImageResponse">ProductImageResponse -</a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -9015,11 +9087,11 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">data (optional)</div>
 
-<div class="param-desc"><span class="param-type">[ProductImage](#ProductImage)</span></div>
+<span class="param-type">[ProductImage](#ProductImage)</span></div>
 
 <div class="param">meta (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Meta](#Meta)</span></div>
+<span class="param-type">[Meta](#Meta)</span></div>
 
 </div>
 
@@ -9027,21 +9099,21 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="ProductPost">ProductPost -</a> [Up](#__Models)
+### <a name="ProductPost">ProductPost -</a> 
 
 <div class="field-items">
 
 <div class="param">id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The unique numeric ID of the product; increments sequentially.</div>
+<span class="param-type">[Integer](#integer)</span> The unique numeric ID of the product; increments sequentially.</div>
 
 <div class="param">name (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The product name.</div>
+<span class="param-type">[String](#string)</span> The product name.</div>
 
 <div class="param">type (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The product type: physical - a physical stock unit; digital - a digital download.</div>
+<span class="param-type">[String](#string)</span> The product type: physical - a physical stock unit; digital - a digital download.</div>
 
 <div class="param-enum-header">Enum:</div>
 
@@ -9051,75 +9123,75 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">sku (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> User-defined product code/stock keeping unit (SKU).</div>
+<span class="param-type">[String](#string)</span> User-defined product code/stock keeping unit (SKU).</div>
 
 <div class="param">description (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The product description, which can include HTML formatting.</div>
+<span class="param-type">[String](#string)</span> The product description, which can include HTML formatting.</div>
 
 <div class="param">weight (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Double](#double)</span> Weight of the product, which can be used when calculating shipping costs. format: double</div>
+<span class="param-type">[Double](#double)</span> Weight of the product, which can be used when calculating shipping costs. format: double</div>
 
 <div class="param">width (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Double](#double)</span> Width of the product, which can be used when calculating shipping costs. format: double</div>
+<span class="param-type">[Double](#double)</span> Width of the product, which can be used when calculating shipping costs. format: double</div>
 
 <div class="param">depth (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Double](#double)</span> Depth of the product, which can be used when calculating shipping costs. format: double</div>
+<span class="param-type">[Double](#double)</span> Depth of the product, which can be used when calculating shipping costs. format: double</div>
 
 <div class="param">height (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Double](#double)</span> Height of the product, which can be used when calculating shipping costs. format: double</div>
+<span class="param-type">[Double](#double)</span> Height of the product, which can be used when calculating shipping costs. format: double</div>
 
 <div class="param">price (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Double](#double)</span> The price of the product. The price should include or exclude tax, based on the store settings. format: double</div>
+<span class="param-type">[Double](#double)</span> The price of the product. The price should include or exclude tax, based on the store settings. format: double</div>
 
 <div class="param">cost_price (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Double](#double)</span> The cost price of the product. Stored for reference only; it is not used or displayed anywhere on the store. format: double</div>
+<span class="param-type">[Double](#double)</span> The cost price of the product. Stored for reference only; it is not used or displayed anywhere on the store. format: double</div>
 
 <div class="param">retail_price (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Double](#double)</span> The retail cost of the product. If entered, the retail cost price will be shown on the product page. format: double</div>
+<span class="param-type">[Double](#double)</span> The retail cost of the product. If entered, the retail cost price will be shown on the product page. format: double</div>
 
 <div class="param">sale_price (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Double](#double)</span> If entered, the sale price will be used instead of value in the price field when calculating the product's cost. format: double</div>
+<span class="param-type">[Double](#double)</span> If entered, the sale price will be used instead of value in the price field when calculating the product's cost. format: double</div>
 
 <div class="param">tax_class_id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The ID of the tax class applied to the product. (NOTE: Value ignored if automatic tax is enabled.)</div>
+<span class="param-type">[Integer](#integer)</span> The ID of the tax class applied to the product. (NOTE: Value ignored if automatic tax is enabled.)</div>
 
 <div class="param">product_tax_code (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Accepts AvaTax System Tax Codes, which identify products and services that fall into special sales-tax categories. By using these codes, merchants who subscribe to Avalara Premium can calculate sales taxes more accurately. Stores without Avalara Premium will ignore the code when calculating sales tax. Do not pass more than one code. The codes are case-sensitive. For details, please see Avalara's documentation.</div>
+<span class="param-type">[String](#string)</span> Accepts AvaTax System Tax Codes, which identify products and services that fall into special sales-tax categories. By using these codes, merchants who subscribe to Avalara Premium can calculate sales taxes more accurately. Stores without Avalara Premium will ignore the code when calculating sales tax. Do not pass more than one code. The codes are case-sensitive. For details, please see Avalara's documentation.</div>
 
 <div class="param">calculated_price (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Double](#double)</span> The price of the product, unless a `sale_price` is set. format: double</div>
+<span class="param-type">[Double](#double)</span> The price of the product, unless a `sale_price` is set. format: double</div>
 
 <div class="param">categories (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[Integer]](#integer)</span> An array of IDs for the categories to which this product belongs. When updating a product, if an array of categories is supplied, all product categories will be overwritten. Does not accept more than 1,000 ID values.</div>
+<span class="param-type">[array[Integer]](#integer)</span> An array of IDs for the categories to which this product belongs. When updating a product, if an array of categories is supplied, all product categories will be overwritten. Does not accept more than 1,000 ID values.</div>
 
 <div class="param">brand_id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The ID associated with the product's brand.</div>
+<span class="param-type">[Integer](#integer)</span> The ID associated with the product's brand.</div>
 
 <div class="param">inventory_level (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> Current inventory level of the product. Simple inventory tracking must be enabled (See the inventory_tracking field) for this to take any effect.</div>
+<span class="param-type">[Integer](#integer)</span> Current inventory level of the product. Simple inventory tracking must be enabled (See the inventory_tracking field) for this to take any effect.</div>
 
 <div class="param">inventory_warning_level (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> Inventory Warning level for the product. When the product's inventory level drops below the warning level, the store owner will be informed. Simple inventory tracking must be enabled (see the `inventory_tracking` field) for this to take any effect.</div>
+<span class="param-type">[Integer](#integer)</span> Inventory Warning level for the product. When the product's inventory level drops below the warning level, the store owner will be informed. Simple inventory tracking must be enabled (see the `inventory_tracking` field) for this to take any effect.</div>
 
 <div class="param">inventory_tracking (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The type of inventory tracking for the product. Values are: none - inventory levels will not be tracked; product - inventory levels will be tracked using the `inventory_level` and `inventory_warning_level` fields; variant - inventory levels will be tracked based on variants, which maintain their own warning levels and inventory levels.</div>
+<span class="param-type">[String](#string)</span> The type of inventory tracking for the product. Values are: none - inventory levels will not be tracked; product - inventory levels will be tracked using the `inventory_level` and `inventory_warning_level` fields; variant - inventory levels will be tracked based on variants, which maintain their own warning levels and inventory levels.</div>
 
 <div class="param-enum-header">Enum:</div>
 
@@ -9131,43 +9203,43 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">fixed_cost_shipping_price (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> A fixed shipping cost for the product. If defined, this value will be used during checkout instead of normal shipping-cost calculation.</div>
+<span class="param-type">[Integer](#integer)</span> A fixed shipping cost for the product. If defined, this value will be used during checkout instead of normal shipping-cost calculation.</div>
 
 <div class="param">is_free_shipping (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> Flag used to indicate whether the product has free shipping. If `true`, the shipping cost for the product will be zero.</div>
+<span class="param-type">[Boolean](#boolean)</span> Flag used to indicate whether the product has free shipping. If `true`, the shipping cost for the product will be zero.</div>
 
 <div class="param">is_visible (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> Flag to determine whether the product should be displayed to customers browsing the store. If `true`, the product will be displayed. If `false`, the product will be hidden from view.</div>
+<span class="param-type">[Boolean](#boolean)</span> Flag to determine whether the product should be displayed to customers browsing the store. If `true`, the product will be displayed. If `false`, the product will be hidden from view.</div>
 
 <div class="param">is_featured (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> Flag to determine whether the product should be included in the `featured products` panel when viewing the store.</div>
+<span class="param-type">[Boolean](#boolean)</span> Flag to determine whether the product should be included in the `featured products` panel when viewing the store.</div>
 
 <div class="param">warranty (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Warranty information displayed on the product page. Can include HTML formatting.</div>
+<span class="param-type">[String](#string)</span> Warranty information displayed on the product page. Can include HTML formatting.</div>
 
 <div class="param">bin_picking_number (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The BIN picking number for the product.</div>
+<span class="param-type">[String](#string)</span> The BIN picking number for the product.</div>
 
 <div class="param">layout_file (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The layout template file used to render this product.</div>
+<span class="param-type">[String](#string)</span> The layout template file used to render this product.</div>
 
 <div class="param">upc (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The product UPC code, which is used in feeds for shopping comparison sites and external channel integrations.</div>
+<span class="param-type">[String](#string)</span> The product UPC code, which is used in feeds for shopping comparison sites and external channel integrations.</div>
 
 <div class="param">search_keywords (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> A comma-separated list of keywords that can be used to locate the product when searching the store.</div>
+<span class="param-type">[String](#string)</span> A comma-separated list of keywords that can be used to locate the product when searching the store.</div>
 
 <div class="param">availability (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Availability of the product. Availability options are: available - the product can be purchased in the storefront; disabled - the product is listed in the storefront, but cannot be purchased; preorder - the product is listed for pre-orders.</div>
+<span class="param-type">[String](#string)</span> Availability of the product. Availability options are: available - the product can be purchased in the storefront; disabled - the product is listed in the storefront, but cannot be purchased; preorder - the product is listed for pre-orders.</div>
 
 <div class="param-enum-header">Enum:</div>
 
@@ -9179,11 +9251,11 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">availability_description (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Availability text displayed on the checkout page, under the product title. Tells the customer how long it will normally take to ship this product, such as 'Usually ships in 24 hours.'</div>
+<span class="param-type">[String](#string)</span> Availability text displayed on the checkout page, under the product title. Tells the customer how long it will normally take to ship this product, such as 'Usually ships in 24 hours.'</div>
 
 <div class="param">gift_wrapping_options_type (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Type of gift-wrapping options. Values: `any` - allow any gift-wrapping options in the store; `none` - disallow gift wrapping on the product; `list` – provide a list of IDs in the `gift_wrapping_options_list` field.</div>
+<span class="param-type">[String](#string)</span> Type of gift-wrapping options. Values: `any` - allow any gift-wrapping options in the store; `none` - disallow gift wrapping on the product; `list` – provide a list of IDs in the `gift_wrapping_options_list` field.</div>
 
 <div class="param-enum-header">Enum:</div>
 
@@ -9195,95 +9267,95 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">gift_wrapping_options_list (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[Integer]](#integer)</span> A list of gift-wrapping option IDs.</div>
+<span class="param-type">[array[Integer]](#integer)</span> A list of gift-wrapping option IDs.</div>
 
 <div class="param">sort_order (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> Priority to give this product when included in product lists on category pages and in search results. Lower integers will place the product closer to the top of the results.</div>
+<span class="param-type">[Integer](#integer)</span> Priority to give this product when included in product lists on category pages and in search results. Lower integers will place the product closer to the top of the results.</div>
 
 <div class="param">condition (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The product condition. Will be shown on the product page if the `is_condition_shown` field's value is `true`. Possible values: `New`, `Used`, `Refurbished`.</div>
+<span class="param-type">[String](#string)</span> The product condition. Will be shown on the product page if the `is_condition_shown` field's value is `true`. Possible values: `New`, `Used`, `Refurbished`.</div>
 
 <div class="param">is_condition_shown (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> Flag used to determine whether the product condition is shown to the customer on the product page.</div>
+<span class="param-type">[Boolean](#boolean)</span> Flag used to determine whether the product condition is shown to the customer on the product page.</div>
 
 <div class="param">order_quantity_minimum (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The minimum quantity an order must contain, to be eligible to purchase this product.</div>
+<span class="param-type">[Integer](#integer)</span> The minimum quantity an order must contain, to be eligible to purchase this product.</div>
 
 <div class="param">order_quantity_maximum (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The maximum quantity an order can contain when purchasing the product.</div>
+<span class="param-type">[Integer](#integer)</span> The maximum quantity an order can contain when purchasing the product.</div>
 
 <div class="param">page_title (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Custom title for the product page. If not defined, the product name will be used as the meta title.</div>
+<span class="param-type">[String](#string)</span> Custom title for the product page. If not defined, the product name will be used as the meta title.</div>
 
 <div class="param">meta_keywords (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[String]](#string)</span> Custom meta keywords for the product page. If not defined, the store's default keywords will be used.</div>
+<span class="param-type">[array[String]](#string)</span> Custom meta keywords for the product page. If not defined, the store's default keywords will be used.</div>
 
 <div class="param">meta_description (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Custom meta description for the product page. If not defined, the store's default meta description will be used.</div>
+<span class="param-type">[String](#string)</span> Custom meta description for the product page. If not defined, the store's default meta description will be used.</div>
 
 <div class="param">date_created (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The date on which the product was created. format: data-time</div>
+<span class="param-type">[String](#string)</span> The date on which the product was created. format: data-time</div>
 
 <div class="param">date_modified (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The date on which the product was modified. format: data-time</div>
+<span class="param-type">[String](#string)</span> The date on which the product was modified. format: data-time</div>
 
 <div class="param">view_count (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The number of times the product has been viewed.</div>
+<span class="param-type">[Integer](#integer)</span> The number of times the product has been viewed.</div>
 
 <div class="param">preorder_release_date (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Pre-order release date. See the `availability` field for details on setting a product's availability to accept pre-orders. format: data-time</div>
+<span class="param-type">[String](#string)</span> Pre-order release date. See the `availability` field for details on setting a product's availability to accept pre-orders. format: data-time</div>
 
 <div class="param">preorder_message (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Custom expected-date message to display on the product page. If undefined, the message defaults to the storewide setting. Can contain the `%%DATE%%` placeholder, which will be substituted for the release date.</div>
+<span class="param-type">[String](#string)</span> Custom expected-date message to display on the product page. If undefined, the message defaults to the storewide setting. Can contain the `%%DATE%%` placeholder, which will be substituted for the release date.</div>
 
 <div class="param">is_preorder_only (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> If set to `false`, the product will not change its availability from `preorder` to `available` on the release date. Otherwise, on the release date the product's availability/status will change to `available`.</div>
+<span class="param-type">[Boolean](#boolean)</span> If set to `false`, the product will not change its availability from `preorder` to `available` on the release date. Otherwise, on the release date the product's availability/status will change to `available`.</div>
 
 <div class="param">is_price_hidden (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> False by default, indicating that this product's price should be shown on the product page. If set to `true`, the price is hidden. (NOTE: To successfully set `is_price_hidden` to `true`, the `availability` value must be `disabled`.)</div>
+<span class="param-type">[Boolean](#boolean)</span> False by default, indicating that this product's price should be shown on the product page. If set to `true`, the price is hidden. (NOTE: To successfully set `is_price_hidden` to `true`, the `availability` value must be `disabled`.)</div>
 
 <div class="param">price_hidden_label (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> By default, an empty string. If `is_price_hidden` is `true`, the value of `price_hidden_label` is displayed instead of the price. (NOTE: To successfully set a non-empty string value with `is_price_hidden` set to `true`, the `availability` value must be `disabled`.)</div>
+<span class="param-type">[String](#string)</span> By default, an empty string. If `is_price_hidden` is `true`, the value of `price_hidden_label` is displayed instead of the price. (NOTE: To successfully set a non-empty string value with `is_price_hidden` set to `true`, the `availability` value must be `disabled`.)</div>
 
 <div class="param">images (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[ProductImage]](#ProductImage)</span></div>
+<span class="param-type">[array[ProductImage]](#ProductImage)</span></div>
 
 <div class="param">videos (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[ProductVideo]](#ProductVideo)</span></div>
+<span class="param-type">[array[ProductVideo]](#ProductVideo)</span></div>
 
 <div class="param">custom_fields (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[CustomField]](#CustomField)</span></div>
+<span class="param-type">[array[CustomField]](#CustomField)</span></div>
 
 <div class="param">custom_url (optional)</div>
 
-<div class="param-desc"><span class="param-type">[CustomUrl](#CustomUrl)</span></div>
+<span class="param-type">[CustomUrl](#CustomUrl)</span></div>
 
 <div class="param">bulk_pricing_rules (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[BulkPricingRule]](#BulkPricingRule)</span></div>
+<span class="param-type">[array[BulkPricingRule]](#BulkPricingRule)</span></div>
 
 <div class="param">variants (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[VariantPost]](#VariantPost)</span></div>
+<span class="param-type">[array[VariantPost]](#VariantPost)</span></div>
 
 </div>
 
@@ -9291,21 +9363,21 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="ProductPut">ProductPut -</a> [Up](#__Models)
+### <a name="ProductPut">ProductPut -</a> 
 
 <div class="field-items">
 
 <div class="param">id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The unique numeric ID of the product; increments sequentially.</div>
+<span class="param-type">[Integer](#integer)</span> The unique numeric ID of the product; increments sequentially.</div>
 
 <div class="param">name (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The product name.</div>
+<span class="param-type">[String](#string)</span> The product name.</div>
 
 <div class="param">type (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The product type: physical - a physical stock unit; digital - a digital download.</div>
+<span class="param-type">[String](#string)</span> The product type: physical - a physical stock unit; digital - a digital download.</div>
 
 <div class="param-enum-header">Enum:</div>
 
@@ -9315,75 +9387,75 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">sku (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> User-defined product code/stock keeping unit (SKU).</div>
+<span class="param-type">[String](#string)</span> User-defined product code/stock keeping unit (SKU).</div>
 
 <div class="param">description (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The product description, which can include HTML formatting.</div>
+<span class="param-type">[String](#string)</span> The product description, which can include HTML formatting.</div>
 
 <div class="param">weight (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Double](#double)</span> Weight of the product, which can be used when calculating shipping costs. format: double</div>
+<span class="param-type">[Double](#double)</span> Weight of the product, which can be used when calculating shipping costs. format: double</div>
 
 <div class="param">width (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Double](#double)</span> Width of the product, which can be used when calculating shipping costs. format: double</div>
+<span class="param-type">[Double](#double)</span> Width of the product, which can be used when calculating shipping costs. format: double</div>
 
 <div class="param">depth (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Double](#double)</span> Depth of the product, which can be used when calculating shipping costs. format: double</div>
+<span class="param-type">[Double](#double)</span> Depth of the product, which can be used when calculating shipping costs. format: double</div>
 
 <div class="param">height (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Double](#double)</span> Height of the product, which can be used when calculating shipping costs. format: double</div>
+<span class="param-type">[Double](#double)</span> Height of the product, which can be used when calculating shipping costs. format: double</div>
 
 <div class="param">price (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Double](#double)</span> The price of the product. The price should include or exclude tax, based on the store settings. format: double</div>
+<span class="param-type">[Double](#double)</span> The price of the product. The price should include or exclude tax, based on the store settings. format: double</div>
 
 <div class="param">cost_price (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Double](#double)</span> The cost price of the product. Stored for reference only; it is not used or displayed anywhere on the store. format: double</div>
+<span class="param-type">[Double](#double)</span> The cost price of the product. Stored for reference only; it is not used or displayed anywhere on the store. format: double</div>
 
 <div class="param">retail_price (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Double](#double)</span> The retail cost of the product. If entered, the retail cost price will be shown on the product page. format: double</div>
+<span class="param-type">[Double](#double)</span> The retail cost of the product. If entered, the retail cost price will be shown on the product page. format: double</div>
 
 <div class="param">sale_price (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Double](#double)</span> If entered, the sale price will be used instead of value in the price field when calculating the product's cost. format: double</div>
+<span class="param-type">[Double](#double)</span> If entered, the sale price will be used instead of value in the price field when calculating the product's cost. format: double</div>
 
 <div class="param">tax_class_id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The ID of the tax class applied to the product. (NOTE: Value ignored if automatic tax is enabled.)</div>
+<span class="param-type">[Integer](#integer)</span> The ID of the tax class applied to the product. (NOTE: Value ignored if automatic tax is enabled.)</div>
 
 <div class="param">product_tax_code (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Accepts AvaTax System Tax Codes, which identify products and services that fall into special sales-tax categories. By using these codes, merchants who subscribe to Avalara Premium can calculate sales taxes more accurately. Stores without Avalara Premium will ignore the code when calculating sales tax. Do not pass more than one code. The codes are case-sensitive. For details, please see Avalara's documentation.</div>
+<span class="param-type">[String](#string)</span> Accepts AvaTax System Tax Codes, which identify products and services that fall into special sales-tax categories. By using these codes, merchants who subscribe to Avalara Premium can calculate sales taxes more accurately. Stores without Avalara Premium will ignore the code when calculating sales tax. Do not pass more than one code. The codes are case-sensitive. For details, please see Avalara's documentation.</div>
 
 <div class="param">calculated_price (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Double](#double)</span> The price of the product, unless a `sale_price` is set. format: double</div>
+<span class="param-type">[Double](#double)</span> The price of the product, unless a `sale_price` is set. format: double</div>
 
 <div class="param">categories (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[Integer]](#integer)</span> An array of IDs for the categories to which this product belongs. When updating a product, if an array of categories is supplied, all product categories will be overwritten. Does not accept more than 1,000 ID values.</div>
+<span class="param-type">[array[Integer]](#integer)</span> An array of IDs for the categories to which this product belongs. When updating a product, if an array of categories is supplied, all product categories will be overwritten. Does not accept more than 1,000 ID values.</div>
 
 <div class="param">brand_id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The ID associated with the product's brand.</div>
+<span class="param-type">[Integer](#integer)</span> The ID associated with the product's brand.</div>
 
 <div class="param">inventory_level (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> Current inventory level of the product. Simple inventory tracking must be enabled (See the inventory_tracking field) for this to take any effect.</div>
+<span class="param-type">[Integer](#integer)</span> Current inventory level of the product. Simple inventory tracking must be enabled (See the inventory_tracking field) for this to take any effect.</div>
 
 <div class="param">inventory_warning_level (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> Inventory Warning level for the product. When the product's inventory level drops below the warning level, the store owner will be informed. Simple inventory tracking must be enabled (see the `inventory_tracking` field) for this to take any effect.</div>
+<span class="param-type">[Integer](#integer)</span> Inventory Warning level for the product. When the product's inventory level drops below the warning level, the store owner will be informed. Simple inventory tracking must be enabled (see the `inventory_tracking` field) for this to take any effect.</div>
 
 <div class="param">inventory_tracking (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The type of inventory tracking for the product. Values are: none - inventory levels will not be tracked; product - inventory levels will be tracked using the `inventory_level` and `inventory_warning_level` fields; variant - inventory levels will be tracked based on variants, which maintain their own warning levels and inventory levels.</div>
+<span class="param-type">[String](#string)</span> The type of inventory tracking for the product. Values are: none - inventory levels will not be tracked; product - inventory levels will be tracked using the `inventory_level` and `inventory_warning_level` fields; variant - inventory levels will be tracked based on variants, which maintain their own warning levels and inventory levels.</div>
 
 <div class="param-enum-header">Enum:</div>
 
@@ -9395,43 +9467,43 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">fixed_cost_shipping_price (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> A fixed shipping cost for the product. If defined, this value will be used during checkout instead of normal shipping-cost calculation.</div>
+<span class="param-type">[Integer](#integer)</span> A fixed shipping cost for the product. If defined, this value will be used during checkout instead of normal shipping-cost calculation.</div>
 
 <div class="param">is_free_shipping (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> Flag used to indicate whether the product has free shipping. If `true`, the shipping cost for the product will be zero.</div>
+<span class="param-type">[Boolean](#boolean)</span> Flag used to indicate whether the product has free shipping. If `true`, the shipping cost for the product will be zero.</div>
 
 <div class="param">is_visible (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> Flag to determine whether the product should be displayed to customers browsing the store. If `true`, the product will be displayed. If `false`, the product will be hidden from view.</div>
+<span class="param-type">[Boolean](#boolean)</span> Flag to determine whether the product should be displayed to customers browsing the store. If `true`, the product will be displayed. If `false`, the product will be hidden from view.</div>
 
 <div class="param">is_featured (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> Flag to determine whether the product should be included in the `featured products` panel when viewing the store.</div>
+<span class="param-type">[Boolean](#boolean)</span> Flag to determine whether the product should be included in the `featured products` panel when viewing the store.</div>
 
 <div class="param">warranty (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Warranty information displayed on the product page. Can include HTML formatting.</div>
+<span class="param-type">[String](#string)</span> Warranty information displayed on the product page. Can include HTML formatting.</div>
 
 <div class="param">bin_picking_number (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The BIN picking number for the product.</div>
+<span class="param-type">[String](#string)</span> The BIN picking number for the product.</div>
 
 <div class="param">layout_file (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The layout template file used to render this product.</div>
+<span class="param-type">[String](#string)</span> The layout template file used to render this product.</div>
 
 <div class="param">upc (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The product UPC code, which is used in feeds for shopping comparison sites and external channel integrations.</div>
+<span class="param-type">[String](#string)</span> The product UPC code, which is used in feeds for shopping comparison sites and external channel integrations.</div>
 
 <div class="param">search_keywords (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> A comma-separated list of keywords that can be used to locate the product when searching the store.</div>
+<span class="param-type">[String](#string)</span> A comma-separated list of keywords that can be used to locate the product when searching the store.</div>
 
 <div class="param">availability (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Availability of the product. Availability options are: available - the product can be purchased in the storefront; disabled - the product is listed in the storefront, but cannot be purchased; preorder - the product is listed for pre-orders.</div>
+<span class="param-type">[String](#string)</span> Availability of the product. Availability options are: available - the product can be purchased in the storefront; disabled - the product is listed in the storefront, but cannot be purchased; preorder - the product is listed for pre-orders.</div>
 
 <div class="param-enum-header">Enum:</div>
 
@@ -9443,11 +9515,11 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">availability_description (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Availability text displayed on the checkout page, under the product title. Tells the customer how long it will normally take to ship this product, such as 'Usually ships in 24 hours.'</div>
+<span class="param-type">[String](#string)</span> Availability text displayed on the checkout page, under the product title. Tells the customer how long it will normally take to ship this product, such as 'Usually ships in 24 hours.'</div>
 
 <div class="param">gift_wrapping_options_type (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Type of gift-wrapping options. Values: `any` - allow any gift-wrapping options in the store; `none` - disallow gift wrapping on the product; `list` – provide a list of IDs in the `gift_wrapping_options_list` field.</div>
+<span class="param-type">[String](#string)</span> Type of gift-wrapping options. Values: `any` - allow any gift-wrapping options in the store; `none` - disallow gift wrapping on the product; `list` – provide a list of IDs in the `gift_wrapping_options_list` field.</div>
 
 <div class="param-enum-header">Enum:</div>
 
@@ -9459,95 +9531,95 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">gift_wrapping_options_list (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[Integer]](#integer)</span> A list of gift-wrapping option IDs.</div>
+<span class="param-type">[array[Integer]](#integer)</span> A list of gift-wrapping option IDs.</div>
 
 <div class="param">sort_order (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> Priority to give this product when included in product lists on category pages and in search results. Lower integers will place the product closer to the top of the results.</div>
+<span class="param-type">[Integer](#integer)</span> Priority to give this product when included in product lists on category pages and in search results. Lower integers will place the product closer to the top of the results.</div>
 
 <div class="param">condition (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The product condition. Will be shown on the product page if the `is_condition_shown` field's value is `true`. Possible values: `New`, `Used`, `Refurbished`.</div>
+<span class="param-type">[String](#string)</span> The product condition. Will be shown on the product page if the `is_condition_shown` field's value is `true`. Possible values: `New`, `Used`, `Refurbished`.</div>
 
 <div class="param">is_condition_shown (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> Flag used to determine whether the product condition is shown to the customer on the product page.</div>
+<span class="param-type">[Boolean](#boolean)</span> Flag used to determine whether the product condition is shown to the customer on the product page.</div>
 
 <div class="param">order_quantity_minimum (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The minimum quantity an order must contain, to be eligible to purchase this product.</div>
+<span class="param-type">[Integer](#integer)</span> The minimum quantity an order must contain, to be eligible to purchase this product.</div>
 
 <div class="param">order_quantity_maximum (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The maximum quantity an order can contain when purchasing the product.</div>
+<span class="param-type">[Integer](#integer)</span> The maximum quantity an order can contain when purchasing the product.</div>
 
 <div class="param">page_title (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Custom title for the product page. If not defined, the product name will be used as the meta title.</div>
+<span class="param-type">[String](#string)</span> Custom title for the product page. If not defined, the product name will be used as the meta title.</div>
 
 <div class="param">meta_keywords (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[String]](#string)</span> Custom meta keywords for the product page. If not defined, the store's default keywords will be used.</div>
+<span class="param-type">[array[String]](#string)</span> Custom meta keywords for the product page. If not defined, the store's default keywords will be used.</div>
 
 <div class="param">meta_description (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Custom meta description for the product page. If not defined, the store's default meta description will be used.</div>
+<span class="param-type">[String](#string)</span> Custom meta description for the product page. If not defined, the store's default meta description will be used.</div>
 
 <div class="param">date_created (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The date on which the product was created. format: data-time</div>
+<span class="param-type">[String](#string)</span> The date on which the product was created. format: data-time</div>
 
 <div class="param">date_modified (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The date on which the product was modified. format: data-time</div>
+<span class="param-type">[String](#string)</span> The date on which the product was modified. format: data-time</div>
 
 <div class="param">view_count (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The number of times the product has been viewed.</div>
+<span class="param-type">[Integer](#integer)</span> The number of times the product has been viewed.</div>
 
 <div class="param">preorder_release_date (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Pre-order release date. See the `availability` field for details on setting a product's availability to accept pre-orders. format: data-time</div>
+<span class="param-type">[String](#string)</span> Pre-order release date. See the `availability` field for details on setting a product's availability to accept pre-orders. format: data-time</div>
 
 <div class="param">preorder_message (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Custom expected-date message to display on the product page. If undefined, the message defaults to the storewide setting. Can contain the `%%DATE%%` placeholder, which will be substituted for the release date.</div>
+<span class="param-type">[String](#string)</span> Custom expected-date message to display on the product page. If undefined, the message defaults to the storewide setting. Can contain the `%%DATE%%` placeholder, which will be substituted for the release date.</div>
 
 <div class="param">is_preorder_only (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> If set to `false`, the product will not change its availability from `preorder` to `available` on the release date. Otherwise, on the release date the product's availability/status will change to `available`.</div>
+<span class="param-type">[Boolean](#boolean)</span> If set to `false`, the product will not change its availability from `preorder` to `available` on the release date. Otherwise, on the release date the product's availability/status will change to `available`.</div>
 
 <div class="param">is_price_hidden (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> False by default, indicating that this product's price should be shown on the product page. If set to `true`, the price is hidden. (NOTE: To successfully set `is_price_hidden` to `true`, the `availability` value must be `disabled`.)</div>
+<span class="param-type">[Boolean](#boolean)</span> False by default, indicating that this product's price should be shown on the product page. If set to `true`, the price is hidden. (NOTE: To successfully set `is_price_hidden` to `true`, the `availability` value must be `disabled`.)</div>
 
 <div class="param">price_hidden_label (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> By default, an empty string. If `is_price_hidden` is `true`, the value of `price_hidden_label` is displayed instead of the price. (NOTE: To successfully set a non-empty string value with `is_price_hidden` set to `true`, the `availability` value must be `disabled`.)</div>
+<span class="param-type">[String](#string)</span> By default, an empty string. If `is_price_hidden` is `true`, the value of `price_hidden_label` is displayed instead of the price. (NOTE: To successfully set a non-empty string value with `is_price_hidden` set to `true`, the `availability` value must be `disabled`.)</div>
 
 <div class="param">images (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[ProductImage]](#ProductImage)</span></div>
+<span class="param-type">[array[ProductImage]](#ProductImage)</span></div>
 
 <div class="param">videos (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[ProductVideo]](#ProductVideo)</span></div>
+<span class="param-type">[array[ProductVideo]](#ProductVideo)</span></div>
 
 <div class="param">custom_fields (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[CustomField]](#CustomField)</span></div>
+<span class="param-type">[array[CustomField]](#CustomField)</span></div>
 
 <div class="param">custom_url (optional)</div>
 
-<div class="param-desc"><span class="param-type">[CustomUrl](#CustomUrl)</span></div>
+<span class="param-type">[CustomUrl](#CustomUrl)</span></div>
 
 <div class="param">bulk_pricing_rules (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[BulkPricingRule]](#BulkPricingRule)</span></div>
+<span class="param-type">[array[BulkPricingRule]](#BulkPricingRule)</span></div>
 
 <div class="param">variants (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[Variant]](#Variant)</span></div>
+<span class="param-type">[array[Variant]](#Variant)</span></div>
 
 </div>
 
@@ -9555,7 +9627,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="ProductResponse">ProductResponse -</a> [Up](#__Models)
+### <a name="ProductResponse">ProductResponse -</a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -9563,11 +9635,11 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">data (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Product](#Product)</span></div>
+<span class="param-type">[Product](#Product)</span></div>
 
 <div class="param">meta (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Meta](#Meta)</span></div>
+<span class="param-type">[Meta](#Meta)</span></div>
 
 </div>
 
@@ -9575,7 +9647,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="ProductVideo">ProductVideo -</a> [Up](#__Models)
+### <a name="ProductVideo">ProductVideo -</a> 
 
 <div class="model-description">A product video model.</div>
 
@@ -9583,27 +9655,27 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The ID of a YouTube video.</div>
+<span class="param-type">[Integer](#integer)</span> The ID of a YouTube video.</div>
 
 <div class="param">product_id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The unique numeric identifier for the product with which the image is associated.</div>
+<span class="param-type">[Integer](#integer)</span> The unique numeric identifier for the product with which the image is associated.</div>
 
 <div class="param">sort_order (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The order in which the video will be displayed on the product page. Higher integers give the video a lower priority. When updating, if the video is given a lower priority, all videos with a `sort_order` the same as or greater than the video's new `sort_order` value will have their `sort_order`s reordered.</div>
+<span class="param-type">[Integer](#integer)</span> The order in which the video will be displayed on the product page. Higher integers give the video a lower priority. When updating, if the video is given a lower priority, all videos with a `sort_order` the same as or greater than the video's new `sort_order` value will have their `sort_order`s reordered.</div>
 
 <div class="param">description (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The description for the video. If left blank, this will be filled in according to data on YouTube.</div>
+<span class="param-type">[String](#string)</span> The description for the video. If left blank, this will be filled in according to data on YouTube.</div>
 
 <div class="param">title (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The title for the video. If left blank, this will be filled in according to data on YouTube.</div>
+<span class="param-type">[String](#string)</span> The title for the video. If left blank, this will be filled in according to data on YouTube.</div>
 
 <div class="param">length (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Length of the video. This will be filled in according to data on YouTube.</div>
+<span class="param-type">[String](#string)</span> Length of the video. This will be filled in according to data on YouTube.</div>
 
 </div>
 
@@ -9611,7 +9683,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="ProductVideoCollectionResponse">ProductVideoCollectionResponse -</a> [Up](#__Models)
+### <a name="ProductVideoCollectionResponse">ProductVideoCollectionResponse -</a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -9619,11 +9691,11 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">data (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[ProductVideo]](#ProductVideo)</span></div>
+<span class="param-type">[array[ProductVideo]](#ProductVideo)</span></div>
 
 <div class="param">meta (optional)</div>
 
-<div class="param-desc"><span class="param-type">[CollectionMeta](#CollectionMeta)</span></div>
+<span class="param-type">[CollectionMeta](#CollectionMeta)</span></div>
 
 </div>
 
@@ -9631,7 +9703,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="ProductVideoResponse">ProductVideoResponse -</a> [Up](#__Models)
+### <a name="ProductVideoResponse">ProductVideoResponse -</a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -9639,11 +9711,11 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">data (optional)</div>
 
-<div class="param-desc"><span class="param-type">[ProductVideo](#ProductVideo)</span></div>
+<span class="param-type">[ProductVideo](#ProductVideo)</span></div>
 
 <div class="param">meta (optional)</div>
 
-<div class="param-desc"><span class="param-type">[CollectionMeta](#CollectionMeta)</span></div>
+<span class="param-type">[CollectionMeta](#CollectionMeta)</span></div>
 
 </div>
 
@@ -9651,7 +9723,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="ResourceImage">ResourceImage -</a> [Up](#__Models)
+### <a name="ResourceImage">ResourceImage -</a> 
 
 <div class="model-description">An object containing a publicly accessible image URL, or a form post that contains an image file.</div>
 
@@ -9659,7 +9731,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">image_url (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> A public URL for a GIF, JPEG, or PNG image.</div>
+<span class="param-type">[String](#string)</span> A public URL for a GIF, JPEG, or PNG image.</div>
 
 </div>
 
@@ -9667,41 +9739,41 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="Subscriber">Subscriber -</a> [Up](#__Models)
+### <a name="Subscriber">Subscriber -</a> 
 
 <div class="field-items">
 
 <div class="param">id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The unique numeric ID of the subscriber; increments sequentially.</div>
+<span class="param-type">[Integer](#integer)</span> The unique numeric ID of the subscriber; increments sequentially.</div>
 
 <div class="param">email (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The email of the subscriber. Must be unique.</div>
+<span class="param-type">[String](#string)</span> The email of the subscriber. Must be unique.</div>
 
 <div class="param">first_name (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The first name of the subscriber.</div>
+<span class="param-type">[String](#string)</span> The first name of the subscriber.</div>
 
 <div class="param">last_name (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The last name of the subscriber.</div>
+<span class="param-type">[String](#string)</span> The last name of the subscriber.</div>
 
 <div class="param">source (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The source of the subscriber. Values are: `storefront`, `order`, or `custom`.</div>
+<span class="param-type">[String](#string)</span> The source of the subscriber. Values are: `storefront`, `order`, or `custom`.</div>
 
 <div class="param">order_id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> The ID of the source order, if source was an order.</div>
+<span class="param-type">[Integer](#integer)</span> The ID of the source order, if source was an order.</div>
 
 <div class="param">date_modified (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The date on which the subscriber was modified. format: data-time</div>
+<span class="param-type">[String](#string)</span> The date on which the subscriber was modified. format: data-time</div>
 
 <div class="param">date_created (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The date on which the subscriber was created. format: data-time</div>
+<span class="param-type">[String](#string)</span> The date on which the subscriber was created. format: data-time</div>
 
 </div>
 
@@ -9709,7 +9781,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="SubscriberCollectionResponse">SubscriberCollectionResponse -</a> [Up](#__Models)
+### <a name="SubscriberCollectionResponse">SubscriberCollectionResponse -</a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -9717,11 +9789,11 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">data (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[Subscriber]](#Subscriber)</span></div>
+<span class="param-type">[array[Subscriber]](#Subscriber)</span></div>
 
 <div class="param">meta (optional)</div>
 
-<div class="param-desc"><span class="param-type">[CollectionMeta](#CollectionMeta)</span></div>
+<span class="param-type">[CollectionMeta](#CollectionMeta)</span></div>
 
 </div>
 
@@ -9729,7 +9801,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="SubscriberResponse">SubscriberResponse -</a> [Up](#__Models)
+### <a name="SubscriberResponse">SubscriberResponse -</a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -9737,11 +9809,11 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">data (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Subscriber](#Subscriber)</span></div>
+<span class="param-type">[Subscriber](#Subscriber)</span></div>
 
 <div class="param">meta (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Meta](#Meta)</span></div>
+<span class="param-type">[Meta](#Meta)</span></div>
 
 </div>
 
@@ -9749,69 +9821,69 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="Variant">Variant -</a> [Up](#__Models)
+### <a name="Variant">Variant -</a> 
 
 <div class="field-items">
 
 <div class="param">id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span></div>
+<span class="param-type">[Integer](#integer)</span></div>
 
 <div class="param">product_id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span></div>
+<span class="param-type">[Integer](#integer)</span></div>
 
 <div class="param">sku (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span></div>
+<span class="param-type">[String](#string)</span></div>
 
 <div class="param">sku_id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> Read-only reference to v2 API's SKU ID. Null if it is a base variant.</div>
+<span class="param-type">[Integer](#integer)</span> Read-only reference to v2 API's SKU ID. Null if it is a base variant.</div>
 
 <div class="param">cost_price (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Double](#double)</span> The cost price of the variant. format: double</div>
+<span class="param-type">[Double](#double)</span> The cost price of the variant. format: double</div>
 
 <div class="param">price (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Double](#double)</span> This variant's base price on the storefront. If this value is null, the product's default price (set in the Product resource's `price` field) will be used as the base price. format: double</div>
+<span class="param-type">[Double](#double)</span> This variant's base price on the storefront. If this value is null, the product's default price (set in the Product resource's `price` field) will be used as the base price. format: double</div>
 
 <div class="param">weight (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Double](#double)</span> This variant's base weight on the storefront. If this value is null, the product's default weight (set in the Product resource's `weight` field) will be used as the base weight. format: double</div>
+<span class="param-type">[Double](#double)</span> This variant's base weight on the storefront. If this value is null, the product's default weight (set in the Product resource's `weight` field) will be used as the base weight. format: double</div>
 
 <div class="param">purchasing_disabled (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> If `true`, this variant will not be purchasable on the storefront.</div>
+<span class="param-type">[Boolean](#boolean)</span> If `true`, this variant will not be purchasable on the storefront.</div>
 
 <div class="param">purchasing_disabled_message (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> If `purchasing_disabled` is `true`, this message should show on the storefront when the variant is selected.</div>
+<span class="param-type">[String](#string)</span> If `purchasing_disabled` is `true`, this message should show on the storefront when the variant is selected.</div>
 
 <div class="param">image_url (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The image that will be displayed when this variant is selected on the storefront. When updating a SKU image, send the publicly accessible URL. Supported image formats are JPEG, PNG, and GIF. Generic product images (not specific to the variant) should be stored on the product.</div>
+<span class="param-type">[String](#string)</span> The image that will be displayed when this variant is selected on the storefront. When updating a SKU image, send the publicly accessible URL. Supported image formats are JPEG, PNG, and GIF. Generic product images (not specific to the variant) should be stored on the product.</div>
 
 <div class="param">upc (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The UPC code used in feeds for shopping comparison sites and external channel integrations.</div>
+<span class="param-type">[String](#string)</span> The UPC code used in feeds for shopping comparison sites and external channel integrations.</div>
 
 <div class="param">inventory_level (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> Inventory level for the variant, which is used when the product's `inventory_tracking` is set to `variant`.</div>
+<span class="param-type">[Integer](#integer)</span> Inventory level for the variant, which is used when the product's `inventory_tracking` is set to `variant`.</div>
 
 <div class="param">inventory_warning_level (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> When the variant hits this inventory level, it is considered low stock.</div>
+<span class="param-type">[Integer](#integer)</span> When the variant hits this inventory level, it is considered low stock.</div>
 
 <div class="param">bin_picking_number (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Identifies where in a warehouse the variant is located.</div>
+<span class="param-type">[String](#string)</span> Identifies where in a warehouse the variant is located.</div>
 
 <div class="param">option_values (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[OptionValueShort]](#OptionValueShort)</span> Array of option and option values IDs that make up this variant. Will be empty if the variant is the product's base variant.</div>
+<span class="param-type">[array[OptionValueShort]](#OptionValueShort)</span> Array of option and option values IDs that make up this variant. Will be empty if the variant is the product's base variant.</div>
 
 </div>
 
@@ -9819,7 +9891,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="VariantCollectionResponse">VariantCollectionResponse -</a> [Up](#__Models)
+### <a name="VariantCollectionResponse">VariantCollectionResponse -</a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -9827,11 +9899,11 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">data (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[Variant]](#Variant)</span></div>
+<span class="param-type">[array[Variant]](#Variant)</span></div>
 
 <div class="param">meta (optional)</div>
 
-<div class="param-desc"><span class="param-type">[CollectionMeta](#CollectionMeta)</span></div>
+<span class="param-type">[CollectionMeta](#CollectionMeta)</span></div>
 
 </div>
 
@@ -9839,69 +9911,69 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="VariantPost">VariantPost -</a> [Up](#__Models)
+### <a name="VariantPost">VariantPost -</a> 
 
 <div class="field-items">
 
 <div class="param">id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span></div>
+<span class="param-type">[Integer](#integer)</span></div>
 
 <div class="param">product_id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span></div>
+<span class="param-type">[Integer](#integer)</span></div>
 
 <div class="param">sku (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span></div>
+<span class="param-type">[String](#string)</span></div>
 
 <div class="param">sku_id (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> Read-only reference to v2 API's SKU ID. Null if it is a base variant.</div>
+<span class="param-type">[Integer](#integer)</span> Read-only reference to v2 API's SKU ID. Null if it is a base variant.</div>
 
 <div class="param">price (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> This variant's base price on the storefront. If this value is null, the product's default price (set in the Product resource's `price` field) will be used as the base price.</div>
+<span class="param-type">[String](#string)</span> This variant's base price on the storefront. If this value is null, the product's default price (set in the Product resource's `price` field) will be used as the base price.</div>
 
 <div class="param">weight (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> This variant's base weight on the storefront. If this value is null, the product's default weight (set in the Product resource's `weight` field) will be used as the base weight.</div>
+<span class="param-type">[String](#string)</span> This variant's base weight on the storefront. If this value is null, the product's default weight (set in the Product resource's `weight` field) will be used as the base weight.</div>
 
 <div class="param">purchasing_disabled (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Boolean](#boolean)</span> If `true`, this variant will not be purchasable on the storefront.</div>
+<span class="param-type">[Boolean](#boolean)</span> If `true`, this variant will not be purchasable on the storefront.</div>
 
 <div class="param">purchasing_disabled_message (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> If `purchasing_disabled` is `true`, this message should show on the storefront when the variant is selected.</div>
+<span class="param-type">[String](#string)</span> If `purchasing_disabled` is `true`, this message should show on the storefront when the variant is selected.</div>
 
 <div class="param">image_url (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The image that will be displayed when this variant is selected on the storefront. When updating a SKU image, send the publicly accessible URL. Supported image formats are JPEG, PNG, and GIF. Generic product images (not specific to the variant) should be stored on the product.</div>
+<span class="param-type">[String](#string)</span> The image that will be displayed when this variant is selected on the storefront. When updating a SKU image, send the publicly accessible URL. Supported image formats are JPEG, PNG, and GIF. Generic product images (not specific to the variant) should be stored on the product.</div>
 
 <div class="param">cost_price (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The variant's cost price.</div>
+<span class="param-type">[String](#string)</span> The variant's cost price.</div>
 
 <div class="param">upc (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> The UPC code used in feeds for shopping comparison sites and external channel integrations.</div>
+<span class="param-type">[String](#string)</span> The UPC code used in feeds for shopping comparison sites and external channel integrations.</div>
 
 <div class="param">inventory_level (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> Inventory level for the variant, which is used when the product's `inventory_tracking` is set to `variant`.</div>
+<span class="param-type">[Integer](#integer)</span> Inventory level for the variant, which is used when the product's `inventory_tracking` is set to `variant`.</div>
 
 <div class="param">inventory_warning_level (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Integer](#integer)</span> When the variant hits this inventory level, it is considered low stock.</div>
+<span class="param-type">[Integer](#integer)</span> When the variant hits this inventory level, it is considered low stock.</div>
 
 <div class="param">bin_picking_number (optional)</div>
 
-<div class="param-desc"><span class="param-type">[String](#string)</span> Identifies where in a warehouse the variant is located.</div>
+<span class="param-type">[String](#string)</span> Identifies where in a warehouse the variant is located.</div>
 
 <div class="param">option_values (optional)</div>
 
-<div class="param-desc"><span class="param-type">[array[OptionValueShortPost]](#OptionValueShortPost)</span></div>
+<span class="param-type">[array[OptionValueShortPost]](#OptionValueShortPost)</span></div>
 
 </div>
 
@@ -9909,7 +9981,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="model">
 
-### <a name="VariantResponse">VariantResponse -</a> [Up](#__Models)
+### <a name="VariantResponse">VariantResponse -</a> 
 
 <div class="model-description">Successful response</div>
 
@@ -9917,11 +9989,11 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 <div class="param">data (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Variant](#Variant)</span></div>
+<span class="param-type">[Variant](#Variant)</span></div>
 
 <div class="param">meta (optional)</div>
 
-<div class="param-desc"><span class="param-type">[Meta](#Meta)</span></div>
+<span class="param-type">[Meta](#Meta)</span></div>
 
 </div>
 
