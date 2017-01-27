@@ -7299,9 +7299,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 63.  [`VariantPost`](#VariantPost)
 64.  [`VariantResponse`](#VariantResponse)
 
-<div class="model">
 
-### <a name="Adjuster">Adjuster -</a> 
+### <a name="Adjuster">Adjuster </a> 
 
 <div class="field-items">
 
@@ -7323,9 +7322,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="BaseError">BaseError -</a> 
+### <a name="BaseError">BaseError </a> 
 
 <div class="model-description">Error payload for the BigCommerce API.</div>
 
@@ -7351,9 +7349,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="Brand">Brand -</a> 
+### <a name="Brand">Brand </a> 
 
 <div class="field-items">
 
@@ -7389,9 +7386,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="BrandCollectionResponse">BrandCollectionResponse -</a> 
+### <a name="BrandCollectionResponse">BrandCollectionResponse </a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -7409,9 +7405,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="BrandResponse">BrandResponse -</a> 
+### <a name="BrandResponse">BrandResponse </a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -7429,9 +7424,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="BulkPricingRule">BulkPricingRule -</a> 
+### <a name="BulkPricingRule">BulkPricingRule </a> 
 
 <div class="model-description">Rules that offer price discounts based on quantity breaks.</div>
 
@@ -7469,9 +7463,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="CatalogSummary">CatalogSummary -</a> 
+### <a name="CatalogSummary">CatalogSummary </a> 
 
 <div class="model-description">A BigCommerce Catalog Summary object describes a lightweight summary of the catalog.</div>
 
@@ -7497,9 +7490,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="CatalogSummaryResponse">CatalogSummaryResponse -</a> 
+### <a name="CatalogSummaryResponse">CatalogSummaryResponse </a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -7517,9 +7509,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="Category">Category -</a> 
+### <a name="Category">Category </a> 
 
 <div class="model-description">A BigCommerce category object.</div>
 
@@ -7609,9 +7600,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="CategoryCollectionResponse">CategoryCollectionResponse -</a> 
+### <a name="CategoryCollectionResponse">CategoryCollectionResponse </a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -7629,9 +7619,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="CategoryNode">CategoryNode -</a> 
+### <a name="CategoryNode">CategoryNode </a> 
 
 <div class="model-description">A BigCommerce category node object. Used to reflect parent <> child category relationships.</div>
 
@@ -7665,9 +7654,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="CategoryResponse">CategoryResponse -</a> 
+### <a name="CategoryResponse">CategoryResponse </a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -7685,9 +7673,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="CategoryTreeCollectionResponse">CategoryTreeCollectionResponse -</a> 
+### <a name="CategoryTreeCollectionResponse">CategoryTreeCollectionResponse </a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -7705,9 +7692,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="CollectionMeta">CollectionMeta -</a> 
+### <a name="CollectionMeta">CollectionMeta </a> 
 
 <div class="model-description">Data about the response, including pagination and collection totals.</div>
 
@@ -7741,9 +7727,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="CollectionMeta_links">CollectionMeta_links -</a> 
+### <a name="CollectionMeta_links">CollectionMeta_links </a> 
 
 <div class="model-description">Pagination links for the previous and next parts of the whole collection.</div>
 
@@ -7765,9 +7750,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="ComplexRule">ComplexRule -</a> 
+### <a name="ComplexRule">ComplexRule </a> 
 
 <div class="model-description">Apply price, weight, image, or availabilty adjustments to product, based on a set of conditions. A complex rule's condition must either contain more than one modifier value, or else contain a modifier value and a variant id.</div>
 
@@ -7825,9 +7809,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="ComplexRuleCollectionResponse">ComplexRuleCollectionResponse -</a> 
+### <a name="ComplexRuleCollectionResponse">ComplexRuleCollectionResponse </a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -7845,9 +7828,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="ComplexRuleCondition">ComplexRuleCondition -</a> 
+### <a name="ComplexRuleCondition">ComplexRuleCondition </a> 
 
 <div class="model-description">Complex rules may return with conditions that apply to one or more variants, or with a single modifier value (if the rules were created using the v2 API or the control panel). Complex rules created or updated in the v3 API must have conditions that either reference multiple `modifier_value_id`'s, or else reference a `modifier_value_id` and a `variant_id`.</div>
 
@@ -7881,9 +7863,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="ComplexRuleResponse">ComplexRuleResponse -</a> 
+### <a name="ComplexRuleResponse">ComplexRuleResponse </a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -7901,9 +7882,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="CustomField">CustomField -</a> 
+### <a name="CustomField">CustomField </a> 
 
 <div class="model-description">Gets custom fields associated with a product. These allow you to specify additional information that will appear on the product's page, such as a book's ISBN or a DVD's release date.</div>
 
@@ -7929,9 +7909,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="CustomUrl">CustomUrl -</a> 
+### <a name="CustomUrl">CustomUrl </a> 
 
 <div class="model-description">The custom URL for the product on the storefront.</div>
 
@@ -7949,15 +7928,13 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="DetailedErrors">DetailedErrors -</a> 
+### <a name="DetailedErrors">DetailedErrors </a> 
 
 </div>
 
-<div class="model">
 
-### <a name="ErrorResponse">ErrorResponse -</a> 
+### <a name="ErrorResponse">ErrorResponse </a> 
 
 <div class="field-items">
 
@@ -7985,9 +7962,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="ImageResponse">ImageResponse -</a> 
+### <a name="ImageResponse">ImageResponse </a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -8005,17 +7981,15 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="Meta">Meta -</a> 
+### <a name="Meta">Meta </a> 
 
 <div class="model-description">Empty meta object; might be used later.</div>
 
 </div>
 
-<div class="model">
 
-### <a name="MetaFieldCollectionResponse">MetaFieldCollectionResponse -</a> 
+### <a name="MetaFieldCollectionResponse">MetaFieldCollectionResponse </a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -8033,9 +8007,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="Metafield">Metafield -</a> 
+### <a name="Metafield">Metafield </a> 
 
 <div class="model-description">Allows app partners to write custom data to various resources in the API.</div>
 
@@ -8103,9 +8076,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="MetafieldResponse">MetafieldResponse -</a> 
+### <a name="MetafieldResponse">MetafieldResponse </a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -8123,9 +8095,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="Modifier">Modifier -</a> 
+### <a name="Modifier">Modifier </a> 
 
 <div class="field-items">
 
@@ -8191,9 +8162,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="ModifierCollectionResponse">ModifierCollectionResponse -</a> 
+### <a name="ModifierCollectionResponse">ModifierCollectionResponse </a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -8211,9 +8181,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="ModifierResponse">ModifierResponse -</a> 
+### <a name="ModifierResponse">ModifierResponse </a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -8231,9 +8200,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="ModifierValue">ModifierValue -</a> 
+### <a name="ModifierValue">ModifierValue </a> 
 
 <div class="field-items">
 
@@ -8265,9 +8233,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="ModifierValue_adjusters">ModifierValue_adjusters -</a> 
+### <a name="ModifierValue_adjusters">ModifierValue_adjusters </a> 
 
 <div class="field-items">
 
@@ -8291,9 +8258,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="ModifierValue_adjusters_purchasing_disabled">ModifierValue_adjusters_purchasing_disabled -</a> 
+### <a name="ModifierValue_adjusters_purchasing_disabled">ModifierValue_adjusters_purchasing_disabled </a> 
 
 <div class="field-items">
 
@@ -8309,9 +8275,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="NotFound">NotFound -</a> 
+### <a name="NotFound">NotFound </a> 
 
 <div class="model-description">Error payload for the BigCommerce API.</div>
 
@@ -8337,9 +8302,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="Option">Option -</a> 
+### <a name="Option">Option </a> 
 
 <div class="field-items">
 
@@ -8389,9 +8353,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="OptionCollectionResponse">OptionCollectionResponse -</a> 
+### <a name="OptionCollectionResponse">OptionCollectionResponse </a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -8409,9 +8372,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="OptionConfig">OptionConfig -</a> 
+### <a name="OptionConfig">OptionConfig </a> 
 
 <div class="field-items">
 
@@ -8545,9 +8507,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="OptionResponse">OptionResponse -</a> 
+### <a name="OptionResponse">OptionResponse </a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -8565,9 +8526,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="OptionValue">OptionValue -</a> 
+### <a name="OptionValue">OptionValue </a> 
 
 <div class="field-items">
 
@@ -8595,9 +8555,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="OptionValueShort">OptionValueShort -</a> 
+### <a name="OptionValueShort">OptionValueShort </a> 
 
 <div class="field-items">
 
@@ -8621,9 +8580,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="OptionValueShortPost">OptionValueShortPost -</a> 
+### <a name="OptionValueShortPost">OptionValueShortPost </a> 
 
 <div class="field-items">
 
@@ -8639,9 +8597,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="Product">Product -</a> 
+### <a name="Product">Product </a> 
 
 <div class="model-description">A BigCommerce Product object describes a single purchasable unit or a collection of purchasable units.</div>
 
@@ -8905,9 +8862,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="ProductCollectionResponse">ProductCollectionResponse -</a> 
+### <a name="ProductCollectionResponse">ProductCollectionResponse </a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -8925,9 +8881,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="ProductImage">ProductImage -</a> 
+### <a name="ProductImage">ProductImage </a> 
 
 <div class="model-description">The full ProductImage model.</div>
 
@@ -8977,9 +8932,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="ProductImageBase">ProductImageBase -</a> 
+### <a name="ProductImageBase">ProductImageBase </a> 
 
 <div class="model-description">Common ProductImage properties.</div>
 
@@ -9001,9 +8955,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="ProductImageCollectionResponse">ProductImageCollectionResponse -</a> 
+### <a name="ProductImageCollectionResponse">ProductImageCollectionResponse </a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -9021,9 +8974,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="ProductImagePost">ProductImagePost -</a> 
+### <a name="ProductImagePost">ProductImagePost </a> 
 
 <div class="model-description">The model for a POST to create an image on a product.</div>
 
@@ -9053,9 +9005,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="ProductImagePut">ProductImagePut -</a> 
+### <a name="ProductImagePut">ProductImagePut </a> 
 
 <div class="model-description">The model for a PUT to update applicable ProductImage fields.</div>
 
@@ -9077,9 +9028,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="ProductImageResponse">ProductImageResponse -</a> 
+### <a name="ProductImageResponse">ProductImageResponse </a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -9097,9 +9047,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="ProductPost">ProductPost -</a> 
+### <a name="ProductPost">ProductPost </a> 
 
 <div class="field-items">
 
@@ -9361,9 +9310,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="ProductPut">ProductPut -</a> 
+### <a name="ProductPut">ProductPut </a> 
 
 <div class="field-items">
 
@@ -9625,9 +9573,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="ProductResponse">ProductResponse -</a> 
+### <a name="ProductResponse">ProductResponse </a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -9645,9 +9592,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="ProductVideo">ProductVideo -</a> 
+### <a name="ProductVideo">ProductVideo </a> 
 
 <div class="model-description">A product video model.</div>
 
@@ -9681,9 +9627,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="ProductVideoCollectionResponse">ProductVideoCollectionResponse -</a> 
+### <a name="ProductVideoCollectionResponse">ProductVideoCollectionResponse </a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -9701,9 +9646,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="ProductVideoResponse">ProductVideoResponse -</a> 
+### <a name="ProductVideoResponse">ProductVideoResponse </a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -9721,9 +9665,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="ResourceImage">ResourceImage -</a> 
+### <a name="ResourceImage">ResourceImage </a> 
 
 <div class="model-description">An object containing a publicly accessible image URL, or a form post that contains an image file.</div>
 
@@ -9737,9 +9680,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="Subscriber">Subscriber -</a> 
+### <a name="Subscriber">Subscriber </a> 
 
 <div class="field-items">
 
@@ -9779,9 +9721,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="SubscriberCollectionResponse">SubscriberCollectionResponse -</a> 
+### <a name="SubscriberCollectionResponse">SubscriberCollectionResponse </a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -9799,9 +9740,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="SubscriberResponse">SubscriberResponse -</a> 
+### <a name="SubscriberResponse">SubscriberResponse </a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -9819,9 +9759,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="Variant">Variant -</a> 
+### <a name="Variant">Variant </a> 
 
 <div class="field-items">
 
@@ -9889,9 +9828,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="VariantCollectionResponse">VariantCollectionResponse -</a> 
+### <a name="VariantCollectionResponse">VariantCollectionResponse </a> 
 
 <div class="model-description">Response payload for the Bigcommerce API.</div>
 
@@ -9909,9 +9847,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="VariantPost">VariantPost -</a> 
+### <a name="VariantPost">VariantPost </a> 
 
 <div class="field-items">
 
@@ -9979,9 +9916,8 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 
 </div>
 
-<div class="model">
 
-### <a name="VariantResponse">VariantResponse -</a> 
+### <a name="VariantResponse">VariantResponse </a> 
 
 <div class="model-description">Successful response</div>
 
