@@ -60,21 +60,21 @@ paths:
       responses:
         200:
           description: |
-            An array of products and metadata
+            An array of products and metadata.
           schema:
             $ref: "#/definitions/ProductCollectionResponse"
     post:
       tags:
         - Catalog
       description: |
-        Creates a `Product` in the BigCommerce Catalog
+        Creates a `Product` in the BigCommerce Catalog.
       operationId: createProduct
       parameters:
         - name: product
           in: body
           required: true
           description: |
-            A BigCommerce `Product` object
+            A BigCommerce `Product` object.
           schema:
             $ref: "#/definitions/ProductPost"
       responses:
@@ -206,11 +206,19 @@ paths:
             List of product images and metadata.
           schema:
             $ref: "#/definitions/ProductImageCollectionResponse"
+        204:
+          description: |
+            There are not any images on this product.
+        404:
+          description: |
+            The product ID does not exist.
+          schema:
+            $ref: '#/definitions/NotFound'
     post:
       tags:
         - Catalog
       description: |
-        Creates an image on a product. Publicly accessible URLs and files (form post) are valid parameters.
+        Creates an image on a product. Publically accessible URLs and files (form post) are valid parameters.
       operationId: createProductImage
       parameters:
       - name: productImage
@@ -219,7 +227,7 @@ paths:
         description: |
           A BigCommerce `ProductImage` object.
         schema:
-          $ref: "#/definitions/ProductImage"
+          $ref: "#/definitions/ProductImagePost"
       responses:
         200:
           description: |
@@ -228,7 +236,7 @@ paths:
             $ref: '#/definitions/ProductImageResponse'
         404:
           description: |
-            The resource was not found.
+            The product ID does not exist.
           schema:
             $ref: '#/definitions/NotFound'
   /catalog/products/{product_id}/images/{image_id}:
@@ -275,7 +283,7 @@ paths:
         description: |
           A BigCommerce `ProductImage` object.
         schema:
-          $ref: "#/definitions/ProductImage"
+          $ref: "#/definitions/ProductImagePut"
       responses:
         200:
           description: |
@@ -2111,14 +2119,14 @@ parameters:
   FilterInventoryLowParam:
     name: inventory_low
     description: |
-      Filter items by inventory_low, values: 1, 0.
+      Filter items by inventory_low; values: 1, 0.
     required: false
     in: query
     type: integer
   FilterOutOfStockParam:
     name: out_of_stock
     description: |
-      Filter items by out_of_stock. To enable the filter, pass out_of_stock=1.
+      Filter items by out_of_stock. To enable the filter, pass `out_of_stock`=`1`.
     required: false
     in: query
     type: integer
@@ -2432,7 +2440,7 @@ definitions:
       data:
         $ref: "#/definitions/ProductImage"
       meta:
-        $ref: "#/definitions/CollectionMeta"
+        $ref: "#/definitions/Meta"
   ProductVideoResponse:
     description: |
       Response payload for the Bigcommerce API.
@@ -2723,7 +2731,7 @@ definitions:
       availability_description:
         type: string
         description: |
-          Availability text displayed on the checkout page under the product title. Tells the customer how long it will normally take to ship this product, such as 'Usually ships in 24 hours.'
+          Availability text displayed on the checkout page, under the product title. Tells the customer how long it will normally take to ship this product, such as 'Usually ships in 24 hours.'
       gift_wrapping_options_type:
         type: string
         enum:
@@ -2731,11 +2739,11 @@ definitions:
           - none
           - list
         description: |
-          Type of gift wrapping options. Values: `any` - allow any gift wrapping options in the store; `none` - disallow gift wrapping on the product; `list` – provide a list of IDs in `gift_wrapping_options_list` field.
+          Type of gift-wrapping options. Values: `any` - allow any gift-wrapping options in the store; `none` - disallow gift wrapping on the product; `list` – provide a list of IDs in the `gift_wrapping_options_list` field.
       gift_wrapping_options_list:
         type: array
         description: |
-          A list of gift wrapping option IDs.
+          A list of gift-wrapping option IDs.
         items:
           type: integer
       sort_order:
@@ -2845,51 +2853,79 @@ definitions:
             type: array
             items:
               $ref: "#/definitions/Variant"
-  ProductImage:
+  ProductImageBase:
     type: object
     description: |
-      An product image model.
+      Common ProductImage properties.
     properties:
-      id:
-        description: |
-          The unique numeric ID of the image; increments sequentially.
-        type: integer
-      product_id:
-        description: |
-          The unique numeric identifier for the product with which the image is associated.
-        type: integer
       is_thumbnail:
         description: |
           Flag for identifying whether the image is used as the product's thumbnail.
         type: boolean
       sort_order:
         description: |
-          The order in which the image will be displayed on the product page. Higher integers will give the image a lower priority. If the image is given a lower priority, then when updating, all images with a `sort_order` the same or greater than the image's new `sort_order` value will have their `sort_order` reordered.
+          The order in which the image will be displayed on the product page. Higher integers give the image a lower priority. When updating, if the image is given a lower priority, all images with a `sort_order` the same as or greater than the image's new `sort_order` value will have their `sort_order`s reordered.
         type: integer
       description:
         description: |
           The description for the image.
         type: string
-      image_file:
-        description: |
-          The local path to the original image file uploaded to BigCommerce. Must be POSTed into as a multipart/form-data field.
-        type: string
-      url_zoom:
-        description: |
-          The zoom URL for this image.
-        type: string
-      url_standard:
-        description: |
-          The standard URL for this image.
-        type: string
-      url_thumbnail:
-        description: |
-          The thumbnail URL for this image.
-        type: string
-      url_tiny:
-        description: |
-          The tiny URL for this image.
-        type: string
+  ProductImage:
+    type: object
+    description: |
+      The full ProductImage model.
+    allOf:
+      - $ref: "#/definitions/ProductImageBase"
+      - properties:
+          id:
+            description: |
+              The unique numeric ID of the image; increments sequentially.
+            type: integer
+          product_id:
+            description: |
+              The unique numeric identifier for the product with which the image is associated.
+            type: integer
+          image_file:
+            description: |
+              The local path to the original image file uploaded to BigCommerce.
+            type: string
+          url_zoom:
+            description: |
+              The zoom URL for this image. By default, this is used as the zoom image on product pages when zoom images are enabled.
+            type: string
+          url_standard:
+            description: |
+              The standard URL for this image. By default, this is used for product-page images.
+            type: string
+          url_thumbnail:
+            description: |
+              The thumbnail URL for this image. By default, this is the image size used on the category page and in side panels.
+            type: string
+          url_tiny:
+            description: |
+              The tiny URL for this image. By default, this is the image size used for thumbnails beneath the product image on a product page.
+            type: string
+  ProductImagePost:
+    type: object
+    description: |
+      The model for a POST to create an image on a product.
+    allOf:
+      - $ref: "#/definitions/ProductImageBase"
+      - properties:
+          image_url:
+            description: |
+              Must be a fully qualified URL path, including protocol.
+            type: string
+          image_file:
+            description: |
+              Must be sent as a multipart/form-data field in the request body.
+            type: string
+  ProductImagePut:
+    type: object
+    description: |
+      The model for a PUT to update applicable ProductImage fields.
+    allOf:
+      - $ref: "#/definitions/ProductImageBase"
   ProductVideo:
     type: object
     description: |
@@ -2917,7 +2953,7 @@ definitions:
         type: string
       length:
         description: |
-          length of video. This will be filled in according to data on YouTube.
+          Length of the video. This will be filled in according to data on YouTube.
         type: string
   CustomField:
     type: object
@@ -2965,11 +3001,11 @@ definitions:
       quantity_min:
         type: integer
         description: |
-          The maximum inclusive quantity of a product to satisfy this rule. Must be greater than the min value – unless this field has a value of 0 (zero), in which case there will be no maximum bound for this rule.
+          The minimum inclusive quantity of a product to satisfy this rule. Must be greater than or equal to zero.
       quantity_max:
         type: integer
         description: |
-          The minimum inclusive quantity of a product to satisfy this rule. Must be greater than or equal to zero.
+          The maximum inclusive quantity of a product to satisfy this rule. Must be greater than the `quantity_min` value – unless this field has a value of 0 (zero), in which case there will be no maximum bound for this rule.
       type:
         type: string
         enum:
@@ -3355,7 +3391,7 @@ definitions:
       date_limit_mode:
         type: string
         description: |
-          (date) The type of limit that is allowed to be entered on a date option. Enum alues: `earliest`, `range`, `latest`.
+          (date) The type of limit that is allowed to be entered on a date option.
         enum:
           - earliest
           - range
@@ -3373,19 +3409,17 @@ definitions:
       file_types_mode:
         type: string
         description: |
-          (file) The kind of restriction on the types of files that can be uploaded to a file upload option.
-            `specific` - restricts upload to particular file types.
-            `all` - allows all files types.
+          (file) The kind of restriction on the file types that can be uploaded with a file upload option. Values: `specific` - restricts uploads to particular file types; `all` - allows all file types.
         enum:
           - specific
           - all
       file_types_supported:
         type: array
         description: |
-          (file) The kind of files allowed to be uploaded if the `file_type_option` is set to `specific`.
+          (file) The type of files allowed to be uploaded if the `file_type_option` is set to `specific`. Values:
             `images` - Allows upload of image MIME types (`bmp`,`gif`,`jpg`,`jpeg`,`jpe`,`jif`,`jfif`,`jfi`,`png`,`wbmp`,`xbm`,`tiff`).
             `documents` - Allows upload of document MIME types (`txt`,`pdf`,`rtf`,`doc`,`docx`,`xls`,`xlsx`,`accdb`,`mdb`,`one`,`pps`,`ppsx`,`ppt`,`pptx`,`pub`,`odt`,`ods`,`odp`,`odg`,`odf`).
-            `other` - Allows other file type defined in the `file_types_other` array.
+            `other` - Allows file types defined in the `file_types_other` array.
         items:
           type: string
       file_types_other:
@@ -3397,11 +3431,11 @@ definitions:
       file_max_size:
         type: integer
         description: |
-         (file) The maximum size of the file that can be used in the file upload option.
+         (file) The maximum size for a file that can be used with the file upload option.
       text_characters_limited:
         type: boolean
         description: |
-          (text, multi_line_text) Flag to validate the length of the text of a text or multi-line text input.
+          (text, multi_line_text) Flag to validate the length of a text or multi-line text input.
       text_min_length:
         type: integer
         description: |
@@ -3425,7 +3459,7 @@ definitions:
       number_limit_mode:
         type: string
         description: |
-          (numbers_only_text) The type of limit that is allowed to be entered on a number option (`lowest`, `highest`, `range`).
+          (numbers_only_text) The type of limit on values entered for a number option.
         enum:
           - lowest
           - highest
@@ -3433,15 +3467,15 @@ definitions:
       number_lowest_value:
         type: number
         description: |
-          (numbers_only_text) The lowest allowed value for a number option if `limit_input` is true.
+          (numbers_only_text) The lowest allowed value for a number option if `number_limited` is true.
       number_highest_value:
         type: number
         description: |
-          (numbers_only_text) The highest allowed value for a number option if `limit_input` is true.
+          (numbers_only_text) The highest allowed value for a number option if `number_limited` is true.
       number_integers_only:
         type: boolean
         description: |
-          (numbers_only_text) Flag to limit the imput on a number option to only accept whole numbers.
+          (numbers_only_text) Flag to limit the input on a number option to whole numbers only.
       product_list_adjusts_inventory:
         type: boolean
         description: |
@@ -3449,11 +3483,11 @@ definitions:
       product_list_adjusts_pricing:
         type: boolean
         description: |
-          (product_list, product_list_with_images) Flag to add the price of the optional product to the price of the main product
+          (product_list, product_list_with_images) Flag to add the optional product's price to the main product's price.
       product_list_shipping_calc:
         type: string
         description: |
-          (product_list, product_list_with_images)  How to factor the optional product's weight and dimensions (package) into the shipping quote (none - don't adjust, weight - use shipping weight only, package - use package, weight and dimensions)
+          (product_list, product_list_with_images) How to factor the optional product's weight and package dimensions into the shipping quote. Values: `none` - don't adjust; `weight` - use shipping weight only; `package` - use weight and dimensions.
         enum:
           - none
           - weight
@@ -3472,7 +3506,7 @@ definitions:
       name:
         type: string
         description: |
-          The unique option name, auto-generated from the display name, a timestamp, and the product ID.
+          The unique option name. Auto-generated from the display name, a timestamp, and the product ID.
       display_name:
         type: string
         description: |
@@ -3563,7 +3597,7 @@ definitions:
       adjuster:
         type: string
         description: |
-          The type of adjuster, as either `relative` or `percentage`, for either the price or the weight of the variant when the modifier value is selected on the storefront.
+          The type of adjuster for either the price or the weight of the variant, when the modifier value is selected on the storefront.
         enum:
           - relative
           - percentage
@@ -3616,7 +3650,7 @@ definitions:
   ComplexRule:
     type: object
     description: |
-      Apply price, weight. image, or availabilty adjustments to product based on a set of conditions. A complex rule's condistion must contain more than one modifier value or a modifier value and a variant id.
+      Apply price, weight, image, or availabilty adjustments to product, based on a set of conditions. A complex rule's condition must either contain more than one modifier value, or else contain a modifier value and a variant id.
     properties:
       id:
         type: integer
@@ -3649,7 +3683,7 @@ definitions:
       purchasing_disabled_message:
         type: string
         description: |
-          Message displayed in the storefront when a rule disables the purchasing of a product.
+          Message displayed on the storefront when a rule disables the purchasing of a product.
       purchasing_hidden:
         type: boolean
         description: |
@@ -3714,7 +3748,7 @@ definitions:
   Metafield:
     type: object
     description: |
-      Allows for app partners to write custom data to various resources in the API.
+      Allows app partners to write custom data to various resources in the API.
     properties:
       id:
         type: integer
@@ -3761,9 +3795,9 @@ definitions:
         type: string
         format: date-time
         description: |
-          Created date and time for the metafield.
+          Date and time of the metafield's creation.
       updated_at:
         type: string
         format: date-time
         description: |
-          Last updated date and time for the metafield.
+          Date and time when the metafield was last updated.
