@@ -10643,3 +10643,7 @@ The `Subscriber` was not valid. This is the result of missing required fields, o
 </div>
 
 </div>
+
+## <span id="definitions">Definitions </span>
+
+<span id="integer"> **Integer:** A whole number. </span>
