@@ -1,4 +1,421 @@
-<!DOCTYPE doctype html>
+# v3 Catalog API Documentation
+
+_Welcome! Please note that this API is in our partner-release stage, which means that in the short term, we'll be iterating on feedback from partners. Our goal is to make sure that all concerns are addressed, and that we reach our goal of creating the most powerful, easiest-to-use catalog API in ecommerce. Because of this iterative approach, please expect small changes and many additions to occur._
+
+**Have suggestions, feedback or questions? Submit them as an issue here:** 
+https://github.com/bigcommerce/api/issues
+
+**Want to see what we have in development, and help direct our roadmap? View our public API roadmap here:** https://trello.com/b/1Od4oCsl/bigcommerce-api-roadmap
+
+## Access and Authentication
+
+All BigCommerce stores have access to the v3 Catalog API.
+
+The base URI is: https://api.bigcommerce.com/stores/{store_hash}/v3/
+
+To authenticate, you'll need to use an OAuth client ID and token, sent along with the following headers:
+  
+- Accept: application/json  
+- X-Auth-Client: {client_id}  
+- X-Auth-Token: {oauth_token}
+
+The flow to register for a client ID and retrieve a token is the same as with the v2 API:
+- To get your Client ID, you must complete [App Registration](https://developer.bigcommerce.com/api/registration).
+- To get your OAuth token, you must complete [App Installation](https://developer.bigcommerce.com/api/callback).
+
+On our short-term roadmap is the ability to more easily create OAuth credentials, within the control panel – similar to the way legacy v2 keys are created now. _Note that in the future, we'll be deprecating legacy keys from v2, and removing the ability to create v2 keys within the CP. So grokking our OAuth flow now is not a wasted effort!_
+
+Existing v2 client ids and tokens will also work with the v3 API. So, if you've already integrated with v2 using our OAuth flow, you should be golden!
+
+## What's New?
+
+- Variants
+  - Every purchasable entity in the catalog is now a variant. When you create a product without any options, we automatically create a variant for you. This enables enhanced flows around inventory management, such as the ability to solely use the variants endpoint to manage inventory levels.
+- Options and Modifiers
+  - There is now a clear separation of options that define variants versus those that are modifiers of a variant. This enables us to simplify the creation and management of variant prices and modifier adjusters. It removes the need to use complex rules, in all but the most extreme cases.
+  - Options and modifiers can also be attached directly to the product, without the requirement to create an option set beforehand.
+- Creating a Product with its Variants in One API Call
+  - When creating an initial catalog, you can send the core product and variant data in the same request. This helps you create more performant, managable codebases. We'll handle the option and option value creation for you.
+- Including Variants in Product GETs
+  - Following our goal of streamlining catalog management, you can now request to `?include=variants` (along with other resources). This further eliminates API calls.
+- Ready-made Catalog Tree
+  - There's now an endpoint specifically for building out the catalog tree, which previously took considerable work to construct.  
+- Full Access to Modifer Configuration values
+  - Properties like number-only field limits, and product-list inventory adjustment settings, are now available via this API. This exposes more than 20 properties previously unavailable to our developers.
+
+## What's Not Here?
+
+If you're currently consuming our v2 API, you'll notice that some catalog endpoints and elements are missing from this version. Some of the omissions are intentional; we're iterating on others, making sure they're done right. 
+
+- Intentional
+  - Product -> Configurable Fields
+      - Modifiers should now be used for any use case where you'd use configurable fields. You can attach modifiers to products as well and they cover a larger array of uses. 
+  - Option Sets
+      - In v3, you attach options directly to products. So option sets are not required, and v3 includes no endpoint to manage options sets. However, v3 will respect option sets that have been attached via v2 or the control panel.
+- Iterating
+  - Product -> Complex Rules
+      - Keep in mind that the majority of rule use cases can already be solved through variant properties and modifier adjusters.
+  - Product -> Reviews
+  - Product -> Videos
+  - Product -> Downloads
+  - Product -> Google Search Mappings
+      - Might instead bring fields onto variant entity as properties/metadata.
+  - Product -> Open Graph and Accounting Fields
+      - Might group into their own product objects, to keep resource clean.
+
+You can see how we're planning to iterate by looking at the [public API roadmap](https://trello.com/b/1Od4oCsl/bigcommerce-api-roadmap). 
+
+## v2 Catalog API and Control-Panel Interoperability
+
+The v3 Catalog API is essentially our catalog's future state. This means that many concepts don't map visibly to their v2 and control-panel relatives.
+
+The good news here is we've built this API with v2 interoperability in mind. So you should be able to use both APIs simultaneously as you (in an ideal scenario) fully transition all catalog management to v3. The key areas to be aware of are:    
+
+- Option Sets
+  - The Product resource in v3 has an `option_set_id` field that, if set, will prevent you from directly editing product options and modifiers. If you want to edit the option set, you will need to either use v2, or else set the `option_set_id` field to null. The latter will remove the option set and allow you to directly attach options and modifiers.
+  - In our control panel's Add/Edit Product section, any products created by v3 will have not have an option set applied, but merchants can still edit the options. If the merchant edits/chooses an option set, any variants will be removed from the product.
+- Product Rules
+  - Any variant created in v3 with non-null core properties (price, weight, image, purchasablilty) will create a rule under the hood. The same goes for modifier adjusters. These will show in v2 as product rules, and any edits to them will be shared across API versions.
+
+_We're already refreshing our control panel's Add/Edit Product workflow to align with the concepts in v3._
+
+### Product POST with Variants
+
+When you include variants in your Product POST, we'll automatically create all the options and option values for you. If you don't pass the price and weight with the variants, the product price and weight will be used for the variants on the storefront.
+
+Here's a sample POST to https://api.bigcommerce.com/stores/{store-hash}/v3/catalog/products:
+```javascript
+{
+    "name": "T-shirt",
+    "type": "physical",
+    "price": 10.25,
+    "description": "<h4>Great T-shirt</h4>The best t-shirt ever.",
+    "weight": 1.20,
+    "categories": [
+        18
+    ],
+    "variants": [
+        {
+            "sku": "SKU-R-SM",
+            "option_values": [
+                {
+                    "option_display_name": "Color",
+                    "label": "Red"
+                },
+                {
+                    "option_display_name": "Size",
+                    "label": "Small"
+                }
+            ]
+        },
+        {
+            "sku": "SKU-B-SM",
+            "option_values": [
+                {
+                    "option_display_name": "Color",
+                    "label": "Blue"
+                },
+                {
+                    "option_display_name": "Size",
+                    "label": "Small"
+                }
+            ]
+        },
+        {
+            "sku": "SKU-R-MD",
+            "option_values": [
+                {
+                    "option_display_name": "Color",
+                    "label": "Red"
+                },
+                {
+                    "option_display_name": "Size",
+                    "label": "Medium"
+                }
+            ]
+        },
+        {
+            "sku": "SKU-B-MD",
+            "option_values": [
+                {
+                    "option_display_name": "Color",
+                    "label": "Blue"
+                },
+                {
+                    "option_display_name": "Size",
+                    "label": "Medium"
+                }
+            ]
+        },
+        {
+            "sku": "SKU-R-LG",
+            "price": 10.50,
+            "weight": 1.25,
+            "option_values": [
+                {
+                    "option_display_name": "Color",
+                    "label": "Red"
+                },
+                {
+                    "option_display_name": "Size",
+                    "label": "Large"
+                }
+            ]
+        },
+        {
+            "sku": "SKU-B-LG",
+            "price": 10.50,
+            "weight": 1.25,
+            "option_values": [
+                {
+                    "option_display_name": "Color",
+                    "label": "Blue"
+                },
+                {
+                    "option_display_name": "Size",
+                    "label": "Large"
+                }
+            ]
+        }
+    ]
+}
+```
+
+When you create a product, we'll automatically return variants in the response:
+```javascript
+{
+    "data": {
+        "id": 114,
+        "name": "T-shirt",
+        "type": 1,
+        "sku": "",
+        "description": "<h4>Great T-shirt</h4>The best t-shirt ever.",
+        "weight": 1.2,
+        "width": 0,
+        "depth": 0,
+        "height": 0,
+        "price": 10.25,
+        "cost_price": 0,
+        "retail_price": 0,
+        "sale_price": 0,
+        "tax_class_id": 0,
+        "product_tax_code": "",
+        "calculated_price": 10.25,
+        "categories": [
+            18
+        ],
+        "brand_id": 0,
+        "option_set_id": null,
+        "inventory_level": 0,
+        "inventory_warning_level": 0,
+        "inventory_tracking": 0,
+        "fixed_cost_shipping_price": 0,
+        "is_free_shipping": false,
+        "is_visible": true,
+        "is_featured": false,
+        "warranty": "",
+        "bin_picking_number": "",
+        "layout_file": "",
+        "upc": "",
+        "search_keywords": "",
+        "availability": "available",
+        "availability_description": "",
+        "gift_wrapping_options": 0,
+        "sort_order": 0,
+        "condition": "New",
+        "is_condition_shown": true,
+        "order_quantity_minimum": 0,
+        "order_quantity_maximum": 0,
+        "page_title": "",
+        "meta_keywords": [],
+        "meta_description": "",
+        "date_created": "2016-07-03T00:39:00+00:00",
+        "date_modified": "2016-07-03T00:39:00+00:00",
+        "view_count": 0,
+        "preorder_release_date": null,
+        "preorder_message": "",
+        "is_preorder_only": false,
+        "is_price_hidden": false,
+        "price_hidden_label": "",
+        "custom_url": {
+            "url": "/t-shirt/",
+            "is_customized": false
+        },
+        "variants": [
+            {
+                "id": 78,
+                "product_id": 114,
+                "sku": "SKU-R-SM",
+                "sku_id": 127,
+                "price": null,
+                "weight": null,
+                "purchasing_disabled": false,
+                "purchasing_disabled_message": "",
+                "image_file": null,
+                "cost_price": 0,
+                "upc": "",
+                "inventory_level": 0,
+                "inventory_warning_level": 0,
+                "bin_picking_number": "",
+                "option_values": [
+                    {
+                        "id": 98,
+                        "option_id": 113
+                    },
+                    {
+                        "id": 99,
+                        "option_id": 114
+                    }
+                ]
+            },
+            {
+                "id": 79,
+                "product_id": 114,
+                "sku": "SKU-B-SM",
+                "sku_id": 128,
+                "price": null,
+                "weight": null,
+                "purchasing_disabled": false,
+                "purchasing_disabled_message": "",
+                "image_file": null,
+                "cost_price": 0,
+                "upc": "",
+                "inventory_level": 0,
+                "inventory_warning_level": 0,
+                "bin_picking_number": "",
+                "option_values": [
+                    {
+                        "id": 100,
+                        "option_id": 113
+                    },
+                    {
+                        "id": 99,
+                        "option_id": 114
+                    }
+                ]
+            },
+            {
+                "id": 80,
+                "product_id": 114,
+                "sku": "SKU-R-MD",
+                "sku_id": 129,
+                "price": null,
+                "weight": null,
+                "purchasing_disabled": false,
+                "purchasing_disabled_message": "",
+                "image_file": null,
+                "cost_price": 0,
+                "upc": "",
+                "inventory_level": 0,
+                "inventory_warning_level": 0,
+                "bin_picking_number": "",
+                "option_values": [
+                    {
+                        "id": 98,
+                        "option_id": 113
+                    },
+                    {
+                        "id": 101,
+                        "option_id": 114
+                    }
+                ]
+            },
+            {
+                "id": 81,
+                "product_id": 114,
+                "sku": "SKU-B-MD",
+                "sku_id": 130,
+                "price": null,
+                "weight": null,
+                "purchasing_disabled": false,
+                "purchasing_disabled_message": "",
+                "image_file": null,
+                "cost_price": 0,
+                "upc": "",
+                "inventory_level": 0,
+                "inventory_warning_level": 0,
+                "bin_picking_number": "",
+                "option_values": [
+                    {
+                        "id": 100,
+                        "option_id": 113
+                    },
+                    {
+                        "id": 101,
+                        "option_id": 114
+                    }
+                ]
+            },
+            {
+                "id": 82,
+                "product_id": 114,
+                "sku": "SKU-R-LG",
+                "sku_id": 131,
+                "price": 10.5,
+                "weight": 1.25,
+                "purchasing_disabled": false,
+                "purchasing_disabled_message": "",
+                "image_file": null,
+                "cost_price": 0,
+                "upc": "",
+                "inventory_level": 0,
+                "inventory_warning_level": 0,
+                "bin_picking_number": "",
+                "option_values": [
+                    {
+                        "id": 98,
+                        "option_id": 113
+                    },
+                    {
+                        "id": 102,
+                        "option_id": 114
+                    }
+                ]
+            },
+            {
+                "id": 83,
+                "product_id": 114,
+                "sku": "SKU-B-LG",
+                "sku_id": 132,
+                "price": 10.5,
+                "weight": 1.25,
+                "purchasing_disabled": false,
+                "purchasing_disabled_message": "",
+                "image_file": null,
+                "cost_price": 0,
+                "upc": "",
+                "inventory_level": 0,
+                "inventory_warning_level": 0,
+                "bin_picking_number": "",
+                "option_values": [
+                    {
+                        "id": 100,
+                        "option_id": 113
+                    },
+                    {
+                        "id": 102,
+                        "option_id": 114
+                    }
+                ]
+            }
+        ],
+        "images": [],
+        "custom_fields": [],
+        "bulk_pricing_rules": []
+    },
+    "meta": {}
+}
+```
+
+## Expanding Product Sub-Resources on GET
+
+You can include sub-resources on a product, as a comma-separated list, by using `include={sub-resources}` as a query string. Valid expansions currently include `variants`, `images`, `custom_fields`, and `bulk_pricing_rules`. For instance, if you wanted variants and custom fields to also return in the product response, you'd GET: 
+https://api.bigcommerce.com/stores/{store-hash}/v3/catalog/products?include=variants,custom_fields
+
+# v3 Catalog API Reference
+
+Please view the documentation generated from the Swagger file [here](http://editor.swagger.io/#/?import=https://raw.githubusercontent.com/bigcommerce/api/master/swagger/v3-catalog.yaml).
+
 <html>
  <head>
   <title>
@@ -13,11 +430,8 @@
    A Swagger Document for the BigCommmerce API V3.
   </div>
   <h2>
-   Access
-  </h2>
-  <h2>
    <a name="__Methods">
-    Methods
+    Methods/Endpoints
    </a>
   </h2>
   [ Jump to
@@ -19203,3 +19617,10 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
   </div>
  </body>
 </html>
+
+
+## <span id="definitions">Definitions </span>
+
+<span id="integer"> **Integer:** A whole number. </span>
+
+<span id="string"> **String:** A sequence of characters (letters, numerals, symbols, and/or punctuation marks). </span>
