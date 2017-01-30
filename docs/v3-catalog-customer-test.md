@@ -10126,7 +10126,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </span>
    request header;
     the media type will be conveyed by the
-   <span class="heaader">
+   <span class="header">
     Content-Type
    </span>
    response header.
@@ -13275,7 +13275,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      adjuster (optional)
     </div>
     <div class="param-desc">
@@ -13295,7 +13295,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     <div class="param-enum">
      percentage
     </div>
-    <div class="param">
+    </p><div class="param">
      adjuster_value (optional)
     </div>
     <div class="param-desc">
@@ -13319,7 +13319,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      status (optional)
     </div>
     <div class="param-desc">
@@ -13330,7 +13330,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The HTTP status code
     </div>
-    <div class="param">
+    </p><div class="param">
      title (optional)
     </div>
     <div class="param-desc">
@@ -13341,7 +13341,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The error title describing the particular error.
     </div>
-    <div class="param">
+    </p><div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -13351,7 +13351,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      instance (optional)
     </div>
     <div class="param-desc">
@@ -13373,7 +13373,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -13384,7 +13384,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The unique numeric ID of the brand; increments sequentially.
     </div>
-    <div class="param">
+    </p><div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -13395,7 +13395,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The name of the brand. Must be unique.
     </div>
-    <div class="param">
+    </p><div class="param">
      page_title (optional)
     </div>
     <div class="param-desc">
@@ -13406,7 +13406,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The title shown in the browser while viewing the brand.
     </div>
-    <div class="param">
+    </p><div class="param">
      meta_keywords (optional)
     </div>
     <div class="param-desc">
@@ -13417,7 +13417,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Comma-separated list of meta keywords to include in the HTML.
     </div>
-    <div class="param">
+    </p><div class="param">
      meta_description (optional)
     </div>
     <div class="param-desc">
@@ -13428,7 +13428,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      A meta description to include.
     </div>
-    <div class="param">
+    </p><div class="param">
      search_keywords (optional)
     </div>
     <div class="param-desc">
@@ -13439,7 +13439,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      A comma-separated list of keywords that can be used to locate this brand.
     </div>
-    <div class="param">
+    </p><div class="param">
      image_url (optional)
     </div>
     <div class="param-desc">
@@ -13463,7 +13463,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -13473,7 +13473,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -13496,7 +13496,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -13506,7 +13506,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -13529,7 +13529,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -13540,7 +13540,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The ID of the bulk pricing rule.
     </div>
-    <div class="param">
+    </p><div class="param">
      quantity_min (optional)
     </div>
     <div class="param-desc">
@@ -13551,7 +13551,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The minimum inclusive quantity of a product to satisfy this rule. Must be greater than or equal to zero.
     </div>
-    <div class="param">
+    </p><div class="param">
      quantity_max (optional)
     </div>
     <div class="param-desc">
@@ -13562,7 +13562,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The maximum inclusive quantity of a product to satisfy this rule. Must be greater than the `quantity_min` value – unless this field has a value of 0 (zero), in which case there will be no maximum bound for this rule.
     </div>
-    <div class="param">
+    </p><div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -13585,7 +13585,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     <div class="param-enum">
      fixed
     </div>
-    <div class="param">
+    </p><div class="param">
      amount (optional)
     </div>
     <div class="param-desc">
@@ -13610,7 +13610,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      inventory_count (optional)
     </div>
     <div class="param-desc">
@@ -13621,7 +13621,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      A count of all inventory items in the catalog.
     </div>
-    <div class="param">
+    </p><div class="param">
      inventory_value (optional)
     </div>
     <div class="param-desc">
@@ -13633,7 +13633,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      Total value of store's inventory.
  format: double
     </div>
-    <div class="param">
+    </p><div class="param">
      primary_category_id (optional)
     </div>
     <div class="param-desc">
@@ -13644,7 +13644,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      ID of the category containing the most products.
     </div>
-    <div class="param">
+    </p><div class="param">
      primary_category_name (optional)
     </div>
     <div class="param-desc">
@@ -13668,7 +13668,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -13678,7 +13678,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -13701,7 +13701,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -13712,7 +13712,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The unique numeric ID of the category; increments sequentially.
     </div>
-    <div class="param">
+    </p><div class="param">
      parent_id (optional)
     </div>
     <div class="param-desc">
@@ -13723,7 +13723,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The unique numeric ID of the category's parent. This field controls where the category sits in the tree of categories that organize the catalog.
     </div>
-    <div class="param">
+    </p><div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -13734,7 +13734,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The name displayed for the category. Name is unique with respect to the category's siblings.
     </div>
-    <div class="param">
+    </p><div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -13745,7 +13745,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The product description, which can include HTML formatting.
     </div>
-    <div class="param">
+    </p><div class="param">
      views (optional)
     </div>
     <div class="param-desc">
@@ -13756,7 +13756,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Number of views the category has on the storefront.
     </div>
-    <div class="param">
+    </p><div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -13767,7 +13767,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Priority this category will be given when included in the menu and category pages. The lower the number, the closer to the top of the results the category will be.
     </div>
-    <div class="param">
+    </p><div class="param">
      page_title (optional)
     </div>
     <div class="param-desc">
@@ -13778,7 +13778,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Custom title for the category page. If not defined, the category name will be used as the meta title.
     </div>
-    <div class="param">
+    </p><div class="param">
      meta_keywords (optional)
     </div>
     <div class="param-desc">
@@ -13789,7 +13789,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Custom meta keywords for the category page. If not defined, the store's default keywords will be used. Must post as an array like: ["awesome","sauce"].
     </div>
-    <div class="param">
+    </p><div class="param">
      meta_description (optional)
     </div>
     <div class="param-desc">
@@ -13800,7 +13800,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Custom meta description for the category page. If not defined, the store's default meta description will be used.
     </div>
-    <div class="param">
+    </p><div class="param">
      layout_file (optional)
     </div>
     <div class="param-desc">
@@ -13811,7 +13811,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The layout template file used to render this category.
     </div>
-    <div class="param">
+    </p><div class="param">
      image_url (optional)
     </div>
     <div class="param-desc">
@@ -13822,7 +13822,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Image URL used for this category on the storefront. Images can be uploaded via form file post to `/categories/{categoryId}/image`, or by providing a publicly accessible URL in this field.
     </div>
-    <div class="param">
+    </p><div class="param">
      is_visible (optional)
     </div>
     <div class="param-desc">
@@ -13833,7 +13833,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Flag to determine whether the product should be displayed to customers browsing the store. If `true`, the category will be displayed. If `false`, the category will be hidden from view.
     </div>
-    <div class="param">
+    </p><div class="param">
      search_keywords (optional)
     </div>
     <div class="param-desc">
@@ -13844,7 +13844,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      A comma-separated list of keywords that can be used to locate the category when searching the store.
     </div>
-    <div class="param">
+    </p><div class="param">
      default_product_sort (optional)
     </div>
     <div class="param-desc">
@@ -13885,7 +13885,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     <div class="param-enum">
      price_desc
     </div>
-    <div class="param">
+    </p><div class="param">																			
      custom_url (optional)
     </div>
     <div class="param-desc">
@@ -13908,7 +13908,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -13918,7 +13918,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -13941,7 +13941,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -13952,7 +13952,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The unique numeric ID of the category; increments sequentially.
     </div>
-    <div class="param">
+    </p><div class="param">
      parent_id (optional)
     </div>
     <div class="param-desc">
@@ -13963,7 +13963,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The unique numeric ID of the category's parent. This field controls where the category sits in the tree of categories that organize the catalog.
     </div>
-    <div class="param">
+    </p><div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -13974,7 +13974,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The name displayed for the category. Name is unique with respect to the category's siblings.
     </div>
-    <div class="param">
+    </p><div class="param">
      is_visible (optional)
     </div>
     <div class="param-desc">
@@ -13985,7 +13985,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Flag to determine whether the product should be displayed to customers browsing the store. If `true`, the category will be displayed. If `false`, the category will be hidden from view.
     </div>
-    <div class="param">
+    </p><div class="param">
      url (optional)
     </div>
     <div class="param-desc">
@@ -13996,7 +13996,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The custom URL for the category on the storefront.
     </div>
-    <div class="param">
+    </p><div class="param">
      children (optional)
     </div>
     <div class="param-desc">
@@ -14020,7 +14020,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -14030,7 +14030,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -14053,7 +14053,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -14063,7 +14063,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -14086,7 +14086,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      total (optional)
     </div>
     <div class="param-desc">
@@ -14097,7 +14097,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Total number of items return in the result set.
     </div>
-    <div class="param">
+    </p><div class="param">
      count (optional)
     </div>
     <div class="param-desc">
@@ -14108,7 +14108,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Total number of items in the collection.
     </div>
-    <div class="param">
+    </p><div class="param">
      per_page (optional)
     </div>
     <div class="param-desc">
@@ -14119,7 +14119,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The amount of items returned in the collection per page, controlled by the limit parameter.
     </div>
-    <div class="param">
+    </p><div class="param">
      current_page (optional)
     </div>
     <div class="param-desc">
@@ -14130,7 +14130,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The page you are currently on within the collection.
     </div>
-    <div class="param">
+    </p><div class="param">
      total_pages (optional)
     </div>
     <div class="param-desc">
@@ -14141,7 +14141,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The total number of pages in the collection.
     </div>
-    <div class="param">
+    </p><div class="param">
      links (optional)
     </div>
     <div class="param-desc">
@@ -14164,7 +14164,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      previous (optional)
     </div>
     <div class="param-desc">
@@ -14175,7 +14175,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Link to the previous page returned in the response.
     </div>
-    <div class="param">
+    </p><div class="param">
      current (optional)
     </div>
     <div class="param-desc">
@@ -14186,7 +14186,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Link to the current page returned in the response.
     </div>
-    <div class="param">
+    </p><div class="param">
      next (optional)
     </div>
     <div class="param-desc">
@@ -14210,7 +14210,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -14221,7 +14221,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The unique numeric ID of the rule; increments sequentially.
     </div>
-    <div class="param">
+    </p><div class="param">
      product_id (optional)
     </div>
     <div class="param-desc">
@@ -14232,7 +14232,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The unique numeric ID of the product with which the rule is associated; increments sequentially.
     </div>
-    <div class="param">
+    </p><div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -14243,7 +14243,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Priority this rule will be given, when making adjustments to the product properties.
     </div>
-    <div class="param">
+    </p><div class="param">
      enabled (optional)
     </div>
     <div class="param-desc">
@@ -14254,7 +14254,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Flag for determining whether the rule is to be used when adjusting a product's price, weight, image, or availabilty.
     </div>
-    <div class="param">
+    </p><div class="param">
      stop (optional)
     </div>
     <div class="param-desc">
@@ -14265,7 +14265,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Flag for determining whether other rules should not be applied after this rule has been applied.
     </div>
-    <div class="param">
+    </p><div class="param">
      price_adjuster (optional)
     </div>
     <div class="param-desc">
@@ -14275,7 +14275,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      weight_adjuster (optional)
     </div>
     <div class="param-desc">
@@ -14285,7 +14285,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      purchasing_disabled (optional)
     </div>
     <div class="param-desc">
@@ -14296,7 +14296,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Flag for determining whether the rule should disable purchasing of a product when the conditions are applied.
     </div>
-    <div class="param">
+    </p><div class="param">
      purchasing_disabled_message (optional)
     </div>
     <div class="param-desc">
@@ -14307,7 +14307,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Message displayed on the storefront when a rule disables the purchasing of a product.
     </div>
-    <div class="param">
+    </p><div class="param">
      purchasing_hidden (optional)
     </div>
     <div class="param-desc">
@@ -14318,7 +14318,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Flag for determining whether the rule should hide purchasing of a product when the conditions are applied.
     </div>
-    <div class="param">
+    </p><div class="param">
      image_url (optional)
     </div>
     <div class="param-desc">
@@ -14329,7 +14329,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The URL for an image displayed on the storefront when the conditions are applied.
     </div>
-    <div class="param">
+    </p><div class="param">
      conditions (optional)
     </div>
     <div class="param-desc">
@@ -14352,7 +14352,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -14362,7 +14362,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -14385,7 +14385,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -14396,7 +14396,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The unique numeric ID of the rule condition; increments sequentially.
     </div>
-    <div class="param">
+    </p><div class="param">
      rule_id (optional)
     </div>
     <div class="param-desc">
@@ -14407,7 +14407,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The unique numeric ID of the rule with which the condition is associated.
     </div>
-    <div class="param">
+    </p><div class="param">
      modifier_id (optional)
     </div>
     <div class="param-desc">
@@ -14418,7 +14418,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The unique numeric ID of the modifier with which the rule condition is associated.
     </div>
-    <div class="param">
+    </p><div class="param">
      modifier_value_id (optional)
     </div>
     <div class="param-desc">
@@ -14429,7 +14429,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The unique numeric ID of the modifier value with which the rule condition is associated.
     </div>
-    <div class="param">
+    </p><div class="param">
      variant_id (optional)
     </div>
     <div class="param-desc">
@@ -14440,7 +14440,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The unique numeric ID of the variant the rule condition is associated with.
     </div>
-    <div class="param">
+    </p><div class="param">
      combination_id (optional)
     </div>
     <div class="param-desc">
@@ -14464,7 +14464,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -14474,7 +14474,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -14497,7 +14497,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -14508,7 +14508,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The unique numeric ID of the custom field; increments sequentially.
     </div>
-    <div class="param">
+    </p><div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -14519,7 +14519,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The name of the field, shown on the storefront, orders, etc.
     </div>
-    <div class="param">
+    </p><div class="param">
      value (optional)
     </div>
     <div class="param-desc">
@@ -14530,7 +14530,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The values or text of the field, shown on the storefront, orders, etc.
     </div>
-    <div class="param">
+    </p><div class="param">
      product_id (optional)
     </div>
     <div class="param-desc">
@@ -14554,7 +14554,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      url (optional)
     </div>
     <div class="param-desc">
@@ -14565,7 +14565,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Product URL on the storefront.
     </div>
-    <div class="param">
+    </p><div class="param">
      is_customized (optional)
     </div>
     <div class="param-desc">
@@ -14600,7 +14600,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      status (optional)
     </div>
     <div class="param-desc">
@@ -14611,7 +14611,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The HTTP status code
     </div>
-    <div class="param">
+    </p><div class="param">
      title (optional)
     </div>
     <div class="param-desc">
@@ -14622,7 +14622,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The error title describing the particular error.
     </div>
-    <div class="param">
+    </p><div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -14632,7 +14632,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      instance (optional)
     </div>
     <div class="param-desc">
@@ -14642,7 +14642,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      errors (optional)
     </div>
     <div class="param-desc">
@@ -14665,7 +14665,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -14675,7 +14675,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -14711,7 +14711,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -14721,7 +14721,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -14744,7 +14744,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -14755,7 +14755,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The unique identifier for the metafields.
     </div>
-    <div class="param">
+    </p><div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -14766,7 +14766,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Description for the metafields.
     </div>
-    <div class="param">
+    </p><div class="param">
      permission_set (optional)
     </div>
     <div class="param-desc">
@@ -14789,7 +14789,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     <div class="param-enum">
      write
     </div>
-    <div class="param">
+    </p><div class="param">
      namespace (optional)
     </div>
     <div class="param-desc">
@@ -14800,7 +14800,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Namespace for the metafield, for organizational purposes.
     </div>
-    <div class="param">
+    </p><div class="param">
      resource_type (optional)
     </div>
     <div class="param-desc">
@@ -14826,7 +14826,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     <div class="param-enum">
      variant
     </div>
-    <div class="param">
+    </p><div class="param">
      resource_id (optional)
     </div>
     <div class="param-desc">
@@ -14837,7 +14837,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The unique identifier for the resource with which the metafield is associated.
     </div>
-    <div class="param">
+    </p><div class="param">
      key (optional)
     </div>
     <div class="param-desc">
@@ -14848,7 +14848,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The name of the field, for example: `location_id`, `color`.
     </div>
-    <div class="param">
+    </p><div class="param">
      value (optional)
     </div>
     <div class="param-desc">
@@ -14859,7 +14859,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The value of the field, for example: `1`, `blue`
     </div>
-    <div class="param">
+    </p><div class="param">
      created_at (optional)
     </div>
     <div class="param-desc">
@@ -14871,7 +14871,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      Date and time of the metafield's creation.
  format: date-time
     </div>
-    <div class="param">
+    </p><div class="param">
      updated_at (optional)
     </div>
     <div class="param-desc">
@@ -14896,7 +14896,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -14906,7 +14906,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -14928,7 +14928,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -14939,7 +14939,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The unique numeric ID of the modifier; increments sequentially.
     </div>
-    <div class="param">
+    </p><div class="param">
      product_id (optional)
     </div>
     <div class="param-desc">
@@ -14950,7 +14950,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The unique numeric ID of the product to which the option belongs.
     </div>
-    <div class="param">
+    </p><div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -14961,7 +14961,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The unique option name. Auto-generated from the display name, a timestamp, and the product ID.
     </div>
-    <div class="param">
+    </p><div class="param">
      display_name (optional)
     </div>
     <div class="param-desc">
@@ -14972,7 +14972,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The name of the option shown on the storefront.
     </div>
-    <div class="param">
+    </p><div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -15024,7 +15024,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
     <div class="param-enum">
      swatch
     </div>
-    <div class="param">
+    </p><div class="param">
      required (optional)
     </div>
     <div class="param-desc">
@@ -15035,7 +15035,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      Whether or not this modifer is required at checkout.
     </div>
-    <div class="param">
+    </p><div class="param">
      config (optional)
     </div>
     <div class="param-desc">
@@ -15045,7 +15045,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      option_values (optional)
     </div>
     <div class="param-desc">
@@ -15068,7 +15068,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -15078,7 +15078,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -15101,7 +15101,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -15111,7 +15111,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -15133,7 +15133,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -15144,7 +15144,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The unique numeric ID of the value; increments sequentially.
     </div>
-    <div class="param">
+    </p><div class="param">
      is_default (optional)
     </div>
     <div class="param-desc">
@@ -15155,7 +15155,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The flag for preselecting a value as the default on the storefront. This field is not supported for swatch options/modifiers.
     </div>
-    <div class="param">
+    </p><div class="param">
      label (optional)
     </div>
     <div class="param-desc">
@@ -15166,7 +15166,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The text display identifying the value on the storefront.
     </div>
-    <div class="param">
+    </p><div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -15177,7 +15177,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The order in which the value will be displayed on the product page.
     </div>
-    <div class="param">
+    </p><div class="param">
      value_data (optional)
     </div>
     <div class="param-desc">
@@ -15188,7 +15188,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      Extra data describing the value, based on the type of option or modifier with which the value is associated. `swatch` requires an array of colors, with up to three hexidecimal color keys; `product list` requires a `product_id`; and `checkbox` requires a boolean flag, called `checked_value`, to determine which value is considered to be the checked state.
     </div>
-    <div class="param">
+    </p><div class="param">
      adjusters (optional)
     </div>
     <div class="param-desc">
@@ -15210,7 +15210,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      price (optional)
     </div>
     <div class="param-desc">
@@ -15220,7 +15220,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      weight (optional)
     </div>
     <div class="param-desc">
@@ -15230,7 +15230,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      image_url (optional)
     </div>
     <div class="param-desc">
@@ -15241,7 +15241,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The URL for an image displayed on the storefront when the modifier value is selected.
     </div>
-    <div class="param">
+    </p><div class="param">
      purchasing_disabled (optional)
     </div>
     <div class="param-desc">
@@ -15263,7 +15263,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      status (optional)
     </div>
     <div class="param-desc">
@@ -15274,7 +15274,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      Flag for whether the modifier value disables purchasing when selected on the storefront. This can be used for temporarily disabling a particular modifier value.
     </div>
-    <div class="param">
+    </p><div class="param">
      message (optional)
     </div>
     <div class="param-desc">
@@ -15298,7 +15298,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      status (optional)
     </div>
     <div class="param-desc">
@@ -15309,7 +15309,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      404 HTTP status code.
     </div>
-    <div class="param">
+    </p><div class="param">
      title (optional)
     </div>
     <div class="param-desc">
@@ -15320,7 +15320,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The error title describing the particular error.
     </div>
-    <div class="param">
+    </p><div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -15330,7 +15330,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      instance (optional)
     </div>
     <div class="param-desc">
@@ -15352,7 +15352,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -15363,7 +15363,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The unique numeric ID of the option; increments sequentially.
     </div>
-    <div class="param">
+    </p><div class="param">
      product_id (optional)
     </div>
     <div class="param-desc">
@@ -15374,7 +15374,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The unique numeric ID of the product to which the option belongs.
     </div>
-    <div class="param">
+    </p><div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -15385,7 +15385,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The unique option name, auto-generated from the display name, a timestamp, and the product ID.
     </div>
-    <div class="param">
+    </p><div class="param">
      display_name (optional)
     </div>
     <div class="param-desc">
@@ -15396,7 +15396,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The name of the option shown on the storefront.
     </div>
-    <div class="param">
+    </p><div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -15429,7 +15429,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      swatch
     </div>
-    <div class="param">
+    </p><div class="param">
      config (optional)
     </div>
     <div class="param-desc">
@@ -15439,7 +15439,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      option_values (optional)
     </div>
     <div class="param-desc">
@@ -15462,7 +15462,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -15472,7 +15472,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -15494,7 +15494,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      default_value (optional)
     </div>
     <div class="param-desc">
@@ -15505,7 +15505,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (date, text, multi_line_text, numbers_only_text) The default value. Shown on a date option as an ISO-8601–formatted string, or on a text option as a string.
     </div>
-    <div class="param">
+    </p><div class="param">
      checked_by_default (optional)
     </div>
     <div class="param-desc">
@@ -15516,7 +15516,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (checkbox) Flag for setting the checkbox to be checked by default.
     </div>
-    <div class="param">
+    </p><div class="param">
      checkbox_label (optional)
     </div>
     <div class="param-desc">
@@ -15527,7 +15527,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (checkbox) Label displayed for the checkbox option.
     </div>
-    <div class="param">
+    </p><div class="param">
      date_limited (optional)
     </div>
     <div class="param-desc">
@@ -15538,7 +15538,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (date) Flag to limit the dates allowed to be entered on a date option.
     </div>
-    <div class="param">
+    </p><div class="param">
      date_limit_mode (optional)
     </div>
     <div class="param-desc">
@@ -15561,7 +15561,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      latest
     </div>
-    <div class="param">
+    </p><div class="param">
      date_earliest_value (optional)
     </div>
     <div class="param-desc">
@@ -15573,7 +15573,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      (date) The earliest date allowed to be entered on the date option, as an ISO-8601 formatted string.
  format: date
     </div>
-    <div class="param">
+    </p><div class="param">
      date_latest_value (optional)
     </div>
     <div class="param-desc">
@@ -15585,7 +15585,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      (date) The latest date allowed to be entered on the date option, as an ISO-8601 formatted string.
  format: date
     </div>
-    <div class="param">
+    </p><div class="param">
      file_types_mode (optional)
     </div>
     <div class="param-desc">
@@ -15605,7 +15605,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      all
     </div>
-    <div class="param">
+    </p><div class="param">
      file_types_supported (optional)
     </div>
     <div class="param-desc">
@@ -15619,7 +15619,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
   `documents` - Allows upload of document MIME types (`txt`,`pdf`,`rtf`,`doc`,`docx`,`xls`,`xlsx`,`accdb`,`mdb`,`one`,`pps`,`ppsx`,`ppt`,`pptx`,`pub`,`odt`,`ods`,`odp`,`odg`,`odf`).
   `other` - Allows file types defined in the `file_types_other` array.
     </div>
-    <div class="param">
+    </p><div class="param">
      file_types_other (optional)
     </div>
     <div class="param-desc">
@@ -15630,7 +15630,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (file) A list of other file types allowed with the file upload option.
     </div>
-    <div class="param">
+    </p><div class="param">
      file_max_size (optional)
     </div>
     <div class="param-desc">
@@ -15641,7 +15641,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (file) The maximum size for a file that can be used with the file upload option.
     </div>
-    <div class="param">
+    </p><div class="param">
      text_characters_limited (optional)
     </div>
     <div class="param-desc">
@@ -15652,7 +15652,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (text, multi_line_text) Flag to validate the length of a text or multi-line text input.
     </div>
-    <div class="param">
+    </p><div class="param">
      text_min_length (optional)
     </div>
     <div class="param-desc">
@@ -15663,7 +15663,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (text, multi_line_text) The minimum length allowed for a text or multi-line text option.
     </div>
-    <div class="param">
+    </p><div class="param">
      text_max_length (optional)
     </div>
     <div class="param-desc">
@@ -15674,7 +15674,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (text, multi_line_text) The maximum length allowed for a text or multi line text option.
     </div>
-    <div class="param">
+    </p><div class="param">
      text_lines_limited (optional)
     </div>
     <div class="param-desc">
@@ -15685,7 +15685,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (multi_line_text) Flag to validate the maximum number of lines allowed on a multi-line text input.
     </div>
-    <div class="param">
+    </p><div class="param">
      text_max_lines (optional)
     </div>
     <div class="param-desc">
@@ -15696,7 +15696,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (multi_line_text) The maximum number of lines allowed on a multi-line text input.
     </div>
-    <div class="param">
+    </p><div class="param">
      number_limited (optional)
     </div>
     <div class="param-desc">
@@ -15707,7 +15707,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (numbers_only_text) Flag to limit the value of a number option.
     </div>
-    <div class="param">
+    </p><div class="param">
      number_limit_mode (optional)
     </div>
     <div class="param-desc">
@@ -15730,7 +15730,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      range
     </div>
-    <div class="param">
+    </p><div class="param">
      number_lowest_value (optional)
     </div>
     <div class="param-desc">
@@ -15741,7 +15741,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (numbers_only_text) The lowest allowed value for a number option if `number_limited` is true.
     </div>
-    <div class="param">
+    </p><div class="param">
      number_highest_value (optional)
     </div>
     <div class="param-desc">
@@ -15752,7 +15752,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (numbers_only_text) The highest allowed value for a number option if `number_limited` is true.
     </div>
-    <div class="param">
+    </p><div class="param">
      number_integers_only (optional)
     </div>
     <div class="param-desc">
@@ -15763,7 +15763,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (numbers_only_text) Flag to limit the input on a number option to whole numbers only.
     </div>
-    <div class="param">
+    </p><div class="param">
      product_list_adjusts_inventory (optional)
     </div>
     <div class="param-desc">
@@ -15774,7 +15774,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (product_list, product_list_with_images) Flag for automatically adjusting inventory on a product included in the list.
     </div>
-    <div class="param">
+    </p><div class="param">
      product_list_adjusts_pricing (optional)
     </div>
     <div class="param-desc">
@@ -15785,7 +15785,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (product_list, product_list_with_images) Flag to add the optional product's price to the main product's price.
     </div>
-    <div class="param">
+    </p><div class="param">
      product_list_shipping_calc (optional)
     </div>
     <div class="param-desc">
@@ -15821,7 +15821,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -15831,7 +15831,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -15853,7 +15853,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -15864,7 +15864,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The unique numeric ID of the value; increments sequentially.
     </div>
-    <div class="param">
+    </p><div class="param">
      is_default (optional)
     </div>
     <div class="param-desc">
@@ -15875,7 +15875,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The flag for preselecting a value as the default on the storefront. This field is not supported for swatch options/modifiers.
     </div>
-    <div class="param">
+    </p><div class="param">
      label (optional)
     </div>
     <div class="param-desc">
@@ -15886,7 +15886,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The text display identifying the value on the storefront.
     </div>
-    <div class="param">
+    </p><div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -15897,7 +15897,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The order in which the value will be displayed on the product page.
     </div>
-    <div class="param">
+    </p><div class="param">
      value_data (optional)
     </div>
     <div class="param-desc">
@@ -15920,7 +15920,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -15930,7 +15930,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      option_id (optional)
     </div>
     <div class="param-desc">
@@ -15940,7 +15940,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      option_display_name (optional)
     </div>
     <div class="param-desc">
@@ -15951,7 +15951,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The name of the option.
     </div>
-    <div class="param">
+    </p><div class="param">
      label (optional)
     </div>
     <div class="param-desc">
@@ -15974,7 +15974,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      option_display_name (optional)
     </div>
     <div class="param-desc">
@@ -15985,7 +15985,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The name of the option to be created on POST.
     </div>
-    <div class="param">
+    </p><div class="param">
      label (optional)
     </div>
     <div class="param-desc">
@@ -16009,7 +16009,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -16020,7 +16020,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The unique numeric ID of the product; increments sequentially.
     </div>
-    <div class="param">
+    </p><div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -16031,7 +16031,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product name.
     </div>
-    <div class="param">
+    </p><div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -16051,7 +16051,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      digital
     </div>
-    <div class="param">
+    </p><div class="param">
      sku (optional)
     </div>
     <div class="param-desc">
@@ -16062,7 +16062,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      User-defined product code/stock keeping unit (SKU).
     </div>
-    <div class="param">
+    </p><div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -16073,7 +16073,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product description, which can include HTML formatting.
     </div>
-    <div class="param">
+    </p><div class="param">
      weight (optional)
     </div>
     <div class="param-desc">
@@ -16085,7 +16085,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Weight of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    <div class="param">
+    </p><div class="param">
      width (optional)
     </div>
     <div class="param-desc">
@@ -16097,7 +16097,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Width of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    <div class="param">
+    </p><div class="param">
      depth (optional)
     </div>
     <div class="param-desc">
@@ -16109,7 +16109,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Depth of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    <div class="param">
+    </p><div class="param">
      height (optional)
     </div>
     <div class="param-desc">
@@ -16121,7 +16121,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Height of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    <div class="param">
+    </p><div class="param">
      price (optional)
     </div>
     <div class="param-desc">
@@ -16133,7 +16133,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The price of the product. The price should include or exclude tax, based on the store settings.
  format: double
     </div>
-    <div class="param">
+    </p><div class="param">
      cost_price (optional)
     </div>
     <div class="param-desc">
@@ -16145,7 +16145,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The cost price of the product. Stored for reference only; it is not used or displayed anywhere on the store.
  format: double
     </div>
-    <div class="param">
+    </p><div class="param">
      retail_price (optional)
     </div>
     <div class="param-desc">
@@ -16157,7 +16157,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The retail cost of the product. If entered, the retail cost price will be shown on the product page.
  format: double
     </div>
-    <div class="param">
+    </p><div class="param">
      sale_price (optional)
     </div>
     <div class="param-desc">
@@ -16169,7 +16169,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      If entered, the sale price will be used instead of value in the price field when calculating the product's cost.
  format: double
     </div>
-    <div class="param">
+    </p><div class="param">
      tax_class_id (optional)
     </div>
     <div class="param-desc">
@@ -16180,7 +16180,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The ID of the tax class applied to the product. (NOTE: Value ignored if automatic tax is enabled.)
     </div>
-    <div class="param">
+    </p><div class="param">
      product_tax_code (optional)
     </div>
     <div class="param-desc">
@@ -16191,7 +16191,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Accepts AvaTax System Tax Codes, which identify products and services that fall into special sales-tax categories. By using these codes, merchants who subscribe to Avalara Premium can calculate sales taxes more accurately. Stores without Avalara Premium will ignore the code when calculating sales tax. Do not pass more than one code. The codes are case-sensitive. For details, please see Avalara's documentation.
     </div>
-    <div class="param">
+    </p><div class="param">
      calculated_price (optional)
     </div>
     <div class="param-desc">
@@ -16203,7 +16203,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The price of the product, unless a `sale_price` is set.
  format: double
     </div>
-    <div class="param">
+    </p><div class="param">
      categories (optional)
     </div>
     <div class="param-desc">
@@ -16214,7 +16214,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      An array of IDs for the categories to which this product belongs. When updating a product, if an array of categories is supplied, all product categories will be overwritten. Does not accept more than 1,000 ID values.
     </div>
-    <div class="param">
+    </p><div class="param">
      brand_id (optional)
     </div>
     <div class="param-desc">
@@ -16225,7 +16225,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The ID associated with the product's brand.
     </div>
-    <div class="param">
+    </p><div class="param">
      inventory_level (optional)
     </div>
     <div class="param-desc">
@@ -16236,7 +16236,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Current inventory level of the product. Simple inventory tracking must be enabled (See the inventory_tracking field) for this to take any effect.
     </div>
-    <div class="param">
+    </p><div class="param">
      inventory_warning_level (optional)
     </div>
     <div class="param-desc">
@@ -16247,7 +16247,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Inventory Warning level for the product. When the product's inventory level drops below the warning level, the store owner will be informed. Simple inventory tracking must be enabled (see the `inventory_tracking` field) for this to take any effect.
     </div>
-    <div class="param">
+    </p><div class="param">
      inventory_tracking (optional)
     </div>
     <div class="param-desc">
@@ -16270,7 +16270,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      variant
     </div>
-    <div class="param">
+    </p><div class="param">
      fixed_cost_shipping_price (optional)
     </div>
     <div class="param-desc">
@@ -16281,7 +16281,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      A fixed shipping cost for the product. If defined, this value will be used during checkout instead of normal shipping-cost calculation.
     </div>
-    <div class="param">
+    </p><div class="param">
      is_free_shipping (optional)
     </div>
     <div class="param-desc">
@@ -16292,7 +16292,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag used to indicate whether the product has free shipping. If `true`, the shipping cost for the product will be zero.
     </div>
-    <div class="param">
+    </p><div class="param">
      is_visible (optional)
     </div>
     <div class="param-desc">
@@ -16303,7 +16303,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag to determine whether the product should be displayed to customers browsing the store. If `true`, the product will be displayed. If `false`, the product will be hidden from view.
     </div>
-    <div class="param">
+    </p><div class="param">
      is_featured (optional)
     </div>
     <div class="param-desc">
@@ -16314,7 +16314,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag to determine whether the product should be included in the `featured products` panel when viewing the store.
     </div>
-    <div class="param">
+    </p><div class="param">
      warranty (optional)
     </div>
     <div class="param-desc">
@@ -16325,7 +16325,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Warranty information displayed on the product page. Can include HTML formatting.
     </div>
-    <div class="param">
+    </p><div class="param">
      bin_picking_number (optional)
     </div>
     <div class="param-desc">
@@ -16336,7 +16336,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The BIN picking number for the product.
     </div>
-    <div class="param">
+    </p><div class="param">
      layout_file (optional)
     </div>
     <div class="param-desc">
@@ -16347,7 +16347,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The layout template file used to render this product.
     </div>
-    <div class="param">
+    </p><div class="param">
      upc (optional)
     </div>
     <div class="param-desc">
@@ -16358,7 +16358,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product UPC code, which is used in feeds for shopping comparison sites and external channel integrations.
     </div>
-    <div class="param">
+    </p><div class="param">
      search_keywords (optional)
     </div>
     <div class="param-desc">
@@ -16369,7 +16369,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      A comma-separated list of keywords that can be used to locate the product when searching the store.
     </div>
-    <div class="param">
+    </p><div class="param">
      availability (optional)
     </div>
     <div class="param-desc">
@@ -16392,7 +16392,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      preorder
     </div>
-    <div class="param">
+    </p><div class="param">
      availability_description (optional)
     </div>
     <div class="param-desc">
@@ -16403,7 +16403,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Availability text displayed on the checkout page, under the product title. Tells the customer how long it will normally take to ship this product, such as 'Usually ships in 24 hours.'
     </div>
-    <div class="param">
+    </p><div class="param">
      gift_wrapping_options_type (optional)
     </div>
     <div class="param-desc">
@@ -16426,7 +16426,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      list
     </div>
-    <div class="param">
+    </p><div class="param">
      gift_wrapping_options_list (optional)
     </div>
     <div class="param-desc">
@@ -16437,7 +16437,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      A list of gift-wrapping option IDs.
     </div>
-    <div class="param">
+    </p><div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -16448,7 +16448,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Priority to give this product when included in product lists on category pages and in search results. Lower integers will place the product closer to the top of the results.
     </div>
-    <div class="param">
+    </p><div class="param">
      condition (optional)
     </div>
     <div class="param-desc">
@@ -16459,7 +16459,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product condition. Will be shown on the product page if the `is_condition_shown` field's value is `true`. Possible values: `New`, `Used`, `Refurbished`.
     </div>
-    <div class="param">
+    </p><div class="param">
      is_condition_shown (optional)
     </div>
     <div class="param-desc">
@@ -16470,7 +16470,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag used to determine whether the product condition is shown to the customer on the product page.
     </div>
-    <div class="param">
+    </p><div class="param">
      order_quantity_minimum (optional)
     </div>
     <div class="param-desc">
@@ -16481,7 +16481,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The minimum quantity an order must contain, to be eligible to purchase this product.
     </div>
-    <div class="param">
+    </p><div class="param">
      order_quantity_maximum (optional)
     </div>
     <div class="param-desc">
@@ -16492,7 +16492,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The maximum quantity an order can contain when purchasing the product.
     </div>
-    <div class="param">
+    </p><div class="param">
      page_title (optional)
     </div>
     <div class="param-desc">
@@ -16503,7 +16503,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom title for the product page. If not defined, the product name will be used as the meta title.
     </div>
-    <div class="param">
+    </p><div class="param">
      meta_keywords (optional)
     </div>
     <div class="param-desc">
@@ -16514,7 +16514,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom meta keywords for the product page. If not defined, the store's default keywords will be used.
     </div>
-    <div class="param">
+    </p><div class="param">
      meta_description (optional)
     </div>
     <div class="param-desc">
@@ -16525,7 +16525,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom meta description for the product page. If not defined, the store's default meta description will be used.
     </div>
-    <div class="param">
+    </p><div class="param">
      date_created (optional)
     </div>
     <div class="param-desc">
@@ -16537,7 +16537,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The date on which the product was created.
  format: data-time
     </div>
-    <div class="param">
+    </p><div class="param">
      date_modified (optional)
     </div>
     <div class="param-desc">
@@ -16549,7 +16549,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The date on which the product was modified.
  format: data-time
     </div>
-    <div class="param">
+    </p><div class="param">
      view_count (optional)
     </div>
     <div class="param-desc">
@@ -16560,7 +16560,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The number of times the product has been viewed.
     </div>
-    <div class="param">
+    </p><div class="param">
      preorder_release_date (optional)
     </div>
     <div class="param-desc">
@@ -16572,7 +16572,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Pre-order release date. See the `availability` field for details on setting a product's availability to accept pre-orders.
  format: data-time
     </div>
-    <div class="param">
+    </p><div class="param">
      preorder_message (optional)
     </div>
     <div class="param-desc">
@@ -16583,7 +16583,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom expected-date message to display on the product page. If undefined, the message defaults to the storewide setting. Can contain the `%%DATE%%` placeholder, which will be substituted for the release date.
     </div>
-    <div class="param">
+    </p><div class="param">
      is_preorder_only (optional)
     </div>
     <div class="param-desc">
@@ -16594,7 +16594,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      If set to `false`, the product will not change its availability from 	`preorder` to `available` on the release date. Otherwise, on the release date the product's availability/status will change to `available`.
     </div>
-    <div class="param">
+    </p><div class="param">
      is_price_hidden (optional)
     </div>
     <div class="param-desc">
@@ -16605,7 +16605,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      False by default, indicating that this product's price should be shown on the product page. If set to `true`, the price is hidden. (NOTE: To successfully set `is_price_hidden` to `true`, the `availability` value must be `disabled`.)
     </div>
-    <div class="param">
+    </p><div class="param">
      price_hidden_label (optional)
     </div>
     <div class="param-desc">
@@ -16616,7 +16616,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      By default, an empty string. If `is_price_hidden` is `true`, the value of `price_hidden_label` is displayed instead of the price. (NOTE: To successfully set a non-empty string value with `is_price_hidden` set to `true`, the `availability` value must be `disabled`.)
     </div>
-    <div class="param">
+    </p><div class="param">
      images (optional)
     </div>
     <div class="param-desc">
@@ -16626,7 +16626,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      videos (optional)
     </div>
     <div class="param-desc">
@@ -16636,7 +16636,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      custom_fields (optional)
     </div>
     <div class="param-desc">
@@ -16646,7 +16646,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      custom_url (optional)
     </div>
     <div class="param-desc">
@@ -16656,7 +16656,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      bulk_pricing_rules (optional)
     </div>
     <div class="param-desc">
@@ -16666,7 +16666,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      variants (optional)
     </div>
     <div class="param-desc">
@@ -16689,7 +16689,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -16699,7 +16699,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -16722,7 +16722,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      is_thumbnail (optional)
     </div>
     <div class="param-desc">
@@ -16733,7 +16733,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag for identifying whether the image is used as the product's thumbnail.
     </div>
-    <div class="param">
+    </p><div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -16744,7 +16744,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The order in which the image will be displayed on the product page. Higher integers give the image a lower priority. When updating, if the image is given a lower priority, all images with a `sort_order` the same as or greater than the image's new `sort_order` value will have their `sort_order`s reordered.
     </div>
-    <div class="param">
+    </p><div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -16755,7 +16755,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The description for the image.
     </div>
-    <div class="param">
+    </p><div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -16766,7 +16766,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The unique numeric ID of the image; increments sequentially.
     </div>
-    <div class="param">
+    </p><div class="param">
      product_id (optional)
     </div>
     <div class="param-desc">
@@ -16777,7 +16777,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The unique numeric identifier for the product with which the image is associated.
     </div>
-    <div class="param">
+    </p><div class="param">
      image_file (optional)
     </div>
     <div class="param-desc">
@@ -16788,7 +16788,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The local path to the original image file uploaded to BigCommerce.
     </div>
-    <div class="param">
+    </p><div class="param">
      url_zoom (optional)
     </div>
     <div class="param-desc">
@@ -16799,7 +16799,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The zoom URL for this image. By default, this is used as the zoom image on product pages when zoom images are enabled.
     </div>
-    <div class="param">
+    </p><div class="param">
      url_standard (optional)
     </div>
     <div class="param-desc">
@@ -16810,7 +16810,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The standard URL for this image. By default, this is used for product-page images.
     </div>
-    <div class="param">
+    </p><div class="param">
      url_thumbnail (optional)
     </div>
     <div class="param-desc">
@@ -16821,7 +16821,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The thumbnail URL for this image. By default, this is the image size used on the category page and in side panels.
     </div>
-    <div class="param">
+    </p><div class="param">
      url_tiny (optional)
     </div>
     <div class="param-desc">
@@ -16845,7 +16845,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      is_thumbnail (optional)
     </div>
     <div class="param-desc">
@@ -16856,7 +16856,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag for identifying whether the image is used as the product's thumbnail.
     </div>
-    <div class="param">
+    </p><div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -16867,7 +16867,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The order in which the image will be displayed on the product page. Higher integers give the image a lower priority. When updating, if the image is given a lower priority, all images with a `sort_order` the same as or greater than the image's new `sort_order` value will have their `sort_order`s reordered.
     </div>
-    <div class="param">
+    </p><div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -16891,7 +16891,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -16901,7 +16901,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -16924,7 +16924,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      is_thumbnail (optional)
     </div>
     <div class="param-desc">
@@ -16935,7 +16935,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag for identifying whether the image is used as the product's thumbnail.
     </div>
-    <div class="param">
+    </p><div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -16946,7 +16946,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The order in which the image will be displayed on the product page. Higher integers give the image a lower priority. When updating, if the image is given a lower priority, all images with a `sort_order` the same as or greater than the image's new `sort_order` value will have their `sort_order`s reordered.
     </div>
-    <div class="param">
+    </p><div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -16957,7 +16957,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The description for the image.
     </div>
-    <div class="param">
+    </p><div class="param">
      image_url (optional)
     </div>
     <div class="param-desc">
@@ -16968,7 +16968,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Must be a fully qualified URL path, including protocol.
     </div>
-    <div class="param">
+    </p><div class="param">
      image_file (optional)
     </div>
     <div class="param-desc">
@@ -16992,7 +16992,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      is_thumbnail (optional)
     </div>
     <div class="param-desc">
@@ -17003,7 +17003,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag for identifying whether the image is used as the product's thumbnail.
     </div>
-    <div class="param">
+    </p><div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -17014,7 +17014,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The order in which the image will be displayed on the product page. Higher integers give the image a lower priority. When updating, if the image is given a lower priority, all images with a `sort_order` the same as or greater than the image's new `sort_order` value will have their `sort_order`s reordered.
     </div>
-    <div class="param">
+    </p><div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -17038,7 +17038,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -17048,7 +17048,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -17070,7 +17070,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -17081,7 +17081,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The unique numeric ID of the product; increments sequentially.
     </div>
-    <div class="param">
+    </p><div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -17092,7 +17092,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product name.
     </div>
-    <div class="param">
+    </p><div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -17112,7 +17112,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      digital
     </div>
-    <div class="param">
+    </p><div class="param">
      sku (optional)
     </div>
     <div class="param-desc">
@@ -17123,7 +17123,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      User-defined product code/stock keeping unit (SKU).
     </div>
-    <div class="param">
+    </p><div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -17134,7 +17134,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product description, which can include HTML formatting.
     </div>
-    <div class="param">
+    </p><div class="param">
      weight (optional)
     </div>
     <div class="param-desc">
@@ -17146,7 +17146,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Weight of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    <div class="param">
+    </p><div class="param">
      width (optional)
     </div>
     <div class="param-desc">
@@ -17158,7 +17158,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Width of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    <div class="param">
+    </p><div class="param">
      depth (optional)
     </div>
     <div class="param-desc">
@@ -17170,7 +17170,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Depth of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    <div class="param">
+    </p><div class="param">
      height (optional)
     </div>
     <div class="param-desc">
@@ -17182,7 +17182,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Height of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    <div class="param">
+    </p><div class="param">
      price (optional)
     </div>
     <div class="param-desc">
@@ -17194,7 +17194,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The price of the product. The price should include or exclude tax, based on the store settings.
  format: double
     </div>
-    <div class="param">
+    </p><div class="param">
      cost_price (optional)
     </div>
     <div class="param-desc">
@@ -17206,7 +17206,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The cost price of the product. Stored for reference only; it is not used or displayed anywhere on the store.
  format: double
     </div>
-    <div class="param">
+    </p><div class="param">
      retail_price (optional)
     </div>
     <div class="param-desc">
@@ -17218,7 +17218,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The retail cost of the product. If entered, the retail cost price will be shown on the product page.
  format: double
     </div>
-    <div class="param">
+    </p><div class="param">
      sale_price (optional)
     </div>
     <div class="param-desc">
@@ -17230,7 +17230,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      If entered, the sale price will be used instead of value in the price field when calculating the product's cost.
  format: double
     </div>
-    <div class="param">
+    </p><div class="param">
      tax_class_id (optional)
     </div>
     <div class="param-desc">
@@ -17241,7 +17241,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The ID of the tax class applied to the product. (NOTE: Value ignored if automatic tax is enabled.)
     </div>
-    <div class="param">
+    </p><div class="param">
      product_tax_code (optional)
     </div>
     <div class="param-desc">
@@ -17252,7 +17252,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Accepts AvaTax System Tax Codes, which identify products and services that fall into special sales-tax categories. By using these codes, merchants who subscribe to Avalara Premium can calculate sales taxes more accurately. Stores without Avalara Premium will ignore the code when calculating sales tax. Do not pass more than one code. The codes are case-sensitive. For details, please see Avalara's documentation.
     </div>
-    <div class="param">
+    </p><div class="param">
      calculated_price (optional)
     </div>
     <div class="param-desc">
@@ -17264,7 +17264,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The price of the product, unless a `sale_price` is set.
  format: double
     </div>
-    <div class="param">
+    </p><div class="param">
      categories (optional)
     </div>
     <div class="param-desc">
@@ -17275,7 +17275,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      An array of IDs for the categories to which this product belongs. When updating a product, if an array of categories is supplied, all product categories will be overwritten. Does not accept more than 1,000 ID values.
     </div>
-    <div class="param">
+    </p><div class="param">
      brand_id (optional)
     </div>
     <div class="param-desc">
@@ -17286,7 +17286,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The ID associated with the product's brand.
     </div>
-    <div class="param">
+    </p><div class="param">
      inventory_level (optional)
     </div>
     <div class="param-desc">
@@ -17297,7 +17297,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Current inventory level of the product. Simple inventory tracking must be enabled (See the inventory_tracking field) for this to take any effect.
     </div>
-    <div class="param">
+    </p><div class="param">
      inventory_warning_level (optional)
     </div>
     <div class="param-desc">
@@ -17308,7 +17308,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Inventory Warning level for the product. When the product's inventory level drops below the warning level, the store owner will be informed. Simple inventory tracking must be enabled (see the `inventory_tracking` field) for this to take any effect.
     </div>
-    <div class="param">
+    </p><div class="param">
      inventory_tracking (optional)
     </div>
     <div class="param-desc">
@@ -17331,7 +17331,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      variant
     </div>
-    <div class="param">
+    </p><div class="param">
      fixed_cost_shipping_price (optional)
     </div>
     <div class="param-desc">
@@ -17342,7 +17342,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      A fixed shipping cost for the product. If defined, this value will be used during checkout instead of normal shipping-cost calculation.
     </div>
-    <div class="param">
+    </p><div class="param">
      is_free_shipping (optional)
     </div>
     <div class="param-desc">
@@ -17353,7 +17353,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag used to indicate whether the product has free shipping. If `true`, the shipping cost for the product will be zero.
     </div>
-    <div class="param">
+    </p><div class="param">
      is_visible (optional)
     </div>
     <div class="param-desc">
@@ -17364,7 +17364,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag to determine whether the product should be displayed to customers browsing the store. If `true`, the product will be displayed. If `false`, the product will be hidden from view.
     </div>
-    <div class="param">
+    </p><div class="param">
      is_featured (optional)
     </div>
     <div class="param-desc">
@@ -17375,7 +17375,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag to determine whether the product should be included in the `featured products` panel when viewing the store.
     </div>
-    <div class="param">
+    </p><div class="param">
      warranty (optional)
     </div>
     <div class="param-desc">
@@ -17386,7 +17386,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Warranty information displayed on the product page. Can include HTML formatting.
     </div>
-    <div class="param">
+    </p><div class="param">
      bin_picking_number (optional)
     </div>
     <div class="param-desc">
@@ -17397,7 +17397,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The BIN picking number for the product.
     </div>
-    <div class="param">
+    </p><div class="param">
      layout_file (optional)
     </div>
     <div class="param-desc">
@@ -17408,7 +17408,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The layout template file used to render this product.
     </div>
-    <div class="param">
+    </p><div class="param">
      upc (optional)
     </div>
     <div class="param-desc">
@@ -17419,7 +17419,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product UPC code, which is used in feeds for shopping comparison sites and external channel integrations.
     </div>
-    <div class="param">
+    </p><div class="param">
      search_keywords (optional)
     </div>
     <div class="param-desc">
@@ -17430,7 +17430,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      A comma-separated list of keywords that can be used to locate the product when searching the store.
     </div>
-    <div class="param">
+    </p><div class="param">
      availability (optional)
     </div>
     <div class="param-desc">
@@ -17453,7 +17453,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      preorder
     </div>
-    <div class="param">
+    </p><div class="param">
      availability_description (optional)
     </div>
     <div class="param-desc">
@@ -17464,7 +17464,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Availability text displayed on the checkout page, under the product title. Tells the customer how long it will normally take to ship this product, such as 'Usually ships in 24 hours.'
     </div>
-    <div class="param">
+    </p><div class="param">
      gift_wrapping_options_type (optional)
     </div>
     <div class="param-desc">
@@ -17487,7 +17487,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      list
     </div>
-    <div class="param">
+    </p><div class="param">
      gift_wrapping_options_list (optional)
     </div>
     <div class="param-desc">
@@ -17498,7 +17498,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      A list of gift-wrapping option IDs.
     </div>
-    <div class="param">
+    </p><div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -17509,7 +17509,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Priority to give this product when included in product lists on category pages and in search results. Lower integers will place the product closer to the top of the results.
     </div>
-    <div class="param">
+    </p><div class="param">
      condition (optional)
     </div>
     <div class="param-desc">
@@ -17520,7 +17520,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product condition. Will be shown on the product page if the `is_condition_shown` field's value is `true`. Possible values: `New`, `Used`, `Refurbished`.
     </div>
-    <div class="param">
+    </p><div class="param">
      is_condition_shown (optional)
     </div>
     <div class="param-desc">
@@ -17531,7 +17531,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag used to determine whether the product condition is shown to the customer on the product page.
     </div>
-    <div class="param">
+    </p><div class="param">
      order_quantity_minimum (optional)
     </div>
     <div class="param-desc">
@@ -17542,7 +17542,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The minimum quantity an order must contain, to be eligible to purchase this product.
     </div>
-    <div class="param">
+    </p><div class="param">
      order_quantity_maximum (optional)
     </div>
     <div class="param-desc">
@@ -17553,7 +17553,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The maximum quantity an order can contain when purchasing the product.
     </div>
-    <div class="param">
+    </p><div class="param">
      page_title (optional)
     </div>
     <div class="param-desc">
@@ -17564,7 +17564,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom title for the product page. If not defined, the product name will be used as the meta title.
     </div>
-    <div class="param">
+    </p><div class="param">
      meta_keywords (optional)
     </div>
     <div class="param-desc">
@@ -17575,7 +17575,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom meta keywords for the product page. If not defined, the store's default keywords will be used.
     </div>
-    <div class="param">
+    </p><div class="param">
      meta_description (optional)
     </div>
     <div class="param-desc">
@@ -17586,7 +17586,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom meta description for the product page. If not defined, the store's default meta description will be used.
     </div>
-    <div class="param">
+    </p><div class="param">
      date_created (optional)
     </div>
     <div class="param-desc">
@@ -17598,7 +17598,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The date on which the product was created.
  format: data-time
     </div>
-    <div class="param">
+    </p><div class="param">
      date_modified (optional)
     </div>
     <div class="param-desc">
@@ -17610,7 +17610,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The date on which the product was modified.
  format: data-time
     </div>
-    <div class="param">
+    </p><div class="param">
      view_count (optional)
     </div>
     <div class="param-desc">
@@ -17621,7 +17621,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The number of times the product has been viewed.
     </div>
-    <div class="param">
+    </p><div class="param">
      preorder_release_date (optional)
     </div>
     <div class="param-desc">
@@ -17633,7 +17633,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Pre-order release date. See the `availability` field for details on setting a product's availability to accept pre-orders.
  format: data-time
     </div>
-    <div class="param">
+    </p><div class="param">
      preorder_message (optional)
     </div>
     <div class="param-desc">
@@ -17644,7 +17644,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom expected-date message to display on the product page. If undefined, the message defaults to the storewide setting. Can contain the `%%DATE%%` placeholder, which will be substituted for the release date.
     </div>
-    <div class="param">
+    </p><div class="param">
      is_preorder_only (optional)
     </div>
     <div class="param-desc">
@@ -17655,7 +17655,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      If set to `false`, the product will not change its availability from 	`preorder` to `available` on the release date. Otherwise, on the release date the product's availability/status will change to `available`.
     </div>
-    <div class="param">
+    </p><div class="param">
      is_price_hidden (optional)
     </div>
     <div class="param-desc">
@@ -17666,7 +17666,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      False by default, indicating that this product's price should be shown on the product page. If set to `true`, the price is hidden. (NOTE: To successfully set `is_price_hidden` to `true`, the `availability` value must be `disabled`.)
     </div>
-    <div class="param">
+    </p><div class="param">
      price_hidden_label (optional)
     </div>
     <div class="param-desc">
@@ -17677,7 +17677,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      By default, an empty string. If `is_price_hidden` is `true`, the value of `price_hidden_label` is displayed instead of the price. (NOTE: To successfully set a non-empty string value with `is_price_hidden` set to `true`, the `availability` value must be `disabled`.)
     </div>
-    <div class="param">
+    </p><div class="param">
      images (optional)
     </div>
     <div class="param-desc">
@@ -17687,7 +17687,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      videos (optional)
     </div>
     <div class="param-desc">
@@ -17697,7 +17697,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      custom_fields (optional)
     </div>
     <div class="param-desc">
@@ -17707,7 +17707,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      custom_url (optional)
     </div>
     <div class="param-desc">
@@ -17717,7 +17717,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      bulk_pricing_rules (optional)
     </div>
     <div class="param-desc">
@@ -17727,7 +17727,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      variants (optional)
     </div>
     <div class="param-desc">
@@ -17749,7 +17749,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -17760,7 +17760,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The unique numeric ID of the product; increments sequentially.
     </div>
-    <div class="param">
+    </p><div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -17771,7 +17771,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product name.
     </div>
-    <div class="param">
+    </p><div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -17791,7 +17791,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      digital
     </div>
-    <div class="param">
+    </p><div class="param">
      sku (optional)
     </div>
     <div class="param-desc">
@@ -17802,7 +17802,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      User-defined product code/stock keeping unit (SKU).
     </div>
-    <div class="param">
+    </p><div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -17813,7 +17813,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product description, which can include HTML formatting.
     </div>
-    <div class="param">
+    </p><div class="param">
      weight (optional)
     </div>
     <div class="param-desc">
@@ -17825,7 +17825,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Weight of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    <div class="param">
+    </p><div class="param">
      width (optional)
     </div>
     <div class="param-desc">
@@ -17837,7 +17837,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Width of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    <div class="param">
+    </p><div class="param">
      depth (optional)
     </div>
     <div class="param-desc">
@@ -17849,7 +17849,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Depth of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    <div class="param">
+    </p><div class="param">
      height (optional)
     </div>
     <div class="param-desc">
@@ -17861,7 +17861,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Height of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    <div class="param">
+    </p><div class="param">
      price (optional)
     </div>
     <div class="param-desc">
@@ -17873,7 +17873,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The price of the product. The price should include or exclude tax, based on the store settings.
  format: double
     </div>
-    <div class="param">
+    </p><div class="param">
      cost_price (optional)
     </div>
     <div class="param-desc">
@@ -17885,7 +17885,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The cost price of the product. Stored for reference only; it is not used or displayed anywhere on the store.
  format: double
     </div>
-    <div class="param">
+    </p><div class="param">
      retail_price (optional)
     </div>
     <div class="param-desc">
@@ -17897,7 +17897,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The retail cost of the product. If entered, the retail cost price will be shown on the product page.
  format: double
     </div>
-    <div class="param">
+    </p><div class="param">
      sale_price (optional)
     </div>
     <div class="param-desc">
@@ -17909,7 +17909,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      If entered, the sale price will be used instead of value in the price field when calculating the product's cost.
  format: double
     </div>
-    <div class="param">
+    </p><div class="param">
      tax_class_id (optional)
     </div>
     <div class="param-desc">
@@ -17920,7 +17920,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The ID of the tax class applied to the product. (NOTE: Value ignored if automatic tax is enabled.)
     </div>
-    <div class="param">
+    </p><div class="param">
      product_tax_code (optional)
     </div>
     <div class="param-desc">
@@ -17931,7 +17931,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Accepts AvaTax System Tax Codes, which identify products and services that fall into special sales-tax categories. By using these codes, merchants who subscribe to Avalara Premium can calculate sales taxes more accurately. Stores without Avalara Premium will ignore the code when calculating sales tax. Do not pass more than one code. The codes are case-sensitive. For details, please see Avalara's documentation.
     </div>
-    <div class="param">
+    </p><div class="param">
      calculated_price (optional)
     </div>
     <div class="param-desc">
@@ -17943,7 +17943,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The price of the product, unless a `sale_price` is set.
  format: double
     </div>
-    <div class="param">
+    </p><div class="param">
      categories (optional)
     </div>
     <div class="param-desc">
@@ -17954,7 +17954,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      An array of IDs for the categories to which this product belongs. When updating a product, if an array of categories is supplied, all product categories will be overwritten. Does not accept more than 1,000 ID values.
     </div>
-    <div class="param">
+    </p><div class="param">
      brand_id (optional)
     </div>
     <div class="param-desc">
@@ -17965,7 +17965,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The ID associated with the product's brand.
     </div>
-    <div class="param">
+    </p><div class="param">
      inventory_level (optional)
     </div>
     <div class="param-desc">
@@ -17976,7 +17976,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Current inventory level of the product. Simple inventory tracking must be enabled (See the inventory_tracking field) for this to take any effect.
     </div>
-    <div class="param">
+    </p><div class="param">
      inventory_warning_level (optional)
     </div>
     <div class="param-desc">
@@ -17987,7 +17987,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Inventory Warning level for the product. When the product's inventory level drops below the warning level, the store owner will be informed. Simple inventory tracking must be enabled (see the `inventory_tracking` field) for this to take any effect.
     </div>
-    <div class="param">
+    </p><div class="param">
      inventory_tracking (optional)
     </div>
     <div class="param-desc">
@@ -18010,7 +18010,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      variant
     </div>
-    <div class="param">
+    </p><div class="param">
      fixed_cost_shipping_price (optional)
     </div>
     <div class="param-desc">
@@ -18021,7 +18021,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      A fixed shipping cost for the product. If defined, this value will be used during checkout instead of normal shipping-cost calculation.
     </div>
-    <div class="param">
+    </p><div class="param">
      is_free_shipping (optional)
     </div>
     <div class="param-desc">
@@ -18032,7 +18032,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag used to indicate whether the product has free shipping. If `true`, the shipping cost for the product will be zero.
     </div>
-    <div class="param">
+    </p><div class="param">
      is_visible (optional)
     </div>
     <div class="param-desc">
@@ -18043,7 +18043,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag to determine whether the product should be displayed to customers browsing the store. If `true`, the product will be displayed. If `false`, the product will be hidden from view.
     </div>
-    <div class="param">
+    </p><div class="param">
      is_featured (optional)
     </div>
     <div class="param-desc">
@@ -18054,7 +18054,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag to determine whether the product should be included in the `featured products` panel when viewing the store.
     </div>
-    <div class="param">
+    </p><div class="param">
      warranty (optional)
     </div>
     <div class="param-desc">
@@ -18065,7 +18065,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Warranty information displayed on the product page. Can include HTML formatting.
     </div>
-    <div class="param">
+    </p><div class="param">
      bin_picking_number (optional)
     </div>
     <div class="param-desc">
@@ -18076,7 +18076,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The BIN picking number for the product.
     </div>
-    <div class="param">
+    </p><div class="param">
      layout_file (optional)
     </div>
     <div class="param-desc">
@@ -18087,7 +18087,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The layout template file used to render this product.
     </div>
-    <div class="param">
+    </p><div class="param">
      upc (optional)
     </div>
     <div class="param-desc">
@@ -18098,7 +18098,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product UPC code, which is used in feeds for shopping comparison sites and external channel integrations.
     </div>
-    <div class="param">
+    </p><div class="param">
      search_keywords (optional)
     </div>
     <div class="param-desc">
@@ -18109,7 +18109,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      A comma-separated list of keywords that can be used to locate the product when searching the store.
     </div>
-    <div class="param">
+    </p><div class="param">
      availability (optional)
     </div>
     <div class="param-desc">
@@ -18132,7 +18132,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      preorder
     </div>
-    <div class="param">
+    </p><div class="param">
      availability_description (optional)
     </div>
     <div class="param-desc">
@@ -18143,7 +18143,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Availability text displayed on the checkout page, under the product title. Tells the customer how long it will normally take to ship this product, such as 'Usually ships in 24 hours.'
     </div>
-    <div class="param">
+    </p><div class="param">
      gift_wrapping_options_type (optional)
     </div>
     <div class="param-desc">
@@ -18166,7 +18166,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      list
     </div>
-    <div class="param">
+    </p><div class="param">
      gift_wrapping_options_list (optional)
     </div>
     <div class="param-desc">
@@ -18177,7 +18177,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      A list of gift-wrapping option IDs.
     </div>
-    <div class="param">
+    </p><div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -18188,7 +18188,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Priority to give this product when included in product lists on category pages and in search results. Lower integers will place the product closer to the top of the results.
     </div>
-    <div class="param">
+    </p><div class="param">
      condition (optional)
     </div>
     <div class="param-desc">
@@ -18199,7 +18199,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product condition. Will be shown on the product page if the `is_condition_shown` field's value is `true`. Possible values: `New`, `Used`, `Refurbished`.
     </div>
-    <div class="param">
+    </p><div class="param">
      is_condition_shown (optional)
     </div>
     <div class="param-desc">
@@ -18210,7 +18210,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag used to determine whether the product condition is shown to the customer on the product page.
     </div>
-    <div class="param">
+    </p><div class="param">
      order_quantity_minimum (optional)
     </div>
     <div class="param-desc">
@@ -18221,7 +18221,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The minimum quantity an order must contain, to be eligible to purchase this product.
     </div>
-    <div class="param">
+    </p><div class="param">
      order_quantity_maximum (optional)
     </div>
     <div class="param-desc">
@@ -18232,7 +18232,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The maximum quantity an order can contain when purchasing the product.
     </div>
-    <div class="param">
+    </p><div class="param">
      page_title (optional)
     </div>
     <div class="param-desc">
@@ -18243,7 +18243,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom title for the product page. If not defined, the product name will be used as the meta title.
     </div>
-    <div class="param">
+    </p><div class="param">
      meta_keywords (optional)
     </div>
     <div class="param-desc">
@@ -18254,7 +18254,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom meta keywords for the product page. If not defined, the store's default keywords will be used.
     </div>
-    <div class="param">
+    </p><div class="param">
      meta_description (optional)
     </div>
     <div class="param-desc">
@@ -18265,7 +18265,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom meta description for the product page. If not defined, the store's default meta description will be used.
     </div>
-    <div class="param">
+    </p><div class="param">
      date_created (optional)
     </div>
     <div class="param-desc">
@@ -18277,7 +18277,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The date on which the product was created.
  format: data-time
     </div>
-    <div class="param">
+    </p><div class="param">
      date_modified (optional)
     </div>
     <div class="param-desc">
@@ -18289,7 +18289,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The date on which the product was modified.
  format: data-time
     </div>
-    <div class="param">
+    </p><div class="param">
      view_count (optional)
     </div>
     <div class="param-desc">
@@ -18300,7 +18300,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The number of times the product has been viewed.
     </div>
-    <div class="param">
+    </p><div class="param">
      preorder_release_date (optional)
     </div>
     <div class="param-desc">
@@ -18312,7 +18312,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Pre-order release date. See the `availability` field for details on setting a product's availability to accept pre-orders.
  format: data-time
     </div>
-    <div class="param">
+    </p><div class="param">
      preorder_message (optional)
     </div>
     <div class="param-desc">
@@ -18323,7 +18323,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom expected-date message to display on the product page. If undefined, the message defaults to the storewide setting. Can contain the `%%DATE%%` placeholder, which will be substituted for the release date.
     </div>
-    <div class="param">
+    </p><div class="param">
      is_preorder_only (optional)
     </div>
     <div class="param-desc">
@@ -18334,7 +18334,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      If set to `false`, the product will not change its availability from 	`preorder` to `available` on the release date. Otherwise, on the release date the product's availability/status will change to `available`.
     </div>
-    <div class="param">
+    </p><div class="param">
      is_price_hidden (optional)
     </div>
     <div class="param-desc">
@@ -18345,7 +18345,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      False by default, indicating that this product's price should be shown on the product page. If set to `true`, the price is hidden. (NOTE: To successfully set `is_price_hidden` to `true`, the `availability` value must be `disabled`.)
     </div>
-    <div class="param">
+    </p><div class="param">
      price_hidden_label (optional)
     </div>
     <div class="param-desc">
@@ -18356,7 +18356,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      By default, an empty string. If `is_price_hidden` is `true`, the value of `price_hidden_label` is displayed instead of the price. (NOTE: To successfully set a non-empty string value with `is_price_hidden` set to `true`, the `availability` value must be `disabled`.)
     </div>
-    <div class="param">
+    </p><div class="param">
      images (optional)
     </div>
     <div class="param-desc">
@@ -18366,7 +18366,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      videos (optional)
     </div>
     <div class="param-desc">
@@ -18376,7 +18376,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      custom_fields (optional)
     </div>
     <div class="param-desc">
@@ -18386,7 +18386,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      custom_url (optional)
     </div>
     <div class="param-desc">
@@ -18396,7 +18396,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      bulk_pricing_rules (optional)
     </div>
     <div class="param-desc">
@@ -18406,7 +18406,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      variants (optional)
     </div>
     <div class="param-desc">
@@ -18429,7 +18429,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -18439,7 +18439,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -18462,7 +18462,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -18473,7 +18473,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The ID of a YouTube video.
     </div>
-    <div class="param">
+    </p><div class="param">
      product_id (optional)
     </div>
     <div class="param-desc">
@@ -18484,7 +18484,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The unique numeric identifier for the product with which the image is associated.
     </div>
-    <div class="param">
+    </p><div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -18495,7 +18495,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The order in which the video will be displayed on the product page. Higher integers give the video a lower priority. When updating, if the video is given a lower priority, all videos with a `sort_order` the same as or greater than the video's new `sort_order` value will have their `sort_order`s reordered.
     </div>
-    <div class="param">
+    </p><div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -18506,7 +18506,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The description for the video. If left blank, this will be filled in according to data on YouTube.
     </div>
-    <div class="param">
+    </p><div class="param">
      title (optional)
     </div>
     <div class="param-desc">
@@ -18517,7 +18517,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The title for the video. If left blank, this will be filled in according to data on YouTube.
     </div>
-    <div class="param">
+    </p><div class="param">
      length (optional)
     </div>
     <div class="param-desc">
@@ -18541,7 +18541,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -18551,7 +18551,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -18574,7 +18574,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -18584,7 +18584,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -18607,7 +18607,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      image_url (optional)
     </div>
     <div class="param-desc">
@@ -18630,7 +18630,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -18641,7 +18641,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The unique numeric ID of the subscriber; increments sequentially.
     </div>
-    <div class="param">
+    </p><div class="param">
      email (optional)
     </div>
     <div class="param-desc">
@@ -18652,7 +18652,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The email of the subscriber. Must be unique.
     </div>
-    <div class="param">
+    </p><div class="param">
      first_name (optional)
     </div>
     <div class="param-desc">
@@ -18663,7 +18663,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The first name of the subscriber.
     </div>
-    <div class="param">
+    </p><div class="param">
      last_name (optional)
     </div>
     <div class="param-desc">
@@ -18674,7 +18674,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The last name of the subscriber.
     </div>
-    <div class="param">
+    </p><div class="param">
      source (optional)
     </div>
     <div class="param-desc">
@@ -18685,7 +18685,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The source of the subscriber. Values are: `storefront`, `order`, or `custom`.
     </div>
-    <div class="param">
+    </p><div class="param">
      order_id (optional)
     </div>
     <div class="param-desc">
@@ -18696,7 +18696,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The ID of the source order, if source was an order.
     </div>
-    <div class="param">
+    </p><div class="param">
      date_modified (optional)
     </div>
     <div class="param-desc">
@@ -18708,7 +18708,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The date on which the subscriber was modified.
  format: data-time
     </div>
-    <div class="param">
+    </p><div class="param">
      date_created (optional)
     </div>
     <div class="param-desc">
@@ -18733,7 +18733,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -18743,7 +18743,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -18766,7 +18766,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -18776,7 +18776,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -18798,7 +18798,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -18808,7 +18808,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      product_id (optional)
     </div>
     <div class="param-desc">
@@ -18818,7 +18818,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      sku (optional)
     </div>
     <div class="param-desc">
@@ -18828,7 +18828,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      sku_id (optional)
     </div>
     <div class="param-desc">
@@ -18839,7 +18839,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Read-only reference to v2 API's SKU ID. Null if it is a base variant.
     </div>
-    <div class="param">
+    </p><div class="param">
      cost_price (optional)
     </div>
     <div class="param-desc">
@@ -18850,7 +18850,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The cost price of the variant. format: double
     </div>
-    <div class="param">
+    </p><div class="param">
      price (optional)
     </div>
     <div class="param-desc">
@@ -18861,7 +18861,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      This variant's base price on the storefront. If this value is null, the product's default price (set in the Product resource's `price` field) will be used as the base price. format: double
     </div>
-    <div class="param">
+    </p><div class="param">
      weight (optional)
     </div>
     <div class="param-desc">
@@ -18872,7 +18872,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      This variant's base weight on the storefront. If this value is null, the product's default weight (set in the Product resource's `weight` field) will be used as the base weight. format: double
     </div>
-    <div class="param">
+    </p><div class="param">
      purchasing_disabled (optional)
     </div>
     <div class="param-desc">
@@ -18883,7 +18883,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      If `true`, this variant will not be purchasable on the storefront.
     </div>
-    <div class="param">
+    </p><div class="param">
      purchasing_disabled_message (optional)
     </div>
     <div class="param-desc">
@@ -18894,7 +18894,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      If `purchasing_disabled` is `true`, this message should show on the storefront when the variant is selected.
     </div>
-    <div class="param">
+    </p><div class="param">
      image_url (optional)
     </div>
     <div class="param-desc">
@@ -18905,7 +18905,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The image that will be displayed when this variant is selected on the storefront. When updating a SKU image, send the publicly accessible URL. Supported image formats are JPEG, PNG, and GIF. Generic product images (not specific to the variant) should be stored on the product.
     </div>
-    <div class="param">
+    </p><div class="param">
      upc (optional)
     </div>
     <div class="param-desc">
@@ -18916,7 +18916,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The UPC code used in feeds for shopping comparison sites and external channel integrations.
     </div>
-    <div class="param">
+    </p><div class="param">
      inventory_level (optional)
     </div>
     <div class="param-desc">
@@ -18927,7 +18927,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Inventory level for the variant, which is used when the product's `inventory_tracking` is set to `variant`.
     </div>
-    <div class="param">
+    </p><div class="param">
      inventory_warning_level (optional)
     </div>
     <div class="param-desc">
@@ -18938,7 +18938,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      When the variant hits this inventory level, it is considered low stock.
     </div>
-    <div class="param">
+    </p><div class="param">
      bin_picking_number (optional)
     </div>
     <div class="param-desc">
@@ -18949,7 +18949,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Identifies where in a warehouse the variant is located.
     </div>
-    <div class="param">
+    </p><div class="param">
      option_values (optional)
     </div>
     <div class="param-desc">
@@ -18973,7 +18973,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -18983,7 +18983,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -19005,7 +19005,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -19015,7 +19015,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      product_id (optional)
     </div>
     <div class="param-desc">
@@ -19025,7 +19025,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      sku (optional)
     </div>
     <div class="param-desc">
@@ -19035,7 +19035,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      sku_id (optional)
     </div>
     <div class="param-desc">
@@ -19046,7 +19046,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Read-only reference to v2 API's SKU ID. Null if it is a base variant.
     </div>
-    <div class="param">
+    </p><div class="param">
      price (optional)
     </div>
     <div class="param-desc">
@@ -19057,7 +19057,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      This variant's base price on the storefront. If this value is null, the product's default price (set in the Product resource's `price` field) will be used as the base price.
     </div>
-    <div class="param">
+    </p><div class="param">
      weight (optional)
     </div>
     <div class="param-desc">
@@ -19068,7 +19068,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      This variant's base weight on the storefront. If this value is null, the product's default weight (set in the Product resource's `weight` field) will be used as the base weight.
     </div>
-    <div class="param">
+    </p><div class="param">
      purchasing_disabled (optional)
     </div>
     <div class="param-desc">
@@ -19079,7 +19079,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      If `true`, this variant will not be purchasable on the storefront.
     </div>
-    <div class="param">
+    </p><div class="param">
      purchasing_disabled_message (optional)
     </div>
     <div class="param-desc">
@@ -19090,7 +19090,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      If `purchasing_disabled` is `true`, this message should show on the storefront when the variant is selected.
     </div>
-    <div class="param">
+    </p><div class="param">
      image_url (optional)
     </div>
     <div class="param-desc">
@@ -19101,7 +19101,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The image that will be displayed when this variant is selected on the storefront. When updating a SKU image, send the publicly accessible URL. Supported image formats are JPEG, PNG, and GIF. Generic product images (not specific to the variant) should be stored on the product.
     </div>
-    <div class="param">
+    </p><div class="param">
      cost_price (optional)
     </div>
     <div class="param-desc">
@@ -19112,7 +19112,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The variant's cost price.
     </div>
-    <div class="param">
+    </p><div class="param">
      upc (optional)
     </div>
     <div class="param-desc">
@@ -19123,7 +19123,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The UPC code used in feeds for shopping comparison sites and external channel integrations.
     </div>
-    <div class="param">
+    </p><div class="param">
      inventory_level (optional)
     </div>
     <div class="param-desc">
@@ -19134,7 +19134,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Inventory level for the variant, which is used when the product's `inventory_tracking` is set to `variant`.
     </div>
-    <div class="param">
+    </p><div class="param">
      inventory_warning_level (optional)
     </div>
     <div class="param-desc">
@@ -19145,7 +19145,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      When the variant hits this inventory level, it is considered low stock.
     </div>
-    <div class="param">
+    </p><div class="param">
      bin_picking_number (optional)
     </div>
     <div class="param-desc">
@@ -19156,7 +19156,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Identifies where in a warehouse the variant is located.
     </div>
-    <div class="param">
+    </p><div class="param">
      option_values (optional)
     </div>
     <div class="param-desc">
@@ -19179,7 +19179,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
    <br/>
    <div class="field-items">
-    <div class="param">
+    </p><div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -19189,7 +19189,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p><div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
