@@ -19615,12 +19615,12 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     </div>
    </div>
   </div>
- </body>
+
+<h2> <a name="definitions"></a> Definitions </h2>
+
+<div id="integer"> <b>Integer:</b> A whole number. </div>
+
+<div id="string"> <b>String:</b> A sequence of characters (letters, numerals, symbols, and/or punctuation marks). </div> 
+
+</body>
 </html>
-
-
-## <span id="definitions">Definitions </span>
-
-<span id="integer"> **Integer:** A whole number. </span>
-
-<span id="string"> **String:** A sequence of characters (letters, numerals, symbols, and/or punctuation marks). </span>
