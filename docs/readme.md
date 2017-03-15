@@ -4,4 +4,4 @@ The majority of our documentation, including legacy API docs, is hosted on our d
 
 ## Docs Available Here
 
-### [v3 Catalog API](./v3-catalog.md)
+### [v3 API](./v3-catalog.md)
