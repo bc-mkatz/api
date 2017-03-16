@@ -421,7 +421,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
  <head>
   <h1>
    BigCommerce v3 API
-  </title>
+  </h1>
  </head>
  <body>
   <div class="app-desc">
