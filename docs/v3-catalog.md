@@ -2,10 +2,10 @@
 
 _Welcome! Please note that this API is in our partner-release stage, which means that in the short term, we'll be iterating on feedback from partners. Our goal is to make sure that all concerns are addressed, and that we reach our goal of creating the most powerful, easiest-to-use catalog API in ecommerce. Because of this iterative approach, please expect small changes and many additions to occur._
 
-**Have suggestions, feedback or questions? Submit them as an issue here:** 
+**Have suggestions, feedback or questions? Submit them as an issue here:**  
 https://github.com/bigcommerce/api/issues
 
-**Want to see what we have in development, and help direct our roadmap? View our public API roadmap here:** 
+**Want to see what we have in development, and help direct our roadmap? View our public API roadmap here:**  
 https://trello.com/b/1Od4oCsl/bigcommerce-api-roadmap
 
 **Jump directly to: [API Reference](#api_ref)**
