@@ -1581,8 +1581,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      Brand
      <a href="#BrandPost">
       BrandPost
@@ -1684,8 +1685,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      brand_id (required)
     </div>
     <div class="param-desc">
@@ -1714,8 +1716,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Form parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      image_file (required)
     </div>
     <div class="param-desc">
@@ -1815,8 +1818,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      brand_id (required)
     </div>
     <div class="param-desc">
@@ -1845,8 +1849,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      Metafield
      <a href="#MetafieldPost">
       MetafieldPost
@@ -1963,8 +1968,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      category
      <a href="#CategoryPost">
       CategoryPost
@@ -2066,8 +2072,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      category_id (required)
     </div>
     <div class="param-desc">
@@ -2096,8 +2103,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Form parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      image_file (required)
     </div>
     <div class="param-desc">
@@ -2197,8 +2205,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      category_id (required)
     </div>
     <div class="param-desc">
@@ -2227,8 +2236,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      Metafield
      <a href="#MetafieldPost">
       MetafieldPost
@@ -2330,8 +2340,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -2359,8 +2370,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      ComplexRule
      <a href="#ComplexRulePost">
       ComplexRulePost
@@ -2462,8 +2474,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -2491,8 +2504,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      CustomField
      <a href="#CustomFieldPost">
       CustomFieldPost
@@ -2594,8 +2608,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -2623,8 +2638,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      Modifier
      <a href="#ModifierPost">
       ModifierPost
@@ -2726,8 +2742,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -2736,7 +2753,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      modifier_id (required)
     </div>
     <div class="param-desc">
@@ -2745,7 +2763,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Modifier`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      value_id (required)
     </div>
     <div class="param-desc">
@@ -2773,8 +2792,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Form parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      image_file (required)
     </div>
     <div class="param-desc">
@@ -2874,8 +2894,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -2884,7 +2905,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      modifier_id (required)
     </div>
     <div class="param-desc">
@@ -2912,8 +2934,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      ModifierValue
      <a href="#ModifierValuePost">
       ModifierValuePost
@@ -3008,8 +3031,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -3037,8 +3061,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      Option
      <a href="#OptionPost">
       OptionPost
@@ -3140,8 +3165,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -3150,7 +3176,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      option_id (required)
     </div>
     <div class="param-desc">
@@ -3178,8 +3205,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      OptionValue
      <a href="#OptionValuePost">
       OptionValuePost
@@ -3289,8 +3317,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product
      <a href="#ProductPost">
       ProductPost
@@ -3392,8 +3421,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -3421,8 +3451,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      productImage
      <a href="#ProductImagePost">
       ProductImagePost
@@ -3517,8 +3548,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -3546,8 +3578,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      Metafield
      <a href="#MetafieldPost">
       MetafieldPost
@@ -3649,8 +3682,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -3678,8 +3712,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      productVideo
      <a href="#ProductVideoPost">
       ProductVideoPost
@@ -3774,8 +3809,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -3803,8 +3839,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      Variant
      <a href="#VariantPost">
       VariantPost
@@ -3898,8 +3935,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -3908,7 +3946,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      variant_id (required)
     </div>
     <div class="param-desc">
@@ -3937,8 +3976,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Form parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      image_file (required)
     </div>
     <div class="param-desc">
@@ -4038,8 +4078,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -4048,7 +4089,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      variant_id (required)
     </div>
     <div class="param-desc">
@@ -4077,8 +4119,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      Metafield
      <a href="#MetafieldPost">
       MetafieldPost
@@ -4180,8 +4223,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      brand_id (required)
     </div>
     <div class="param-desc">
@@ -4262,8 +4306,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      brand_id (required)
     </div>
     <div class="param-desc">
@@ -4344,8 +4389,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      metafield_id (required)
     </div>
     <div class="param-desc">
@@ -4355,7 +4401,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      — The ID of the `Metafield`.
  format: int
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      brand_id (required)
     </div>
     <div class="param-desc">
@@ -4451,8 +4498,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Query parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -4461,7 +4509,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by name.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      page_title (optional)
     </div>
     <div class="param-desc">
@@ -4541,8 +4590,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Query parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -4551,7 +4601,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by name.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      parent_id (optional)
     </div>
     <div class="param-desc">
@@ -4560,7 +4611,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by parent_id.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      page_title (optional)
     </div>
     <div class="param-desc">
@@ -4569,7 +4621,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by page_title.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      keyword (optional)
     </div>
     <div class="param-desc">
@@ -4578,7 +4631,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by keywords.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_visible (optional)
     </div>
     <div class="param-desc">
@@ -4643,8 +4697,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      category_id (required)
     </div>
     <div class="param-desc">
@@ -4725,8 +4780,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      category_id (required)
     </div>
     <div class="param-desc">
@@ -4807,8 +4863,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      metafield_id (required)
     </div>
     <div class="param-desc">
@@ -4818,7 +4875,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      — The ID of the `Metafield`.
  format: int
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      category_id (required)
     </div>
     <div class="param-desc">
@@ -4899,8 +4957,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -4909,7 +4968,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      complex_rule_id (required)
     </div>
     <div class="param-desc">
@@ -4989,8 +5049,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -4999,7 +5060,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      custom_field_id (required)
     </div>
     <div class="param-desc">
@@ -5086,8 +5148,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -5096,7 +5159,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      modifier_id (required)
     </div>
     <div class="param-desc">
@@ -5176,8 +5240,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -5186,7 +5251,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      modifier_id (required)
     </div>
     <div class="param-desc">
@@ -5195,7 +5261,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Modifier`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      value_id (required)
     </div>
     <div class="param-desc">
@@ -5275,8 +5342,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -5285,7 +5353,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      modifier_id (required)
     </div>
     <div class="param-desc">
@@ -5294,7 +5363,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Modifier`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      value_id (required)
     </div>
     <div class="param-desc">
@@ -5374,8 +5444,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -5384,7 +5455,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      option_id (required)
     </div>
     <div class="param-desc">
@@ -5464,8 +5536,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -5474,7 +5547,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      option_id (required)
     </div>
     <div class="param-desc">
@@ -5483,7 +5557,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Option`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      value_id (required)
     </div>
     <div class="param-desc">
@@ -5563,8 +5638,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -5644,8 +5720,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -5654,7 +5731,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      image_id (required)
     </div>
     <div class="param-desc">
@@ -5734,8 +5812,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      metafield_id (required)
     </div>
     <div class="param-desc">
@@ -5745,7 +5824,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      — The ID of the `Metafield`.
  format: int
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -5825,8 +5905,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -5835,7 +5916,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      video_id (required)
     </div>
     <div class="param-desc">
@@ -5930,8 +6012,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Query parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -5940,7 +6023,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by name.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sku (optional)
     </div>
     <div class="param-desc">
@@ -5949,7 +6033,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by sku.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      price (optional)
     </div>
     <div class="param-desc">
@@ -5958,7 +6043,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by price.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      weight (optional)
     </div>
     <div class="param-desc">
@@ -5967,7 +6053,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by weight.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      condition (optional)
     </div>
     <div class="param-desc">
@@ -5976,7 +6063,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by condition.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      brand_id (optional)
     </div>
     <div class="param-desc">
@@ -5985,7 +6073,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by brand_id.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      date_modified (optional)
     </div>
     <div class="param-desc">
@@ -5995,7 +6084,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      — Filter items by date_modified.
  format: date-time
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      date_last_imported (optional)
     </div>
     <div class="param-desc">
@@ -6005,7 +6095,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      — Filter items by date_last_imported.
  format: date-time
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_visible (optional)
     </div>
     <div class="param-desc">
@@ -6014,7 +6105,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by is_visible.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_featured (optional)
     </div>
     <div class="param-desc">
@@ -6023,7 +6115,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by is_featured.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      inventory_level (optional)
     </div>
     <div class="param-desc">
@@ -6032,7 +6125,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by inventory_level.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      total_sold (optional)
     </div>
     <div class="param-desc">
@@ -6041,7 +6135,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by total_sold.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -6050,7 +6145,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by type: `physical` or `digital`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      categories (optional)
     </div>
     <div class="param-desc">
@@ -6059,7 +6155,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by categories.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      keyword (optional)
     </div>
     <div class="param-desc">
@@ -6124,8 +6221,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -6134,7 +6232,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      variant_id (required)
     </div>
     <div class="param-desc">
@@ -6215,8 +6314,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      metafield_id (required)
     </div>
     <div class="param-desc">
@@ -6226,7 +6326,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      — The ID of the `Metafield`.
  format: int
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -6235,7 +6336,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      variant_id (required)
     </div>
     <div class="param-desc">
@@ -6316,8 +6418,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      brand_id (required)
     </div>
     <div class="param-desc">
@@ -6424,8 +6527,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      metafield_id (required)
     </div>
     <div class="param-desc">
@@ -6435,7 +6539,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      — The ID of the `Metafield`.
  format: int
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      brand_id (required)
     </div>
     <div class="param-desc">
@@ -6542,8 +6647,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      brand_id (required)
     </div>
     <div class="param-desc">
@@ -6572,8 +6678,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Query parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      page (optional)
     </div>
     <div class="param-desc">
@@ -6582,7 +6689,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Control the page in a limited list of products.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      limit (optional)
     </div>
     <div class="param-desc">
@@ -6591,7 +6699,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Control the items per page.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      key (optional)
     </div>
     <div class="param-desc">
@@ -6600,7 +6709,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter based on a metafield's key.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      namespace (optional)
     </div>
     <div class="param-desc">
@@ -6719,8 +6829,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Query parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -6729,7 +6840,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by name.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      page_title (optional)
     </div>
     <div class="param-desc">
@@ -6738,7 +6850,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by page_title.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      page (optional)
     </div>
     <div class="param-desc">
@@ -6747,7 +6860,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Control the page in a limited list of products.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      limit (optional)
     </div>
     <div class="param-desc">
@@ -6859,8 +6973,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Query parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -6869,7 +6984,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by name.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      parent_id (optional)
     </div>
     <div class="param-desc">
@@ -6878,7 +6994,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by parent_id.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      page_title (optional)
     </div>
     <div class="param-desc">
@@ -6887,7 +7004,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by page_title.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      keyword (optional)
     </div>
     <div class="param-desc">
@@ -6896,7 +7014,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by keywords.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_visible (optional)
     </div>
     <div class="param-desc">
@@ -6905,7 +7024,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by is_visible.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      page (optional)
     </div>
     <div class="param-desc">
@@ -6914,7 +7034,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Control the page in a limited list of products.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      limit (optional)
     </div>
     <div class="param-desc">
@@ -7011,8 +7132,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      category_id (required)
     </div>
     <div class="param-desc">
@@ -7119,8 +7241,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      metafield_id (required)
     </div>
     <div class="param-desc">
@@ -7130,7 +7253,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      — The ID of the `Metafield`.
  format: int
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      category_id (required)
     </div>
     <div class="param-desc">
@@ -7237,8 +7361,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      category_id (required)
     </div>
     <div class="param-desc">
@@ -7267,8 +7392,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Query parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      page (optional)
     </div>
     <div class="param-desc">
@@ -7277,7 +7403,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Control the page in a limited list of products.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      limit (optional)
     </div>
     <div class="param-desc">
@@ -7286,7 +7413,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Control the items per page.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      key (optional)
     </div>
     <div class="param-desc">
@@ -7295,7 +7423,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter based on a metafield's key.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      namespace (optional)
     </div>
     <div class="param-desc">
@@ -7505,8 +7634,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -7515,7 +7645,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      complex_rule_id (required)
     </div>
     <div class="param-desc">
@@ -7621,8 +7752,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -7734,8 +7866,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -7744,7 +7877,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      custom_field_id (required)
     </div>
     <div class="param-desc">
@@ -7850,8 +7984,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -7963,8 +8098,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -7973,7 +8109,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      modifier_id (required)
     </div>
     <div class="param-desc">
@@ -8079,8 +8216,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -8089,7 +8227,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      modifier_id (required)
     </div>
     <div class="param-desc">
@@ -8098,7 +8237,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Modifier`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      value_id (required)
     </div>
     <div class="param-desc">
@@ -8204,8 +8344,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -8214,7 +8355,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      modifier_id (required)
     </div>
     <div class="param-desc">
@@ -8326,8 +8468,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -8439,8 +8582,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -8449,7 +8593,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      option_id (required)
     </div>
     <div class="param-desc">
@@ -8555,8 +8700,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -8565,7 +8711,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      option_id (required)
     </div>
     <div class="param-desc">
@@ -8574,7 +8721,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Option`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      value_id (required)
     </div>
     <div class="param-desc">
@@ -8680,8 +8828,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -8690,7 +8839,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      option_id (required)
     </div>
     <div class="param-desc">
@@ -8802,8 +8952,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -8922,8 +9073,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -8951,8 +9103,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Query parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      include (optional)
     </div>
     <div class="param-desc">
@@ -9043,8 +9196,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -9053,7 +9207,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      image_id (required)
     </div>
     <div class="param-desc">
@@ -9159,8 +9314,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -9285,8 +9441,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      metafield_id (required)
     </div>
     <div class="param-desc">
@@ -9296,7 +9453,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      — The ID of the `Metafield`.
  format: int
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -9402,8 +9560,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -9431,8 +9590,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Query parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      page (optional)
     </div>
     <div class="param-desc">
@@ -9441,7 +9601,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Control the page in a limited list of products.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      limit (optional)
     </div>
     <div class="param-desc">
@@ -9450,7 +9611,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Control the items per page.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      key (optional)
     </div>
     <div class="param-desc">
@@ -9459,7 +9621,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter based on a metafield's key.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      namespace (optional)
     </div>
     <div class="param-desc">
@@ -9563,8 +9726,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -9573,7 +9737,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      video_id (required)
     </div>
     <div class="param-desc">
@@ -9679,8 +9844,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -9807,8 +9973,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Query parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -9817,7 +9984,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by id.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -9826,7 +9994,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by name.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sku (optional)
     </div>
     <div class="param-desc">
@@ -9835,7 +10004,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by sku.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      upc (optional)
     </div>
     <div class="param-desc">
@@ -9844,7 +10014,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by upc.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      price (optional)
     </div>
     <div class="param-desc">
@@ -9853,7 +10024,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by price.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      weight (optional)
     </div>
     <div class="param-desc">
@@ -9862,7 +10034,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by weight.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      condition (optional)
     </div>
     <div class="param-desc">
@@ -9871,7 +10044,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by condition.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      brand_id (optional)
     </div>
     <div class="param-desc">
@@ -9880,7 +10054,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by brand_id.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      date_modified (optional)
     </div>
     <div class="param-desc">
@@ -9890,7 +10065,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      — Filter items by date_modified.
  format: date-time
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      date_last_imported (optional)
     </div>
     <div class="param-desc">
@@ -9900,7 +10076,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      — Filter items by date_last_imported.
  format: date-time
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_visible (optional)
     </div>
     <div class="param-desc">
@@ -9909,7 +10086,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by is_visible.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_featured (optional)
     </div>
     <div class="param-desc">
@@ -9918,7 +10096,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by is_featured.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_free_shipping (optional)
     </div>
     <div class="param-desc">
@@ -9927,7 +10106,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by is_free_shipping.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      inventory_level (optional)
     </div>
     <div class="param-desc">
@@ -9936,7 +10116,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by inventory_level.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      inventory_low (optional)
     </div>
     <div class="param-desc">
@@ -9945,7 +10126,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by inventory_low; values: 1, 0.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      out_of_stock (optional)
     </div>
     <div class="param-desc">
@@ -9954,7 +10136,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by out_of_stock. To enable the filter, pass `out_of_stock`=`1`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      total_sold (optional)
     </div>
     <div class="param-desc">
@@ -9963,7 +10146,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by total_sold.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -9972,7 +10156,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by type: `physical` or `digital`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      categories (optional)
     </div>
     <div class="param-desc">
@@ -9981,7 +10166,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by categories.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      keyword (optional)
     </div>
     <div class="param-desc">
@@ -9990,7 +10176,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by keywords found in the name, description, sku, keywords, or brand name.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      keyword_context (optional)
     </div>
     <div class="param-desc">
@@ -9999,7 +10186,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Set context for a product search.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      channel_id (optional)
     </div>
     <div class="param-desc">
@@ -10008,7 +10196,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by channel.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      status (optional)
     </div>
     <div class="param-desc">
@@ -10017,7 +10206,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by status.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      include (optional)
     </div>
     <div class="param-desc">
@@ -10026,7 +10216,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Include sub-resources on a product, with a comma-separated list. Valid expansions currently include `variants`, `images`, `custom_fields`, and `bulk_pricing_rules`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      availability (optional)
     </div>
     <div class="param-desc">
@@ -10035,7 +10226,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by availability. Values are: available, disabled, preorder.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      page (optional)
     </div>
     <div class="param-desc">
@@ -10044,7 +10236,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Control the page in a limited list of products.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      limit (optional)
     </div>
     <div class="param-desc">
@@ -10053,7 +10246,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Control the items per page.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      direction (optional)
     </div>
     <div class="param-desc">
@@ -10062,7 +10256,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Sort direction. Values are: asc, desc.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sort (optional)
     </div>
     <div class="param-desc">
@@ -10159,8 +10354,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -10169,7 +10365,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      variant_id (required)
     </div>
     <div class="param-desc">
@@ -10276,8 +10473,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      metafield_id (required)
     </div>
     <div class="param-desc">
@@ -10287,7 +10485,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      — The ID of the `Metafield`.
  format: int
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -10296,7 +10495,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      variant_id (required)
     </div>
     <div class="param-desc">
@@ -10403,8 +10603,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -10413,7 +10614,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      variant_id (required)
     </div>
     <div class="param-desc">
@@ -10442,8 +10644,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Query parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      page (optional)
     </div>
     <div class="param-desc">
@@ -10452,7 +10655,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Control the page in a limited list of products.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      limit (optional)
     </div>
     <div class="param-desc">
@@ -10461,7 +10665,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Control the items per page.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      key (optional)
     </div>
     <div class="param-desc">
@@ -10470,7 +10675,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter based on a metafield's key.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      namespace (optional)
     </div>
     <div class="param-desc">
@@ -10589,8 +10795,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Query parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -10599,7 +10806,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by id.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sku (optional)
     </div>
     <div class="param-desc">
@@ -10608,7 +10816,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by sku.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      page (optional)
     </div>
     <div class="param-desc">
@@ -10617,7 +10826,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Control the page in a limited list of products.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      limit (optional)
     </div>
     <div class="param-desc">
@@ -10721,8 +10931,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -10750,8 +10961,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Query parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      page (optional)
     </div>
     <div class="param-desc">
@@ -10760,7 +10972,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Control the page in a limited list of products.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      limit (optional)
     </div>
     <div class="param-desc">
@@ -10864,8 +11077,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      brand_id (required)
     </div>
     <div class="param-desc">
@@ -10894,8 +11108,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      brand
      <a href="#BrandPut">
       BrandPut
@@ -11004,8 +11219,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      metafield_id (required)
     </div>
     <div class="param-desc">
@@ -11015,7 +11231,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      — The ID of the `Metafield`.
  format: int
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      brand_id (required)
     </div>
     <div class="param-desc">
@@ -11044,8 +11261,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      Metafield
      <a href="#MetafieldPut">
       MetafieldPut
@@ -11140,8 +11358,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      category_id (required)
     </div>
     <div class="param-desc">
@@ -11170,8 +11389,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      category
      <a href="#CategoryPut">
       CategoryPut
@@ -11280,8 +11500,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      metafield_id (required)
     </div>
     <div class="param-desc">
@@ -11291,7 +11512,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      — The ID of the `Metafield`.
  format: int
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      category_id (required)
     </div>
     <div class="param-desc">
@@ -11320,8 +11542,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      Metafield
      <a href="#MetafieldPut">
       MetafieldPut
@@ -11416,8 +11639,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -11426,7 +11650,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      complex_rule_id (required)
     </div>
     <div class="param-desc">
@@ -11454,8 +11679,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      ComplexRule
      <a href="#ComplexRulePut">
       ComplexRulePut
@@ -11557,8 +11783,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -11567,7 +11794,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      custom_field_id (required)
     </div>
     <div class="param-desc">
@@ -11595,8 +11823,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      CustomField
      <a href="#CustomFieldPut">
       CustomFieldPut
@@ -11698,8 +11927,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -11708,7 +11938,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      modifier_id (required)
     </div>
     <div class="param-desc">
@@ -11736,8 +11967,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      modifier
      <a href="#ModifierPut">
       ModifierPut
@@ -11839,8 +12071,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -11849,7 +12082,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      modifier_id (required)
     </div>
     <div class="param-desc">
@@ -11858,7 +12092,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Modifier`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      value_id (required)
     </div>
     <div class="param-desc">
@@ -11886,8 +12121,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      ModifierValue
      <a href="#ModifierValuePut">
       ModifierValuePut
@@ -11982,8 +12218,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -11992,7 +12229,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      option_id (required)
     </div>
     <div class="param-desc">
@@ -12020,8 +12258,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      option
      <a href="#OptionPut">
       OptionPut
@@ -12123,8 +12362,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -12133,7 +12373,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      option_id (required)
     </div>
     <div class="param-desc">
@@ -12142,7 +12383,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Option`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      value_id (required)
     </div>
     <div class="param-desc">
@@ -12170,8 +12412,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      OptionValue
      <a href="#OptionValuePut">
       OptionValuePut
@@ -12266,8 +12509,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -12295,8 +12539,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product
      <a href="#ProductPut">
       ProductPut
@@ -12405,8 +12650,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -12415,7 +12661,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      image_id (required)
     </div>
     <div class="param-desc">
@@ -12443,8 +12690,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      productImage
      <a href="#ProductImagePut">
       ProductImagePut
@@ -12539,8 +12787,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      metafield_id (required)
     </div>
     <div class="param-desc">
@@ -12550,7 +12799,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      — The ID of the `Metafield`.
  format: int
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -12578,8 +12828,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      Metafield
      <a href="#MetafieldPut">
       MetafieldPut
@@ -12674,8 +12925,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -12684,7 +12936,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      video_id (required)
     </div>
     <div class="param-desc">
@@ -12712,8 +12965,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      productVideo
      <a href="#ProductVideoPut">
       ProductVideoPut
@@ -12808,8 +13062,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -12818,7 +13073,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      variant_id (required)
     </div>
     <div class="param-desc">
@@ -12847,8 +13103,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      Variant
      <a href="#VariantPut">
       VariantPut
@@ -12943,8 +13200,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      metafield_id (required)
     </div>
     <div class="param-desc">
@@ -12954,7 +13212,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      — The ID of the `Metafield`.
  format: int
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
@@ -12963,7 +13222,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      variant_id (required)
     </div>
     <div class="param-desc">
@@ -12992,8 +13252,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      Metafield
      <a href="#MetafieldPut">
       MetafieldPut
@@ -13109,8 +13370,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      subscriber
      <a href="#SubscriberPost">
       SubscriberPost
@@ -13212,8 +13474,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      subscriber_id (required)
     </div>
     <div class="param-desc">
@@ -13309,8 +13572,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Query parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      email (optional)
     </div>
     <div class="param-desc">
@@ -13319,7 +13583,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by email.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      first_name (optional)
     </div>
     <div class="param-desc">
@@ -13328,7 +13593,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by first_name.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      last_name (optional)
     </div>
     <div class="param-desc">
@@ -13337,7 +13603,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by last_name.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      source (optional)
     </div>
     <div class="param-desc">
@@ -13346,7 +13613,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by source.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      order_id (optional)
     </div>
     <div class="param-desc">
@@ -13355,7 +13623,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by order_id.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      date_created (optional)
     </div>
     <div class="param-desc">
@@ -13365,7 +13634,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      — Filter items by date_created.
  format: date-time
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      date_modified (optional)
     </div>
     <div class="param-desc">
@@ -13431,8 +13701,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      subscriber_id (required)
     </div>
     <div class="param-desc">
@@ -13554,8 +13825,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Query parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      email (optional)
     </div>
     <div class="param-desc">
@@ -13564,7 +13836,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by email.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      first_name (optional)
     </div>
     <div class="param-desc">
@@ -13573,7 +13846,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by first_name.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      last_name (optional)
     </div>
     <div class="param-desc">
@@ -13582,7 +13856,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by last_name.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      source (optional)
     </div>
     <div class="param-desc">
@@ -13591,7 +13866,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by source.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      order_id (optional)
     </div>
     <div class="param-desc">
@@ -13600,7 +13876,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Filter items by order_id.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      date_created (optional)
     </div>
     <div class="param-desc">
@@ -13610,7 +13887,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      — Filter items by date_created.
  format: date-time
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      date_modified (optional)
     </div>
     <div class="param-desc">
@@ -13620,7 +13898,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      — Filter items by date_modified.
  format: date-time
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      page (optional)
     </div>
     <div class="param-desc">
@@ -13629,7 +13908,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      — Control the page in a limited list of products.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      limit (optional)
     </div>
     <div class="param-desc">
@@ -13726,8 +14006,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      subscriber_id (required)
     </div>
     <div class="param-desc">
@@ -13756,8 +14037,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      subscriber
      <a href="#SubscriberPut">
       SubscriberPut
@@ -14668,6 +14950,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </li>
   </ol>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="Adjuster">
      Adjuster
@@ -14676,8 +14959,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <div class="model-description">
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      adjuster (optional)
     </div>
     <div class="param-desc">
@@ -14697,7 +14981,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
     <div class="param-enum">
      percentage
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      adjuster_value (optional)
     </div>
     <div class="param-desc">
@@ -14711,6 +14996,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="BaseError">
      BaseError
@@ -14720,8 +15006,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     Error payload for the BigCommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      status (optional)
     </div>
     <div class="param-desc">
@@ -14732,7 +15019,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The HTTP status code.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      title (optional)
     </div>
     <div class="param-desc">
@@ -14743,7 +15031,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The error title describing the particular error.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -14753,7 +15042,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      instance (optional)
     </div>
     <div class="param-desc">
@@ -14766,6 +15056,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="Brand">
      Brand
@@ -14774,8 +15065,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <div class="model-description">
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -14786,7 +15078,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The name of the brand. Must be unique.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      page_title (optional)
     </div>
     <div class="param-desc">
@@ -14797,7 +15090,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The title shown in the browser while viewing the brand.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta_keywords (optional)
     </div>
     <div class="param-desc">
@@ -14808,7 +15102,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Comma separated list of meta keywords to include in the HTML.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta_description (optional)
     </div>
     <div class="param-desc">
@@ -14819,7 +15114,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      A meta description to include.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      search_keywords (optional)
     </div>
     <div class="param-desc">
@@ -14830,7 +15126,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      A comma separated list of keywords that can be used to locate this brand.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      image_url (optional)
     </div>
     <div class="param-desc">
@@ -14841,7 +15138,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Image URL used for this category on the storefront. Images can be uploaded via form file post to `/brands/{brandId}/image`, or by providing a publicly accessible URL in this field.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -14855,6 +15153,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="BrandBase">
      BrandBase
@@ -14864,8 +15163,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     Common Brand properties.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -14876,7 +15176,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The name of the brand. Must be unique.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      page_title (optional)
     </div>
     <div class="param-desc">
@@ -14887,7 +15188,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The title shown in the browser while viewing the brand.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta_keywords (optional)
     </div>
     <div class="param-desc">
@@ -14898,7 +15200,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Comma separated list of meta keywords to include in the HTML.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta_description (optional)
     </div>
     <div class="param-desc">
@@ -14909,7 +15212,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      A meta description to include.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      search_keywords (optional)
     </div>
     <div class="param-desc">
@@ -14920,7 +15224,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      A comma separated list of keywords that can be used to locate this brand.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      image_url (optional)
     </div>
     <div class="param-desc">
@@ -14934,6 +15239,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="BrandCollectionResponse">
      BrandCollectionResponse
@@ -14943,8 +15249,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -14954,7 +15261,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -14967,6 +15275,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="BrandPost">
      BrandPost
@@ -14976,8 +15285,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     The model for a POST to create brand.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -14988,7 +15298,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The name of the brand. Must be unique.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      page_title (optional)
     </div>
     <div class="param-desc">
@@ -14999,7 +15310,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The title shown in the browser while viewing the brand.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta_keywords (optional)
     </div>
     <div class="param-desc">
@@ -15010,7 +15322,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Comma separated list of meta keywords to include in the HTML.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta_description (optional)
     </div>
     <div class="param-desc">
@@ -15021,7 +15334,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      A meta description to include.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      search_keywords (optional)
     </div>
     <div class="param-desc">
@@ -15032,7 +15346,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      A comma separated list of keywords that can be used to locate this brand.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      image_url (optional)
     </div>
     <div class="param-desc">
@@ -15046,6 +15361,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="BrandPut">
      BrandPut
@@ -15055,8 +15371,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     The model for a PUT to update brand.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -15067,7 +15384,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The name of the brand. Must be unique.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      page_title (optional)
     </div>
     <div class="param-desc">
@@ -15078,7 +15396,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The title shown in the browser while viewing the brand.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta_keywords (optional)
     </div>
     <div class="param-desc">
@@ -15089,7 +15408,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Comma separated list of meta keywords to include in the HTML.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta_description (optional)
     </div>
     <div class="param-desc">
@@ -15100,7 +15420,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      A meta description to include.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      search_keywords (optional)
     </div>
     <div class="param-desc">
@@ -15111,7 +15432,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      A comma separated list of keywords that can be used to locate this brand.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      image_url (optional)
     </div>
     <div class="param-desc">
@@ -15122,7 +15444,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Image URL used for this category on the storefront. Images can be uploaded via form file post to `/brands/{brandId}/image`, or by providing a publicly accessible URL in this field.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -15136,6 +15459,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="BrandResponse">
      BrandResponse
@@ -15145,8 +15469,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -15156,7 +15481,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -15169,6 +15495,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="BulkPricingRule">
      BulkPricingRule
@@ -15178,8 +15505,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     Rules that offer price discounts based on quantity breaks.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -15190,7 +15518,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The ID of the bulk pricing rule.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      quantity_min (optional)
     </div>
     <div class="param-desc">
@@ -15201,7 +15530,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The minimum inclusive quantity of a product to satisfy this rule. Must be greater than or equal to zero.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      quantity_max (optional)
     </div>
     <div class="param-desc">
@@ -15212,7 +15542,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The maximum inclusive quantity of a product to satisfy this rule. Must be greater than the `quantity_min` value – unless this field has a value of 0 (zero), in which case there will be no maximum bound for this rule.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -15235,7 +15566,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
     <div class="param-enum">
      fixed
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      amount (optional)
     </div>
     <div class="param-desc">
@@ -15250,6 +15582,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="CatalogSummary">
      CatalogSummary
@@ -15259,8 +15592,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     A BigCommerce Catalog Summary object describes a lightweight summary of the catalog.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      inventory_count (optional)
     </div>
     <div class="param-desc">
@@ -15271,7 +15605,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      A count of all inventory items in the catalog.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      inventory_value (optional)
     </div>
     <div class="param-desc">
@@ -15283,7 +15618,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      Total value of store's inventory.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      primary_category_id (optional)
     </div>
     <div class="param-desc">
@@ -15294,7 +15630,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      ID of the category containing the most products.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      primary_category_name (optional)
     </div>
     <div class="param-desc">
@@ -15308,6 +15645,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="CatalogSummaryResponse">
      CatalogSummaryResponse
@@ -15317,8 +15655,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -15328,7 +15667,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -15341,6 +15681,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="Category">
      Category
@@ -15350,8 +15691,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     A BigCommerce category object.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      parent_id (optional)
     </div>
     <div class="param-desc">
@@ -15362,7 +15704,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The unique numeric ID of the category's parent. This field controls where the category sits in the tree of categories that organize the catalog.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -15373,7 +15716,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The name displayed for the category. Name is unique with respect to the category's siblings.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -15384,7 +15728,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The product description, which can include HTML formatting.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      views (optional)
     </div>
     <div class="param-desc">
@@ -15395,7 +15740,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Number of views the category has on the storefront.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -15406,7 +15752,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Priority this category will be given when included in the menu and category pages. The lower the number, the closer to the top of the results the category will be.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      page_title (optional)
     </div>
     <div class="param-desc">
@@ -15417,7 +15764,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Custom title for the category page, if not defined the category name will be used as the meta title.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      search_keywords (optional)
     </div>
     <div class="param-desc">
@@ -15428,7 +15776,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      A comma separated list of keywords that can be used to locate the category when searching the store.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta_keywords (optional)
     </div>
     <div class="param-desc">
@@ -15439,7 +15788,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Custom meta keywords for the category page. If not defined, the store's default keywords will be used. Must post as an array like: ["awesome","sauce"].
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta_description (optional)
     </div>
     <div class="param-desc">
@@ -15450,7 +15800,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Custom meta description for the category page. If not defined, the store's default meta description will be used.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      layout_file (optional)
     </div>
     <div class="param-desc">
@@ -15461,7 +15812,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The layout template file used to render this category.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_visible (optional)
     </div>
     <div class="param-desc">
@@ -15472,7 +15824,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Flag to determine whether the product should be displayed to customers browsing the store. If `true`, the category will be displayed. If `false`, the category will be hidden from view.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      default_product_sort (optional)
     </div>
     <div class="param-desc">
@@ -15513,7 +15866,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
     <div class="param-enum">
      price_desc
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      image_url (optional)
     </div>
     <div class="param-desc">
@@ -15524,7 +15878,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Image URL used for this category on the storefront. Images can be uploaded via form file post to `/categories/{categoryId}/image`, or by providing a publicly accessible URL in this field.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      custom_url (optional)
     </div>
     <div class="param-desc">
@@ -15534,7 +15889,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -15548,6 +15904,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="CategoryBase">
      CategoryBase
@@ -15557,8 +15914,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     Common Category properties.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      parent_id (optional)
     </div>
     <div class="param-desc">
@@ -15569,7 +15927,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The unique numeric ID of the category's parent. This field controls where the category sits in the tree of categories that organize the catalog.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -15580,7 +15939,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The name displayed for the category. Name is unique with respect to the category's siblings.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -15591,7 +15951,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The product description, which can include HTML formatting.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      views (optional)
     </div>
     <div class="param-desc">
@@ -15602,7 +15963,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Number of views the category has on the storefront.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -15613,7 +15975,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Priority this category will be given when included in the menu and category pages. The lower the number, the closer to the top of the results the category will be.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      page_title (optional)
     </div>
     <div class="param-desc">
@@ -15624,7 +15987,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Custom title for the category page, if not defined the category name will be used as the meta title.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      search_keywords (optional)
     </div>
     <div class="param-desc">
@@ -15635,7 +15999,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      A comma separated list of keywords that can be used to locate the category when searching the store.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta_keywords (optional)
     </div>
     <div class="param-desc">
@@ -15646,7 +16011,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Custom meta keywords for the category page. If not defined, the store's default keywords will be used. Must post as an array like: ["awesome","sauce"].
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta_description (optional)
     </div>
     <div class="param-desc">
@@ -15657,7 +16023,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Custom meta description for the category page. If not defined, the store's default meta description will be used.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      layout_file (optional)
     </div>
     <div class="param-desc">
@@ -15668,7 +16035,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The layout template file used to render this category.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_visible (optional)
     </div>
     <div class="param-desc">
@@ -15679,7 +16047,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Flag to determine whether the product should be displayed to customers browsing the store. If `true`, the category will be displayed. If `false`, the category will be hidden from view.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      default_product_sort (optional)
     </div>
     <div class="param-desc">
@@ -15720,7 +16089,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
     <div class="param-enum">
      price_desc
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      image_url (optional)
     </div>
     <div class="param-desc">
@@ -15731,7 +16101,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Image URL used for this category on the storefront. Images can be uploaded via form file post to `/categories/{categoryId}/image`, or by providing a publicly accessible URL in this field.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      custom_url (optional)
     </div>
     <div class="param-desc">
@@ -15744,6 +16115,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="CategoryCollectionResponse">
      CategoryCollectionResponse
@@ -15753,8 +16125,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -15764,7 +16137,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -15777,6 +16151,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="CategoryNode">
      CategoryNode
@@ -15786,8 +16161,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     A BigCommerce category node object. Used to reflect parent &lt;&gt; child category relationships.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -15798,7 +16174,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The unique numeric ID of the category; increments sequentially.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      parent_id (optional)
     </div>
     <div class="param-desc">
@@ -15809,7 +16186,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The unique numeric ID of the category's parent. This field controls where the category sits in the tree of categories that organize the catalog.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -15820,7 +16198,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The name displayed for the category. Name is unique with respect to the category's siblings.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_visible (optional)
     </div>
     <div class="param-desc">
@@ -15831,7 +16210,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Flag to determine whether the product should be displayed to customers browsing the store. If `true`, the category will be displayed. If `false`, the category will be hidden from view.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      url (optional)
     </div>
     <div class="param-desc">
@@ -15842,7 +16222,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The custom URL for the category on the storefront.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      children (optional)
     </div>
     <div class="param-desc">
@@ -15856,6 +16237,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="CategoryPost">
      CategoryPost
@@ -15865,8 +16247,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     The model for a POST to create category.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      parent_id (optional)
     </div>
     <div class="param-desc">
@@ -15877,7 +16260,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The unique numeric ID of the category's parent. This field controls where the category sits in the tree of categories that organize the catalog.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -15888,7 +16272,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The name displayed for the category. Name is unique with respect to the category's siblings.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -15899,7 +16284,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The product description, which can include HTML formatting.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      views (optional)
     </div>
     <div class="param-desc">
@@ -15910,7 +16296,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Number of views the category has on the storefront.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -15921,7 +16308,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Priority this category will be given when included in the menu and category pages. The lower the number, the closer to the top of the results the category will be.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      page_title (optional)
     </div>
     <div class="param-desc">
@@ -15932,7 +16320,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Custom title for the category page, if not defined the category name will be used as the meta title.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      search_keywords (optional)
     </div>
     <div class="param-desc">
@@ -15943,7 +16332,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      A comma separated list of keywords that can be used to locate the category when searching the store.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta_keywords (optional)
     </div>
     <div class="param-desc">
@@ -15954,7 +16344,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Custom meta keywords for the category page. If not defined, the store's default keywords will be used. Must post as an array like: ["awesome","sauce"].
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta_description (optional)
     </div>
     <div class="param-desc">
@@ -15965,7 +16356,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Custom meta description for the category page. If not defined, the store's default meta description will be used.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      layout_file (optional)
     </div>
     <div class="param-desc">
@@ -15976,7 +16368,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The layout template file used to render this category.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_visible (optional)
     </div>
     <div class="param-desc">
@@ -15987,7 +16380,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Flag to determine whether the product should be displayed to customers browsing the store. If `true`, the category will be displayed. If `false`, the category will be hidden from view.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      default_product_sort (optional)
     </div>
     <div class="param-desc">
@@ -16028,7 +16422,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
     <div class="param-enum">
      price_desc
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      image_url (optional)
     </div>
     <div class="param-desc">
@@ -16039,7 +16434,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Image URL used for this category on the storefront. Images can be uploaded via form file post to `/categories/{categoryId}/image`, or by providing a publicly accessible URL in this field.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      custom_url (optional)
     </div>
     <div class="param-desc">
@@ -16052,6 +16448,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="CategoryPut">
      CategoryPut
@@ -16061,8 +16458,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     The model for a PUT to update category.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      parent_id (optional)
     </div>
     <div class="param-desc">
@@ -16073,7 +16471,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The unique numeric ID of the category's parent. This field controls where the category sits in the tree of categories that organize the catalog.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -16084,7 +16483,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The name displayed for the category. Name is unique with respect to the category's siblings.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -16095,7 +16495,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The product description, which can include HTML formatting.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      views (optional)
     </div>
     <div class="param-desc">
@@ -16106,7 +16507,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Number of views the category has on the storefront.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -16117,7 +16519,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Priority this category will be given when included in the menu and category pages. The lower the number, the closer to the top of the results the category will be.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      page_title (optional)
     </div>
     <div class="param-desc">
@@ -16128,7 +16531,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Custom title for the category page, if not defined the category name will be used as the meta title.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      search_keywords (optional)
     </div>
     <div class="param-desc">
@@ -16139,7 +16543,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      A comma separated list of keywords that can be used to locate the category when searching the store.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta_keywords (optional)
     </div>
     <div class="param-desc">
@@ -16150,7 +16555,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Custom meta keywords for the category page. If not defined, the store's default keywords will be used. Must post as an array like: ["awesome","sauce"].
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta_description (optional)
     </div>
     <div class="param-desc">
@@ -16161,7 +16567,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Custom meta description for the category page. If not defined, the store's default meta description will be used.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      layout_file (optional)
     </div>
     <div class="param-desc">
@@ -16172,7 +16579,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The layout template file used to render this category.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_visible (optional)
     </div>
     <div class="param-desc">
@@ -16183,7 +16591,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Flag to determine whether the product should be displayed to customers browsing the store. If `true`, the category will be displayed. If `false`, the category will be hidden from view.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      default_product_sort (optional)
     </div>
     <div class="param-desc">
@@ -16224,7 +16633,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
     <div class="param-enum">
      price_desc
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      image_url (optional)
     </div>
     <div class="param-desc">
@@ -16235,7 +16645,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Image URL used for this category on the storefront. Images can be uploaded via form file post to `/categories/{categoryId}/image`, or by providing a publicly accessible URL in this field.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      custom_url (optional)
     </div>
     <div class="param-desc">
@@ -16248,6 +16659,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="CategoryResponse">
      CategoryResponse
@@ -16257,8 +16669,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -16268,7 +16681,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -16281,6 +16695,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="CategoryTreeCollectionResponse">
      CategoryTreeCollectionResponse
@@ -16290,8 +16705,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -16301,7 +16717,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -16314,6 +16731,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="CollectionMeta">
      CollectionMeta
@@ -16323,8 +16741,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     Data about the response, including pagination and collection totals.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      pagination (optional)
     </div>
     <div class="param-desc">
@@ -16337,6 +16756,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ComplexRule">
      ComplexRule
@@ -16346,8 +16766,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     Apply price, weight, image, or availabilty adjustments to product, based on a set of conditions. A complex rule's condition must either contain more than one modifier value, or else contain a modifier value and a variant id.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (optional)
     </div>
     <div class="param-desc">
@@ -16358,7 +16779,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The unique numeric ID of the product with which the rule is associated; increments sequentially.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -16369,7 +16791,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Priority this rule will be given, when making adjustments to the product properties.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      enabled (optional)
     </div>
     <div class="param-desc">
@@ -16380,7 +16803,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Flag for determining whether the rule is to be used when adjusting a product's price, weight, image, or availabilty.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      stop (optional)
     </div>
     <div class="param-desc">
@@ -16391,7 +16815,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Flag for determining whether other rules should not be applied after this rule has been applied.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      purchasing_disabled (optional)
     </div>
     <div class="param-desc">
@@ -16402,7 +16827,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Flag for determining whether the rule should disable purchasing of a product when the conditions are applied.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      purchasing_disabled_message (optional)
     </div>
     <div class="param-desc">
@@ -16413,7 +16839,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Message displayed on the storefront when a rule disables the purchasing of a product.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      purchasing_hidden (optional)
     </div>
     <div class="param-desc">
@@ -16424,7 +16851,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Flag for determining whether the rule should hide purchasing of a product when the conditions are applied.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      price_adjuster (optional)
     </div>
     <div class="param-desc">
@@ -16434,7 +16862,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      weight_adjuster (optional)
     </div>
     <div class="param-desc">
@@ -16444,7 +16873,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -16455,7 +16885,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The unique numeric ID of the rule; increments sequentially.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      image_url (optional)
     </div>
     <div class="param-desc">
@@ -16466,7 +16897,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The URL for an image displayed on the storefront when the conditions are applied.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      conditions (optional)
     </div>
     <div class="param-desc">
@@ -16479,6 +16911,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ComplexRuleBase">
      ComplexRuleBase
@@ -16488,8 +16921,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     Common ComplexRule properties.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (optional)
     </div>
     <div class="param-desc">
@@ -16500,7 +16934,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The unique numeric ID of the product with which the rule is associated; increments sequentially.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -16511,7 +16946,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Priority this rule will be given, when making adjustments to the product properties.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      enabled (optional)
     </div>
     <div class="param-desc">
@@ -16522,7 +16958,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Flag for determining whether the rule is to be used when adjusting a product's price, weight, image, or availabilty.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      stop (optional)
     </div>
     <div class="param-desc">
@@ -16533,7 +16970,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Flag for determining whether other rules should not be applied after this rule has been applied.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      purchasing_disabled (optional)
     </div>
     <div class="param-desc">
@@ -16544,7 +16982,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Flag for determining whether the rule should disable purchasing of a product when the conditions are applied.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      purchasing_disabled_message (optional)
     </div>
     <div class="param-desc">
@@ -16555,7 +16994,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Message displayed on the storefront when a rule disables the purchasing of a product.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      purchasing_hidden (optional)
     </div>
     <div class="param-desc">
@@ -16566,7 +17006,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Flag for determining whether the rule should hide purchasing of a product when the conditions are applied.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      price_adjuster (optional)
     </div>
     <div class="param-desc">
@@ -16576,7 +17017,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      weight_adjuster (optional)
     </div>
     <div class="param-desc">
@@ -16589,6 +17031,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ComplexRuleCollectionResponse">
      ComplexRuleCollectionResponse
@@ -16598,8 +17041,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -16609,7 +17053,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -16622,6 +17067,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ComplexRuleCondition">
      ComplexRuleCondition
@@ -16631,8 +17077,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     Complex rules may return with conditions that apply to one or more variants, or with a single modifier value (if the rules were created using the v2 API or the control panel). Complex rules created or updated in the v3 API must have conditions that either reference multiple `modifier_value_id`'s, or else reference a `modifier_value_id` and a `variant_id`.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -16643,7 +17090,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The unique numeric ID of the rule condition; increments sequentially.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      rule_id (optional)
     </div>
     <div class="param-desc">
@@ -16654,7 +17102,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The unique numeric ID of the rule with which the condition is associated.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      modifier_id (optional)
     </div>
     <div class="param-desc">
@@ -16665,7 +17114,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The unique numeric ID of the modifier with which the rule condition is associated.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      modifier_value_id (optional)
     </div>
     <div class="param-desc">
@@ -16676,7 +17126,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The unique numeric ID of the modifier value with which the rule condition is associated.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      variant_id (optional)
     </div>
     <div class="param-desc">
@@ -16687,7 +17138,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The unique numeric ID of the variant the rule condition is associated with.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      combination_id (optional)
     </div>
     <div class="param-desc">
@@ -16701,6 +17153,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ComplexRuleConditionBase">
      ComplexRuleConditionBase
@@ -16710,8 +17163,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     Common ComplexRuleCondition properties.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -16722,7 +17176,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The unique numeric ID of the rule condition; increments sequentially.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      rule_id (optional)
     </div>
     <div class="param-desc">
@@ -16733,7 +17188,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The unique numeric ID of the rule with which the condition is associated.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      modifier_id (optional)
     </div>
     <div class="param-desc">
@@ -16744,7 +17200,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The unique numeric ID of the modifier with which the rule condition is associated.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      modifier_value_id (optional)
     </div>
     <div class="param-desc">
@@ -16755,7 +17212,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The unique numeric ID of the modifier value with which the rule condition is associated.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      variant_id (optional)
     </div>
     <div class="param-desc">
@@ -16769,6 +17227,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ComplexRuleConditionPost">
      ComplexRuleConditionPost
@@ -16778,8 +17237,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     The model for a POST to create conditions on a complex rule.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -16790,7 +17250,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The unique numeric ID of the rule condition; increments sequentially.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      rule_id (optional)
     </div>
     <div class="param-desc">
@@ -16801,7 +17262,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The unique numeric ID of the rule with which the condition is associated.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      modifier_id (optional)
     </div>
     <div class="param-desc">
@@ -16812,7 +17274,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The unique numeric ID of the modifier with which the rule condition is associated.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      modifier_value_id (optional)
     </div>
     <div class="param-desc">
@@ -16823,7 +17286,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The unique numeric ID of the modifier value with which the rule condition is associated.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      variant_id (optional)
     </div>
     <div class="param-desc">
@@ -16837,6 +17301,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ComplexRuleConditionPut">
      ComplexRuleConditionPut
@@ -16846,8 +17311,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     The model for a PUT to update conditions on a complex rule.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -16858,7 +17324,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The unique numeric ID of the rule condition; increments sequentially.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      rule_id (optional)
     </div>
     <div class="param-desc">
@@ -16869,7 +17336,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The unique numeric ID of the rule with which the condition is associated.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      modifier_id (optional)
     </div>
     <div class="param-desc">
@@ -16880,7 +17348,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The unique numeric ID of the modifier with which the rule condition is associated.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      modifier_value_id (optional)
     </div>
     <div class="param-desc">
@@ -16891,7 +17360,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The unique numeric ID of the modifier value with which the rule condition is associated.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      variant_id (optional)
     </div>
     <div class="param-desc">
@@ -16905,6 +17375,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ComplexRulePost">
      ComplexRulePost
@@ -16914,8 +17385,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     The model for a POST to create complex rule on a product.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (optional)
     </div>
     <div class="param-desc">
@@ -16926,7 +17398,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The unique numeric ID of the product with which the rule is associated; increments sequentially.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -16937,7 +17410,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Priority this rule will be given, when making adjustments to the product properties.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      enabled (optional)
     </div>
     <div class="param-desc">
@@ -16948,7 +17422,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Flag for determining whether the rule is to be used when adjusting a product's price, weight, image, or availabilty.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      stop (optional)
     </div>
     <div class="param-desc">
@@ -16959,7 +17434,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Flag for determining whether other rules should not be applied after this rule has been applied.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      purchasing_disabled (optional)
     </div>
     <div class="param-desc">
@@ -16970,7 +17446,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Flag for determining whether the rule should disable purchasing of a product when the conditions are applied.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      purchasing_disabled_message (optional)
     </div>
     <div class="param-desc">
@@ -16981,7 +17458,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Message displayed on the storefront when a rule disables the purchasing of a product.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      purchasing_hidden (optional)
     </div>
     <div class="param-desc">
@@ -16992,7 +17470,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Flag for determining whether the rule should hide purchasing of a product when the conditions are applied.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      price_adjuster (optional)
     </div>
     <div class="param-desc">
@@ -17002,7 +17481,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      weight_adjuster (optional)
     </div>
     <div class="param-desc">
@@ -17012,7 +17492,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      conditions (optional)
     </div>
     <div class="param-desc">
@@ -17025,6 +17506,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ComplexRulePut">
      ComplexRulePut
@@ -17034,8 +17516,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     The model for a PUT to update complex rule on a product.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (optional)
     </div>
     <div class="param-desc">
@@ -17046,7 +17529,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The unique numeric ID of the product with which the rule is associated; increments sequentially.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -17057,7 +17541,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Priority this rule will be given, when making adjustments to the product properties.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      enabled (optional)
     </div>
     <div class="param-desc">
@@ -17068,7 +17553,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Flag for determining whether the rule is to be used when adjusting a product's price, weight, image, or availabilty.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      stop (optional)
     </div>
     <div class="param-desc">
@@ -17079,7 +17565,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Flag for determining whether other rules should not be applied after this rule has been applied.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      purchasing_disabled (optional)
     </div>
     <div class="param-desc">
@@ -17090,7 +17577,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Flag for determining whether the rule should disable purchasing of a product when the conditions are applied.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      purchasing_disabled_message (optional)
     </div>
     <div class="param-desc">
@@ -17101,7 +17589,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Message displayed on the storefront when a rule disables the purchasing of a product.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      purchasing_hidden (optional)
     </div>
     <div class="param-desc">
@@ -17112,7 +17601,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Flag for determining whether the rule should hide purchasing of a product when the conditions are applied.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      price_adjuster (optional)
     </div>
     <div class="param-desc">
@@ -17122,7 +17612,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      weight_adjuster (optional)
     </div>
     <div class="param-desc">
@@ -17132,7 +17623,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -17143,7 +17635,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The unique numeric ID of the rule; increments sequentially.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      conditions (optional)
     </div>
     <div class="param-desc">
@@ -17156,6 +17649,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ComplexRuleResponse">
      ComplexRuleResponse
@@ -17165,8 +17659,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -17176,7 +17671,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -17189,6 +17685,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="CustomField">
      CustomField
@@ -17198,8 +17695,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     Gets custom fields associated with a product. These allow you to specify additional information that will appear on the product's page, such as a book's ISBN or a DVD's release date.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -17210,7 +17708,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The name of the field, shown on the storefront, orders, etc.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      value (optional)
     </div>
     <div class="param-desc">
@@ -17221,7 +17720,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The name of the field, shown on the storefront, orders, etc.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -17235,6 +17735,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="CustomFieldBase">
      CustomFieldBase
@@ -17244,8 +17745,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     Common CustomField properties.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -17256,7 +17758,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The name of the field, shown on the storefront, orders, etc.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      value (optional)
     </div>
     <div class="param-desc">
@@ -17270,6 +17773,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="CustomFieldCollectionResponse">
      CustomFieldCollectionResponse
@@ -17279,8 +17783,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -17290,7 +17795,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -17303,6 +17809,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="CustomFieldPost">
      CustomFieldPost
@@ -17312,8 +17819,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     The model for a POST to create custom field on a product.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -17324,7 +17832,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The name of the field, shown on the storefront, orders, etc.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      value (optional)
     </div>
     <div class="param-desc">
@@ -17338,6 +17847,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="CustomFieldPut">
      CustomFieldPut
@@ -17347,8 +17857,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     The model for a PUT to update custom field on a product.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -17359,7 +17870,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The name of the field, shown on the storefront, orders, etc.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      value (optional)
     </div>
     <div class="param-desc">
@@ -17373,6 +17885,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="CustomFieldResponse">
      CustomFieldResponse
@@ -17382,8 +17895,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -17393,7 +17907,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -17406,6 +17921,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="CustomUrlCategory">
      CustomUrlCategory
@@ -17415,8 +17931,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     The custom URL for the category on the storefront.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      url (optional)
     </div>
     <div class="param-desc">
@@ -17427,7 +17944,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Category URL on the storefront.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_customized (optional)
     </div>
     <div class="param-desc">
@@ -17441,6 +17959,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="CustomUrlProduct">
      CustomUrlProduct
@@ -17450,8 +17969,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     The custom URL for the product on the storefront.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      url (optional)
     </div>
     <div class="param-desc">
@@ -17462,7 +17982,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Product URL on the storefront.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_customized (optional)
     </div>
     <div class="param-desc">
@@ -17476,6 +17997,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="DetailedErrors">
      DetailedErrors
@@ -17484,10 +18006,11 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <div class="model-description">
    </div>
    <br/>
-   <div class="field-items">
+   <div class="field-items"> <b>Properties:</b>
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ErrorResponse">
      ErrorResponse
@@ -17496,8 +18019,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <div class="model-description">
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      status (optional)
     </div>
     <div class="param-desc">
@@ -17508,7 +18032,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The HTTP status code.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      title (optional)
     </div>
     <div class="param-desc">
@@ -17519,7 +18044,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The error title describing the particular error.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -17529,7 +18055,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      instance (optional)
     </div>
     <div class="param-desc">
@@ -17539,7 +18066,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      errors (optional)
     </div>
     <div class="param-desc">
@@ -17552,6 +18080,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ImageResponse">
      ImageResponse
@@ -17561,8 +18090,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -17572,7 +18102,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -17585,6 +18116,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="Meta">
      Meta
@@ -17594,10 +18126,11 @@ Please view the documentation generated from the Swagger file in YAML format [he
     Empty meta object, may be used later
    </div>
    <br/>
-   <div class="field-items">
+   <div class="field-items"> <b>Properties:</b>
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="MetaFieldCollectionResponse">
      MetaFieldCollectionResponse
@@ -17607,8 +18140,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -17618,7 +18152,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -17631,6 +18166,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="Metafield">
      Metafield
@@ -17640,8 +18176,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     Allows app partners to write custom data to various resources in the API.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      permission_set (optional)
     </div>
     <div class="param-desc">
@@ -17664,7 +18201,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
     <div class="param-enum">
      write
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      namespace (optional)
     </div>
     <div class="param-desc">
@@ -17675,7 +18213,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Namespace for the metafield, for organizational purposes.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      key (optional)
     </div>
     <div class="param-desc">
@@ -17686,7 +18225,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The name of the field, for example: `location_id`, `color`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      value (optional)
     </div>
     <div class="param-desc">
@@ -17697,7 +18237,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The value of the field, for example: `1`, `blue`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -17708,7 +18249,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Description for the metafields.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      resource_type (optional)
     </div>
     <div class="param-desc">
@@ -17734,7 +18276,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
     <div class="param-enum">
      variant
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      resource_id (optional)
     </div>
     <div class="param-desc">
@@ -17745,7 +18288,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The unique identifier for the resource with which the metafield is associated.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -17756,7 +18300,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The unique identifier for the metafields.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      created_at (optional)
     </div>
     <div class="param-desc">
@@ -17768,7 +18313,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      Date and time of the metafield's creation.
  format: date-time
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      updated_at (optional)
     </div>
     <div class="param-desc">
@@ -17783,6 +18329,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="MetafieldBase">
      MetafieldBase
@@ -17792,8 +18339,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     Common Metafield properties.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      permission_set (optional)
     </div>
     <div class="param-desc">
@@ -17816,7 +18364,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
     <div class="param-enum">
      write
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      namespace (optional)
     </div>
     <div class="param-desc">
@@ -17827,7 +18376,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Namespace for the metafield, for organizational purposes.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      key (optional)
     </div>
     <div class="param-desc">
@@ -17838,7 +18388,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The name of the field, for example: `location_id`, `color`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      value (optional)
     </div>
     <div class="param-desc">
@@ -17849,7 +18400,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The value of the field, for example: `1`, `blue`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -17860,7 +18412,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Description for the metafields.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      resource_type (optional)
     </div>
     <div class="param-desc">
@@ -17886,7 +18439,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
     <div class="param-enum">
      variant
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      resource_id (optional)
     </div>
     <div class="param-desc">
@@ -17900,6 +18454,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="MetafieldPost">
      MetafieldPost
@@ -17909,8 +18464,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     The model for a POST to create metafield.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      permission_set (optional)
     </div>
     <div class="param-desc">
@@ -17933,7 +18489,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
     <div class="param-enum">
      write
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      namespace (optional)
     </div>
     <div class="param-desc">
@@ -17944,7 +18501,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Namespace for the metafield, for organizational purposes.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      key (optional)
     </div>
     <div class="param-desc">
@@ -17955,7 +18513,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The name of the field, for example: `location_id`, `color`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      value (optional)
     </div>
     <div class="param-desc">
@@ -17966,7 +18525,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The value of the field, for example: `1`, `blue`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -17977,7 +18537,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Description for the metafields.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      resource_type (optional)
     </div>
     <div class="param-desc">
@@ -18003,7 +18564,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
     <div class="param-enum">
      variant
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      resource_id (optional)
     </div>
     <div class="param-desc">
@@ -18017,6 +18579,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="MetafieldPut">
      MetafieldPut
@@ -18026,8 +18589,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     The model for a PUT to update metafield.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      permission_set (optional)
     </div>
     <div class="param-desc">
@@ -18050,7 +18614,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
     <div class="param-enum">
      write
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      namespace (optional)
     </div>
     <div class="param-desc">
@@ -18061,7 +18626,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Namespace for the metafield, for organizational purposes.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      key (optional)
     </div>
     <div class="param-desc">
@@ -18072,7 +18638,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The name of the field, for example: `location_id`, `color`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      value (optional)
     </div>
     <div class="param-desc">
@@ -18083,7 +18650,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The value of the field, for example: `1`, `blue`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -18094,7 +18662,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      Description for the metafields.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      resource_type (optional)
     </div>
     <div class="param-desc">
@@ -18120,7 +18689,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
     <div class="param-enum">
      variant
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      resource_id (optional)
     </div>
     <div class="param-desc">
@@ -18131,7 +18701,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
      </span>
      The unique identifier for the resource with which the metafield is associated.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -18145,6 +18716,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="MetafieldResponse">
      MetafieldResponse
@@ -18154,8 +18726,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -18165,7 +18738,8 @@ Please view the documentation generated from the Swagger file in YAML format [he
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -18178,6 +18752,7 @@ Please view the documentation generated from the Swagger file in YAML format [he
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="Modifier">
      Modifier
@@ -18186,8 +18761,9 @@ Please view the documentation generated from the Swagger file in YAML format [he
    <div class="model-description">
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -18239,7 +18815,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
     <div class="param-enum">
      swatch
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      required (optional)
     </div>
     <div class="param-desc">
@@ -18250,7 +18827,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      Whether this modifer is required or not at checkout
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      config (optional)
     </div>
     <div class="param-desc">
@@ -18260,7 +18838,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      option_values (optional)
     </div>
     <div class="param-desc">
@@ -18270,7 +18849,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -18281,7 +18861,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The unique numeric ID of the modifier; increments sequentially.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      product_id (optional)
     </div>
     <div class="param-desc">
@@ -18292,7 +18873,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The unique numeric ID of the product to which the option belongs.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -18303,7 +18885,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The unique option name. Auto-generated from the display name, a timestamp, and the product ID.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      display_name (optional)
     </div>
     <div class="param-desc">
@@ -18317,6 +18900,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ModifierBase">
      ModifierBase
@@ -18326,8 +18910,9 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
     Common Modifier properties.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -18379,7 +18964,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
     <div class="param-enum">
      swatch
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      required (optional)
     </div>
     <div class="param-desc">
@@ -18390,7 +18976,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      Whether this modifer is required or not at checkout
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      config (optional)
     </div>
     <div class="param-desc">
@@ -18400,7 +18987,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      option_values (optional)
     </div>
     <div class="param-desc">
@@ -18413,6 +19001,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ModifierCollectionResponse">
      ModifierCollectionResponse
@@ -18422,8 +19011,9 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -18433,7 +19023,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -18446,6 +19037,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ModifierPost">
      ModifierPost
@@ -18455,8 +19047,9 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
     The model for a POST to create modifier on a product.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -18508,7 +19101,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
     <div class="param-enum">
      swatch
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      required (optional)
     </div>
     <div class="param-desc">
@@ -18519,7 +19113,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      Whether this modifer is required or not at checkout
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      config (optional)
     </div>
     <div class="param-desc">
@@ -18529,7 +19124,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      option_values (optional)
     </div>
     <div class="param-desc">
@@ -18539,7 +19135,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      display_name (optional)
     </div>
     <div class="param-desc">
@@ -18553,6 +19150,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ModifierPut">
      ModifierPut
@@ -18562,8 +19160,9 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
     The model for a PUT to update modifier on a product.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -18615,7 +19214,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
     <div class="param-enum">
      swatch
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      required (optional)
     </div>
     <div class="param-desc">
@@ -18626,7 +19226,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      Whether this modifer is required or not at checkout
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      config (optional)
     </div>
     <div class="param-desc">
@@ -18636,7 +19237,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      option_values (optional)
     </div>
     <div class="param-desc">
@@ -18649,6 +19251,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ModifierResponse">
      ModifierResponse
@@ -18658,8 +19261,9 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -18669,7 +19273,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -18682,6 +19287,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ModifierValue">
      ModifierValue
@@ -18690,8 +19296,9 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
    <div class="model-description">
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      is_default (optional)
     </div>
     <div class="param-desc">
@@ -18702,7 +19309,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The flag for preselecting a value as the default on the storefront. This field is not supported for swatch options/modifiers.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      label (optional)
     </div>
     <div class="param-desc">
@@ -18713,7 +19321,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The text display identifying the value on the storefront.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -18724,7 +19333,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The order in which the value will be displayed on the product page.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      value_data (optional)
     </div>
     <div class="param-desc">
@@ -18735,7 +19345,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      Extra data describing the value, based on the type of option or modifier with which the value is associated. `swatch` requires an array of colors, with up to three hexidecimal color keys; `product list` requires a `product_id`; and `checkbox` requires a boolean flag, called `checked_value`, to determine which value is considered to be the checked state.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      adjusters (optional)
     </div>
     <div class="param-desc">
@@ -18745,7 +19356,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -18759,6 +19371,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ModifierValueBase">
      ModifierValueBase
@@ -18767,8 +19380,9 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
    <div class="model-description">
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      is_default (optional)
     </div>
     <div class="param-desc">
@@ -18779,7 +19393,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The flag for preselecting a value as the default on the storefront. This field is not supported for swatch options/modifiers.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      label (optional)
     </div>
     <div class="param-desc">
@@ -18790,7 +19405,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The text display identifying the value on the storefront.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -18801,7 +19417,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The order in which the value will be displayed on the product page.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      value_data (optional)
     </div>
     <div class="param-desc">
@@ -18812,7 +19429,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      Extra data describing the value, based on the type of option or modifier with which the value is associated. `swatch` requires an array of colors, with up to three hexidecimal color keys; `product list` requires a `product_id`; and `checkbox` requires a boolean flag, called `checked_value`, to determine which value is considered to be the checked state.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      adjusters (optional)
     </div>
     <div class="param-desc">
@@ -18825,6 +19443,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ModifierValueBase_adjusters">
      ModifierValueBase_adjusters
@@ -18833,8 +19452,9 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
    <div class="model-description">
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      price (optional)
     </div>
     <div class="param-desc">
@@ -18844,7 +19464,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      weight (optional)
     </div>
     <div class="param-desc">
@@ -18854,7 +19475,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      image_url (optional)
     </div>
     <div class="param-desc">
@@ -18865,7 +19487,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The URL for an image displayed on the storefront when the modifier value is selected.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      purchasing_disabled (optional)
     </div>
     <div class="param-desc">
@@ -18878,6 +19501,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ModifierValueBase_adjusters_purchasing_disabled">
      ModifierValueBase_adjusters_purchasing_disabled
@@ -18886,8 +19510,9 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
    <div class="model-description">
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      status (optional)
     </div>
     <div class="param-desc">
@@ -18898,7 +19523,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      Flag for whether the modifier value disables purchasing when selected on the storefront. This can be used for temporarily disabling a particular modifier value.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      message (optional)
     </div>
     <div class="param-desc">
@@ -18912,6 +19538,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ModifierValueCollectionResponse">
      ModifierValueCollectionResponse
@@ -18921,8 +19548,9 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -18932,7 +19560,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -18945,6 +19574,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ModifierValuePost">
      ModifierValuePost
@@ -18954,8 +19584,9 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
     The model for a POST to create modifier value on a product.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      is_default (optional)
     </div>
     <div class="param-desc">
@@ -18966,7 +19597,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The flag for preselecting a value as the default on the storefront. This field is not supported for swatch options/modifiers.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      label (optional)
     </div>
     <div class="param-desc">
@@ -18977,7 +19609,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The text display identifying the value on the storefront.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -18988,7 +19621,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The order in which the value will be displayed on the product page.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      value_data (optional)
     </div>
     <div class="param-desc">
@@ -18999,7 +19633,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      Extra data describing the value, based on the type of option or modifier with which the value is associated. `swatch` requires an array of colors, with up to three hexidecimal color keys; `product list` requires a `product_id`; and `checkbox` requires a boolean flag, called `checked_value`, to determine which value is considered to be the checked state.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      adjusters (optional)
     </div>
     <div class="param-desc">
@@ -19012,6 +19647,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ModifierValuePut">
      ModifierValuePut
@@ -19021,8 +19657,9 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
     The model for a PUT to update modifier value on a product.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      is_default (optional)
     </div>
     <div class="param-desc">
@@ -19033,7 +19670,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The flag for preselecting a value as the default on the storefront. This field is not supported for swatch options/modifiers.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      label (optional)
     </div>
     <div class="param-desc">
@@ -19044,7 +19682,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The text display identifying the value on the storefront.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -19055,7 +19694,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The order in which the value will be displayed on the product page.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      value_data (optional)
     </div>
     <div class="param-desc">
@@ -19066,7 +19706,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      Extra data describing the value, based on the type of option or modifier with which the value is associated. `swatch` requires an array of colors, with up to three hexidecimal color keys; `product list` requires a `product_id`; and `checkbox` requires a boolean flag, called `checked_value`, to determine which value is considered to be the checked state.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      adjusters (optional)
     </div>
     <div class="param-desc">
@@ -19076,7 +19717,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -19090,6 +19732,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ModifierValueResponse">
      ModifierValueResponse
@@ -19099,8 +19742,9 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -19110,7 +19754,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -19123,6 +19768,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="NotFound">
      NotFound
@@ -19132,8 +19778,9 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
     Error payload for the BigCommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      status (optional)
     </div>
     <div class="param-desc">
@@ -19144,7 +19791,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      404 HTTP status code.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      title (optional)
     </div>
     <div class="param-desc">
@@ -19155,7 +19803,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The error title describing the particular error.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -19165,7 +19814,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      instance (optional)
     </div>
     <div class="param-desc">
@@ -19178,6 +19828,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="Option">
      Option
@@ -19186,8 +19837,9 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
    <div class="model-description">
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -19198,7 +19850,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The unique numerical ID of the option, increments sequentially.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      product_id (optional)
     </div>
     <div class="param-desc">
@@ -19209,7 +19862,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The unique numerical ID of the product that the option belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      display_name (optional)
     </div>
     <div class="param-desc">
@@ -19220,7 +19874,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The name of the option shown on the storefront.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -19253,7 +19908,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      swatch
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      config (optional)
     </div>
     <div class="param-desc">
@@ -19263,7 +19919,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      option_values (optional)
     </div>
     <div class="param-desc">
@@ -19273,7 +19930,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -19287,6 +19945,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="OptionBase">
      OptionBase
@@ -19296,8 +19955,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Common Option properties.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -19308,7 +19968,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The unique numerical ID of the option, increments sequentially.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      product_id (optional)
     </div>
     <div class="param-desc">
@@ -19319,7 +19980,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The unique numerical ID of the product that the option belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      display_name (optional)
     </div>
     <div class="param-desc">
@@ -19330,7 +19992,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The name of the option shown on the storefront.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -19363,7 +20026,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      swatch
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      config (optional)
     </div>
     <div class="param-desc">
@@ -19373,7 +20037,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      option_values (optional)
     </div>
     <div class="param-desc">
@@ -19386,6 +20051,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="OptionCollectionResponse">
      OptionCollectionResponse
@@ -19395,8 +20061,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -19406,7 +20073,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -19419,6 +20087,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="OptionConfig">
      OptionConfig
@@ -19427,8 +20096,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    <div class="model-description">
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      default_value (optional)
     </div>
     <div class="param-desc">
@@ -19439,7 +20109,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (date, text, multi_line_text, numbers_only_text) The default value. Shown on a date option as an ISO-8601–formatted string, or on a text option as a string.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      checked_by_default (optional)
     </div>
     <div class="param-desc">
@@ -19450,7 +20121,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (checkbox) Flag for setting the checkbox to be checked by default.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      checkbox_label (optional)
     </div>
     <div class="param-desc">
@@ -19461,7 +20133,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (checkbox) Label displayed for the checkbox option.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      date_limited (optional)
     </div>
     <div class="param-desc">
@@ -19472,7 +20145,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (date) Flag to limit the dates allowed to be entered on a date option.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      date_limit_mode (optional)
     </div>
     <div class="param-desc">
@@ -19495,7 +20169,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      latest
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      date_earliest_value (optional)
     </div>
     <div class="param-desc">
@@ -19507,7 +20182,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      (date) The earliest date allowed to be entered on the date option, as an ISO-8601 formatted string.
  format: date
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      date_latest_value (optional)
     </div>
     <div class="param-desc">
@@ -19519,7 +20195,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      (date) The latest date allowed to be entered on the date option, as an ISO-8601 formatted string.
  format: date
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      file_types_mode (optional)
     </div>
     <div class="param-desc">
@@ -19539,7 +20216,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      all
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      file_types_supported (optional)
     </div>
     <div class="param-desc">
@@ -19553,7 +20231,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
   `documents` - Allows upload of document MIME types (`txt`,`pdf`,`rtf`,`doc`,`docx`,`xls`,`xlsx`,`accdb`,`mdb`,`one`,`pps`,`ppsx`,`ppt`,`pptx`,`pub`,`odt`,`ods`,`odp`,`odg`,`odf`).
   `other` - Allows file types defined in the `file_types_other` array.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      file_types_other (optional)
     </div>
     <div class="param-desc">
@@ -19564,7 +20243,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (file) A list of other file types allowed with the file upload option.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      file_max_size (optional)
     </div>
     <div class="param-desc">
@@ -19575,7 +20255,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (file) The maximum size for a file that can be used with the file upload option.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      text_characters_limited (optional)
     </div>
     <div class="param-desc">
@@ -19586,7 +20267,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (text, multi_line_text) Flag to validate the length of a text or multi-line text input.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      text_min_length (optional)
     </div>
     <div class="param-desc">
@@ -19597,7 +20279,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (text, multi_line_text) The minimum length allowed for a text or multi-line text option.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      text_max_length (optional)
     </div>
     <div class="param-desc">
@@ -19608,7 +20291,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (text, multi_line_text) The maximum length allowed for a text or multi line text option.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      text_lines_limited (optional)
     </div>
     <div class="param-desc">
@@ -19619,7 +20303,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (multi_line_text) Flag to validate the maximum number of lines allowed on a multi-line text input.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      text_max_lines (optional)
     </div>
     <div class="param-desc">
@@ -19630,7 +20315,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (multi_line_text) The maximum number of lines allowed on a multi-line text input.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      number_limited (optional)
     </div>
     <div class="param-desc">
@@ -19641,7 +20327,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (numbers_only_text) Flag to limit the value of a number option.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      number_limit_mode (optional)
     </div>
     <div class="param-desc">
@@ -19664,7 +20351,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      range
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      number_lowest_value (optional)
     </div>
     <div class="param-desc">
@@ -19675,7 +20363,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (numbers_only_text) The lowest allowed value for a number option if `number_limited` is true.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      number_highest_value (optional)
     </div>
     <div class="param-desc">
@@ -19686,7 +20375,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (numbers_only_text) The highest allowed value for a number option if `number_limited` is true.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      number_integers_only (optional)
     </div>
     <div class="param-desc">
@@ -19697,7 +20387,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (numbers_only_text) Flag to limit the input on a number option to whole numbers only.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      product_list_adjusts_inventory (optional)
     </div>
     <div class="param-desc">
@@ -19708,7 +20399,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (product_list, product_list_with_images) Flag for automatically adjusting inventory on a product included in the list.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      product_list_adjusts_pricing (optional)
     </div>
     <div class="param-desc">
@@ -19719,7 +20411,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (product_list, product_list_with_images) Flag to add the optional product's price to the main product's price.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      product_list_shipping_calc (optional)
     </div>
     <div class="param-desc">
@@ -19745,6 +20438,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="OptionPost">
      OptionPost
@@ -19754,8 +20448,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     The model for a POST to create option on a product.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -19766,7 +20461,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The unique numerical ID of the option, increments sequentially.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      product_id (optional)
     </div>
     <div class="param-desc">
@@ -19777,7 +20473,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The unique numerical ID of the product that the option belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      display_name (optional)
     </div>
     <div class="param-desc">
@@ -19788,7 +20485,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The name of the option shown on the storefront.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -19821,7 +20519,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      swatch
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      config (optional)
     </div>
     <div class="param-desc">
@@ -19831,7 +20530,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      option_values (optional)
     </div>
     <div class="param-desc">
@@ -19844,6 +20544,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="OptionPut">
      OptionPut
@@ -19853,8 +20554,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     The model for a PUT to update option on a product.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -19865,7 +20567,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The unique numerical ID of the option, increments sequentially.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      product_id (optional)
     </div>
     <div class="param-desc">
@@ -19876,7 +20579,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The unique numerical ID of the product that the option belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      display_name (optional)
     </div>
     <div class="param-desc">
@@ -19887,7 +20591,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The name of the option shown on the storefront.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -19920,7 +20625,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      swatch
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      config (optional)
     </div>
     <div class="param-desc">
@@ -19930,7 +20636,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      option_values (optional)
     </div>
     <div class="param-desc">
@@ -19943,6 +20650,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="OptionResponse">
      OptionResponse
@@ -19952,8 +20660,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -19963,7 +20672,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -19976,6 +20686,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="OptionValue">
      OptionValue
@@ -19984,8 +20695,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    <div class="model-description">
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      is_default (optional)
     </div>
     <div class="param-desc">
@@ -19996,7 +20708,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The flag for preselecting a value as the default on the storefront. This field is not supported for swatch options/modifiers.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      label (optional)
     </div>
     <div class="param-desc">
@@ -20007,7 +20720,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The text display identifying the value on the storefront.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -20018,7 +20732,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The order in which the value will be displayed on the product page.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      value_data (optional)
     </div>
     <div class="param-desc">
@@ -20029,7 +20744,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Extra data describing the value, based on the type of option or modifier with which the value is associated. `swatch` requires an array of colors, with up to three hexidecimal color keys; `product list` requires a `product_id`; and `checkbox` requires a boolean flag, called `checked_value`, to determine which value is considered to be the checked state.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -20043,6 +20759,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="OptionValueBase">
      OptionValueBase
@@ -20052,8 +20769,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Common OptionValue properties.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      is_default (optional)
     </div>
     <div class="param-desc">
@@ -20064,7 +20782,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The flag for preselecting a value as the default on the storefront. This field is not supported for swatch options/modifiers.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      label (optional)
     </div>
     <div class="param-desc">
@@ -20075,7 +20794,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The text display identifying the value on the storefront.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -20086,7 +20806,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The order in which the value will be displayed on the product page.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      value_data (optional)
     </div>
     <div class="param-desc">
@@ -20100,6 +20821,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="OptionValueCollectionResponse">
      OptionValueCollectionResponse
@@ -20109,8 +20831,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -20120,7 +20843,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -20133,6 +20857,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="OptionValuePost">
      OptionValuePost
@@ -20142,8 +20867,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     The model for a POST to create option value on a product.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      is_default (optional)
     </div>
     <div class="param-desc">
@@ -20154,7 +20880,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The flag for preselecting a value as the default on the storefront. This field is not supported for swatch options/modifiers.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      label (optional)
     </div>
     <div class="param-desc">
@@ -20165,7 +20892,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The text display identifying the value on the storefront.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -20176,7 +20904,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The order in which the value will be displayed on the product page.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      value_data (optional)
     </div>
     <div class="param-desc">
@@ -20190,6 +20919,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="OptionValueProductBase">
      OptionValueProductBase
@@ -20199,8 +20929,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Common OptionValueProduct properties.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      option_display_name (optional)
     </div>
     <div class="param-desc">
@@ -20211,7 +20942,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The name of the option.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      label (optional)
     </div>
     <div class="param-desc">
@@ -20225,6 +20957,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="OptionValueProductPost">
      OptionValueProductPost
@@ -20234,8 +20967,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     The model for a POST to create option values with a product.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      option_display_name (optional)
     </div>
     <div class="param-desc">
@@ -20246,7 +20980,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The name of the option.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      label (optional)
     </div>
     <div class="param-desc">
@@ -20260,6 +20995,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="OptionValuePut">
      OptionValuePut
@@ -20269,8 +21005,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     The model for a PUT to update option value on a product.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      is_default (optional)
     </div>
     <div class="param-desc">
@@ -20281,7 +21018,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The flag for preselecting a value as the default on the storefront. This field is not supported for swatch options/modifiers.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      label (optional)
     </div>
     <div class="param-desc">
@@ -20292,7 +21030,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The text display identifying the value on the storefront.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -20303,7 +21042,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The order in which the value will be displayed on the product page.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      value_data (optional)
     </div>
     <div class="param-desc">
@@ -20314,7 +21054,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Extra data describing the value, based on the type of option or modifier with which the value is associated. `swatch` requires an array of colors, with up to three hexidecimal color keys; `product list` requires a `product_id`; and `checkbox` requires a boolean flag, called `checked_value`, to determine which value is considered to be the checked state.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -20328,6 +21069,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="OptionValueResponse">
      OptionValueResponse
@@ -20337,8 +21079,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -20348,7 +21091,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -20361,6 +21105,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="OptionValueVariant">
      OptionValueVariant
@@ -20369,8 +21114,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    <div class="model-description">
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      option_display_name (optional)
     </div>
     <div class="param-desc">
@@ -20381,7 +21127,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The name of the option.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      label (optional)
     </div>
     <div class="param-desc">
@@ -20392,7 +21139,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The label of the option value.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -20402,7 +21150,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      option_id (optional)
     </div>
     <div class="param-desc">
@@ -20415,6 +21164,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="OptionValueVariantPost">
      OptionValueVariantPost
@@ -20424,8 +21174,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     The model for a POST to create option values with a variant.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -20435,7 +21186,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      option_id (optional)
     </div>
     <div class="param-desc">
@@ -20448,6 +21200,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="Pagination">
      Pagination
@@ -20457,8 +21210,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Data about the response, including pagination and collection totals.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      total (optional)
     </div>
     <div class="param-desc">
@@ -20469,7 +21223,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Total number of items in the result set.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      count (optional)
     </div>
     <div class="param-desc">
@@ -20480,7 +21235,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Total number of items in the collection response.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      per_page (optional)
     </div>
     <div class="param-desc">
@@ -20491,7 +21247,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The amount of items returned in the collection per page, controlled by the limit parameter.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      current_page (optional)
     </div>
     <div class="param-desc">
@@ -20502,7 +21259,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The page you are currently on within the collection.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      total_pages (optional)
     </div>
     <div class="param-desc">
@@ -20513,7 +21271,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The total number of pages in the collection.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      links (optional)
     </div>
     <div class="param-desc">
@@ -20526,6 +21285,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="Pagination_links">
      Pagination_links
@@ -20535,8 +21295,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Pagination links for the previous and next parts of the whole collection.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      previous (optional)
     </div>
     <div class="param-desc">
@@ -20547,7 +21308,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Link to the previous page returned in the response.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      current (optional)
     </div>
     <div class="param-desc">
@@ -20558,7 +21320,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Link to the current page returned in the response.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      next (optional)
     </div>
     <div class="param-desc">
@@ -20572,6 +21335,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="Product">
      Product
@@ -20581,8 +21345,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     A BigCommerce Product object describes a single purchasable unit or a collection of purchasable units.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -20593,7 +21358,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product name.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -20613,7 +21379,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      digital
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sku (optional)
     </div>
     <div class="param-desc">
@@ -20624,7 +21391,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      User defined product code/stock keeping unit (SKU).
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -20635,7 +21403,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product description, which can include HTML formatting.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      weight (optional)
     </div>
     <div class="param-desc">
@@ -20647,7 +21416,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Weight of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      width (optional)
     </div>
     <div class="param-desc">
@@ -20659,7 +21429,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Width of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      depth (optional)
     </div>
     <div class="param-desc">
@@ -20671,7 +21442,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Depth of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      height (optional)
     </div>
     <div class="param-desc">
@@ -20683,7 +21455,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Height of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      price (optional)
     </div>
     <div class="param-desc">
@@ -20695,7 +21468,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The price of the product. The price should include or exclude tax, based on the store settings.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      cost_price (optional)
     </div>
     <div class="param-desc">
@@ -20707,7 +21481,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The cost price of the product. Stored for reference only; it is not used or displayed anywhere on the store.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      retail_price (optional)
     </div>
     <div class="param-desc">
@@ -20719,7 +21494,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The retail cost of the product. If entered, the retail cost price will be shown on the product page.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sale_price (optional)
     </div>
     <div class="param-desc">
@@ -20731,7 +21507,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      If entered, the sale price will be used instead of value in the price field when calculating the product's cost.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      tax_class_id (optional)
     </div>
     <div class="param-desc">
@@ -20742,7 +21519,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The ID of the tax class applied to the product. (NOTE: Value ignored if automatic tax is enabled.)
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      product_tax_code (optional)
     </div>
     <div class="param-desc">
@@ -20753,7 +21531,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Accepts AvaTax System Tax Codes, which identify products and services that fall into special sales-tax categories. By using these codes, merchants who subscribe to Avalara Premium can calculate sales taxes more accurately. Stores without Avalara Premium will ignore the code when calculating sales tax. Do not pass more than one code. The codes are case-sensitive. For details, please see Avalara's documentation.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      categories (optional)
     </div>
     <div class="param-desc">
@@ -20764,7 +21543,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      An array of IDs for the categories to which this product belongs. When updating a product, if an array of categories is supplied, all product categories will be overwritten. Does not accept more than 1,000 ID values.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      brand_id (optional)
     </div>
     <div class="param-desc">
@@ -20775,7 +21555,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The ID associated with the product's brand.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      inventory_level (optional)
     </div>
     <div class="param-desc">
@@ -20786,7 +21567,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Current inventory level of the product. Simple inventory tracking must be enabled (See the inventory_tracking field) for this to take any effect.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      inventory_warning_level (optional)
     </div>
     <div class="param-desc">
@@ -20797,7 +21579,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Inventory Warning level for the product. When the product's inventory level drops below the warning level, the store owner will be informed. Simple inventory tracking must be enabled (see the `inventory_tracking` field) for this to take any effect.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      inventory_tracking (optional)
     </div>
     <div class="param-desc">
@@ -20820,7 +21603,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      variant
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      fixed_cost_shipping_price (optional)
     </div>
     <div class="param-desc">
@@ -20832,7 +21616,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      A fixed shipping cost for the product. If defined, this value will be used during checkout instead of normal shipping-cost calculation.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_free_shipping (optional)
     </div>
     <div class="param-desc">
@@ -20843,7 +21628,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag used to indicate whether the product has free shipping. If `true`, the shipping cost for the product will be zero.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_visible (optional)
     </div>
     <div class="param-desc">
@@ -20854,7 +21640,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag to determine whether the product should be displayed to customers browsing the store. If `true`, the product will be displayed. If `false`, the product will be hidden from view.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_featured (optional)
     </div>
     <div class="param-desc">
@@ -20865,7 +21652,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag to determine whether the product should be included in the `featured products` panel when viewing the store.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      related_products (optional)
     </div>
     <div class="param-desc">
@@ -20876,7 +21664,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      An array of IDs for the related products.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      warranty (optional)
     </div>
     <div class="param-desc">
@@ -20887,7 +21676,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Warranty information displayed on the product page. Can include HTML formatting.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      bin_picking_number (optional)
     </div>
     <div class="param-desc">
@@ -20898,7 +21688,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The BIN picking number for the product.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      layout_file (optional)
     </div>
     <div class="param-desc">
@@ -20909,7 +21700,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The layout template file used to render this product.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      upc (optional)
     </div>
     <div class="param-desc">
@@ -20920,7 +21712,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product UPC code, which is used in feeds for shopping comparison sites and external channel integrations.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      search_keywords (optional)
     </div>
     <div class="param-desc">
@@ -20931,7 +21724,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      A comma-separated list of keywords that can be used to locate the product when searching the store.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      availability (optional)
     </div>
     <div class="param-desc">
@@ -20954,7 +21748,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      preorder
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      availability_description (optional)
     </div>
     <div class="param-desc">
@@ -20965,7 +21760,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Availability text displayed on the checkout page, under the product title. Tells the customer how long it will normally take to ship this product, such as 'Usually ships in 24 hours.'
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      gift_wrapping_options_type (optional)
     </div>
     <div class="param-desc">
@@ -20988,7 +21784,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      list
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      gift_wrapping_options_list (optional)
     </div>
     <div class="param-desc">
@@ -20999,7 +21796,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      A list of gift-wrapping option IDs.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -21010,7 +21808,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Priority to give this product when included in product lists on category pages and in search results. Lower integers will place the product closer to the top of the results.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      condition (optional)
     </div>
     <div class="param-desc">
@@ -21033,7 +21832,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      Refurbished
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_condition_shown (optional)
     </div>
     <div class="param-desc">
@@ -21044,7 +21844,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag used to determine whether the product condition is shown to the customer on the product page.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      order_quantity_minimum (optional)
     </div>
     <div class="param-desc">
@@ -21055,7 +21856,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The minimum quantity an order must contain, to be eligible to purchase this product.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      order_quantity_maximum (optional)
     </div>
     <div class="param-desc">
@@ -21066,7 +21868,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The maximum quantity an order can contain when purchasing the product.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      page_title (optional)
     </div>
     <div class="param-desc">
@@ -21077,7 +21880,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom title for the product page. If not defined, the product name will be used as the meta title.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta_keywords (optional)
     </div>
     <div class="param-desc">
@@ -21088,7 +21892,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom meta keywords for the product page. If not defined, the store's default keywords will be used.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta_description (optional)
     </div>
     <div class="param-desc">
@@ -21099,7 +21904,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom meta description for the product page. If not defined, the store's default meta description will be used.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      view_count (optional)
     </div>
     <div class="param-desc">
@@ -21110,7 +21916,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The number of times the product has been viewed.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      preorder_release_date (optional)
     </div>
     <div class="param-desc">
@@ -21122,7 +21929,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Pre-order release date. See the `availability` field for details on setting a product's availability to accept pre-orders.
  format: date-time
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      preorder_message (optional)
     </div>
     <div class="param-desc">
@@ -21133,7 +21941,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom expected-date message to display on the product page. If undefined, the message defaults to the storewide setting. Can contain the `%%DATE%%` placeholder, which will be substituted for the release date.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_preorder_only (optional)
     </div>
     <div class="param-desc">
@@ -21144,7 +21953,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      If set to `false`, the product will not change its availability from 	`preorder` to `available` on the release date. Otherwise, on the release date the product's availability/status will change to `available`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_price_hidden (optional)
     </div>
     <div class="param-desc">
@@ -21155,7 +21965,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      False by default, indicating that this product's price should be shown on the product page. If set to `true`, the price is hidden. (NOTE: To successfully set `is_price_hidden` to `true`, the `availability` value must be `disabled`.)
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      price_hidden_label (optional)
     </div>
     <div class="param-desc">
@@ -21166,7 +21977,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      By default, an empty string. If `is_price_hidden` is `true`, the value of `price_hidden_label` is displayed instead of the price. (NOTE: To successfully set a non-empty string value with `is_price_hidden` set to `true`, the `availability` value must be `disabled`.)
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      custom_url (optional)
     </div>
     <div class="param-desc">
@@ -21176,7 +21988,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      bulk_pricing_rules (optional)
     </div>
     <div class="param-desc">
@@ -21186,7 +21999,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -21197,7 +22011,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The unique numeric ID of the product; increments sequentially.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      calculated_price (optional)
     </div>
     <div class="param-desc">
@@ -21209,7 +22024,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The price of the product, unless a `sale_price` is set.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      custom_fields (optional)
     </div>
     <div class="param-desc">
@@ -21219,7 +22035,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      date_created (optional)
     </div>
     <div class="param-desc">
@@ -21231,7 +22048,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The date on which the product was created.
  format: date-time
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      date_modified (optional)
     </div>
     <div class="param-desc">
@@ -21243,7 +22061,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The date on which the product was modified.
  format: date-time
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      images (optional)
     </div>
     <div class="param-desc">
@@ -21253,7 +22072,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      videos (optional)
     </div>
     <div class="param-desc">
@@ -21263,7 +22083,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      variants (optional)
     </div>
     <div class="param-desc">
@@ -21276,6 +22097,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ProductBase">
      ProductBase
@@ -21285,8 +22107,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Common Product properties.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -21297,7 +22120,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product name.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -21317,7 +22141,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      digital
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sku (optional)
     </div>
     <div class="param-desc">
@@ -21328,7 +22153,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      User defined product code/stock keeping unit (SKU).
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -21339,7 +22165,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product description, which can include HTML formatting.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      weight (optional)
     </div>
     <div class="param-desc">
@@ -21351,7 +22178,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Weight of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      width (optional)
     </div>
     <div class="param-desc">
@@ -21363,7 +22191,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Width of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      depth (optional)
     </div>
     <div class="param-desc">
@@ -21375,7 +22204,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Depth of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      height (optional)
     </div>
     <div class="param-desc">
@@ -21387,7 +22217,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Height of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      price (optional)
     </div>
     <div class="param-desc">
@@ -21399,7 +22230,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The price of the product. The price should include or exclude tax, based on the store settings.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      cost_price (optional)
     </div>
     <div class="param-desc">
@@ -21411,7 +22243,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The cost price of the product. Stored for reference only; it is not used or displayed anywhere on the store.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      retail_price (optional)
     </div>
     <div class="param-desc">
@@ -21423,7 +22256,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The retail cost of the product. If entered, the retail cost price will be shown on the product page.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sale_price (optional)
     </div>
     <div class="param-desc">
@@ -21435,7 +22269,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      If entered, the sale price will be used instead of value in the price field when calculating the product's cost.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      tax_class_id (optional)
     </div>
     <div class="param-desc">
@@ -21446,7 +22281,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The ID of the tax class applied to the product. (NOTE: Value ignored if automatic tax is enabled.)
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      product_tax_code (optional)
     </div>
     <div class="param-desc">
@@ -21457,7 +22293,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Accepts AvaTax System Tax Codes, which identify products and services that fall into special sales-tax categories. By using these codes, merchants who subscribe to Avalara Premium can calculate sales taxes more accurately. Stores without Avalara Premium will ignore the code when calculating sales tax. Do not pass more than one code. The codes are case-sensitive. For details, please see Avalara's documentation.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      categories (optional)
     </div>
     <div class="param-desc">
@@ -21468,7 +22305,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      An array of IDs for the categories to which this product belongs. When updating a product, if an array of categories is supplied, all product categories will be overwritten. Does not accept more than 1,000 ID values.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      brand_id (optional)
     </div>
     <div class="param-desc">
@@ -21479,7 +22317,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The ID associated with the product's brand.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      inventory_level (optional)
     </div>
     <div class="param-desc">
@@ -21490,7 +22329,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Current inventory level of the product. Simple inventory tracking must be enabled (See the inventory_tracking field) for this to take any effect.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      inventory_warning_level (optional)
     </div>
     <div class="param-desc">
@@ -21501,7 +22341,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Inventory Warning level for the product. When the product's inventory level drops below the warning level, the store owner will be informed. Simple inventory tracking must be enabled (see the `inventory_tracking` field) for this to take any effect.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      inventory_tracking (optional)
     </div>
     <div class="param-desc">
@@ -21524,7 +22365,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      variant
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      fixed_cost_shipping_price (optional)
     </div>
     <div class="param-desc">
@@ -21536,7 +22378,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      A fixed shipping cost for the product. If defined, this value will be used during checkout instead of normal shipping-cost calculation.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_free_shipping (optional)
     </div>
     <div class="param-desc">
@@ -21547,7 +22390,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag used to indicate whether the product has free shipping. If `true`, the shipping cost for the product will be zero.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_visible (optional)
     </div>
     <div class="param-desc">
@@ -21558,7 +22402,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag to determine whether the product should be displayed to customers browsing the store. If `true`, the product will be displayed. If `false`, the product will be hidden from view.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_featured (optional)
     </div>
     <div class="param-desc">
@@ -21569,7 +22414,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag to determine whether the product should be included in the `featured products` panel when viewing the store.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      related_products (optional)
     </div>
     <div class="param-desc">
@@ -21580,7 +22426,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      An array of IDs for the related products.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      warranty (optional)
     </div>
     <div class="param-desc">
@@ -21591,7 +22438,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Warranty information displayed on the product page. Can include HTML formatting.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      bin_picking_number (optional)
     </div>
     <div class="param-desc">
@@ -21602,7 +22450,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The BIN picking number for the product.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      layout_file (optional)
     </div>
     <div class="param-desc">
@@ -21613,7 +22462,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The layout template file used to render this product.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      upc (optional)
     </div>
     <div class="param-desc">
@@ -21624,7 +22474,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product UPC code, which is used in feeds for shopping comparison sites and external channel integrations.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      search_keywords (optional)
     </div>
     <div class="param-desc">
@@ -21635,7 +22486,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      A comma-separated list of keywords that can be used to locate the product when searching the store.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      availability (optional)
     </div>
     <div class="param-desc">
@@ -21658,7 +22510,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      preorder
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      availability_description (optional)
     </div>
     <div class="param-desc">
@@ -21669,7 +22522,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Availability text displayed on the checkout page, under the product title. Tells the customer how long it will normally take to ship this product, such as 'Usually ships in 24 hours.'
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      gift_wrapping_options_type (optional)
     </div>
     <div class="param-desc">
@@ -21692,7 +22546,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      list
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      gift_wrapping_options_list (optional)
     </div>
     <div class="param-desc">
@@ -21703,7 +22558,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      A list of gift-wrapping option IDs.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -21714,7 +22570,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Priority to give this product when included in product lists on category pages and in search results. Lower integers will place the product closer to the top of the results.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      condition (optional)
     </div>
     <div class="param-desc">
@@ -21737,7 +22594,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      Refurbished
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_condition_shown (optional)
     </div>
     <div class="param-desc">
@@ -21748,7 +22606,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag used to determine whether the product condition is shown to the customer on the product page.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      order_quantity_minimum (optional)
     </div>
     <div class="param-desc">
@@ -21759,7 +22618,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The minimum quantity an order must contain, to be eligible to purchase this product.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      order_quantity_maximum (optional)
     </div>
     <div class="param-desc">
@@ -21770,7 +22630,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The maximum quantity an order can contain when purchasing the product.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      page_title (optional)
     </div>
     <div class="param-desc">
@@ -21781,7 +22642,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom title for the product page. If not defined, the product name will be used as the meta title.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta_keywords (optional)
     </div>
     <div class="param-desc">
@@ -21792,7 +22654,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom meta keywords for the product page. If not defined, the store's default keywords will be used.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta_description (optional)
     </div>
     <div class="param-desc">
@@ -21803,7 +22666,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom meta description for the product page. If not defined, the store's default meta description will be used.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      view_count (optional)
     </div>
     <div class="param-desc">
@@ -21814,7 +22678,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The number of times the product has been viewed.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      preorder_release_date (optional)
     </div>
     <div class="param-desc">
@@ -21826,7 +22691,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Pre-order release date. See the `availability` field for details on setting a product's availability to accept pre-orders.
  format: date-time
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      preorder_message (optional)
     </div>
     <div class="param-desc">
@@ -21837,7 +22703,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom expected-date message to display on the product page. If undefined, the message defaults to the storewide setting. Can contain the `%%DATE%%` placeholder, which will be substituted for the release date.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_preorder_only (optional)
     </div>
     <div class="param-desc">
@@ -21848,7 +22715,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      If set to `false`, the product will not change its availability from 	`preorder` to `available` on the release date. Otherwise, on the release date the product's availability/status will change to `available`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_price_hidden (optional)
     </div>
     <div class="param-desc">
@@ -21859,7 +22727,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      False by default, indicating that this product's price should be shown on the product page. If set to `true`, the price is hidden. (NOTE: To successfully set `is_price_hidden` to `true`, the `availability` value must be `disabled`.)
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      price_hidden_label (optional)
     </div>
     <div class="param-desc">
@@ -21870,7 +22739,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      By default, an empty string. If `is_price_hidden` is `true`, the value of `price_hidden_label` is displayed instead of the price. (NOTE: To successfully set a non-empty string value with `is_price_hidden` set to `true`, the `availability` value must be `disabled`.)
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      custom_url (optional)
     </div>
     <div class="param-desc">
@@ -21880,7 +22750,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      bulk_pricing_rules (optional)
     </div>
     <div class="param-desc">
@@ -21893,6 +22764,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ProductCollectionResponse">
      ProductCollectionResponse
@@ -21902,8 +22774,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -21913,7 +22786,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -21926,6 +22800,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ProductImage">
      ProductImage
@@ -21935,8 +22810,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     The full ProductImage model.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      is_thumbnail (optional)
     </div>
     <div class="param-desc">
@@ -21947,7 +22823,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag for identifying whether the image is used as the product's thumbnail.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -21958,7 +22835,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The order in which the image will be displayed on the product page. Higher integers give the image a lower priority. When updating, if the image is given a lower priority, all images with a `sort_order` the same as or greater than the image's new `sort_order` value will have their `sort_order`s reordered.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -21969,7 +22847,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The description for the image.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -21980,7 +22859,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The unique numeric ID of the image; increments sequentially.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      product_id (optional)
     </div>
     <div class="param-desc">
@@ -21991,7 +22871,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The unique numeric identifier for the product with which the image is associated.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      image_file (optional)
     </div>
     <div class="param-desc">
@@ -22002,7 +22883,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The local path to the original image file uploaded to BigCommerce.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      url_zoom (optional)
     </div>
     <div class="param-desc">
@@ -22013,7 +22895,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The zoom URL for this image. By default, this is used as the zoom image on product pages when zoom images are enabled.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      url_standard (optional)
     </div>
     <div class="param-desc">
@@ -22024,7 +22907,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The standard URL for this image. By default, this is used for product-page images.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      url_thumbnail (optional)
     </div>
     <div class="param-desc">
@@ -22035,7 +22919,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The thumbnail URL for this image. By default, this is the image size used on the category page and in side panels.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      url_tiny (optional)
     </div>
     <div class="param-desc">
@@ -22046,7 +22931,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The tiny URL for this image. By default, this is the image size used for thumbnails beneath the product image on a product page.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      date_modified (optional)
     </div>
     <div class="param-desc">
@@ -22061,6 +22947,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ProductImageBase">
      ProductImageBase
@@ -22070,8 +22957,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Common ProductImage properties.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      is_thumbnail (optional)
     </div>
     <div class="param-desc">
@@ -22082,7 +22970,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag for identifying whether the image is used as the product's thumbnail.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -22093,7 +22982,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The order in which the image will be displayed on the product page. Higher integers give the image a lower priority. When updating, if the image is given a lower priority, all images with a `sort_order` the same as or greater than the image's new `sort_order` value will have their `sort_order`s reordered.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -22107,6 +22997,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ProductImageCollectionResponse">
      ProductImageCollectionResponse
@@ -22116,8 +23007,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -22127,7 +23019,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -22140,6 +23033,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ProductImagePost">
      ProductImagePost
@@ -22149,8 +23043,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     The model for a POST to create an image on a product.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      is_thumbnail (optional)
     </div>
     <div class="param-desc">
@@ -22161,7 +23056,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag for identifying whether the image is used as the product's thumbnail.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -22172,7 +23068,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The order in which the image will be displayed on the product page. Higher integers give the image a lower priority. When updating, if the image is given a lower priority, all images with a `sort_order` the same as or greater than the image's new `sort_order` value will have their `sort_order`s reordered.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -22183,7 +23080,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The description for the image.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      image_url (optional)
     </div>
     <div class="param-desc">
@@ -22194,7 +23092,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Must be a fully qualified URL path, including protocol.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      image_file (optional)
     </div>
     <div class="param-desc">
@@ -22208,6 +23107,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ProductImagePut">
      ProductImagePut
@@ -22217,8 +23117,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     The model for a PUT to update applicable ProductImage fields.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      is_thumbnail (optional)
     </div>
     <div class="param-desc">
@@ -22229,7 +23130,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag for identifying whether the image is used as the product's thumbnail.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -22240,7 +23142,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The order in which the image will be displayed on the product page. Higher integers give the image a lower priority. When updating, if the image is given a lower priority, all images with a `sort_order` the same as or greater than the image's new `sort_order` value will have their `sort_order`s reordered.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -22254,6 +23157,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ProductImageResponse">
      ProductImageResponse
@@ -22263,8 +23167,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -22274,7 +23179,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -22287,6 +23193,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ProductPost">
      ProductPost
@@ -22296,8 +23203,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     The model for a POST to create product.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -22308,7 +23216,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product name.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -22328,7 +23237,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      digital
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sku (optional)
     </div>
     <div class="param-desc">
@@ -22339,7 +23249,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      User defined product code/stock keeping unit (SKU).
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -22350,7 +23261,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product description, which can include HTML formatting.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      weight (optional)
     </div>
     <div class="param-desc">
@@ -22362,7 +23274,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Weight of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      width (optional)
     </div>
     <div class="param-desc">
@@ -22374,7 +23287,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Width of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      depth (optional)
     </div>
     <div class="param-desc">
@@ -22386,7 +23300,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Depth of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      height (optional)
     </div>
     <div class="param-desc">
@@ -22398,7 +23313,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Height of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      price (optional)
     </div>
     <div class="param-desc">
@@ -22410,7 +23326,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The price of the product. The price should include or exclude tax, based on the store settings.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      cost_price (optional)
     </div>
     <div class="param-desc">
@@ -22422,7 +23339,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The cost price of the product. Stored for reference only; it is not used or displayed anywhere on the store.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      retail_price (optional)
     </div>
     <div class="param-desc">
@@ -22434,7 +23352,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The retail cost of the product. If entered, the retail cost price will be shown on the product page.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sale_price (optional)
     </div>
     <div class="param-desc">
@@ -22446,7 +23365,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      If entered, the sale price will be used instead of value in the price field when calculating the product's cost.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      tax_class_id (optional)
     </div>
     <div class="param-desc">
@@ -22457,7 +23377,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The ID of the tax class applied to the product. (NOTE: Value ignored if automatic tax is enabled.)
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      product_tax_code (optional)
     </div>
     <div class="param-desc">
@@ -22468,7 +23389,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Accepts AvaTax System Tax Codes, which identify products and services that fall into special sales-tax categories. By using these codes, merchants who subscribe to Avalara Premium can calculate sales taxes more accurately. Stores without Avalara Premium will ignore the code when calculating sales tax. Do not pass more than one code. The codes are case-sensitive. For details, please see Avalara's documentation.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      categories (optional)
     </div>
     <div class="param-desc">
@@ -22479,7 +23401,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      An array of IDs for the categories to which this product belongs. When updating a product, if an array of categories is supplied, all product categories will be overwritten. Does not accept more than 1,000 ID values.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      brand_id (optional)
     </div>
     <div class="param-desc">
@@ -22490,7 +23413,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The ID associated with the product's brand.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      inventory_level (optional)
     </div>
     <div class="param-desc">
@@ -22501,7 +23425,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Current inventory level of the product. Simple inventory tracking must be enabled (See the inventory_tracking field) for this to take any effect.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      inventory_warning_level (optional)
     </div>
     <div class="param-desc">
@@ -22512,7 +23437,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Inventory Warning level for the product. When the product's inventory level drops below the warning level, the store owner will be informed. Simple inventory tracking must be enabled (see the `inventory_tracking` field) for this to take any effect.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      inventory_tracking (optional)
     </div>
     <div class="param-desc">
@@ -22535,7 +23461,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      variant
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      fixed_cost_shipping_price (optional)
     </div>
     <div class="param-desc">
@@ -22547,7 +23474,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      A fixed shipping cost for the product. If defined, this value will be used during checkout instead of normal shipping-cost calculation.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_free_shipping (optional)
     </div>
     <div class="param-desc">
@@ -22558,7 +23486,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag used to indicate whether the product has free shipping. If `true`, the shipping cost for the product will be zero.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_visible (optional)
     </div>
     <div class="param-desc">
@@ -22569,7 +23498,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag to determine whether the product should be displayed to customers browsing the store. If `true`, the product will be displayed. If `false`, the product will be hidden from view.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_featured (optional)
     </div>
     <div class="param-desc">
@@ -22580,7 +23510,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag to determine whether the product should be included in the `featured products` panel when viewing the store.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      related_products (optional)
     </div>
     <div class="param-desc">
@@ -22591,7 +23522,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      An array of IDs for the related products.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      warranty (optional)
     </div>
     <div class="param-desc">
@@ -22602,7 +23534,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Warranty information displayed on the product page. Can include HTML formatting.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      bin_picking_number (optional)
     </div>
     <div class="param-desc">
@@ -22613,7 +23546,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The BIN picking number for the product.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      layout_file (optional)
     </div>
     <div class="param-desc">
@@ -22624,7 +23558,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The layout template file used to render this product.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      upc (optional)
     </div>
     <div class="param-desc">
@@ -22635,7 +23570,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product UPC code, which is used in feeds for shopping comparison sites and external channel integrations.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      search_keywords (optional)
     </div>
     <div class="param-desc">
@@ -22646,7 +23582,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      A comma-separated list of keywords that can be used to locate the product when searching the store.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      availability (optional)
     </div>
     <div class="param-desc">
@@ -22669,7 +23606,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      preorder
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      availability_description (optional)
     </div>
     <div class="param-desc">
@@ -22680,7 +23618,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Availability text displayed on the checkout page, under the product title. Tells the customer how long it will normally take to ship this product, such as 'Usually ships in 24 hours.'
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      gift_wrapping_options_type (optional)
     </div>
     <div class="param-desc">
@@ -22703,7 +23642,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      list
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      gift_wrapping_options_list (optional)
     </div>
     <div class="param-desc">
@@ -22714,7 +23654,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      A list of gift-wrapping option IDs.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -22725,7 +23666,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Priority to give this product when included in product lists on category pages and in search results. Lower integers will place the product closer to the top of the results.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      condition (optional)
     </div>
     <div class="param-desc">
@@ -22748,7 +23690,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      Refurbished
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_condition_shown (optional)
     </div>
     <div class="param-desc">
@@ -22759,7 +23702,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag used to determine whether the product condition is shown to the customer on the product page.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      order_quantity_minimum (optional)
     </div>
     <div class="param-desc">
@@ -22770,7 +23714,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The minimum quantity an order must contain, to be eligible to purchase this product.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      order_quantity_maximum (optional)
     </div>
     <div class="param-desc">
@@ -22781,7 +23726,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The maximum quantity an order can contain when purchasing the product.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      page_title (optional)
     </div>
     <div class="param-desc">
@@ -22792,7 +23738,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom title for the product page. If not defined, the product name will be used as the meta title.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta_keywords (optional)
     </div>
     <div class="param-desc">
@@ -22803,7 +23750,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom meta keywords for the product page. If not defined, the store's default keywords will be used.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta_description (optional)
     </div>
     <div class="param-desc">
@@ -22814,7 +23762,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom meta description for the product page. If not defined, the store's default meta description will be used.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      view_count (optional)
     </div>
     <div class="param-desc">
@@ -22825,7 +23774,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The number of times the product has been viewed.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      preorder_release_date (optional)
     </div>
     <div class="param-desc">
@@ -22837,7 +23787,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Pre-order release date. See the `availability` field for details on setting a product's availability to accept pre-orders.
  format: date-time
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      preorder_message (optional)
     </div>
     <div class="param-desc">
@@ -22848,7 +23799,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom expected-date message to display on the product page. If undefined, the message defaults to the storewide setting. Can contain the `%%DATE%%` placeholder, which will be substituted for the release date.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_preorder_only (optional)
     </div>
     <div class="param-desc">
@@ -22859,7 +23811,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      If set to `false`, the product will not change its availability from 	`preorder` to `available` on the release date. Otherwise, on the release date the product's availability/status will change to `available`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_price_hidden (optional)
     </div>
     <div class="param-desc">
@@ -22870,7 +23823,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      False by default, indicating that this product's price should be shown on the product page. If set to `true`, the price is hidden. (NOTE: To successfully set `is_price_hidden` to `true`, the `availability` value must be `disabled`.)
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      price_hidden_label (optional)
     </div>
     <div class="param-desc">
@@ -22881,7 +23835,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      By default, an empty string. If `is_price_hidden` is `true`, the value of `price_hidden_label` is displayed instead of the price. (NOTE: To successfully set a non-empty string value with `is_price_hidden` set to `true`, the `availability` value must be `disabled`.)
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      custom_url (optional)
     </div>
     <div class="param-desc">
@@ -22891,7 +23846,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      bulk_pricing_rules (optional)
     </div>
     <div class="param-desc">
@@ -22901,7 +23857,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      custom_fields (optional)
     </div>
     <div class="param-desc">
@@ -22911,7 +23868,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      variants (optional)
     </div>
     <div class="param-desc">
@@ -22924,6 +23882,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ProductPut">
      ProductPut
@@ -22933,8 +23892,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     The model for a PUT to update product.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -22945,7 +23905,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product name.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -22965,7 +23926,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      digital
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sku (optional)
     </div>
     <div class="param-desc">
@@ -22976,7 +23938,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      User defined product code/stock keeping unit (SKU).
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -22987,7 +23950,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product description, which can include HTML formatting.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      weight (optional)
     </div>
     <div class="param-desc">
@@ -22999,7 +23963,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Weight of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      width (optional)
     </div>
     <div class="param-desc">
@@ -23011,7 +23976,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Width of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      depth (optional)
     </div>
     <div class="param-desc">
@@ -23023,7 +23989,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Depth of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      height (optional)
     </div>
     <div class="param-desc">
@@ -23035,7 +24002,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Height of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      price (optional)
     </div>
     <div class="param-desc">
@@ -23047,7 +24015,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The price of the product. The price should include or exclude tax, based on the store settings.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      cost_price (optional)
     </div>
     <div class="param-desc">
@@ -23059,7 +24028,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The cost price of the product. Stored for reference only; it is not used or displayed anywhere on the store.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      retail_price (optional)
     </div>
     <div class="param-desc">
@@ -23071,7 +24041,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The retail cost of the product. If entered, the retail cost price will be shown on the product page.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sale_price (optional)
     </div>
     <div class="param-desc">
@@ -23083,7 +24054,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      If entered, the sale price will be used instead of value in the price field when calculating the product's cost.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      tax_class_id (optional)
     </div>
     <div class="param-desc">
@@ -23094,7 +24066,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The ID of the tax class applied to the product. (NOTE: Value ignored if automatic tax is enabled.)
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      product_tax_code (optional)
     </div>
     <div class="param-desc">
@@ -23105,7 +24078,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Accepts AvaTax System Tax Codes, which identify products and services that fall into special sales-tax categories. By using these codes, merchants who subscribe to Avalara Premium can calculate sales taxes more accurately. Stores without Avalara Premium will ignore the code when calculating sales tax. Do not pass more than one code. The codes are case-sensitive. For details, please see Avalara's documentation.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      categories (optional)
     </div>
     <div class="param-desc">
@@ -23116,7 +24090,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      An array of IDs for the categories to which this product belongs. When updating a product, if an array of categories is supplied, all product categories will be overwritten. Does not accept more than 1,000 ID values.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      brand_id (optional)
     </div>
     <div class="param-desc">
@@ -23127,7 +24102,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The ID associated with the product's brand.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      inventory_level (optional)
     </div>
     <div class="param-desc">
@@ -23138,7 +24114,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Current inventory level of the product. Simple inventory tracking must be enabled (See the inventory_tracking field) for this to take any effect.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      inventory_warning_level (optional)
     </div>
     <div class="param-desc">
@@ -23149,7 +24126,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Inventory Warning level for the product. When the product's inventory level drops below the warning level, the store owner will be informed. Simple inventory tracking must be enabled (see the `inventory_tracking` field) for this to take any effect.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      inventory_tracking (optional)
     </div>
     <div class="param-desc">
@@ -23172,7 +24150,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      variant
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      fixed_cost_shipping_price (optional)
     </div>
     <div class="param-desc">
@@ -23184,7 +24163,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      A fixed shipping cost for the product. If defined, this value will be used during checkout instead of normal shipping-cost calculation.
  format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_free_shipping (optional)
     </div>
     <div class="param-desc">
@@ -23195,7 +24175,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag used to indicate whether the product has free shipping. If `true`, the shipping cost for the product will be zero.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_visible (optional)
     </div>
     <div class="param-desc">
@@ -23206,7 +24187,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag to determine whether the product should be displayed to customers browsing the store. If `true`, the product will be displayed. If `false`, the product will be hidden from view.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_featured (optional)
     </div>
     <div class="param-desc">
@@ -23217,7 +24199,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag to determine whether the product should be included in the `featured products` panel when viewing the store.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      related_products (optional)
     </div>
     <div class="param-desc">
@@ -23228,7 +24211,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      An array of IDs for the related products.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      warranty (optional)
     </div>
     <div class="param-desc">
@@ -23239,7 +24223,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Warranty information displayed on the product page. Can include HTML formatting.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      bin_picking_number (optional)
     </div>
     <div class="param-desc">
@@ -23250,7 +24235,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The BIN picking number for the product.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      layout_file (optional)
     </div>
     <div class="param-desc">
@@ -23261,7 +24247,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The layout template file used to render this product.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      upc (optional)
     </div>
     <div class="param-desc">
@@ -23272,7 +24259,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product UPC code, which is used in feeds for shopping comparison sites and external channel integrations.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      search_keywords (optional)
     </div>
     <div class="param-desc">
@@ -23283,7 +24271,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      A comma-separated list of keywords that can be used to locate the product when searching the store.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      availability (optional)
     </div>
     <div class="param-desc">
@@ -23306,7 +24295,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      preorder
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      availability_description (optional)
     </div>
     <div class="param-desc">
@@ -23317,7 +24307,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Availability text displayed on the checkout page, under the product title. Tells the customer how long it will normally take to ship this product, such as 'Usually ships in 24 hours.'
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      gift_wrapping_options_type (optional)
     </div>
     <div class="param-desc">
@@ -23340,7 +24331,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      list
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      gift_wrapping_options_list (optional)
     </div>
     <div class="param-desc">
@@ -23351,7 +24343,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      A list of gift-wrapping option IDs.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -23362,7 +24355,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Priority to give this product when included in product lists on category pages and in search results. Lower integers will place the product closer to the top of the results.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      condition (optional)
     </div>
     <div class="param-desc">
@@ -23385,7 +24379,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      Refurbished
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_condition_shown (optional)
     </div>
     <div class="param-desc">
@@ -23396,7 +24391,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag used to determine whether the product condition is shown to the customer on the product page.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      order_quantity_minimum (optional)
     </div>
     <div class="param-desc">
@@ -23407,7 +24403,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The minimum quantity an order must contain, to be eligible to purchase this product.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      order_quantity_maximum (optional)
     </div>
     <div class="param-desc">
@@ -23418,7 +24415,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The maximum quantity an order can contain when purchasing the product.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      page_title (optional)
     </div>
     <div class="param-desc">
@@ -23429,7 +24427,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom title for the product page. If not defined, the product name will be used as the meta title.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta_keywords (optional)
     </div>
     <div class="param-desc">
@@ -23440,7 +24439,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom meta keywords for the product page. If not defined, the store's default keywords will be used.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta_description (optional)
     </div>
     <div class="param-desc">
@@ -23451,7 +24451,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom meta description for the product page. If not defined, the store's default meta description will be used.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      view_count (optional)
     </div>
     <div class="param-desc">
@@ -23462,7 +24463,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The number of times the product has been viewed.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      preorder_release_date (optional)
     </div>
     <div class="param-desc">
@@ -23474,7 +24476,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Pre-order release date. See the `availability` field for details on setting a product's availability to accept pre-orders.
  format: date-time
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      preorder_message (optional)
     </div>
     <div class="param-desc">
@@ -23485,7 +24488,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom expected-date message to display on the product page. If undefined, the message defaults to the storewide setting. Can contain the `%%DATE%%` placeholder, which will be substituted for the release date.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_preorder_only (optional)
     </div>
     <div class="param-desc">
@@ -23496,7 +24500,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      If set to `false`, the product will not change its availability from 	`preorder` to `available` on the release date. Otherwise, on the release date the product's availability/status will change to `available`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_price_hidden (optional)
     </div>
     <div class="param-desc">
@@ -23507,7 +24512,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      False by default, indicating that this product's price should be shown on the product page. If set to `true`, the price is hidden. (NOTE: To successfully set `is_price_hidden` to `true`, the `availability` value must be `disabled`.)
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      price_hidden_label (optional)
     </div>
     <div class="param-desc">
@@ -23518,7 +24524,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      By default, an empty string. If `is_price_hidden` is `true`, the value of `price_hidden_label` is displayed instead of the price. (NOTE: To successfully set a non-empty string value with `is_price_hidden` set to `true`, the `availability` value must be `disabled`.)
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      custom_url (optional)
     </div>
     <div class="param-desc">
@@ -23528,7 +24535,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      bulk_pricing_rules (optional)
     </div>
     <div class="param-desc">
@@ -23538,7 +24546,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -23549,7 +24558,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The unique numerical ID of the product, increments sequentially.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      custom_fields (optional)
     </div>
     <div class="param-desc">
@@ -23559,7 +24569,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      variants (optional)
     </div>
     <div class="param-desc">
@@ -23572,6 +24583,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ProductResponse">
      ProductResponse
@@ -23581,8 +24593,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -23592,7 +24605,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -23605,6 +24619,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ProductVideo">
      ProductVideo
@@ -23614,8 +24629,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     A product video model.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      title (optional)
     </div>
     <div class="param-desc">
@@ -23626,7 +24642,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The title for the video. If left blank, this will be filled in according to data on YouTube.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -23637,7 +24654,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The description for the video. If left blank, this will be filled in according to data on YouTube.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -23648,7 +24666,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The order in which the video will be displayed on the product page. Higher integers give the video a lower priority. When updating, if the video is given a lower priority, all videos with a `sort_order` the same as or greater than the video's new `sort_order` value will have their `sort_order`s reordered.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -23659,7 +24678,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The ID of a YouTube video.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      product_id (optional)
     </div>
     <div class="param-desc">
@@ -23670,7 +24690,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The unique numeric identifier for the product with which the image is associated.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      length (optional)
     </div>
     <div class="param-desc">
@@ -23684,6 +24705,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ProductVideoBase">
      ProductVideoBase
@@ -23693,8 +24715,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Common ProductVideo properties.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      title (optional)
     </div>
     <div class="param-desc">
@@ -23705,7 +24728,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The title for the video. If left blank, this will be filled in according to data on YouTube.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -23716,7 +24740,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The description for the video. If left blank, this will be filled in according to data on YouTube.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -23730,6 +24755,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ProductVideoCollectionResponse">
      ProductVideoCollectionResponse
@@ -23739,8 +24765,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -23750,7 +24777,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -23763,6 +24791,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ProductVideoPost">
      ProductVideoPost
@@ -23772,8 +24801,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     The model for a POST to create video on a product.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      title (optional)
     </div>
     <div class="param-desc">
@@ -23784,7 +24814,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The title for the video. If left blank, this will be filled in according to data on YouTube.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -23795,7 +24826,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The description for the video. If left blank, this will be filled in according to data on YouTube.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -23806,7 +24838,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The order in which the video will be displayed on the product page. Higher integers give the video a lower priority. When updating, if the video is given a lower priority, all videos with a `sort_order` the same as or greater than the video's new `sort_order` value will have their `sort_order`s reordered.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -23817,7 +24850,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The ID of a YouTube video.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      product_id (optional)
     </div>
     <div class="param-desc">
@@ -23831,6 +24865,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ProductVideoPut">
      ProductVideoPut
@@ -23840,8 +24875,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     The model for a PUT to update video on a product.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      title (optional)
     </div>
     <div class="param-desc">
@@ -23852,7 +24888,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The title for the video. If left blank, this will be filled in according to data on YouTube.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -23863,7 +24900,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The description for the video. If left blank, this will be filled in according to data on YouTube.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -23877,6 +24915,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ProductVideoResponse">
      ProductVideoResponse
@@ -23886,8 +24925,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -23897,7 +24937,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -23910,6 +24951,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ResourceImage">
      ResourceImage
@@ -23919,8 +24961,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     An object containing a publicly accessible image URL, or a form post that contains an image file.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      image_url (optional)
     </div>
     <div class="param-desc">
@@ -23934,6 +24977,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="Subscriber">
      Subscriber
@@ -23942,8 +24986,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    <div class="model-description">
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -23954,7 +24999,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The unique numeric ID of the subscriber; increments sequentially.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      email (optional)
     </div>
     <div class="param-desc">
@@ -23965,7 +25011,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The email of the subscriber. Must be unique.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      first_name (optional)
     </div>
     <div class="param-desc">
@@ -23976,7 +25023,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The first name of the subscriber.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      last_name (optional)
     </div>
     <div class="param-desc">
@@ -23987,7 +25035,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The last name of the subscriber.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      source (optional)
     </div>
     <div class="param-desc">
@@ -23998,7 +25047,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The source of the subscriber. Values are: `storefront`, `order`, or `custom`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      order_id (optional)
     </div>
     <div class="param-desc">
@@ -24009,7 +25059,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The ID of the source order, if source was an order.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      date_modified (optional)
     </div>
     <div class="param-desc">
@@ -24021,7 +25072,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The date on which the subscriber was modified.
  format: date-time
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      date_created (optional)
     </div>
     <div class="param-desc">
@@ -24036,6 +25088,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="SubscriberBase">
      SubscriberBase
@@ -24045,8 +25098,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Common Subscriber properties.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -24057,7 +25111,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The unique numeric ID of the subscriber; increments sequentially.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      email (optional)
     </div>
     <div class="param-desc">
@@ -24068,7 +25123,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The email of the subscriber. Must be unique.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      first_name (optional)
     </div>
     <div class="param-desc">
@@ -24079,7 +25135,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The first name of the subscriber.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      last_name (optional)
     </div>
     <div class="param-desc">
@@ -24090,7 +25147,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The last name of the subscriber.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      source (optional)
     </div>
     <div class="param-desc">
@@ -24101,7 +25159,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The source of the subscriber. Values are: `storefront`, `order`, or `custom`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      order_id (optional)
     </div>
     <div class="param-desc">
@@ -24115,6 +25174,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="SubscriberCollectionResponse">
      SubscriberCollectionResponse
@@ -24124,8 +25184,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -24135,7 +25196,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -24148,6 +25210,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="SubscriberPost">
      SubscriberPost
@@ -24157,8 +25220,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     The model for a POST to create subscriber.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -24169,7 +25233,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The unique numeric ID of the subscriber; increments sequentially.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      email (optional)
     </div>
     <div class="param-desc">
@@ -24180,7 +25245,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The email of the subscriber. Must be unique.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      first_name (optional)
     </div>
     <div class="param-desc">
@@ -24191,7 +25257,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The first name of the subscriber.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      last_name (optional)
     </div>
     <div class="param-desc">
@@ -24202,7 +25269,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The last name of the subscriber.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      source (optional)
     </div>
     <div class="param-desc">
@@ -24213,7 +25281,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The source of the subscriber. Values are: `storefront`, `order`, or `custom`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      order_id (optional)
     </div>
     <div class="param-desc">
@@ -24227,6 +25296,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="SubscriberPut">
      SubscriberPut
@@ -24236,8 +25306,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     The model for a PUT to update subscriber.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -24248,7 +25319,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The unique numeric ID of the subscriber; increments sequentially.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      email (optional)
     </div>
     <div class="param-desc">
@@ -24259,7 +25331,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The email of the subscriber. Must be unique.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      first_name (optional)
     </div>
     <div class="param-desc">
@@ -24270,7 +25343,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The first name of the subscriber.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      last_name (optional)
     </div>
     <div class="param-desc">
@@ -24281,7 +25355,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The last name of the subscriber.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      source (optional)
     </div>
     <div class="param-desc">
@@ -24292,7 +25367,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The source of the subscriber. Values are: `storefront`, `order`, or `custom`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      order_id (optional)
     </div>
     <div class="param-desc">
@@ -24306,6 +25382,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="SubscriberResponse">
      SubscriberResponse
@@ -24315,8 +25392,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -24326,7 +25404,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -24339,6 +25418,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="Variant">
      Variant
@@ -24347,8 +25427,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    <div class="model-description">
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      cost_price (optional)
     </div>
     <div class="param-desc">
@@ -24359,7 +25440,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The cost price of the variant. format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      price (optional)
     </div>
     <div class="param-desc">
@@ -24370,7 +25452,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      This variant's base price on the storefront. If this value is null, the product's default price (set in the Product resource's `price` field) will be used as the base price. format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      weight (optional)
     </div>
     <div class="param-desc">
@@ -24381,7 +25464,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      This variant's base weight on the storefront. If this value is null, the product's default weight (set in the Product resource's weight field) will be used as the base weight. format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      purchasing_disabled (optional)
     </div>
     <div class="param-desc">
@@ -24392,7 +25476,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      If `true`, this variant will not be purchasable on the storefront.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      purchasing_disabled_message (optional)
     </div>
     <div class="param-desc">
@@ -24403,7 +25488,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      If `purchasing_disabled` is `true`, this message should show on the storefront when the variant is selected.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      image_url (optional)
     </div>
     <div class="param-desc">
@@ -24414,7 +25500,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The image that will be displayed when this variant is selected on the storefront. When updating a SKU image, send the publicly accessible URL. Supported image formats are JPEG, PNG, and GIF. Generic product images not specific to the variant should be stored on the product.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      upc (optional)
     </div>
     <div class="param-desc">
@@ -24425,7 +25512,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The UPC code used in feeds for shopping comparison sites and external channel integrations.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      inventory_level (optional)
     </div>
     <div class="param-desc">
@@ -24436,7 +25524,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Inventory level for the variant, which is used when the product's inventory_tracking is set to variant
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      inventory_warning_level (optional)
     </div>
     <div class="param-desc">
@@ -24447,7 +25536,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      When the variant hits this inventory level, it is considered low stock.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      bin_picking_number (optional)
     </div>
     <div class="param-desc">
@@ -24458,7 +25548,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Identifies where in a warehouse the variant is located.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -24468,7 +25559,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      product_id (optional)
     </div>
     <div class="param-desc">
@@ -24478,7 +25570,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sku (optional)
     </div>
     <div class="param-desc">
@@ -24488,7 +25581,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sku_id (optional)
     </div>
     <div class="param-desc">
@@ -24499,7 +25593,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Read-only reference to v2 API's SKU ID. Null if it is a base variant.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      option_values (optional)
     </div>
     <div class="param-desc">
@@ -24513,6 +25608,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="VariantBase">
      VariantBase
@@ -24522,8 +25618,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Common Variant properties.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      cost_price (optional)
     </div>
     <div class="param-desc">
@@ -24534,7 +25631,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The cost price of the variant. format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      price (optional)
     </div>
     <div class="param-desc">
@@ -24545,7 +25643,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      This variant's base price on the storefront. If this value is null, the product's default price (set in the Product resource's `price` field) will be used as the base price. format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      weight (optional)
     </div>
     <div class="param-desc">
@@ -24556,7 +25655,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      This variant's base weight on the storefront. If this value is null, the product's default weight (set in the Product resource's weight field) will be used as the base weight. format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      purchasing_disabled (optional)
     </div>
     <div class="param-desc">
@@ -24567,7 +25667,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      If `true`, this variant will not be purchasable on the storefront.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      purchasing_disabled_message (optional)
     </div>
     <div class="param-desc">
@@ -24578,7 +25679,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      If `purchasing_disabled` is `true`, this message should show on the storefront when the variant is selected.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      image_url (optional)
     </div>
     <div class="param-desc">
@@ -24589,7 +25691,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The image that will be displayed when this variant is selected on the storefront. When updating a SKU image, send the publicly accessible URL. Supported image formats are JPEG, PNG, and GIF. Generic product images not specific to the variant should be stored on the product.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      upc (optional)
     </div>
     <div class="param-desc">
@@ -24600,7 +25703,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The UPC code used in feeds for shopping comparison sites and external channel integrations.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      inventory_level (optional)
     </div>
     <div class="param-desc">
@@ -24611,7 +25715,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Inventory level for the variant, which is used when the product's inventory_tracking is set to variant
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      inventory_warning_level (optional)
     </div>
     <div class="param-desc">
@@ -24622,7 +25727,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      When the variant hits this inventory level, it is considered low stock.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      bin_picking_number (optional)
     </div>
     <div class="param-desc">
@@ -24636,6 +25742,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="VariantCollectionResponse">
      VariantCollectionResponse
@@ -24645,8 +25752,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -24656,7 +25764,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -24669,6 +25778,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="VariantPost">
      VariantPost
@@ -24678,8 +25788,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     The model for a POST to create variant on a product.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      cost_price (optional)
     </div>
     <div class="param-desc">
@@ -24690,7 +25801,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The cost price of the variant. format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      price (optional)
     </div>
     <div class="param-desc">
@@ -24701,7 +25813,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      This variant's base price on the storefront. If this value is null, the product's default price (set in the Product resource's `price` field) will be used as the base price. format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      weight (optional)
     </div>
     <div class="param-desc">
@@ -24712,7 +25825,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      This variant's base weight on the storefront. If this value is null, the product's default weight (set in the Product resource's weight field) will be used as the base weight. format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      purchasing_disabled (optional)
     </div>
     <div class="param-desc">
@@ -24723,7 +25837,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      If `true`, this variant will not be purchasable on the storefront.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      purchasing_disabled_message (optional)
     </div>
     <div class="param-desc">
@@ -24734,7 +25849,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      If `purchasing_disabled` is `true`, this message should show on the storefront when the variant is selected.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      image_url (optional)
     </div>
     <div class="param-desc">
@@ -24745,7 +25861,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The image that will be displayed when this variant is selected on the storefront. When updating a SKU image, send the publicly accessible URL. Supported image formats are JPEG, PNG, and GIF. Generic product images not specific to the variant should be stored on the product.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      upc (optional)
     </div>
     <div class="param-desc">
@@ -24756,7 +25873,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The UPC code used in feeds for shopping comparison sites and external channel integrations.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      inventory_level (optional)
     </div>
     <div class="param-desc">
@@ -24767,7 +25885,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Inventory level for the variant, which is used when the product's inventory_tracking is set to variant
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      inventory_warning_level (optional)
     </div>
     <div class="param-desc">
@@ -24778,7 +25897,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      When the variant hits this inventory level, it is considered low stock.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      bin_picking_number (optional)
     </div>
     <div class="param-desc">
@@ -24789,7 +25909,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Identifies where in a warehouse the variant is located.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      product_id (optional)
     </div>
     <div class="param-desc">
@@ -24799,7 +25920,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sku (optional)
     </div>
     <div class="param-desc">
@@ -24809,7 +25931,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      option_values (optional)
     </div>
     <div class="param-desc">
@@ -24823,6 +25946,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="VariantProductPost">
      VariantProductPost
@@ -24832,8 +25956,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     The model for a POST to create variant with a product.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      cost_price (optional)
     </div>
     <div class="param-desc">
@@ -24844,7 +25969,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The cost price of the variant. format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      price (optional)
     </div>
     <div class="param-desc">
@@ -24855,7 +25981,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      This variant's base price on the storefront. If this value is null, the product's default price (set in the Product resource's `price` field) will be used as the base price. format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      weight (optional)
     </div>
     <div class="param-desc">
@@ -24866,7 +25993,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      This variant's base weight on the storefront. If this value is null, the product's default weight (set in the Product resource's weight field) will be used as the base weight. format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      purchasing_disabled (optional)
     </div>
     <div class="param-desc">
@@ -24877,7 +26005,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      If `true`, this variant will not be purchasable on the storefront.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      purchasing_disabled_message (optional)
     </div>
     <div class="param-desc">
@@ -24888,7 +26017,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      If `purchasing_disabled` is `true`, this message should show on the storefront when the variant is selected.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      image_url (optional)
     </div>
     <div class="param-desc">
@@ -24899,7 +26029,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The image that will be displayed when this variant is selected on the storefront. When updating a SKU image, send the publicly accessible URL. Supported image formats are JPEG, PNG, and GIF. Generic product images not specific to the variant should be stored on the product.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      upc (optional)
     </div>
     <div class="param-desc">
@@ -24910,7 +26041,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The UPC code used in feeds for shopping comparison sites and external channel integrations.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      inventory_level (optional)
     </div>
     <div class="param-desc">
@@ -24921,7 +26053,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Inventory level for the variant, which is used when the product's inventory_tracking is set to variant
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      inventory_warning_level (optional)
     </div>
     <div class="param-desc">
@@ -24932,7 +26065,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      When the variant hits this inventory level, it is considered low stock.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      bin_picking_number (optional)
     </div>
     <div class="param-desc">
@@ -24943,7 +26077,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Identifies where in a warehouse the variant is located.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      product_id (optional)
     </div>
     <div class="param-desc">
@@ -24953,7 +26088,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sku (optional)
     </div>
     <div class="param-desc">
@@ -24963,7 +26099,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      option_values (optional)
     </div>
     <div class="param-desc">
@@ -24976,6 +26113,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="VariantProductPut">
      VariantProductPut
@@ -24985,8 +26123,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     The model for a PUT to update variant with a product.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      cost_price (optional)
     </div>
     <div class="param-desc">
@@ -24997,7 +26136,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The cost price of the variant. format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      price (optional)
     </div>
     <div class="param-desc">
@@ -25008,7 +26148,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      This variant's base price on the storefront. If this value is null, the product's default price (set in the Product resource's `price` field) will be used as the base price. format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      weight (optional)
     </div>
     <div class="param-desc">
@@ -25019,7 +26160,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      This variant's base weight on the storefront. If this value is null, the product's default weight (set in the Product resource's weight field) will be used as the base weight. format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      purchasing_disabled (optional)
     </div>
     <div class="param-desc">
@@ -25030,7 +26172,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      If `true`, this variant will not be purchasable on the storefront.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      purchasing_disabled_message (optional)
     </div>
     <div class="param-desc">
@@ -25041,7 +26184,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      If `purchasing_disabled` is `true`, this message should show on the storefront when the variant is selected.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      image_url (optional)
     </div>
     <div class="param-desc">
@@ -25052,7 +26196,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The image that will be displayed when this variant is selected on the storefront. When updating a SKU image, send the publicly accessible URL. Supported image formats are JPEG, PNG, and GIF. Generic product images not specific to the variant should be stored on the product.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      upc (optional)
     </div>
     <div class="param-desc">
@@ -25063,7 +26208,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The UPC code used in feeds for shopping comparison sites and external channel integrations.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      inventory_level (optional)
     </div>
     <div class="param-desc">
@@ -25074,7 +26220,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Inventory level for the variant, which is used when the product's inventory_tracking is set to variant
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      inventory_warning_level (optional)
     </div>
     <div class="param-desc">
@@ -25085,7 +26232,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      When the variant hits this inventory level, it is considered low stock.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      bin_picking_number (optional)
     </div>
     <div class="param-desc">
@@ -25096,7 +26244,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Identifies where in a warehouse the variant is located.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      product_id (optional)
     </div>
     <div class="param-desc">
@@ -25106,7 +26255,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sku (optional)
     </div>
     <div class="param-desc">
@@ -25119,6 +26269,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="VariantPut">
      VariantPut
@@ -25128,8 +26279,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     The model for a PUT to update variant on a product.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      cost_price (optional)
     </div>
     <div class="param-desc">
@@ -25140,7 +26292,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The cost price of the variant. format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      price (optional)
     </div>
     <div class="param-desc">
@@ -25151,7 +26304,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      This variant's base price on the storefront. If this value is null, the product's default price (set in the Product resource's `price` field) will be used as the base price. format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      weight (optional)
     </div>
     <div class="param-desc">
@@ -25162,7 +26316,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      This variant's base weight on the storefront. If this value is null, the product's default weight (set in the Product resource's weight field) will be used as the base weight. format: double
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      purchasing_disabled (optional)
     </div>
     <div class="param-desc">
@@ -25173,7 +26328,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      If `true`, this variant will not be purchasable on the storefront.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      purchasing_disabled_message (optional)
     </div>
     <div class="param-desc">
@@ -25184,7 +26340,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      If `purchasing_disabled` is `true`, this message should show on the storefront when the variant is selected.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      image_url (optional)
     </div>
     <div class="param-desc">
@@ -25195,7 +26352,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The image that will be displayed when this variant is selected on the storefront. When updating a SKU image, send the publicly accessible URL. Supported image formats are JPEG, PNG, and GIF. Generic product images not specific to the variant should be stored on the product.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      upc (optional)
     </div>
     <div class="param-desc">
@@ -25206,7 +26364,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The UPC code used in feeds for shopping comparison sites and external channel integrations.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      inventory_level (optional)
     </div>
     <div class="param-desc">
@@ -25217,7 +26376,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Inventory level for the variant, which is used when the product's inventory_tracking is set to variant
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      inventory_warning_level (optional)
     </div>
     <div class="param-desc">
@@ -25228,7 +26388,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      When the variant hits this inventory level, it is considered low stock.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      bin_picking_number (optional)
     </div>
     <div class="param-desc">
@@ -25239,7 +26400,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Identifies where in a warehouse the variant is located.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -25252,6 +26414,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="VariantResponse">
      VariantResponse
@@ -25261,8 +26424,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Successful response.
    </div>
    <br/>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -25272,7 +26436,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
