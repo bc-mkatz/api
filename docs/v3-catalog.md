@@ -5,7 +5,8 @@ _Welcome! Please note that this API is in our partner-release stage, which means
 **Have suggestions, feedback or questions? Submit them as an issue here:** 
 https://github.com/bigcommerce/api/issues
 
-**Want to see what we have in development, and help direct our roadmap? View our public API roadmap here:** https://trello.com/b/1Od4oCsl/bigcommerce-api-roadmap
+**Want to see what we have in development, and help direct our roadmap? View our public API roadmap here:** 
+https://trello.com/b/1Od4oCsl/bigcommerce-api-roadmap
 
 **Jump directly to: [API Reference](#api_ref)**
 
@@ -412,20 +413,11 @@ When you create a product, we'll automatically return variants in the response:
 You can include sub-resources on a product, as a comma-separated list, by using `include={sub-resources}` as a query string. Valid expansions currently include `variants`, `images`, `custom_fields`, and `bulk_pricing_rules`. For instance, if you wanted variants and custom fields to also return in the product response, you'd GET: 
 https://api.bigcommerce.com/stores/{store-hash}/v3/catalog/products?include=variants,custom_fields
 
-# <span id="api_ref"> v3 API Reference </span>
+# <a name="api_ref"></a> v3 API Reference
 
 Please view the documentation generated from the Swagger file in YAML format [here](http://editor.swagger.io/#/?import=https://raw.githubusercontent.com/bigcommerce/api/master/swagger/v3-api.yaml).
 
 <html>
- <head>
-  <title>
-   BigCommerce v3 API
-  </title>
- </head>
- <body>
-  <div class="app-desc">
-   A Swagger Document for the BigCommmerce API V3.
-  </div>
   <h2>
    <a name="__Methods">
     Methods/Endpoints
